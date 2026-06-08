@@ -8,6 +8,7 @@ const BASE_URL = 'https://www.sesb.com.my/en/procurement/tender-notices/';
 
 async function* scrape() {
   const now = nowIso();
+  const results = [];
   try {
     const { data } = await axios.get(BASE_URL, { timeout: 20000,
       headers: { 'User-Agent': 'Mozilla/5.0' } });
@@ -30,12 +31,13 @@ async function* scrape() {
       if (!title || title.length < 15) return;
       let url = link || BASE_URL;
       if (url.startsWith('/')) url = 'https://www.sesb.com.my' + url;
-      yield { source_id: SOURCE_ID, ref: null, title,
-        deadline, open_date: openDate || null, status: inferStatus(openDate, deadline), url, scraped_at: now };
+      results.push({ source_id: SOURCE_ID, ref: null, title,
+        deadline, open_date: openDate || null, status: inferStatus(openDate, deadline), url, scraped_at: now });
     });
   } catch (e) {
     console.error(`[${SOURCE_NAME}] fetch error: ${e.message}`);
   }
+  for (const r of results) yield r;
 }
 
 module.exports = { SOURCE_ID, SOURCE_NAME, scrape };

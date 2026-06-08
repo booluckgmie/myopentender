@@ -8,6 +8,7 @@ const BASE_URL = 'https://www.bursamalaysia.com/market_information/announcements
 
 async function* scrape() {
   const now = nowIso();
+  const results = [];
   try {
     const { data } = await axios.get(BASE_URL, { timeout: 20000,
       headers: { 'User-Agent': 'Mozilla/5.0' } });
@@ -24,12 +25,13 @@ async function* scrape() {
       if (url.startsWith('/')) url = 'https://www.bursamalaysia.com' + url;
       const deadline = parseDate(cells[3] || cells[2]);
       const openDate = parseDate(cells[2]);
-      yield { source_id: SOURCE_ID, ref: cells[0] || null, title,
-        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now };
+      results.push({ source_id: SOURCE_ID, ref: cells[0] || null, title,
+        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now });
     });
   } catch (e) {
     console.error(`[${SOURCE_NAME}] fetch error: ${e.message}`);
   }
+  for (const r of results) yield r;
 }
 
 module.exports = { SOURCE_ID, SOURCE_NAME, scrape };

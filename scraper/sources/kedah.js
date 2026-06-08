@@ -9,6 +9,7 @@ const HOST = 'https://www.kedah.gov.my';
 
 async function* scrape() {
   const now = nowIso();
+  const results = [];
   try {
     const { data } = await axios.get(BASE_URL, { timeout: 20000,
       headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'en-US,en;q=0.9,ms;q=0.8' } });
@@ -25,12 +26,13 @@ async function* scrape() {
       if (url.startsWith('/')) url = HOST + url;
       const deadline = parseDate(cells[1]);
       const openDate = parseDate(cells[2]);
-      yield { source_id: SOURCE_ID, ref: null, title,
-        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now };
+      results.push({ source_id: SOURCE_ID, ref: null, title,
+        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now });
     });
   } catch (e) {
     console.error(`[${SOURCE_NAME}] fetch error: ${e.message}`);
   }
+  for (const r of results) yield r;
 }
 
 module.exports = { SOURCE_ID, SOURCE_NAME, scrape };

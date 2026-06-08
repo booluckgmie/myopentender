@@ -8,6 +8,7 @@ const BASE_URL = 'https://www.tm.com.my/en/business/procurement/open-tender/';
 
 async function* scrape() {
   const now = nowIso();
+  const results = [];
   try {
     const { data } = await axios.get(BASE_URL, { timeout: 20000,
       headers: { 'User-Agent': 'Mozilla/5.0' } });
@@ -22,10 +23,9 @@ async function* scrape() {
       if (url.startsWith('/')) url = 'https://www.tm.com.my' + url;
       const deadline = parseDate(cells[3] || cells[2]);
       const openDate = parseDate(cells[2]);
-      yield { source_id: SOURCE_ID, ref: cells[0] || null, title,
-        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now };
+      results.push({ source_id: SOURCE_ID, ref: cells[0] || null, title,
+        deadline, open_date: openDate, status: inferStatus(openDate, deadline), url, scraped_at: now });
     });
-    // card/list layout
     $('article, .tender-item, .procurement-card').each((_, el) => {
       const title = $(el).find('h3, h4, .title, strong').first().text().trim();
       if (!title || title.length < 15) return;
@@ -34,12 +34,13 @@ async function* scrape() {
       if (url.startsWith('/')) url = 'https://www.tm.com.my' + url;
       const dateText = $(el).find('.date, time, .closing').first().text().trim();
       const deadline = parseDate(dateText);
-      yield { source_id: SOURCE_ID, ref: null, title,
-        deadline, open_date: null, status: inferStatus(null, deadline), url, scraped_at: now };
+      results.push({ source_id: SOURCE_ID, ref: null, title,
+        deadline, open_date: null, status: inferStatus(null, deadline), url, scraped_at: now });
     });
   } catch (e) {
     console.error(`[${SOURCE_NAME}] fetch error: ${e.message}`);
   }
+  for (const r of results) yield r;
 }
 
 module.exports = { SOURCE_ID, SOURCE_NAME, scrape };
