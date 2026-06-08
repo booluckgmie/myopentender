@@ -696,12 +696,12 @@
 <header>
   <div class="logo">Tender<span>Track</span> <span class="region">MY</span></div>
   <div class="header-actions">
-    <button class="btn" onclick="openScrapeModal()">&#x27F3; Scrape Now</button>
+    <button class="btn" onclick="openScrapeModal()">⟳ Scrape Now</button>
     <button class="btn btn-primary" onclick="openAddModal()">+ Add Tender</button>
     <button class="btn" onclick="navTo('notifications', null)" style="position:relative">
       🔔 Alerts <span class="badge" id="alertBadge">0</span>
     </button>
-    <button class="btn" onclick="exportCSV()">&#x2193; Export</button>
+    <button class="btn" onclick="exportCSV()">↓ Export</button>
   </div>
 </header>
 
@@ -740,12 +740,12 @@
       <div class="resources-bar">
         📎 Need to add tender documents?
         <a href="#" onclick="openAddModal();return false">+ Add Tender with Resources</a>
-        &nbsp;&middot;&nbsp;
+        &nbsp;·&nbsp;
         <a href="#" onclick="navTo('sources',null);return false">Manage Sources</a>
-        &nbsp;&middot;&nbsp;
-        <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank">ePerolehan &#x2197;</a>
-        &nbsp;&middot;&nbsp;
-        <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank">Bursa &#x2197;</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank">ePerolehan ↗</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank">Bursa ↗</a>
       </div>
 
       <div class="stats-grid">
@@ -810,10 +810,10 @@
         <table>
           <thead>
             <tr>
-              <th onclick="setSortBy('title')">Tender Title &#x21D5;</th>
-              <th onclick="setSortBy('source')">Source &#x21D5;</th>
+              <th onclick="setSortBy('title')">Tender Title ↕</th>
+              <th onclick="setSortBy('source')">Source ↕</th>
               <th>Type</th>
-              <th onclick="setSortBy('deadline')">Deadline &#x21D5;</th>
+              <th onclick="setSortBy('deadline')">Deadline ↕</th>
               <th>Days Left</th>
               <th>Status</th>
               <th>Actions</th>
@@ -854,9 +854,9 @@
       </div>
       <div style="margin-bottom:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
         <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank" class="btn btn-primary" style="text-decoration:none">
-          📈 Open Bursa Portal &#x2197;
+          📈 Open Bursa Portal ↗
         </a>
-        <span style="color:var(--muted);font-size:0.82rem">Filter by keyword: <strong style="color:var(--text)">&quot;tender&quot;</strong></span>
+        <span style="color:var(--muted);font-size:0.82rem">Filter by keyword: <strong style="color:var(--text)">"tender"</strong></span>
       </div>
       <div class="table-wrap">
         <table>
@@ -886,7 +886,7 @@
     <section id="sec-pipeline" class="section">
       <div style="margin-bottom:1.5rem">
         <div class="page-title">Data Pipeline</div>
-        <div class="page-sub">Architecture: Scraper → SQLite → UI &middot; Connect a backend to automate</div>
+        <div class="page-sub">Architecture: Scraper → SQLite → UI · Connect a backend to automate</div>
       </div>
 
       <div class="pipeline-diagram">
@@ -897,22 +897,22 @@
             <div>📡 Sources</div>
             <div class="pipeline-step-label">13 portals</div>
           </div>
-          <div class="pipeline-arrow">&rarr;</div>
+          <div class="pipeline-arrow">→</div>
           <div class="pipeline-step">
-            <div>🖸 Scraper</div>
+            <div>🕸 Scraper</div>
             <div class="pipeline-step-label">Python/Node</div>
           </div>
-          <div class="pipeline-arrow">&rarr;</div>
+          <div class="pipeline-arrow">→</div>
           <div class="pipeline-step">
             <div>🗄 SQLite</div>
             <div class="pipeline-step-label">sql.js (browser)</div>
           </div>
-          <div class="pipeline-arrow">&rarr;</div>
+          <div class="pipeline-arrow">→</div>
           <div class="pipeline-step active">
             <div>🖥 UI</div>
             <div class="pipeline-step-label">This dashboard</div>
           </div>
-          <div class="pipeline-arrow">&rarr;</div>
+          <div class="pipeline-arrow">→</div>
           <div class="pipeline-step">
             <div>🔔 Alerts</div>
             <div class="pipeline-step-label">Email / SMS</div>
@@ -933,24 +933,24 @@
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
           <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.75rem">Federal / State Portals</div>
           <div style="display:flex;flex-direction:column;gap:0.4rem">
-            <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eperolehan.gov.my &#x2197;</a>
-            <a href="https://tender.selangor.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tender.selangor.my &#x2197;</a>
-            <a href="https://ep.penang.gov.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">ep.penang.gov.my &#x2197;</a>
-            <a href="https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">etendernotice.sarawak.gov.my &#x2197;</a>
-            <a href="http://www.psupsabah.gov.my/?page_id=14070" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">psupsabah.gov.my &#x2197;</a>
-            <a href="https://eprocurement.spsb.com.my:8443/E-procurement/index.php/home" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eprocurement.spsb.com.my &#x2197;</a>
-            <a href="https://s3pk.perak.gov.my/IklanList.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">s3pk.perak.gov.my &#x2197;</a>
-            <a href="https://www.kedah.gov.my/index.php/tender-sebut-harga-jabatan-negeri/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">kedah.gov.my &#x2197;</a>
+            <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eperolehan.gov.my ↗</a>
+            <a href="https://tender.selangor.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tender.selangor.my ↗</a>
+            <a href="https://ep.penang.gov.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">ep.penang.gov.my ↗</a>
+            <a href="https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">etendernotice.sarawak.gov.my ↗</a>
+            <a href="http://www.psupsabah.gov.my/?page_id=14070" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">psupsabah.gov.my ↗</a>
+            <a href="https://eprocurement.spsb.com.my:8443/E-procurement/index.php/home" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eprocurement.spsb.com.my ↗</a>
+            <a href="https://s3pk.perak.gov.my/IklanList.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">s3pk.perak.gov.my ↗</a>
+            <a href="https://www.kedah.gov.my/index.php/tender-sebut-harga-jabatan-negeri/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">kedah.gov.my ↗</a>
           </div>
         </div>
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
           <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.75rem">PLC &amp; Bursa Portals</div>
           <div style="display:flex;flex-direction:column;gap:0.4rem">
-            <a href="https://www.sesb.com.my/Tender.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">sesb.com.my &#x2197;</a>
-            <a href="https://www.prasarana.com.my/tenders/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">prasarana.com.my &#x2197;</a>
-            <a href="https://www.tnb.com.my/listings/tender_notices/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tnb.com.my &#x2197;</a>
-            <a href="https://www.tm.com.my/business-with-tm/tender-notices" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tm.com.my &#x2197;</a>
-            <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">bursamalaysia.com (keyword: tender) &#x2197;</a>
+            <a href="https://www.sesb.com.my/Tender.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">sesb.com.my ↗</a>
+            <a href="https://www.prasarana.com.my/tenders/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">prasarana.com.my ↗</a>
+            <a href="https://www.tnb.com.my/listings/tender_notices/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tnb.com.my ↗</a>
+            <a href="https://www.tm.com.my/business-with-tm/tender-notices" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tm.com.my ↗</a>
+            <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">bursamalaysia.com (keyword: tender) ↗</a>
           </div>
         </div>
       </div>
@@ -960,7 +960,7 @@
         <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.25rem;display:flex;flex-direction:column;gap:0.35rem">
           <li>Most portals require <strong style="color:var(--text)">Playwright / Selenium</strong> for JS-rendered pages (ePerolehan, SPSB, Prasarana)</li>
           <li>Sarawak &amp; Perak S3PK expose plain HTML tables — use <strong style="color:var(--text)">requests + BeautifulSoup</strong></li>
-          <li>Bursa: scrape <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">company_announcement</code> page, filter announcements containing &quot;tender&quot;</li>
+          <li>Bursa: scrape <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">company_announcement</code> page, filter announcements containing "tender"</li>
           <li>Store normalized rows in SQLite: <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">tenders</code> table (schema matches this app)</li>
           <li>Export as <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">tenders.sqlite</code> and load via <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">sql.js</code> FileReader API</li>
           <li>Run scraper on cron (daily at 08:00) and push updated DB to the same GitHub Pages deployment</li>
@@ -979,7 +979,7 @@
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title" id="modalTitle"></div>
-      <button class="modal-close" onclick="closeModal('detailModal')">&#x2715;</button>
+      <button class="modal-close" onclick="closeModal('detailModal')">✕</button>
     </div>
     <div id="modalBody"></div>
     <div class="modal-actions" id="modalActions"></div>
@@ -991,7 +991,7 @@
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title">Add New Tender</div>
-      <button class="modal-close" onclick="closeModal('addModal')">&#x2715;</button>
+      <button class="modal-close" onclick="closeModal('addModal')">✕</button>
     </div>
     <div class="form-group">
       <label class="form-label">Tender Title *</label>
@@ -1051,20 +1051,20 @@
   <div class="modal" style="max-width:520px">
     <div class="modal-header">
       <div class="modal-title">Scrape Tender Portals</div>
-      <button class="modal-close" onclick="closeModal('scrapeModal')">&#x2715;</button>
+      <button class="modal-close" onclick="closeModal('scrapeModal')">✕</button>
     </div>
     <p style="color:var(--muted);font-size:0.83rem;margin-bottom:1rem">
       Simulates fetching the latest tenders from all 12 configured sources. In production, connect a Python/Node scraper backend that writes to <code style="background:var(--surface2);padding:1px 5px;border-radius:3px">tenders.sqlite</code>.
     </p>
     <div class="scrape-progress" id="scrapeProgress">
-      <div class="progress-title">&#x27F3; Scraping Sources...</div>
+      <div class="progress-title">⟳ Scraping Sources...</div>
       <div class="progress-items" id="scrapeItems"></div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="scrapeBar" style="width:0%"></div>
       </div>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-primary" id="startScrapeBtn" onclick="startScrape()">&#x25B6; Start Scraping</button>
+      <button class="btn btn-primary" id="startScrapeBtn" onclick="startScrape()">▶ Start Scraping</button>
       <button class="btn" onclick="closeModal('scrapeModal')">Close</button>
     </div>
   </div>
@@ -1075,7 +1075,7 @@
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title">Edit Tender</div>
-      <button class="modal-close" onclick="closeModal('editModal')">&#x2715;</button>
+      <button class="modal-close" onclick="closeModal('editModal')">✕</button>
     </div>
     <div id="editForm"></div>
     <div class="modal-actions">
@@ -1097,7 +1097,7 @@ let currentView = 'dashboard';
 let editingId = null;
 
 const SOURCES = [
-  { id: 1,  name: 'ePerolehan',      short: 'ePro', type: 'Federal', color: '#0077cc', icon: '🏗️', url: 'https://www.eperolehan.gov.my/quotation-tender-notice' },
+  { id: 1,  name: 'ePerolehan',      short: 'ePro', type: 'Federal', color: '#0077cc', icon: '🏛️', url: 'https://www.eperolehan.gov.my/quotation-tender-notice' },
   { id: 2,  name: 'Selangor Tender', short: 'SEL',  type: 'State',   color: '#2563eb', icon: '🏢', url: 'https://tender.selangor.my/' },
   { id: 3,  name: 'Penang eProcure', short: 'PNG',  type: 'State',   color: '#7c3aed', icon: '🏢', url: 'https://ep.penang.gov.my/' },
   { id: 4,  name: 'Sarawak eTender', short: 'SRW',  type: 'State',   color: '#059669', icon: '🏢', url: 'https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp' },
@@ -1320,7 +1320,7 @@ function renderTable(extraFilter='', targetId='tenderTable') {
   if (!tbody) return;
   tbody.innerHTML = rows.length
     ? rows.map(renderRow).join('')
-    : `<tr><td colspan="7"><div class="empty"><div class="empty-icon">💭</div><div class="empty-title">No tenders found</div><div style="font-size:0.82rem;color:var(--muted)">Try adjusting filters or add new tenders</div></div></td></tr>`;
+    : `<tr><td colspan="7"><div class="empty"><div class="empty-icon">📭</div><div class="empty-title">No tenders found</div><div style="font-size:0.82rem;color:var(--muted)">Try adjusting filters or add new tenders</div></div></td></tr>`;
   const info = document.getElementById('paginationInfo');
   if (info) info.textContent = `Showing ${total?Math.min(offset+1,total):0}–${Math.min(offset+perPage,total)} of ${total}`;
   renderPages(total);
