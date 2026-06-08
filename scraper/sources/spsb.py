@@ -1,5 +1,5 @@
 """
-SPSB eProcurement.
+SPSB eProcurement (Sabah Port Sdn Bhd / Sabah State procurement).
 URL: https://eprocurement.spsb.com.my:8443/E-procurement/index.php/home
 
 Playwright required — React/JS portal with self-signed cert.

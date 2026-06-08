@@ -30,6 +30,7 @@ def scrape() -> Iterator[dict]:
     soup = BeautifulSoup(resp.text, "lxml")
     now = now_iso()
 
+    # WordPress pages often have tender entries as list items or paragraphs with links
     for link in soup.select(".entry-content a, .page-content a, article a"):
         href = link.get("href", "")
         title = link.get_text(strip=True)

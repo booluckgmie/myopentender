@@ -30,6 +30,7 @@ def scrape() -> Iterator[dict]:
             page.goto(BASE_URL, timeout=30000, wait_until="networkidle")
             page.wait_for_selector(".tender-item, table tbody tr, article", timeout=15000)
 
+            # Try table rows first, then article/card layout
             rows = page.query_selector_all("table tbody tr")
             if not rows:
                 rows = page.query_selector_all(".tender-item, article.tender, .card")

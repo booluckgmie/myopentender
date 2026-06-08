@@ -34,6 +34,7 @@ def _scrape_playwright() -> Iterator[dict]:
         browser = pw.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(BASE_URL, timeout=30000, wait_until="networkidle")
+        # Wait for tender rows
         page.wait_for_selector("table tbody tr", timeout=15000)
         rows = page.query_selector_all("table tbody tr")
         for row in rows:
@@ -63,6 +64,7 @@ def _scrape_requests() -> Iterator[dict]:
 
 
 def _build(cells: list, url: str = BASE_URL) -> dict:
+    # Typical columns: [ref, title, ministry, open_date, deadline, ...]
     ref      = cells[0] if len(cells) > 0 else None
     title    = cells[1] if len(cells) > 1 else "Untitled"
     ministry = cells[2] if len(cells) > 2 else None
