@@ -3,7 +3,6 @@ Bursa Malaysia — Company Announcements filtered by keyword "tender".
 URL: https://www.bursamalaysia.com/market_information/announcements/company_announcement
 
 Playwright required (heavy JS).
-Results stored separately in tenders table with source_id=13.
 """
 import logging
 from typing import Iterator
@@ -31,7 +30,6 @@ def scrape() -> Iterator[dict]:
         try:
             page.goto(BASE_URL, timeout=45000, wait_until="networkidle")
 
-            # Try to find a keyword/search field
             search_sel = 'input[placeholder*="search" i], input[placeholder*="keyword" i], input[name*="keyword" i]'
             search_box = page.query_selector(search_sel)
             if search_box:
