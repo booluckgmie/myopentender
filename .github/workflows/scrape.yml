@@ -1,0 +1,45 @@
+name: Daily Tender Scrape
+
+on:
+  schedule:
+    # 01:00 UTC = 09:00 MYT (UTC+8) every day
+    - cron: "0 1 * * *"
+  workflow_dispatch:   # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write      # needed to commit tenders.json / tenders.sqlite back
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main          # always scrape from main / change to your deploy branch
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r scraper/requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Run scraper + export JSON
+        run: python -m scraper.run --export
+        env:
+          PYTHONPATH: .
+
+      - name: Commit updated tenders.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tenders.json tenders.sqlite || true
+          git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
+          git push

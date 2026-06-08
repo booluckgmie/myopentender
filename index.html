@@ -1154,7 +1154,7 @@ async function initDB() {
     open_date TEXT, deadline TEXT, value REAL,
     category TEXT, ministry TEXT, status TEXT,
     url TEXT, notes TEXT, starred INTEGER DEFAULT 0,
-    notified INTEGER DEFAULT 0, date_added TEXT
+    notified INTEGER DEFAULT 0, date_added TEXT, scraped_at TEXT
   )`);
 
   db.run(`CREATE TABLE IF NOT EXISTS notifications (
@@ -1163,21 +1163,50 @@ async function initDB() {
     created_at TEXT, read INTEGER DEFAULT 0
   )`);
 
-  const now = new Date().toISOString();
-  MOCK_TENDERS.forEach(t => {
-    db.run(`INSERT INTO tenders (title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-      [t.title,t.ref,t.source_id,t.open_date,t.deadline,t.value,t.category,t.ministry,t.status,t.url,t.notes,t.starred,t.notified,now]);
-  });
+  // Try to load live data from tenders.json (produced by the Python scraper).
+  // Falls back to MOCK_TENDERS if the file is absent (local dev / GitHub Pages cold start).
+  let loaded = false;
+  try {
+    const resp = await fetch('tenders.json');
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.tenders && data.tenders.length) {
+        data.tenders.forEach(t => {
+          db.run(`INSERT OR IGNORE INTO tenders
+            (id,title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added,scraped_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+            [t.id,t.title,t.ref,t.source_id,t.open_date,t.deadline,t.value,
+             t.category,t.ministry,t.status,t.url,t.notes,t.starred||0,t.notified||0,
+             t.date_added,t.scraped_at]);
+        });
+        (data.notifications||[]).forEach(n => {
+          db.run(`INSERT OR IGNORE INTO notifications (id,tender_id,type,message,created_at,read) VALUES (?,?,?,?,?,?)`,
+            [n.id,n.tender_id,n.type,n.message,n.created_at,n.read||0]);
+        });
+        loaded = true;
+        const ts = data.exported_at ? ' · last scraped ' + new Date(data.exported_at).toLocaleString('en-MY') : '';
+        showToast(`Live data loaded — ${data.tenders.length} tenders${ts}`, 'success');
+      }
+    }
+  } catch(_) { /* fetch not available or file missing */ }
 
-  const urgentTitles = [
-    { id: 11, title: 'TNB Smart Meter AMI Rollout', type: 'urgent' },
-    { id: 2,  title: 'Pembinaan Kompleks Sukan Negeri Selangor', type: 'reminder' },
-    { id: 3,  title: 'Perkhidmatan Pembersihan Penang Hill', type: 'reminder' },
-  ];
-  urgentTitles.forEach(n => {
-    db.run(`INSERT INTO notifications (tender_id,type,message,created_at,read) VALUES (?,?,?,?,?)`,
-      [n.id, n.type, `Bid deadline approaching: ${n.title}`, now, 0]);
-  });
+  if (!loaded) {
+    const now = new Date().toISOString();
+    MOCK_TENDERS.forEach(t => {
+      db.run(`INSERT INTO tenders (title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+        [t.title,t.ref,t.source_id,t.open_date,t.deadline,t.value,t.category,t.ministry,t.status,t.url,t.notes,t.starred,t.notified,now]);
+    });
+    const urgentTitles = [
+      { id: 11, title: 'TNB Smart Meter AMI Rollout', type: 'urgent' },
+      { id: 2,  title: 'Pembinaan Kompleks Sukan Negeri Selangor', type: 'reminder' },
+      { id: 3,  title: 'Perkhidmatan Pembersihan Penang Hill', type: 'reminder' },
+    ];
+    urgentTitles.forEach(n => {
+      db.run(`INSERT INTO notifications (tender_id,type,message,created_at,read) VALUES (?,?,?,?,?)`,
+        [n.id, n.type, `Bid deadline approaching: ${n.title}`, now, 0]);
+    });
+    showToast('Demo data loaded — run the scraper to get live tenders', 'info');
+  }
 
   updateStats();
   renderSidebar();
