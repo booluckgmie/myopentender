@@ -40,7 +40,7 @@ jobs:
       - name: Show summary
         run: |
           node -e "
-            const d = require('./tenders.json');
+            const d = require('./public/tenders.json');
             console.log('Total tenders:', d.tenders.length);
             const by = {};
             d.tenders.forEach(t => { by[t.source_id] = (by[t.source_id]||0)+1; });
@@ -51,6 +51,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tenders.json
+          git add public/tenders.json
           git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
           git push

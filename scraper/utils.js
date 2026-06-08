@@ -1,4 +1,17 @@
-const JUNK_PATTERNS = /^(no\b|tajuk|jenis|tarikh|status|tindakan|actions?|type|title|ref|tekan\s*(sini|here)|click\s*here|log\s*masuk|login|email|kata\s*laluan|password|search\s*for|record\(s\)\s*found|available\s*tender|posted\s*date|closing\s*date|sebutharga$|tender$|no\.\s*$|[-–—]+$|\d+\s*\.\s*$)/i;
+const JUNK_PATTERNS = /^[*•·\s]*(no\b|tajuk|jenis|tarikh|status|tindakan|actions?|type|title|ref|tekan\s*(sini|here)|click\s*here|log\s*masuk|login|email|kata\s*laluan|password|search\s*(for|title)|record\(s\)\s*found|available\s*tender|posted\s*date|closing\s*date|sebutharga$|tender$|no\.\s*$|[-–—]+$|\d+\s*\.\s*$|tutup|buka|daftar|laman|halaman|sila\s|hubungi|maklumat\s*lanjut|klik\s*sini)/i;
+
+// Reject strings that look like times/office hours
+const TIME_PATTERN = /^\d{1,2}[.:]\d{2}\s*(pagi|petang|tengah|malam|am|pm)/i;
+
+// Reject strings that are mostly numbers/punctuation
+const MOSTLY_DIGITS = /^[\d\s\/\-\.,:()]+$/;
+
+// Reject navigation strings with pipe separators like "Iklan Semasa | Keputusan |"
+const NAV_PIPES = /\w\s*\|\s*\w/;
+
+// Reject "subscribe to receive..." type strings
+const SUBSCRIBE_PATTERN = /^subscribe\b/i;
+
 const MIN_TITLE_LEN = 15;
 
 function isValidTitle(title) {
@@ -6,6 +19,10 @@ function isValidTitle(title) {
   const t = title.trim();
   if (t.length < MIN_TITLE_LEN) return false;
   if (JUNK_PATTERNS.test(t)) return false;
+  if (TIME_PATTERN.test(t)) return false;
+  if (MOSTLY_DIGITS.test(t)) return false;
+  if (NAV_PIPES.test(t)) return false;
+  if (SUBSCRIBE_PATTERN.test(t)) return false;
   const words = t.split(/\s+/);
   if (words.length <= 2 && t === t.toUpperCase()) return false;
   return true;
@@ -14,11 +31,8 @@ function isValidTitle(title) {
 function parseDate(raw) {
   if (!raw) return null;
   let s = raw.trim();
-  // DD/MM/YYYY → YYYY-MM-DD
   s = s.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1');
-  // DD-MM-YYYY → YYYY-MM-DD
   s = s.replace(/(\d{2})-(\d{2})-(\d{4})/, '$3-$2-$1');
-  // DD MMM YYYY
   const months = {jan:'01',feb:'02',mar:'03',apr:'04',may:'05',jun:'06',
                   jul:'07',aug:'08',sep:'09',oct:'10',nov:'11',dec:'12'};
   const m = s.match(/(\d{1,2})\s+([a-z]{3})\w*\s+(\d{4})/i);

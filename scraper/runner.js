@@ -36,7 +36,7 @@ async function main() {
   }
 
   if (doExport || args.includes('--export')) {
-    const outPath = path.join(__dirname, '..', 'tenders.json');
+    const outPath = path.join(__dirname, '..', 'public', 'tenders.json');
     await exportJson(db, outPath);
   }
 }
