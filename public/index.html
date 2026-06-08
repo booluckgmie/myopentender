@@ -318,24 +318,43 @@ const SOURCES_META = {
 
 // ── Boot ───────────────────────────────────────────────────────────────────
 async function boot() {
+  // 1. Try live API
   try {
-    const r = await fetch('/api/stats');
+    const r = await fetch('/api/stats', { signal: AbortSignal.timeout(4000) });
     if (r.ok) {
-      state.stats = await r.json();
-      state.mode = 'api';
-    } else throw new Error();
-  } catch {
-    // Fallback: try static tenders.json (Netlify mode)
-    try {
-      const r = await fetch('tenders.json');
-      if (r.ok) {
-        const d = await r.json();
-        state.staticData = d;
-        state.mode = 'static';
-        computeStaticStats(d);
+      const json = await r.json();
+      if (typeof json.total === 'number') {
+        state.stats = json;
+        state.mode = 'api';
       }
-    } catch {}
+    }
+  } catch {}
+
+  // 2. Always try tenders.json — use it if API mode didn't load or as supplement
+  if (state.mode !== 'api') {
+    try {
+      const r = await fetch('tenders.json', { signal: AbortSignal.timeout(8000) });
+      if (r.ok) {
+        const text = await r.text();
+        const d = JSON.parse(text);
+        if (d && Array.isArray(d.tenders) && d.tenders.length > 0) {
+          state.staticData = d;
+          state.mode = 'static';
+          computeStaticStats(d);
+        }
+      }
+    } catch (e) {
+      console.warn('tenders.json load failed:', e.message);
+    }
   }
+
+  // 3. Last resort: seed with empty state so UI renders
+  if (!state.staticData && state.mode !== 'api') {
+    state.staticData = { tenders: [], notifications: [] };
+    state.mode = 'static';
+    computeStaticStats(state.staticData);
+  }
+
   updateBadges();
   showPage('tenders');
   loadNotifications();
@@ -356,32 +375,38 @@ function computeStaticStats(d) {
 // ── Data fetching ──────────────────────────────────────────────────────────
 async function fetchTenders() {
   if (state.mode === 'static') return fetchTendersStatic();
-  const params = new URLSearchParams({
-    page: state.currentPage,
-    limit: state.limit,
-    ...(state.q && {q: state.q}),
-    ...(state.status && {status: state.status}),
-    ...(state.source && {source_id: state.source}),
-    ...(state.starred && {starred: '1'}),
-  });
-  const r = await fetch('/api/tenders?' + params);
-  return r.json();
+  try {
+    const params = new URLSearchParams({
+      page: state.currentPage, limit: state.limit,
+      ...(state.q && {q: state.q}),
+      ...(state.status && {status: state.status}),
+      ...(state.source && {source_id: state.source}),
+      ...(state.starred && {starred: '1'}),
+    });
+    const r = await fetch('/api/tenders?' + params);
+    if (r.ok) return r.json();
+  } catch {}
+  // API failed mid-session — fall back to static
+  return fetchTendersStatic();
 }
 
 function fetchTendersStatic() {
   let data = (state.staticData?.tenders || []);
-  if (state.q) data = data.filter(t => t.title.toLowerCase().includes(state.q.toLowerCase()));
+  if (state.q) data = data.filter(t => t.title?.toLowerCase().includes(state.q.toLowerCase()));
   if (state.status) data = data.filter(t => t.status === state.status);
-  if (state.source) data = data.filter(t => t.source_id == state.source);
+  if (state.source) data = data.filter(t => String(t.source_id) === String(state.source));
   if (state.starred) data = data.filter(t => t.starred);
   const start = (state.currentPage - 1) * state.limit;
-  return Promise.resolve({ total: data.length, data: data.slice(start, start + state.limit) });
+  return { total: data.length, data: data.slice(start, start + state.limit) };
 }
 
 async function fetchStats() {
   if (state.mode === 'static') return state.stats;
-  const r = await fetch('/api/stats');
-  return r.ok ? r.json() : state.stats;
+  try {
+    const r = await fetch('/api/stats');
+    if (r.ok) return r.json();
+  } catch {}
+  return state.stats;
 }
 
 async function loadNotifications() {
@@ -420,13 +445,20 @@ async function renderTenders() {
   const content = document.getElementById('mainContent');
   content.innerHTML = renderStatsHTML() + renderFiltersHTML() + '<div id="tableArea"><div class="skeleton" style="height:200px;margin-top:1rem"></div></div>';
 
-  const [statsData, tData] = await Promise.all([fetchStats(), fetchTenders()]);
-  state.stats = statsData;
+  let statsData, tData;
+  try {
+    [statsData, tData] = await Promise.all([fetchStats(), fetchTenders()]);
+  } catch (e) {
+    console.error('renderTenders fetch error:', e);
+    tData = fetchTendersStatic();
+    statsData = state.stats;
+  }
+  state.stats = statsData || state.stats;
   updateBadges();
 
   const area = document.getElementById('tableArea');
   if (!tData?.data?.length) {
-    area.innerHTML = `<div class="empty-state"><div class="big-icon">📋</div><h3>No tenders found</h3><p>Try adjusting filters or run the scraper</p></div>`;
+    area.innerHTML = `<div class="empty-state"><div class="big-icon">📋</div><h3>No tenders found</h3><p>Try adjusting filters or trigger a scrape from Pipeline</p></div>`;
     return;
   }
   area.innerHTML = `
