@@ -7,7 +7,7 @@ on:
   workflow_dispatch:   # allow manual trigger from GitHub UI
 
 permissions:
-  contents: write      # needed to commit tenders.json / tenders.sqlite back
+  contents: write      # needed to commit tenders.json back
 
 jobs:
   scrape:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: main          # always scrape from main / change to your deploy branch
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,15 +31,31 @@ jobs:
           pip install -r scraper/requirements.txt
           playwright install chromium --with-deps
 
+      - name: Clear previous database (fresh scrape each run)
+        run: rm -f tenders.sqlite
+
       - name: Run scraper + export JSON
         run: python -m scraper.run --export
         env:
           PYTHONPATH: .
 
+      - name: Show scrape summary
+        run: |
+          python3 - <<'EOF'
+          import json
+          with open("tenders.json") as f:
+              data = json.load(f)
+          print(f"✅ Exported {len(data['tenders'])} tenders at {data['exported_at']}")
+          from collections import Counter
+          src = Counter(t['source_id'] for t in data['tenders'])
+          for sid, count in sorted(src.items()):
+              print(f"   source {sid}: {count} tenders")
+          EOF
+
       - name: Commit updated tenders.json
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tenders.json tenders.sqlite || true
-          git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
+          git add tenders.json
+          git diff --cached --quiet || git commit -m "data: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
           git push

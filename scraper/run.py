@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 from scraper.db import get_conn, init_db, upsert_tender
-from scraper.utils import now_iso
+from scraper.utils import now_iso, is_valid_title
 
 logging.basicConfig(
     level=logging.INFO,
@@ -53,6 +53,9 @@ def scrape_all(conn, source_ids: list[int]) -> dict:
             new = 0
             error = None
             for row in mod.scrape():
+                if not is_valid_title(row.get("title")):
+                    logger.debug("skip junk row: %r", row.get("title", "")[:60])
+                    continue
                 try:
                     if upsert_tender(conn, row):
                         new += 1

@@ -57,3 +57,34 @@ def infer_status(open_date: Optional[str], deadline: Optional[str]) -> str:
 
 def now_iso() -> str:
     return datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+
+# Words that indicate a scraped row is UI chrome, not a real tender
+_JUNK_PATTERNS = re.compile(
+    r"^("
+    r"no\b|tajuk|jenis|tarikh|status|tindakan|actions?|type|title|ref|"
+    r"tekan\s*(sini|here)|click\s*here|log\s*masuk|login|email|kata\s*laluan|password|"
+    r"search\s*for|record\(s\)\s*found|available\s*tender|posted\s*date|closing\s*date|"
+    r"sebutharga$|tender$|no\.\s*$|[-–—]+$|"
+    r"\d+\s*\.\s*$"   # lone row-numbers like "1."
+    r")",
+    re.IGNORECASE,
+)
+
+_MIN_TITLE_LEN = 15  # real tender titles are always longer than this
+
+
+def is_valid_title(title: Optional[str]) -> bool:
+    """Return True only if title looks like a real tender, not UI chrome."""
+    if not title:
+        return False
+    t = title.strip()
+    if len(t) < _MIN_TITLE_LEN:
+        return False
+    if _JUNK_PATTERNS.match(t):
+        return False
+    # reject rows that are clearly just repeated single-word header cells
+    words = t.split()
+    if len(words) <= 2 and t.upper() == t:  # e.g. "LOG MASUK", "TAJUK"
+        return False
+    return True

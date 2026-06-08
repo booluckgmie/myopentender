@@ -3,6 +3,7 @@ Kedah State Government — Tender & Sebut Harga.
 URL: https://www.kedah.gov.my/index.php/tender-sebut-harga-jabatan-negeri/
 
 WordPress site — requests + BeautifulSoup.
+Skips empty rows and navigation links.
 """
 import logging
 from typing import Iterator
@@ -31,15 +32,22 @@ def scrape() -> Iterator[dict]:
     now = now_iso()
 
     for row in soup.select("table tr, .entry-content table tr"):
-        cells = [td.get_text(" ", strip=True) for td in row.find_all("td")]
-        if len(cells) < 2:
+        if row.find("th") and not row.find("td"):
             continue
-        link = row.find("a")
-        url = link["href"] if link and link.get("href") else BASE_URL
+        cells = [td.get_text(" ", strip=True) for td in row.find_all("td")]
+        if not cells:
+            continue
+
+        title = cells[0].strip()
+        if not title:
+            continue
+
+        # Kedah often has PDF links; grab the href
+        link = row.find("a", href=True)
+        url = link["href"] if link else BASE_URL
         if url.startswith("/"):
             url = HOST + url
 
-        title    = cells[0]
         deadline = parse_date(cells[1]) if len(cells) > 1 else None
         open_d   = parse_date(cells[2]) if len(cells) > 2 else None
 
