@@ -2,12 +2,11 @@ name: Daily Tender Scrape
 
 on:
   schedule:
-    # 01:00 UTC = 09:00 MYT (UTC+8) every day
-    - cron: "0 1 * * *"
-  workflow_dispatch:   # allow manual trigger from GitHub UI
+    - cron: "0 1 * * *"   # 09:00 MYT (UTC+8)
+  workflow_dispatch:
 
 permissions:
-  contents: write      # needed to commit tenders.json back
+  contents: write
 
 jobs:
   scrape:
@@ -20,42 +19,38 @@ jobs:
         with:
           ref: main
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
-          cache: pip
+          node-version: "20"
+          cache: npm
 
       - name: Install dependencies
-        run: |
-          pip install -r scraper/requirements.txt
-          playwright install chromium --with-deps
+        run: npm ci
 
-      - name: Clear previous database (fresh scrape each run)
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Clean previous database
         run: rm -f tenders.sqlite
 
       - name: Run scraper + export JSON
-        run: python -m scraper.run --export
-        env:
-          PYTHONPATH: .
+        run: npm run scrape:export
 
-      - name: Show scrape summary
+      - name: Show summary
         run: |
-          python3 - <<'EOF'
-          import json
-          with open("tenders.json") as f:
-              data = json.load(f)
-          print(f"✅ Exported {len(data['tenders'])} tenders at {data['exported_at']}")
-          from collections import Counter
-          src = Counter(t['source_id'] for t in data['tenders'])
-          for sid, count in sorted(src.items()):
-              print(f"   source {sid}: {count} tenders")
-          EOF
+          node -e "
+            const d = require('./tenders.json');
+            console.log('Total tenders:', d.tenders.length);
+            const by = {};
+            d.tenders.forEach(t => { by[t.source_id] = (by[t.source_id]||0)+1; });
+            Object.entries(by).sort((a,b)=>b[1]-a[1]).forEach(([k,v])=>console.log(' source',k+':',v));
+          "
 
       - name: Commit updated tenders.json
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tenders.json
-          git diff --cached --quiet || git commit -m "data: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
+          git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
           git push
