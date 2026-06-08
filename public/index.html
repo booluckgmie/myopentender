@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TenderTrack MY</title>
+<meta name="description" content="Malaysia Tender Intelligence Dashboard — track federal & state government tenders">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f7fa;--surface:#fff;--border:#e2e8f0;--text:#1a202c;--muted:#64748b;
+  --primary:#0077cc;--primary-dark:#005fa3;--primary-light:#e8f4fd;
+  --success:#16a34a;--warning:#d97706;--danger:#dc2626;
+  --radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --shadow-lg:0 10px 25px rgba(0,0,0,.1);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+button{cursor:pointer;font-family:inherit}
+
+/* ── Layout ── */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.logo{font-size:1.1rem;font-weight:700;color:var(--primary);white-space:nowrap}
+.logo span{color:var(--text)}
+.topbar-search{flex:1;max-width:400px;position:relative}
+.topbar-search input{width:100%;padding:.45rem .75rem .45rem 2.2rem;border:1px solid var(--border);border-radius:6px;font-size:.9rem;background:#f8fafc;outline:none;transition:border-color .15s}
+.topbar-search input:focus{border-color:var(--primary);background:#fff}
+.topbar-search .ico{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.topbar-actions{display:flex;align-items:center;gap:.5rem;margin-left:auto}
+.notif-btn{position:relative;background:none;border:none;padding:.35rem;border-radius:6px;color:var(--muted)}
+.notif-btn:hover{background:var(--bg)}
+.notif-badge{position:absolute;top:2px;right:2px;width:8px;height:8px;background:var(--danger);border-radius:50%;display:none}
+.notif-badge.show{display:block}
+
+.layout{display:flex;min-height:calc(100vh - 57px)}
+.sidebar{width:220px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);padding:1rem .75rem;display:flex;flex-direction:column;gap:.25rem}
+.nav-item{display:flex;align-items:center;gap:.6rem;padding:.5rem .75rem;border-radius:6px;color:var(--text);font-size:.9rem;border:none;background:none;width:100%;text-align:left;cursor:pointer;transition:background .15s}
+.nav-item:hover{background:var(--bg)}
+.nav-item.active{background:var(--primary-light);color:var(--primary);font-weight:600}
+.nav-item .badge{margin-left:auto;background:var(--primary);color:#fff;font-size:.7rem;padding:.1rem .4rem;border-radius:10px}
+.nav-section{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:.75rem .75rem .25rem}
+.content{flex:1;padding:1.5rem;overflow:auto;max-width:1400px}
+
+/* ── Stats cards ── */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center}
+.stat-card .num{font-size:1.8rem;font-weight:700;color:var(--primary)}
+.stat-card .lbl{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.stat-card.active .num{color:var(--success)}
+.stat-card.upcoming .num{color:var(--warning)}
+.stat-card.overdue .num{color:var(--danger)}
+
+/* ── Filters bar ── */
+.filters-bar{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem;align-items:center}
+.filter-btn{padding:.35rem .8rem;border:1px solid var(--border);border-radius:20px;font-size:.82rem;background:var(--surface);color:var(--muted);transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.source-select{padding:.35rem .75rem;border:1px solid var(--border);border-radius:6px;font-size:.82rem;background:var(--surface);color:var(--text);outline:none}
+.add-btn{margin-left:auto;padding:.4rem 1rem;background:var(--primary);color:#fff;border:none;border-radius:6px;font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.4rem;transition:background .15s}
+.add-btn:hover{background:var(--primary-dark)}
+
+/* ── Tender table ── */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.table-header{padding:.75rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.table-header h2{font-size:.95rem;font-weight:600}
+.table-meta{font-size:.8rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{background:#f8fafc;padding:.65rem .75rem;text-align:left;font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;border-bottom:1px solid var(--border)}
+td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafafa}
+.source-tag{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.72rem;font-weight:600;white-space:nowrap}
+.status-badge{display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.75rem;font-weight:600}
+.status-active{background:#dcfce7;color:#15803d}
+.status-upcoming{background:#fef3c7;color:#92400e}
+.status-overdue{background:#fee2e2;color:#991b1b}
+.title-cell{max-width:320px}
+.title-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);font-weight:500}
+.title-text:hover{color:var(--primary)}
+.action-btns{display:flex;gap:.3rem;justify-content:flex-end}
+.icon-btn{background:none;border:none;padding:.3rem;border-radius:4px;color:var(--muted);transition:all .15s;display:flex}
+.icon-btn:hover{background:var(--bg);color:var(--text)}
+.icon-btn.starred{color:#f59e0b}
+.icon-btn.notified{color:var(--primary)}
+
+/* ── Pagination ── */
+.pagination{display:flex;align-items:center;gap:.4rem;padding:1rem;justify-content:center;border-top:1px solid var(--border)}
+.page-btn{padding:.35rem .65rem;border:1px solid var(--border);border-radius:4px;font-size:.82rem;background:var(--surface);color:var(--text);min-width:36px;text-align:center}
+.page-btn:hover:not(:disabled){background:var(--bg)}
+.page-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.page-btn:disabled{opacity:.4;cursor:default}
+.page-info{font-size:.82rem;color:var(--muted)}
+
+/* ── Modal ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.modal-header{padding:1.25rem 1.25rem .75rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:1rem;font-weight:700}
+.close-btn{background:none;border:none;color:var(--muted);font-size:1.3rem;line-height:1;padding:.2rem}
+.close-btn:hover{color:var(--text)}
+.modal-body{padding:1.25rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.83rem;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.5rem .75rem;border:1px solid var(--border);border-radius:6px;font-size:.9rem;font-family:inherit;background:#fff;outline:none;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary)}
+.modal-footer{padding:.75rem 1.25rem;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:.6rem}
+.btn{padding:.5rem 1.1rem;border-radius:6px;font-size:.88rem;font-weight:600;border:none;transition:all .15s}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-secondary{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--border)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#b91c1c}
+
+/* ── Notifications panel ── */
+.notif-panel{display:none;position:fixed;top:57px;right:1rem;width:340px;max-height:480px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);z-index:150;overflow-y:auto;flex-direction:column}
+.notif-panel.open{display:flex;flex-direction:column}
+.notif-panel-header{padding:.75rem 1rem;border-bottom:1px solid var(--border);font-weight:600;font-size:.9rem;display:flex;justify-content:space-between}
+.notif-item{padding:.7rem 1rem;border-bottom:1px solid var(--border);font-size:.83rem;display:flex;gap:.6rem}
+.notif-item.unread{background:var(--primary-light)}
+.notif-icon{flex-shrink:0;margin-top:.1rem}
+.notif-text{flex:1}
+.notif-title{font-weight:600;color:var(--text)}
+.notif-sub{color:var(--muted);font-size:.78rem;margin-top:.1rem}
+.notif-empty{padding:2rem;text-align:center;color:var(--muted);font-size:.88rem}
+
+/* ── Source cards ── */
+.sources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.source-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.source-card-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.source-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.source-card h3{font-size:.9rem;font-weight:700}
+.source-card-meta{font-size:.78rem;color:var(--muted)}
+.source-status{display:inline-block;padding:.15rem .45rem;border-radius:3px;font-size:.7rem;font-weight:600;margin-top:.4rem}
+.source-ok{background:#dcfce7;color:#15803d}
+.source-error{background:#fee2e2;color:#991b1b}
+
+/* ── Loading / empty states ── */
+.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:4px;height:1rem}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.empty-state .big-icon{font-size:3rem;margin-bottom:.75rem}
+.empty-state h3{color:var(--text);margin-bottom:.5rem}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#1a202c;color:#fff;padding:.7rem 1.1rem;border-radius:8px;font-size:.85rem;z-index:999;transform:translateY(100px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ── Pipeline page ── */
+.pipeline-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
+.pipeline-section h3{font-size:.95rem;font-weight:700;margin-bottom:.75rem}
+.log-list{font-size:.82rem;font-family:'Courier New',monospace;background:#f8fafc;border-radius:6px;padding:.75rem;max-height:200px;overflow-y:auto;color:var(--text)}
+.log-item{padding:.2rem 0;border-bottom:1px solid var(--border)}
+.log-item:last-child{border-bottom:none}
+.log-ok{color:var(--success)}
+.log-err{color:var(--danger)}
+
+/* ── Mobile responsive ── */
+@media(max-width:768px){
+  .sidebar{display:none}
+  .content{padding:1rem}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .table-wrap{overflow-x:auto}
+  table{min-width:600px}
+  .title-cell{max-width:160px}
+  .notif-panel{left:0;right:0;width:auto;border-radius:0}
+  .add-btn span{display:none}
+  .mobile-menu{display:flex}
+}
+@media(min-width:769px){.mobile-menu{display:none}}
+.mobile-menu{background:none;border:none;padding:.35rem;color:var(--text);font-size:1.2rem}
+.mobile-sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90}
+.mobile-sidebar-overlay.open{display:block}
+.mobile-sidebar{position:fixed;left:0;top:0;bottom:0;width:220px;background:var(--surface);z-index:95;padding:1rem .75rem;transform:translateX(-100%);transition:transform .2s;overflow-y:auto;border-right:1px solid var(--border)}
+.mobile-sidebar.open{transform:translateX(0)}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<nav class="topbar">
+  <button class="mobile-menu" onclick="toggleMobileSidebar()" title="Menu">&#9776;</button>
+  <div class="logo">Tender<span>Track</span> MY</div>
+  <div class="topbar-search">
+    <span class="ico">&#128269;</span>
+    <input type="text" id="searchInput" placeholder="Search tenders…" oninput="onSearch(this.value)">
+  </div>
+  <div class="topbar-actions">
+    <button class="notif-btn" onclick="toggleNotifPanel()" title="Notifications">
+      &#128276;
+      <span class="notif-badge" id="notifBadge"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile sidebar overlay -->
+<div class="mobile-sidebar-overlay" id="mobileSidebarOverlay" onclick="toggleMobileSidebar()"></div>
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="nav-section">Views</div>
+  <button class="nav-item active" onclick="showPage('tenders');toggleMobileSidebar()" id="nav-tenders">&#128196; All Tenders <span class="badge" id="totalBadge">0</span></button>
+  <button class="nav-item" onclick="showPage('active');toggleMobileSidebar()" id="nav-active">&#9989; Active</button>
+  <button class="nav-item" onclick="showPage('upcoming');toggleMobileSidebar()" id="nav-upcoming">&#8987; Upcoming</button>
+  <button class="nav-item" onclick="showPage('overdue');toggleMobileSidebar()" id="nav-overdue">&#9888; Overdue</button>
+  <button class="nav-item" onclick="showPage('starred');toggleMobileSidebar()" id="nav-starred">&#11088; Starred</button>
+  <div class="nav-section">Tools</div>
+  <button class="nav-item" onclick="showPage('sources');toggleMobileSidebar()" id="nav-sources">&#127760; Sources</button>
+  <button class="nav-item" onclick="showPage('pipeline');toggleMobileSidebar()" id="nav-pipeline">&#9881; Pipeline</button>
+</div>
+
+<div class="layout">
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <div class="nav-section">Views</div>
+    <button class="nav-item active" onclick="showPage('tenders')" id="dnav-tenders">&#128196; All Tenders <span class="badge" id="dtotalBadge">0</span></button>
+    <button class="nav-item" onclick="showPage('active')" id="dnav-active">&#9989; Active</button>
+    <button class="nav-item" onclick="showPage('upcoming')" id="dnav-upcoming">&#8987; Upcoming</button>
+    <button class="nav-item" onclick="showPage('overdue')" id="dnav-overdue">&#9888; Overdue</button>
+    <button class="nav-item" onclick="showPage('starred')" id="dnav-starred">&#11088; Starred</button>
+    <div class="nav-section">Tools</div>
+    <button class="nav-item" onclick="showPage('sources')" id="dnav-sources">&#127760; Sources</button>
+    <button class="nav-item" onclick="showPage('pipeline')" id="dnav-pipeline">&#9881; Pipeline</button>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content" id="mainContent">
+    <!-- Pages rendered dynamically -->
+  </main>
+</div>
+
+<!-- Notifications panel -->
+<div class="notif-panel" id="notifPanel">
+  <div class="notif-panel-header">
+    <span>Notifications</span>
+    <button onclick="markAllRead()" style="font-size:.78rem;color:var(--primary);background:none;border:none;cursor:pointer">Mark all read</button>
+  </div>
+  <div id="notifList"><div class="notif-empty">No notifications yet</div></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Add/Edit Modal -->
+<div class="overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="modalTitle">Add Tender</h3>
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="tenderForm" onsubmit="saveTender(event)">
+        <input type="hidden" id="editId">
+        <div class="form-group">
+          <label>Title *</label>
+          <input type="text" id="fTitle" required placeholder="Full tender title">
+        </div>
+        <div class="form-group">
+          <label>Source</label>
+          <select id="fSource"><option value="0">Manual Entry</option></select>
+        </div>
+        <div class="form-group">
+          <label>Reference No.</label>
+          <input type="text" id="fRef" placeholder="e.g. JKR/KL/2024/001">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div class="form-group">
+            <label>Open Date</label>
+            <input type="date" id="fOpenDate">
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="date" id="fDeadline">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>URL / Link</label>
+          <input type="url" id="fUrl" placeholder="https://…">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-danger" id="deleteBtn" onclick="deleteCurrent()" style="display:none">Delete</button>
+      <button class="btn btn-primary" onclick="document.getElementById('tenderForm').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}))">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+const state = {
+  page: 'tenders',
+  status: null,
+  starred: false,
+  q: '',
+  source: '',
+  currentPage: 1,
+  limit: 50,
+  stats: {},
+  notifications: [],
+  mode: 'api', // 'api' or 'static'
+};
+
+// Source metadata (icons/colors) for display
+const SOURCES_META = {
+  1:{name:'ePerolehan',icon:'🏛️',color:'#1d4ed8'},
+  2:{name:'Selangor',icon:'⭐',color:'#7c3aed'},
+  3:{name:'Penang',icon:'🏝️',color:'#0891b2'},
+  4:{name:'Sarawak',icon:'🌿',color:'#15803d'},
+  5:{name:'Sabah',icon:'🏔️',color:'#b45309'},
+  6:{name:'SPSB',icon:'📋',color:'#0284c7'},
+  7:{name:'Perak S3PK',icon:'🏗️',color:'#6d28d9'},
+  8:{name:'Kedah',icon:'🌾',color:'#065f46'},
+  9:{name:'SESB',icon:'⚡',color:'#c2410c'},
+  10:{name:'Prasarana',icon:'🚇',color:'#1e40af'},
+  11:{name:'TNB',icon:'💡',color:'#d97706'},
+  12:{name:'TM',icon:'📡',color:'#0f766e'},
+  13:{name:'Bursa',icon:'📈',color:'#dc2626'},
+};
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+async function boot() {
+  try {
+    const r = await fetch('/api/stats');
+    if (r.ok) {
+      state.stats = await r.json();
+      state.mode = 'api';
+    } else throw new Error();
+  } catch {
+    // Fallback: try static tenders.json (Netlify mode)
+    try {
+      const r = await fetch('tenders.json');
+      if (r.ok) {
+        const d = await r.json();
+        state.staticData = d;
+        state.mode = 'static';
+        computeStaticStats(d);
+      }
+    } catch {}
+  }
+  updateBadges();
+  showPage('tenders');
+  loadNotifications();
+}
+
+function computeStaticStats(d) {
+  const t = d.tenders || [];
+  state.stats = {
+    total: t.length,
+    active: t.filter(x=>x.status==='active').length,
+    upcoming: t.filter(x=>x.status==='upcoming').length,
+    overdue: t.filter(x=>x.status==='overdue').length,
+    starred: t.filter(x=>x.starred).length,
+    last_scrape: d.exported_at,
+  };
+}
+
+// ── Data fetching ──────────────────────────────────────────────────────────
+async function fetchTenders() {
+  if (state.mode === 'static') return fetchTendersStatic();
+  const params = new URLSearchParams({
+    page: state.currentPage,
+    limit: state.limit,
+    ...(state.q && {q: state.q}),
+    ...(state.status && {status: state.status}),
+    ...(state.source && {source_id: state.source}),
+    ...(state.starred && {starred: '1'}),
+  });
+  const r = await fetch('/api/tenders?' + params);
+  return r.json();
+}
+
+function fetchTendersStatic() {
+  let data = (state.staticData?.tenders || []);
+  if (state.q) data = data.filter(t => t.title.toLowerCase().includes(state.q.toLowerCase()));
+  if (state.status) data = data.filter(t => t.status === state.status);
+  if (state.source) data = data.filter(t => t.source_id == state.source);
+  if (state.starred) data = data.filter(t => t.starred);
+  const start = (state.currentPage - 1) * state.limit;
+  return Promise.resolve({ total: data.length, data: data.slice(start, start + state.limit) });
+}
+
+async function fetchStats() {
+  if (state.mode === 'static') return state.stats;
+  const r = await fetch('/api/stats');
+  return r.ok ? r.json() : state.stats;
+}
+
+async function loadNotifications() {
+  if (state.mode === 'static') {
+    state.notifications = state.staticData?.notifications || [];
+  } else {
+    try {
+      const r = await fetch('/api/notifications');
+      if (r.ok) state.notifications = await r.json();
+    } catch {}
+  }
+  const unread = state.notifications.filter(n => !n.read).length;
+  document.getElementById('notifBadge').classList.toggle('show', unread > 0);
+  renderNotifList();
+}
+
+// ── Page routing ───────────────────────────────────────────────────────────
+function showPage(page) {
+  state.page = page;
+  state.currentPage = 1;
+  state.status = ['active','upcoming','overdue'].includes(page) ? page : null;
+  state.starred = page === 'starred';
+  // update nav active state
+  const pages = ['tenders','active','upcoming','overdue','starred','sources','pipeline'];
+  pages.forEach(p => {
+    document.getElementById('nav-'+p)?.classList.toggle('active', p===page);
+    document.getElementById('dnav-'+p)?.classList.toggle('active', p===page);
+  });
+  if (page === 'sources') renderSources();
+  else if (page === 'pipeline') renderPipeline();
+  else renderTenders();
+}
+
+// ── Render tenders page ────────────────────────────────────────────────────
+async function renderTenders() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = renderStatsHTML() + renderFiltersHTML() + '<div id="tableArea"><div class="skeleton" style="height:200px;margin-top:1rem"></div></div>';
+
+  const [statsData, tData] = await Promise.all([fetchStats(), fetchTenders()]);
+  state.stats = statsData;
+  updateBadges();
+
+  const area = document.getElementById('tableArea');
+  if (!tData?.data?.length) {
+    area.innerHTML = `<div class="empty-state"><div class="big-icon">📋</div><h3>No tenders found</h3><p>Try adjusting filters or run the scraper</p></div>`;
+    return;
+  }
+  area.innerHTML = `
+    <div class="table-wrap">
+      <div class="table-header">
+        <h2>Tenders</h2>
+        <span class="table-meta">${tData.total} total</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr>
+            <th style="width:36px"></th>
+            <th>Title</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Deadline</th>
+            <th>Open Date</th>
+            <th style="width:80px">Actions</th>
+          </tr></thead>
+          <tbody>${tData.data.map(renderRow).join('')}</tbody>
+        </table>
+      </div>
+      ${renderPagination(tData.total)}
+    </div>`;
+}
+
+function renderStatsHTML() {
+  const s = state.stats;
+  return `<div class="stats-row">
+    <div class="stat-card"><div class="num">${s.total||0}</div><div class="lbl">Total</div></div>
+    <div class="stat-card active"><div class="num">${s.active||0}</div><div class="lbl">Active</div></div>
+    <div class="stat-card upcoming"><div class="num">${s.upcoming||0}</div><div class="lbl">Upcoming</div></div>
+    <div class="stat-card overdue"><div class="num">${s.overdue||0}</div><div class="lbl">Overdue</div></div>
+    <div class="stat-card"><div class="num">${s.starred||0}</div><div class="lbl">Starred</div></div>
+  </div>`;
+}
+
+function renderFiltersHTML() {
+  const sourceOpts = Object.entries(SOURCES_META).map(([id,m])=>`<option value="${id}" ${state.source==id?'selected':''}>${m.name}</option>`).join('');
+  return `<div class="filters-bar">
+    <button class="filter-btn ${!state.status&&!state.starred?'active':''}" onclick="setFilter(null,false)">All</button>
+    <button class="filter-btn ${state.status==='active'?'active':''}" onclick="setFilter('active',false)">&#9989; Active</button>
+    <button class="filter-btn ${state.status==='upcoming'?'active':''}" onclick="setFilter('upcoming',false)">&#8987; Upcoming</button>
+    <button class="filter-btn ${state.status==='overdue'?'active':''}" onclick="setFilter('overdue',false)">&#9888; Overdue</button>
+    <button class="filter-btn ${state.starred?'active':''}" onclick="setFilter(null,true)">&#11088; Starred</button>
+    <select class="source-select" onchange="setSource(this.value)">
+      <option value="">All Sources</option>${sourceOpts}
+    </select>
+    <button class="add-btn" onclick="openModal()">&#43; <span>Add Tender</span></button>
+  </div>`;
+}
+
+function renderRow(t) {
+  const src = SOURCES_META[t.source_id] || {name:'Unknown',icon:'📄',color:'#64748b'};
+  const statusClass = `status-${t.status||'active'}`;
+  const starClass = t.starred ? 'starred' : '';
+  const notifClass = t.notify ? 'notified' : '';
+  const deadline = t.deadline ? fmtDate(t.deadline) : '—';
+  const openDate = t.open_date ? fmtDate(t.open_date) : '—';
+  const url = t.url || '#';
+  return `<tr>
+    <td><button class="icon-btn ${starClass}" onclick="toggleStar(${t.id})" title="Star">&#11088;</button></td>
+    <td class="title-cell">
+      <a href="${escHtml(url)}" target="_blank" rel="noopener" class="title-text" title="${escHtml(t.title)}">${escHtml(t.title)}</a>
+      ${t.ref ? `<div style="font-size:.73rem;color:var(--muted)">${escHtml(t.ref)}</div>` : ''}
+    </td>
+    <td><span class="source-tag" style="background:${src.color}20;color:${src.color}">${src.icon} ${src.name}</span></td>
+    <td><span class="status-badge ${statusClass}">${capitalize(t.status||'active')}</span></td>
+    <td style="white-space:nowrap">${deadline}</td>
+    <td style="white-space:nowrap">${openDate}</td>
+    <td>
+      <div class="action-btns">
+        <button class="icon-btn ${notifClass}" onclick="toggleNotify(${t.id})" title="Notify">&#128276;</button>
+        <button class="icon-btn" onclick="openModal(${t.id})" title="Edit">&#9998;</button>
+      </div>
+    </td>
+  </tr>`;
+}
+
+function renderPagination(total) {
+  const pages = Math.ceil(total / state.limit);
+  if (pages <= 1) return '';
+  const cp = state.currentPage;
+  let btns = `<button class="page-btn" onclick="goPage(${cp-1})" ${cp<=1?'disabled':''}>&#8592;</button>`;
+  for (let i = Math.max(1, cp-2); i <= Math.min(pages, cp+2); i++) {
+    btns += `<button class="page-btn ${i===cp?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  btns += `<button class="page-btn" onclick="goPage(${cp+1})" ${cp>=pages?'disabled':''}>&#8594;</button>`;
+  return `<div class="pagination"><span class="page-info">${total} results</span>${btns}</div>`;
+}
+
+// ── Sources page ───────────────────────────────────────────────────────────
+async function renderSources() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = '<h2 style="margin-bottom:1rem">Data Sources</h2><div class="sources-grid" id="sourcesGrid"><div class="skeleton" style="height:100px"></div></div>';
+  let rows = [];
+  if (state.mode === 'api') {
+    try { const r = await fetch('/api/sources'); if (r.ok) rows = await r.json(); } catch {}
+  }
+  const grid = document.getElementById('sourcesGrid');
+  grid.innerHTML = Object.entries(SOURCES_META).map(([id, m]) => {
+    const info = rows.find(r => r.source_id == id);
+    const count = info?.tender_count || 0;
+    const error = info?.error;
+    const lastScrape = info?.scraped_at ? fmtDateTime(info.scraped_at) : 'Never';
+    return `<div class="source-card">
+      <div class="source-card-head">
+        <div class="source-icon" style="background:${m.color}20;color:${m.color}">${m.icon}</div>
+        <h3>${m.name}</h3>
+      </div>
+      <div class="source-card-meta">${count} tenders</div>
+      <div class="source-card-meta">Last: ${lastScrape}</div>
+      ${error ? `<span class="source-status source-error">Error</span>` : `<span class="source-status source-ok">OK</span>`}
+    </div>`;
+  }).join('');
+}
+
+// ── Pipeline page ──────────────────────────────────────────────────────────
+async function renderPipeline() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = `
+    <h2 style="margin-bottom:1rem">Data Pipeline</h2>
+    <div class="pipeline-section">
+      <h3>Overview</h3>
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:.75rem">
+        The scraper runs daily at 09:00 MYT via GitHub Actions, storing results in SQLite and exporting
+        <code>tenders.json</code> for static hosting. The Express API reads from SQLite when deployed on Railway/Render.
+      </p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#9881; Scraper</div>
+          <div style="color:var(--muted)">Node.js + Axios + Cheerio + Playwright</div>
+        </div>
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#128196; Storage</div>
+          <div style="color:var(--muted)">SQLite (better-sqlite3)</div>
+        </div>
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#127760; Export</div>
+          <div style="color:var(--muted)">tenders.json → Netlify CDN</div>
+        </div>
+      </div>
+    </div>
+    <div class="pipeline-section">
+      <h3>Scrape Logs</h3>
+      <div id="logArea"><div class="skeleton" style="height:100px"></div></div>
+    </div>
+    <div class="pipeline-section">
+      <h3>Manual Trigger</h3>
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:.75rem">Run scraper for all or specific sources</p>
+      <button class="btn btn-primary" onclick="triggerScrape()" id="scrapeBtn">&#9654; Run Scraper Now</button>
+      <div id="scrapeResult" style="margin-top:.75rem;font-size:.83rem"></div>
+    </div>`;
+
+  if (state.mode === 'api') {
+    try {
+      const r = await fetch('/api/sources');
+      const rows = r.ok ? await r.json() : [];
+      const logArea = document.getElementById('logArea');
+      if (!rows.length) { logArea.innerHTML = '<div style="color:var(--muted);font-size:.85rem">No scrape history yet.</div>'; return; }
+      logArea.innerHTML = `<div class="log-list">${rows.map(row => `
+        <div class="log-item ${row.error?'log-err':'log-ok'}">
+          [${fmtDateTime(row.scraped_at)}] ${row.source_name} — ${row.new_count} new ${row.error?'❌ '+row.error:'✓'}
+        </div>`).join('')}</div>`;
+    } catch {}
+  } else {
+    document.getElementById('logArea').innerHTML = '<div style="color:var(--muted);font-size:.85rem">Pipeline logs available in API mode only.</div>';
+  }
+}
+
+async function triggerScrape() {
+  if (state.mode !== 'api') { showToast('Scraper only available in API mode'); return; }
+  const btn = document.getElementById('scrapeBtn');
+  const res = document.getElementById('scrapeResult');
+  btn.disabled = true; btn.textContent = '⏳ Running…';
+  try {
+    const r = await fetch('/api/scrape', { method: 'POST', headers: {'Content-Type':'application/json'}, body: '{}' });
+    const d = await r.json();
+    res.innerHTML = r.ok ? `<span style="color:var(--success)">✓ Done: ${JSON.stringify(d.summary)}</span>` : `<span style="color:var(--danger)">Error: ${d.error}</span>`;
+  } catch (e) {
+    res.innerHTML = `<span style="color:var(--danger)">Error: ${e.message}</span>`;
+  }
+  btn.disabled = false; btn.innerHTML = '&#9654; Run Scraper Now';
+}
+
+// ── Notifications ──────────────────────────────────────────────────────────
+function renderNotifList() {
+  const list = document.getElementById('notifList');
+  if (!state.notifications.length) { list.innerHTML = '<div class="notif-empty">No notifications yet</div>'; return; }
+  list.innerHTML = state.notifications.map(n => `
+    <div class="notif-item ${n.read?'':'unread'}">
+      <span class="notif-icon">&#128276;</span>
+      <div class="notif-text">
+        <div class="notif-title">${escHtml(n.tender_title || n.message || 'Notification')}</div>
+        <div class="notif-sub">${n.deadline ? 'Deadline: ' + fmtDate(n.deadline) : ''} · ${fmtDateTime(n.created_at)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleNotifPanel() {
+  document.getElementById('notifPanel').classList.toggle('open');
+}
+
+async function markAllRead() {
+  if (state.mode === 'api') {
+    state.notifications.filter(n=>!n.read).forEach(n => fetch(`/api/notifications/${n.id}/read`,{method:'PATCH'}));
+  }
+  state.notifications.forEach(n => n.read = 1);
+  document.getElementById('notifBadge').classList.remove('show');
+  renderNotifList();
+}
+
+// ── Actions ────────────────────────────────────────────────────────────────
+async function toggleStar(id) {
+  if (state.mode === 'api') {
+    await fetch(`/api/tenders/${id}/star`, {method:'PATCH'});
+  } else {
+    const t = state.staticData?.tenders?.find(t=>t.id===id);
+    if (t) t.starred = t.starred ? 0 : 1;
+    computeStaticStats(state.staticData);
+  }
+  renderTenders();
+  showToast('Updated');
+}
+
+async function toggleNotify(id) {
+  if (state.mode === 'api') {
+    const r = await fetch(`/api/tenders/${id}/notify`, {method:'PATCH'});
+    const d = await r.json();
+    showToast(d.notify ? 'Notification enabled' : 'Notification disabled');
+    loadNotifications();
+  } else {
+    showToast('Notifications require API mode');
+  }
+  renderTenders();
+}
+
+function setFilter(status, starred) {
+  state.status = status;
+  state.starred = starred;
+  state.currentPage = 1;
+  renderTenders();
+}
+
+function setSource(val) {
+  state.source = val;
+  state.currentPage = 1;
+  renderTenders();
+}
+
+let searchTimer;
+function onSearch(val) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.q = val;
+    state.currentPage = 1;
+    renderTenders();
+  }, 300);
+}
+
+function goPage(p) {
+  state.currentPage = p;
+  renderTenders();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── CRUD Modal ─────────────────────────────────────────────────────────────
+function openModal(id) {
+  const overlay = document.getElementById('modalOverlay');
+  const deleteBtn = document.getElementById('deleteBtn');
+  document.getElementById('editId').value = id || '';
+  document.getElementById('modalTitle').textContent = id ? 'Edit Tender' : 'Add Tender';
+  deleteBtn.style.display = id ? '' : 'none';
+  if (!id) {
+    ['fTitle','fRef','fUrl'].forEach(f => document.getElementById(f).value = '');
+    ['fOpenDate','fDeadline'].forEach(f => document.getElementById(f).value = '');
+    document.getElementById('fSource').value = '0';
+  } else {
+    loadForEdit(id);
+  }
+  overlay.classList.add('open');
+  // Populate source dropdown
+  const sel = document.getElementById('fSource');
+  if (sel.options.length <= 1) {
+    Object.entries(SOURCES_META).forEach(([id,m]) => {
+      const o = document.createElement('option');
+      o.value = id; o.textContent = m.name;
+      sel.appendChild(o);
+    });
+  }
+}
+
+async function loadForEdit(id) {
+  if (state.mode === 'static') {
+    const t = state.staticData?.tenders?.find(t=>t.id===id);
+    if (!t) return;
+    fillModal(t);
+    return;
+  }
+  const r = await fetch(`/api/tenders/${id}`);
+  if (r.ok) fillModal(await r.json());
+}
+
+function fillModal(t) {
+  document.getElementById('fTitle').value = t.title || '';
+  document.getElementById('fRef').value = t.ref || '';
+  document.getElementById('fUrl').value = t.url || '';
+  document.getElementById('fOpenDate').value = t.open_date || '';
+  document.getElementById('fDeadline').value = t.deadline || '';
+  document.getElementById('fSource').value = t.source_id || '0';
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+async function saveTender(e) {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const body = {
+    title: document.getElementById('fTitle').value,
+    ref: document.getElementById('fRef').value || null,
+    source_id: Number(document.getElementById('fSource').value),
+    open_date: document.getElementById('fOpenDate').value || null,
+    deadline: document.getElementById('fDeadline').value || null,
+    url: document.getElementById('fUrl').value || null,
+  };
+  if (state.mode === 'api') {
+    const url = id ? `/api/tenders/${id}` : '/api/tenders';
+    const method = id ? 'PUT' : 'POST';
+    await fetch(url, { method, headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+  }
+  document.getElementById('modalOverlay').classList.remove('open');
+  showToast(id ? 'Tender updated' : 'Tender added');
+  renderTenders();
+}
+
+async function deleteCurrent() {
+  const id = document.getElementById('editId').value;
+  if (!id || !confirm('Delete this tender?')) return;
+  if (state.mode === 'api') await fetch(`/api/tenders/${id}`, {method:'DELETE'});
+  document.getElementById('modalOverlay').classList.remove('open');
+  showToast('Deleted');
+  renderTenders();
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function updateBadges() {
+  const n = state.stats.total || 0;
+  document.getElementById('totalBadge').textContent = n;
+  document.getElementById('dtotalBadge').textContent = n;
+}
+
+function toggleMobileSidebar() {
+  document.getElementById('mobileSidebar').classList.toggle('open');
+  document.getElementById('mobileSidebarOverlay').classList.toggle('open');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function fmtDate(s) {
+  if (!s) return '—';
+  try { return new Date(s+'T00:00:00').toLocaleDateString('en-MY',{day:'2-digit',month:'short',year:'numeric'}); } catch { return s; }
+}
+
+function fmtDateTime(s) {
+  if (!s) return '—';
+  try { return new Date(s).toLocaleString('en-MY',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}); } catch { return s; }
+}
+
+function capitalize(s) { return s ? s[0].toUpperCase() + s.slice(1) : ''; }
+function escHtml(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// Close panels on outside click
+document.addEventListener('click', e => {
+  const panel = document.getElementById('notifPanel');
+  if (panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('.notif-btn')) {
+    panel.classList.remove('open');
+  }
+});
+
+boot();
+</script>
+</body>
+</html>

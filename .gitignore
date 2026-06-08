@@ -1,0 +1,9 @@
+node_modules/
+tenders.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.playwright/
