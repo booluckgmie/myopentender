@@ -1,20 +1,5 @@
 {
-  "exported_at": "2026-06-09T05:07:41Z",
-  "tenders": [
-    {
-      "id": 1,
-      "source_id": 4,
-      "ref": null,
-      "title": "AJAX ErrorSorry, failed to load required information. Please contact your system administrator.",
-      "deadline": null,
-      "open_date": null,
-      "status": "active",
-      "url": "https://www.sarawak.gov.myjavascript:hideItSimple('divAjaxError')",
-      "starred": 0,
-      "notify": 0,
-      "scraped_at": "2026-06-09T05:06:27Z",
-      "created_at": "2026-06-09 05:06:30"
-    }
-  ],
+  "exported_at": "2026-06-09T07:30:04Z",
+  "tenders": [],
   "notifications": []
 }
