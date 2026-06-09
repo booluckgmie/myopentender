@@ -37,20 +37,22 @@ jobs:
       - name: Run scraper + export JSON
         run: npm run scrape:export
 
-      - name: Show summary
+      - name: Show summary and guard
         run: |
           node -e "
-            const d = require('./public/tenders.json');
-            console.log('Total tenders:', d.tenders.length);
+            const d = require('./tenders.json');
+            const count = d.tenders.length;
+            console.log('Total tenders:', count);
             const by = {};
             d.tenders.forEach(t => { by[t.source_id] = (by[t.source_id]||0)+1; });
             Object.entries(by).sort((a,b)=>b[1]-a[1]).forEach(([k,v])=>console.log(' source',k+':',v));
+            if (count < 5) { console.error('Too few tenders ('+count+') — aborting commit to protect existing data'); process.exit(1); }
           "
 
       - name: Commit updated tenders.json
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tenders.json public/tenders.json
+          git add tenders.json public/tenders.json scraper/utils.js
           git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
           git push

@@ -1,4 +1,4 @@
-const JUNK_PATTERNS = /^[*•·\s]*(no\b|tajuk|jenis|tarikh|status|tindakan|actions?|type|title|ref|tekan\s*(sini|here)|click\s*here|log\s*masuk|login|email|kata\s*laluan|password|search\s*(for|title)|record\(s\)\s*found|available\s*tender|posted\s*date|closing\s*date|sebutharga$|tender$|no\.\s*$|[-–—]+$|\d+\s*\.\s*$|tutup|buka|daftar|laman|halaman|sila\s|hubungi|maklumat\s*lanjut|klik\s*sini)/i;
+const JUNK_PATTERNS = /^[*•·\s]*(no\b|tajuk|jenis|tarikh|status|tindakan|actions?|type|title|ref|tekan\s*(sini|here)|click\s*here|log\s*masuk|login|email|kata\s*laluan|password|search\s*(for|title)|record\(s\)\s*found|available\s*tender|posted\s*date|closing\s*date|sebutharga$|tender$|no\.\s*$|[-–—]+$|\d+\s*\.\s*$|tutup|buka|daftar|laman|halaman|sila\s|hubungi|maklumat\s*lanjut|klik\s*sini|ajax\s*error|sorry,?\s*failed|failed\s*to\s*load|please\s*(activ|enabl)|javascript\s*required|error\s*loading)/i;
 
 // Reject strings that look like times/office hours
 const TIME_PATTERN = /^\d{1,2}[.:]\d{2}\s*(pagi|petang|tengah|malam|am|pm)/i;
