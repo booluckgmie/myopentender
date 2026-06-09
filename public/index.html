@@ -73,7 +73,7 @@ td{padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:mid
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#fafbfc}
 .tcell{max-width:260px}
-.tlink{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);font-weight:500}
+.tlink{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);font-weight:500;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:inherit;text-align:left;width:100%}
 .tlink:hover{color:var(--primary)}
 .reftxt{font-size:.69rem;color:var(--muted);margin-top:.08rem}
 .stag{display:inline-flex;align-items:center;gap:.2rem;padding:.16rem .48rem;border-radius:4px;font-size:.7rem;font-weight:600;white-space:nowrap}
@@ -145,6 +145,22 @@ tr:hover td{background:#fafbfc}
 .btn-g{background:var(--bg);color:var(--text);border:1.5px solid var(--border)}.btn-g:hover{background:var(--border)}
 .btn-d{background:var(--danger);color:#fff}.btn-d:hover{background:#b91c1c}
 
+/* detail popup */
+.det-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:flex-end;justify-content:center}
+.det-overlay.on{display:flex}
+.det-modal{background:var(--surface);border-radius:16px 16px 0 0;width:100%;max-width:560px;max-height:92vh;overflow-y:auto}
+.det-hd{padding:.9rem 1rem .65rem;display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--surface);z-index:1}
+.det-hd h3{font-size:.92rem;font-weight:700;line-height:1.35;flex:1}
+.det-body{padding:.9rem 1rem}
+.det-row{display:flex;gap:.5rem;margin-bottom:.6rem;font-size:.83rem;align-items:flex-start}
+.det-lbl{min-width:82px;color:var(--muted);font-weight:600;font-size:.76rem;padding-top:.12rem}
+.det-val{flex:1;color:var(--text)}
+.det-divider{border:none;border-top:1px solid var(--border);margin:.6rem 0}
+.det-ft{padding:.65rem 1rem;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:.45rem;position:sticky;bottom:0;background:var(--surface)}
+.det-link-btn{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:.48rem 1.1rem;font-size:.86rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.35rem;text-decoration:none}
+.det-link-btn:hover{background:var(--primary-dark)}
+.det-link-btn.disabled{background:var(--muted);cursor:default;opacity:.7}
+.det-badge{display:inline-flex;align-items:center;gap:.28rem;padding:.22rem .65rem;border-radius:20px;font-size:.76rem;font-weight:600}
 /* notif panel */
 .npanel{display:none;position:fixed;top:52px;right:.65rem;width:min(330px,calc(100vw - 1.3rem));background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);z-index:150;flex-direction:column;max-height:400px;overflow-y:auto}
 .npanel.on{display:flex;flex-direction:column}
@@ -254,6 +270,22 @@ tr:hover td{background:#fafbfc}
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- Tender detail popup -->
+<div class="det-overlay" id="det-overlay" onclick="if(event.target===this)closeDet()">
+  <div class="det-modal" onclick="event.stopPropagation()">
+    <div class="det-hd">
+      <h3 id="det-title">—</h3>
+      <button class="mclose" onclick="closeDet()">×</button>
+    </div>
+    <div class="det-body" id="det-body"></div>
+    <div class="det-ft">
+      <button class="btn btn-g" onclick="closeDet()">Close</button>
+      <button class="btn btn-g" onclick="openEditFromDet()" style="display:none" id="det-edit-btn">✏️ Edit</button>
+      <a id="det-link" href="#" target="_blank" rel="noopener noreferrer" class="det-link-btn" onclick="return handleDetLink(event)">🔗 Open Tender Link</a>
+    </div>
+  </div>
+</div>
 
 <div class="overlay" id="overlay" onclick="maybeClose(event)">
   <div class="modal" onclick="event.stopPropagation()">
@@ -372,7 +404,7 @@ function tRow(t){
   const s=SRCS[t.source_id]||{n:'Unknown',i:'📄',c:'#64748b'};
   return`<tr>
     <td><button class="ab ${t.starred?'star':''}" onclick="toggleStar(${t.id})">⭐</button></td>
-    <td class="tcell"><a href="${esc(t.url||'#')}" target="_blank" class="tlink" title="${esc(t.title)}">${esc(t.title)}</a>${t.ref?`<div class="reftxt">${esc(t.ref)}</div>`:''}</td>
+    <td class="tcell"><button class="tlink" onclick="viewTender(${t.id})" title="${esc(t.title)}">${esc(t.title)}</button>${t.ref?`<div class="reftxt">${esc(t.ref)}</div>`:''}</td>
     <td><span class="stag" style="background:${s.c}18;color:${s.c}">${s.i} ${s.n}</span></td>
     <td><span class="pill p-${t.status||'active'}">${cap(t.status||'active')}</span></td>
     <td style="white-space:nowrap;font-size:.79rem">${fd(t.deadline)}</td>
@@ -386,7 +418,7 @@ function cRow(t){
   const s=SRCS[t.source_id]||{n:'Unknown',i:'📄',c:'#64748b'};
   return`<div class="card">
     <div class="card-top">
-      <div class="card-title"><a href="${esc(t.url||'#')}" target="_blank">${esc(t.title)}</a></div>
+      <div class="card-title"><button class="tlink" onclick="viewTender(${t.id})">${esc(t.title)}</button></div>
       <button class="cstar ${t.starred?'on':''}" onclick="toggleStar(${t.id})">⭐</button>
     </div>
     <div class="cmeta">
@@ -401,7 +433,7 @@ function cRow(t){
       </div>
       <div class="cacts">
         <button class="cnbtn ${t.notify?'on':''}" onclick="toggleNotify(${t.id})">🔔</button>
-        <button class="cedit" onclick="openModal(${t.id})">Edit</button>
+        <button class="cedit" onclick="viewTender(${t.id})">View</button>
       </div>
     </div>
   </div>`;
@@ -519,6 +551,37 @@ function setFilter(st,starred){S.status=st;S.starred=starred;S.pn=1;renderTender
 function setSrc(v){S.src=v;S.pn=1;renderTenders();}
 function gp(p){S.pn=p;renderTenders();window.scrollTo({top:0,behavior:'smooth'});}
 let st;function onSearch(v){clearTimeout(st);st=setTimeout(()=>{S.q=v;S.pn=1;renderTenders();},280);}
+
+function viewTender(id){
+  let t;
+  if(S.mode==='api'){t=S._detCache?.[id];}
+  if(!t)t=S.data?.tenders?.find(x=>x.id===id);
+  if(!t)return;
+  const s=SRCS[t.source_id]||{n:'Unknown',i:'📄',c:'#64748b'};
+  const hasUrl=t.url&&t.url!=='#';
+  document.getElementById('det-title').textContent=t.title||'—';
+  document.getElementById('det-edit-btn').style.display='';
+  document.getElementById('det-edit-btn').dataset.id=id;
+  const link=document.getElementById('det-link');
+  if(hasUrl){link.href=t.url;link.classList.remove('disabled');}
+  else{link.href='#';link.classList.add('disabled');}
+  const daysLeft=t.deadline?Math.ceil((new Date(t.deadline+'T00:00:00')-new Date())/(1000*60*60*24)):null;
+  const deadlineNote=daysLeft===null?'':daysLeft<0?`<span style="color:var(--danger);font-size:.74rem">Overdue by ${Math.abs(daysLeft)} day(s)</span>`:daysLeft===0?`<span style="color:var(--warning);font-size:.74rem">Due today</span>`:`<span style="color:var(--success);font-size:.74rem">${daysLeft} day(s) remaining</span>`;
+  document.getElementById('det-body').innerHTML=`
+    <div class="det-row"><span class="det-lbl">Source</span><span class="det-val"><span class="stag" style="background:${s.c}18;color:${s.c}">${s.i} ${s.n}</span></span></div>
+    <div class="det-row"><span class="det-lbl">Status</span><span class="det-val"><span class="pill p-${t.status||'active'}">${cap(t.status||'active')}</span></span></div>
+    ${t.ref?`<div class="det-row"><span class="det-lbl">Reference</span><span class="det-val" style="font-family:monospace;font-size:.82rem">${esc(t.ref)}</span></div>`:''}
+    <hr class="det-divider">
+    <div class="det-row"><span class="det-lbl">Open Date</span><span class="det-val">${t.open_date?fd(t.open_date):'<span style="color:var(--muted)">Not set</span>'}</span></div>
+    <div class="det-row"><span class="det-lbl">Deadline</span><span class="det-val">${t.deadline?fd(t.deadline)+' '+deadlineNote:'<span style="color:var(--muted)">Not set</span>'}</span></div>
+    <hr class="det-divider">
+    <div class="det-row"><span class="det-lbl">Link</span><span class="det-val" style="word-break:break-all;font-size:.78rem">${hasUrl?`<a href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary)">${esc(t.url)}</a>`:'<span style="color:var(--muted)">No link available</span>'}</span></div>
+  `;
+  document.getElementById('det-overlay').classList.add('on');
+}
+function closeDet(){document.getElementById('det-overlay').classList.remove('on');}
+function openEditFromDet(){const id=Number(document.getElementById('det-edit-btn').dataset.id);closeDet();openModal(id);}
+function handleDetLink(e){if(e.currentTarget.classList.contains('disabled')){e.preventDefault();return false;}return true;}
 
 function openModal(id){
   document.getElementById('mtitle').textContent=id?'Edit Tender':'Add Tender';
