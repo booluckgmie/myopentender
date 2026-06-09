@@ -36,8 +36,13 @@ async function main() {
   }
 
   if (doExport || args.includes('--export')) {
-    const outPath = path.join(__dirname, '..', 'public', 'tenders.json');
-    await exportJson(db, outPath);
+    const rootPath = path.join(__dirname, '..', 'tenders.json');
+    const publicPath = path.join(__dirname, '..', 'public', 'tenders.json');
+    await exportJson(db, rootPath);
+    // Also copy to public/ for Express static serving
+    const fs2 = require('fs');
+    fs2.copyFileSync(rootPath, publicPath);
+    console.log(`Also copied → ${publicPath}`);
   }
 }
 

@@ -3,1760 +3,850 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TenderTrack MY — Malaysia Tender Intelligence</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.js"></script>
+<title>TenderTrack MY</title>
+<meta name="description" content="Malaysia Tender Intelligence Dashboard — track federal & state government tenders">
 <style>
-  :root {
-    --bg: #f8f9fb;
-    --surface: #ffffff;
-    --surface2: #f1f3f7;
-    --border: #e2e6ed;
-    --accent: #0077cc;
-    --accent2: #d97706;
-    --accent3: #dc2626;
-    --accent4: #2563eb;
-    --text: #1a1d23;
-    --muted: #6b7280;
-    --green: #059669;
-    --red: #dc2626;
-    --yellow: #d97706;
-    --blue: #2563eb;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f7fa;--surface:#fff;--border:#e2e8f0;--text:#1a202c;--muted:#64748b;
+  --primary:#0077cc;--primary-dark:#005fa3;--primary-light:#e8f4fd;
+  --success:#16a34a;--warning:#d97706;--danger:#dc2626;
+  --radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --shadow-lg:0 10px 25px rgba(0,0,0,.1);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+button{cursor:pointer;font-family:inherit}
 
-  /* ===== HEADER ===== */
-  header {
-    position: sticky; top: 0; z-index: 100;
-    background: #ffffff;
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
-  .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-  .logo span { color: var(--text); }
-  .logo .region { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
-  .header-actions { display: flex; gap: 0.75rem; align-items: center; }
-  .btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.5px;
-  }
-  .btn:hover { border-color: var(--accent); color: var(--accent); background: #eef6ff; }
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-    font-weight: 500;
-  }
-  .btn-primary:hover { background: #005fa3; color: #fff; border-color: #005fa3; }
-  .btn-danger { border-color: var(--red); color: var(--red); }
-  .btn-danger:hover { background: var(--red); color: #fff; }
-  .badge {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--red);
-    color: #fff;
-    font-size: 0.65rem;
-    font-family: 'JetBrains Mono', monospace;
-    border-radius: 20px;
-    padding: 0 6px;
-    min-width: 20px; height: 18px;
-    margin-left: 4px;
-  }
+/* ── Layout ── */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.logo{font-size:1.1rem;font-weight:700;color:var(--primary);white-space:nowrap}
+.logo span{color:var(--text)}
+.topbar-search{flex:1;max-width:400px;position:relative}
+.topbar-search input{width:100%;padding:.45rem .75rem .45rem 2.2rem;border:1px solid var(--border);border-radius:6px;font-size:.9rem;background:#f8fafc;outline:none;transition:border-color .15s}
+.topbar-search input:focus{border-color:var(--primary);background:#fff}
+.topbar-search .ico{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.topbar-actions{display:flex;align-items:center;gap:.5rem;margin-left:auto}
+.notif-btn{position:relative;background:none;border:none;padding:.35rem;border-radius:6px;color:var(--muted)}
+.notif-btn:hover{background:var(--bg)}
+.notif-badge{position:absolute;top:2px;right:2px;width:8px;height:8px;background:var(--danger);border-radius:50%;display:none}
+.notif-badge.show{display:block}
 
-  /* ===== LAYOUT ===== */
-  .app { position: relative; z-index: 1; }
-  .main-layout {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    min-height: calc(100vh - 60px);
-  }
+.layout{display:flex;min-height:calc(100vh - 57px)}
+.sidebar{width:220px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);padding:1rem .75rem;display:flex;flex-direction:column;gap:.25rem}
+.nav-item{display:flex;align-items:center;gap:.6rem;padding:.5rem .75rem;border-radius:6px;color:var(--text);font-size:.9rem;border:none;background:none;width:100%;text-align:left;cursor:pointer;transition:background .15s}
+.nav-item:hover{background:var(--bg)}
+.nav-item.active{background:var(--primary-light);color:var(--primary);font-weight:600}
+.nav-item .badge{margin-left:auto;background:var(--primary);color:#fff;font-size:.7rem;padding:.1rem .4rem;border-radius:10px}
+.nav-section{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:.75rem .75rem .25rem}
+.content{flex:1;padding:1.5rem;overflow:auto;max-width:1400px}
 
-  /* ===== SIDEBAR ===== */
-  .sidebar {
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 60px;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-  }
-  .sidebar-section { margin-bottom: 1.5rem; }
-  .sidebar-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 0 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-  .nav-item {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.6rem 1.25rem;
-    cursor: pointer;
-    color: var(--muted);
-    font-size: 0.85rem;
-    transition: all 0.15s;
-    border-left: 2px solid transparent;
-  }
-  .nav-item:hover { color: var(--text); background: var(--surface2); }
-  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: #eef6ff; }
-  .nav-item .icon { font-size: 1rem; }
-  .nav-count {
-    margin-left: auto;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    background: var(--surface2);
-    padding: 1px 6px;
-    border-radius: 4px;
-    color: var(--muted);
-    border: 1px solid var(--border);
-  }
-  .source-item {
-    display: flex; align-items: center; gap: 0.5rem;
-    padding: 0.4rem 1.25rem;
-    cursor: pointer;
-    font-size: 0.78rem;
-    color: var(--muted);
-    transition: color 0.15s;
-  }
-  .source-item:hover { color: var(--text); background: var(--surface2); }
-  .source-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+/* ── Stats cards ── */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center}
+.stat-card .num{font-size:1.8rem;font-weight:700;color:var(--primary)}
+.stat-card .lbl{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.stat-card.active .num{color:var(--success)}
+.stat-card.upcoming .num{color:var(--warning)}
+.stat-card.overdue .num{color:var(--danger)}
 
-  /* ===== CONTENT ===== */
-  .content { padding: 1.5rem; overflow-y: auto; }
+/* ── Filters bar ── */
+.filters-bar{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem;align-items:center}
+.filter-btn{padding:.35rem .8rem;border:1px solid var(--border);border-radius:20px;font-size:.82rem;background:var(--surface);color:var(--muted);transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.source-select{padding:.35rem .75rem;border:1px solid var(--border);border-radius:6px;font-size:.82rem;background:var(--surface);color:var(--text);outline:none}
+.add-btn{margin-left:auto;padding:.4rem 1rem;background:var(--primary);color:#fff;border:none;border-radius:6px;font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.4rem;transition:background .15s}
+.add-btn:hover{background:var(--primary-dark)}
 
-  /* ===== PAGE TITLE ===== */
-  .page-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .page-sub { color: var(--muted); font-size: 0.83rem; margin-top: 0.25rem; }
+/* ── Tender table ── */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.table-header{padding:.75rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.table-header h2{font-size:.95rem;font-weight:600}
+.table-meta{font-size:.8rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{background:#f8fafc;padding:.65rem .75rem;text-align:left;font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;border-bottom:1px solid var(--border)}
+td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafafa}
+.source-tag{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.72rem;font-weight:600;white-space:nowrap}
+.status-badge{display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.75rem;font-weight:600}
+.status-active{background:#dcfce7;color:#15803d}
+.status-upcoming{background:#fef3c7;color:#92400e}
+.status-overdue{background:#fee2e2;color:#991b1b}
+.title-cell{max-width:320px}
+.title-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);font-weight:500}
+.title-text:hover{color:var(--primary)}
+.action-btns{display:flex;gap:.3rem;justify-content:flex-end}
+.icon-btn{background:none;border:none;padding:.3rem;border-radius:4px;color:var(--muted);transition:all .15s;display:flex}
+.icon-btn:hover{background:var(--bg);color:var(--text)}
+.icon-btn.starred{color:#f59e0b}
+.icon-btn.notified{color:var(--primary)}
 
-  /* ===== STATS ROW ===== */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .stat-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-color: #c5d0de; }
-  .stat-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .stat-card.total::after { background: var(--accent); }
-  .stat-card.active::after { background: var(--green); }
-  .stat-card.upcoming::after { background: var(--blue); }
-  .stat-card.overdue::after { background: var(--red); }
-  .stat-card.tracked::after { background: var(--yellow); }
-  .stat-label {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-  }
-  .stat-value {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1;
-  }
-  .stat-card.total .stat-value { color: var(--accent); }
-  .stat-card.active .stat-value { color: var(--green); }
-  .stat-card.upcoming .stat-value { color: var(--blue); }
-  .stat-card.overdue .stat-value { color: var(--red); }
-  .stat-card.tracked .stat-value { color: var(--yellow); }
-  .stat-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; }
+/* ── Pagination ── */
+.pagination{display:flex;align-items:center;gap:.4rem;padding:1rem;justify-content:center;border-top:1px solid var(--border)}
+.page-btn{padding:.35rem .65rem;border:1px solid var(--border);border-radius:4px;font-size:.82rem;background:var(--surface);color:var(--text);min-width:36px;text-align:center}
+.page-btn:hover:not(:disabled){background:var(--bg)}
+.page-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.page-btn:disabled{opacity:.4;cursor:default}
+.page-info{font-size:.82rem;color:var(--muted)}
 
-  /* ===== TOOLBAR ===== */
-  .toolbar {
-    display: flex; gap: 0.75rem; align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
-  .search-box {
-    flex: 1; min-width: 200px;
-    position: relative;
-  }
-  .search-box input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    color: var(--text);
-    font-size: 0.85rem;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,119,204,0.1); }
-  .search-box input::placeholder { color: var(--muted); }
-  .search-icon {
-    position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%);
-    color: var(--muted); font-size: 0.9rem;
-  }
-  select {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 0.75rem;
-    color: var(--text);
-    font-size: 0.82rem;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
-  select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,119,204,0.1); }
+/* ── Modal ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.modal-header{padding:1.25rem 1.25rem .75rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:1rem;font-weight:700}
+.close-btn{background:none;border:none;color:var(--muted);font-size:1.3rem;line-height:1;padding:.2rem}
+.close-btn:hover{color:var(--text)}
+.modal-body{padding:1.25rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.83rem;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.5rem .75rem;border:1px solid var(--border);border-radius:6px;font-size:.9rem;font-family:inherit;background:#fff;outline:none;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary)}
+.modal-footer{padding:.75rem 1.25rem;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:.6rem}
+.btn{padding:.5rem 1.1rem;border-radius:6px;font-size:.88rem;font-weight:600;border:none;transition:all .15s}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-secondary{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--border)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#b91c1c}
 
-  /* ===== TABLE ===== */
-  .table-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  }
-  table { width: 100%; border-collapse: collapse; }
-  thead { background: var(--surface2); }
-  th {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--muted);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    transition: color 0.15s;
-    border-bottom: 1px solid var(--border);
-  }
-  th:hover { color: var(--accent); }
-  td {
-    padding: 0.7rem 1rem;
-    font-size: 0.83rem;
-    border-top: 1px solid var(--border);
-    vertical-align: middle;
-  }
-  tr:hover td { background: #f6f9ff; }
-  .tender-title {
-    font-weight: 500;
-    color: var(--text);
-    max-width: 280px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-  }
-  .tender-title:hover { color: var(--accent); text-decoration: underline; }
-  .source-tag {
-    display: inline-flex; align-items: center; gap: 0.3rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    padding: 2px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    color: var(--text);
-  }
-  .status-badge {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-  .status-active { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
-  .status-upcoming { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
-  .status-overdue { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
-  .status-closed { background: #f3f4f6; color: var(--muted); border: 1px solid var(--border); }
-  .days-left {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
-  .days-critical { color: var(--red); }
-  .days-warn { color: var(--yellow); }
-  .days-ok { color: var(--green); }
-  .days-overdue { color: var(--red); font-style: italic; }
-  .action-btns { display: flex; gap: 0.4rem; }
-  .icon-btn {
-    background: none; border: 1px solid var(--border);
-    color: var(--muted); padding: 4px 8px;
-    border-radius: 5px; cursor: pointer; font-size: 0.8rem;
-    transition: all 0.15s;
-  }
-  .icon-btn:hover { color: var(--accent); border-color: var(--accent); background: #eef6ff; }
-  .icon-btn.starred { color: var(--yellow); border-color: var(--yellow); background: #fffbeb; }
-  .icon-btn.notified { color: var(--blue); border-color: var(--blue); background: #eff6ff; }
+/* ── Notifications panel ── */
+.notif-panel{display:none;position:fixed;top:57px;right:1rem;width:340px;max-height:480px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);z-index:150;overflow-y:auto;flex-direction:column}
+.notif-panel.open{display:flex;flex-direction:column}
+.notif-panel-header{padding:.75rem 1rem;border-bottom:1px solid var(--border);font-weight:600;font-size:.9rem;display:flex;justify-content:space-between}
+.notif-item{padding:.7rem 1rem;border-bottom:1px solid var(--border);font-size:.83rem;display:flex;gap:.6rem}
+.notif-item.unread{background:var(--primary-light)}
+.notif-icon{flex-shrink:0;margin-top:.1rem}
+.notif-text{flex:1}
+.notif-title{font-weight:600;color:var(--text)}
+.notif-sub{color:var(--muted);font-size:.78rem;margin-top:.1rem}
+.notif-empty{padding:2rem;text-align:center;color:var(--muted);font-size:.88rem}
 
-  /* ===== PIPELINE INFO BANNER ===== */
-  .pipeline-banner {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  .pipeline-banner-icon { font-size: 1.3rem; flex-shrink: 0; }
-  .pipeline-banner-title { font-weight: 600; font-size: 0.9rem; color: #1e40af; margin-bottom: 0.25rem; }
-  .pipeline-banner-text { font-size: 0.8rem; color: #3b82f6; }
-  .pipeline-sources {
-    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem;
-  }
-  .pipeline-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    background: #dbeafe;
-    color: #1e40af;
-    border: 1px solid #93c5fd;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
+/* ── Source cards ── */
+.sources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.source-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.source-card-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.source-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.source-card h3{font-size:.9rem;font-weight:700}
+.source-card-meta{font-size:.78rem;color:var(--muted)}
+.source-status{display:inline-block;padding:.15rem .45rem;border-radius:3px;font-size:.7rem;font-weight:600;margin-top:.4rem}
+.source-ok{background:#dcfce7;color:#15803d}
+.source-error{background:#fee2e2;color:#991b1b}
 
-  /* ===== PAGINATION ===== */
-  .pagination {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.8rem;
-    color: var(--muted);
-    background: var(--surface2);
-  }
-  .page-btns { display: flex; gap: 0.4rem; }
-  .page-btn {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 4px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.78rem;
-    font-family: 'JetBrains Mono', monospace;
-    transition: all 0.15s;
-  }
-  .page-btn:hover { border-color: var(--accent); color: var(--accent); background: #eef6ff; }
-  .page-btn.active { border-color: var(--accent); color: var(--accent); background: #eef6ff; font-weight: 600; }
-  .page-btn:disabled { opacity: 0.3; cursor: default; }
+/* ── Loading / empty states ── */
+.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:4px;height:1rem}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.empty-state .big-icon{font-size:3rem;margin-bottom:.75rem}
+.empty-state h3{color:var(--text);margin-bottom:.5rem}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#1a202c;color:#fff;padding:.7rem 1.1rem;border-radius:8px;font-size:.85rem;z-index:999;transform:translateY(100px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
 
-  /* ===== MODAL ===== */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(4px);
-    z-index: 200;
-    align-items: center; justify-content: center;
-  }
-  .modal-overlay.show { display: flex; }
-  .modal {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 2rem;
-    width: min(640px, 95vw);
-    max-height: 85vh;
-    overflow-y: auto;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-  }
-  .modal-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 1.5rem;
-  }
-  .modal-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text);
-    max-width: 85%;
-  }
-  .modal-close {
-    background: none; border: 1px solid var(--border);
-    color: var(--muted); width: 28px; height: 28px;
-    border-radius: 6px; cursor: pointer; font-size: 1rem;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.15s; flex-shrink: 0;
-  }
-  .modal-close:hover { border-color: var(--red); color: var(--red); background: #fee2e2; }
-  .modal-row {
-    display: grid; grid-template-columns: 140px 1fr;
-    gap: 0.5rem 1rem;
-    margin-bottom: 0.6rem;
-    align-items: start;
-  }
-  .modal-key {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-    padding-top: 2px;
-  }
-  .modal-val { font-size: 0.85rem; color: var(--text); }
-  .modal-divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
-  .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
-  .form-group { margin-bottom: 1rem; }
-  .form-label {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .form-input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 0.5rem 0.75rem;
-    color: var(--text);
-    font-size: 0.85rem;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,119,204,0.1); }
-  textarea.form-input { resize: vertical; min-height: 80px; }
+/* ── Pipeline page ── */
+.pipeline-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
+.pipeline-section h3{font-size:.95rem;font-weight:700;margin-bottom:.75rem}
+.log-list{font-size:.82rem;font-family:'Courier New',monospace;background:#f8fafc;border-radius:6px;padding:.75rem;max-height:200px;overflow-y:auto;color:var(--text)}
+.log-item{padding:.2rem 0;border-bottom:1px solid var(--border)}
+.log-item:last-child{border-bottom:none}
+.log-ok{color:var(--success)}
+.log-err{color:var(--danger)}
 
-  /* ===== SOURCES PANEL ===== */
-  .sources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-  }
-  .source-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .source-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #c5d0de; }
-  .source-card-header {
-    display: flex; align-items: center; gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-  .source-icon {
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .source-card-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
-  .source-card-type {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .source-card-url {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    margin-bottom: 0.75rem;
-  }
-  .source-card-url a { color: inherit; text-decoration: none; }
-  .source-card-url a:hover { text-decoration: underline; }
-  .source-stats {
-    display: flex; gap: 1rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--muted);
-    margin-bottom: 0.75rem;
-  }
-  .source-stats strong { color: var(--text); }
-
-  /* ===== NOTIFICATION PANEL ===== */
-  .notif-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .notif-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    display: flex; gap: 0.75rem; align-items: flex-start;
-    transition: box-shadow 0.2s;
-  }
-  .notif-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-  .notif-card.unread { border-left: 3px solid var(--accent); background: #f8fbff; }
-  .notif-card.urgent { border-left: 3px solid var(--red); background: #fff8f8; }
-  .notif-icon { font-size: 1.2rem; margin-top: 1px; }
-  .notif-title { font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem; color: var(--text); }
-  .notif-sub { font-size: 0.78rem; color: var(--muted); }
-  .notif-time { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-left: auto; white-space: nowrap; }
-
-  /* ===== LOADING ===== */
-  .loading-bar {
-    position: fixed; top: 60px; left: 0; right: 0;
-    height: 3px; background: var(--border); z-index: 101;
-    overflow: hidden;
-  }
-  .loading-bar-inner {
-    height: 100%;
-    background: var(--accent);
-    width: 0%;
-    transition: width 0.3s ease;
-  }
-
-  /* ===== TOAST ===== */
-  .toast-container {
-    position: fixed; bottom: 1.5rem; right: 1.5rem;
-    display: flex; flex-direction: column; gap: 0.5rem;
-    z-index: 300;
-  }
-  .toast {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    display: flex; align-items: center; gap: 0.6rem;
-    font-size: 0.83rem;
-    min-width: 250px;
-    animation: slideIn 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    color: var(--text);
-  }
-  .toast.success { border-left: 3px solid var(--green); }
-  .toast.info { border-left: 3px solid var(--blue); }
-  .toast.warn { border-left: 3px solid var(--yellow); }
-  @keyframes slideIn {
-    from { transform: translateX(120%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-
-  /* ===== EMPTY STATE ===== */
-  .empty {
-    text-align: center; padding: 4rem 2rem;
-    color: var(--muted);
-  }
-  .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
-  .empty-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text); }
-
-  /* ===== SCRAPE PROGRESS ===== */
-  .scrape-progress {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .progress-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; margin-bottom: 1rem; color: var(--text); font-weight: 600; }
-  .progress-items { display: flex; flex-direction: column; gap: 0.5rem; }
-  .progress-item {
-    display: flex; align-items: center; gap: 0.75rem;
-    font-size: 0.82rem; color: var(--text);
-  }
-  .progress-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--border); flex-shrink: 0;
-    transition: background 0.3s;
-  }
-  .progress-dot.done { background: var(--green); }
-  .progress-dot.loading { background: var(--yellow); animation: pulse 0.8s infinite; }
-  .progress-dot.error { background: var(--red); }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .progress-bar-wrap {
-    background: var(--border);
-    border-radius: 4px; height: 6px;
-    margin-top: 1rem; overflow: hidden;
-  }
-  .progress-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--blue));
-    border-radius: 4px;
-    transition: width 0.5s ease;
-  }
-
-  /* ===== PIPELINE DIAGRAM ===== */
-  .pipeline-diagram {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .pipeline-steps {
-    display: flex; align-items: center; gap: 0; flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  .pipeline-step {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.6rem 0.9rem;
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text);
-    text-align: center;
-    flex-shrink: 0;
-  }
-  .pipeline-step.active { background: #eef6ff; border-color: #93c5fd; color: var(--accent); }
-  .pipeline-arrow {
-    color: var(--muted); font-size: 1rem; padding: 0 0.4rem; flex-shrink: 0;
-  }
-  .pipeline-step-label { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .main-layout { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .stats-grid { grid-template-columns: 1fr; }
-    header { padding: 0 1rem; }
-    .content { padding: 1rem; }
-    .header-actions .btn:not(.btn-primary) { display: none; }
-  }
-
-  /* Section visibility */
-  .section { display: none; }
-  .section.active { display: block; }
-
-  /* Resources link */
-  .resources-bar {
-    background: #fefce8;
-    border: 1px solid #fde68a;
-    border-radius: 8px;
-    padding: 0.6rem 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.82rem;
-    color: #92400e;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  .resources-bar a { color: var(--accent); font-weight: 500; }
+/* ── Mobile responsive ── */
+@media(max-width:768px){
+  .sidebar{display:none}
+  .content{padding:1rem}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .table-wrap{overflow-x:auto}
+  table{min-width:600px}
+  .title-cell{max-width:160px}
+  .notif-panel{left:0;right:0;width:auto;border-radius:0}
+  .add-btn span{display:none}
+  .mobile-menu{display:flex}
+}
+@media(min-width:769px){.mobile-menu{display:none}}
+.mobile-menu{background:none;border:none;padding:.35rem;color:var(--text);font-size:1.2rem}
+.mobile-sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90}
+.mobile-sidebar-overlay.open{display:block}
+.mobile-sidebar{position:fixed;left:0;top:0;bottom:0;width:220px;background:var(--surface);z-index:95;padding:1rem .75rem;transform:translateX(-100%);transition:transform .2s;overflow-y:auto;border-right:1px solid var(--border)}
+.mobile-sidebar.open{transform:translateX(0)}
 </style>
 </head>
 <body>
-<div class="app">
 
-<!-- Loading bar -->
-<div class="loading-bar"><div class="loading-bar-inner" id="loadBar"></div></div>
-
-<!-- Header -->
-<header>
-  <div class="logo">Tender<span>Track</span> <span class="region">MY</span></div>
-  <div class="header-actions">
-    <button class="btn" onclick="openScrapeModal()">⟳ Scrape Now</button>
-    <button class="btn btn-primary" onclick="openAddModal()">+ Add Tender</button>
-    <button class="btn" onclick="navTo('notifications', null)" style="position:relative">
-      🔔 Alerts <span class="badge" id="alertBadge">0</span>
-    </button>
-    <button class="btn" onclick="exportCSV()">↓ Export</button>
+<!-- Top bar -->
+<nav class="topbar">
+  <button class="mobile-menu" onclick="toggleMobileSidebar()" title="Menu">&#9776;</button>
+  <div class="logo">Tender<span>Track</span> MY</div>
+  <div class="topbar-search">
+    <span class="ico">&#128269;</span>
+    <input type="text" id="searchInput" placeholder="Search tenders…" oninput="onSearch(this.value)">
   </div>
-</header>
+  <div class="topbar-actions">
+    <button class="notif-btn" onclick="toggleNotifPanel()" title="Notifications">
+      &#128276;
+      <span class="notif-badge" id="notifBadge"></span>
+    </button>
+  </div>
+</nav>
 
-<div class="main-layout">
-  <!-- Sidebar -->
+<!-- Mobile sidebar overlay -->
+<div class="mobile-sidebar-overlay" id="mobileSidebarOverlay" onclick="toggleMobileSidebar()"></div>
+<div class="mobile-sidebar" id="mobileSidebar">
+  <div class="nav-section">Views</div>
+  <button class="nav-item active" onclick="showPage('tenders');toggleMobileSidebar()" id="nav-tenders">&#128196; All Tenders <span class="badge" id="totalBadge">0</span></button>
+  <button class="nav-item" onclick="showPage('active');toggleMobileSidebar()" id="nav-active">&#9989; Active</button>
+  <button class="nav-item" onclick="showPage('upcoming');toggleMobileSidebar()" id="nav-upcoming">&#8987; Upcoming</button>
+  <button class="nav-item" onclick="showPage('overdue');toggleMobileSidebar()" id="nav-overdue">&#9888; Overdue</button>
+  <button class="nav-item" onclick="showPage('starred');toggleMobileSidebar()" id="nav-starred">&#11088; Starred</button>
+  <div class="nav-section">Tools</div>
+  <button class="nav-item" onclick="showPage('sources');toggleMobileSidebar()" id="nav-sources">&#127760; Sources</button>
+  <button class="nav-item" onclick="showPage('pipeline');toggleMobileSidebar()" id="nav-pipeline">&#9881; Pipeline</button>
+</div>
+
+<div class="layout">
+  <!-- Desktop sidebar -->
   <aside class="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Navigation</div>
-      <div class="nav-item active" onclick="navTo('dashboard', this)"><span class="icon">⬡</span> Dashboard <span class="nav-count" id="navTotal">0</span></div>
-      <div class="nav-item" onclick="navTo('active', this)"><span class="icon">◉</span> Active <span class="nav-count" id="navActive">0</span></div>
-      <div class="nav-item" onclick="navTo('upcoming', this)"><span class="icon">◷</span> Upcoming <span class="nav-count" id="navUpcoming">0</span></div>
-      <div class="nav-item" onclick="navTo('overdue', this)"><span class="icon">⚠</span> Overdue <span class="nav-count" id="navOverdue">0</span></div>
-      <div class="nav-item" onclick="navTo('starred', this)"><span class="icon">★</span> Starred <span class="nav-count" id="navStarred">0</span></div>
-      <div class="nav-item" onclick="navTo('notifications', this)"><span class="icon">🔔</span> Notifications</div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Sources</div>
-      <div class="nav-item" onclick="navTo('sources', this)"><span class="icon">⊕</span> All Sources</div>
-      <div id="sourceList"></div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Bursa</div>
-      <div class="nav-item" onclick="navTo('bursa', this)"><span class="icon">📈</span> Announcements</div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Pipeline</div>
-      <div class="nav-item" onclick="navTo('pipeline', this)"><span class="icon">⚙</span> Data Pipeline</div>
-    </div>
+    <div class="nav-section">Views</div>
+    <button class="nav-item active" onclick="showPage('tenders')" id="dnav-tenders">&#128196; All Tenders <span class="badge" id="dtotalBadge">0</span></button>
+    <button class="nav-item" onclick="showPage('active')" id="dnav-active">&#9989; Active</button>
+    <button class="nav-item" onclick="showPage('upcoming')" id="dnav-upcoming">&#8987; Upcoming</button>
+    <button class="nav-item" onclick="showPage('overdue')" id="dnav-overdue">&#9888; Overdue</button>
+    <button class="nav-item" onclick="showPage('starred')" id="dnav-starred">&#11088; Starred</button>
+    <div class="nav-section">Tools</div>
+    <button class="nav-item" onclick="showPage('sources')" id="dnav-sources">&#127760; Sources</button>
+    <button class="nav-item" onclick="showPage('pipeline')" id="dnav-pipeline">&#9881; Pipeline</button>
   </aside>
 
-  <!-- Content -->
-  <main class="content">
-
-    <!-- Dashboard -->
-    <section id="sec-dashboard" class="section active">
-      <div class="resources-bar">
-        📎 Need to add tender documents?
-        <a href="#" onclick="openAddModal();return false">+ Add Tender with Resources</a>
-        &nbsp;·&nbsp;
-        <a href="#" onclick="navTo('sources',null);return false">Manage Sources</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank">ePerolehan ↗</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank">Bursa ↗</a>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card total">
-          <div class="stat-label">Total Tenders</div>
-          <div class="stat-value" id="statTotal">0</div>
-          <div class="stat-sub">All sources</div>
-        </div>
-        <div class="stat-card active">
-          <div class="stat-label">Active</div>
-          <div class="stat-value" id="statActive">0</div>
-          <div class="stat-sub">Open for bid</div>
-        </div>
-        <div class="stat-card upcoming">
-          <div class="stat-label">Upcoming</div>
-          <div class="stat-value" id="statUpcoming">0</div>
-          <div class="stat-sub">Starting soon</div>
-        </div>
-        <div class="stat-card overdue">
-          <div class="stat-label">Overdue</div>
-          <div class="stat-value" id="statOverdue">0</div>
-          <div class="stat-sub">Deadline passed</div>
-        </div>
-        <div class="stat-card tracked">
-          <div class="stat-label">Starred</div>
-          <div class="stat-value" id="statStarred">0</div>
-          <div class="stat-sub">Watching</div>
-        </div>
-      </div>
-
-      <div class="toolbar">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" placeholder="Search tenders, reference no, ministry..." oninput="filterTenders()">
-        </div>
-        <select id="filterSource" onchange="filterTenders()">
-          <option value="">All Sources</option>
-        </select>
-        <select id="filterStatus" onchange="filterTenders()">
-          <option value="">All Status</option>
-          <option value="active">Active</option>
-          <option value="upcoming">Upcoming</option>
-          <option value="overdue">Overdue</option>
-          <option value="closed">Closed</option>
-        </select>
-        <select id="filterType" onchange="filterTenders()">
-          <option value="">All Types</option>
-          <option value="Federal">Federal</option>
-          <option value="State">State</option>
-          <option value="PLC">PLC</option>
-          <option value="Bursa">Bursa</option>
-        </select>
-        <select id="sortBy" onchange="filterTenders()">
-          <option value="deadline">Sort: Deadline</option>
-          <option value="date_added">Sort: Date Added</option>
-          <option value="title">Sort: Title</option>
-          <option value="source">Sort: Source</option>
-        </select>
-      </div>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th onclick="setSortBy('title')">Tender Title ↕</th>
-              <th onclick="setSortBy('source')">Source ↕</th>
-              <th>Type</th>
-              <th onclick="setSortBy('deadline')">Deadline ↕</th>
-              <th>Days Left</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="tenderTable"></tbody>
-        </table>
-        <div class="pagination">
-          <span id="paginationInfo" style="font-family:'JetBrains Mono',monospace;font-size:0.75rem">Showing 0 of 0</span>
-          <div class="page-btns" id="pageButtons"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Active / Upcoming / Overdue / Starred — rendered dynamically -->
-    <section id="sec-active" class="section"></section>
-    <section id="sec-upcoming" class="section"></section>
-    <section id="sec-overdue" class="section"></section>
-    <section id="sec-starred" class="section"></section>
-
-    <!-- Sources -->
-    <section id="sec-sources" class="section">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
-        <div>
-          <div class="page-title">Tender Sources</div>
-          <div class="page-sub">All configured tender listing portals — click to scrape or open</div>
-        </div>
-        <button class="btn btn-primary" onclick="openAddSourceModal()">+ Add Source</button>
-      </div>
-      <div class="sources-grid" id="sourcesGrid"></div>
-    </section>
-
-    <!-- Bursa -->
-    <section id="sec-bursa" class="section">
-      <div style="margin-bottom:1rem">
-        <div class="page-title">Bursa Malaysia Tender Announcements</div>
-        <div class="page-sub">Company announcements tracked by keyword: "tender"</div>
-      </div>
-      <div style="margin-bottom:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
-        <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank" class="btn btn-primary" style="text-decoration:none">
-          📈 Open Bursa Portal ↗
-        </a>
-        <span style="color:var(--muted);font-size:0.82rem">Filter by keyword: <strong style="color:var(--text)">"tender"</strong></span>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Company</th><th>Announcement</th><th>Date</th><th>Value</th><th>Link</th>
-            </tr>
-          </thead>
-          <tbody id="bursaTable"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Notifications -->
-    <section id="sec-notifications" class="section">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
-        <div>
-          <div class="page-title">Bid Alerts &amp; Notifications</div>
-          <div class="page-sub">Deadline reminders and bid notifications for starred tenders</div>
-        </div>
-        <button class="btn btn-danger" onclick="clearNotifications()">Clear All</button>
-      </div>
-      <div class="notif-list" id="notifList"></div>
-    </section>
-
-    <!-- Pipeline -->
-    <section id="sec-pipeline" class="section">
-      <div style="margin-bottom:1.5rem">
-        <div class="page-title">Data Pipeline</div>
-        <div class="page-sub">Architecture: Scraper → SQLite → UI · Connect a backend to automate</div>
-      </div>
-
-      <div class="pipeline-diagram">
-        <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.25rem">Pipeline Flow</div>
-        <div style="font-size:0.8rem;color:var(--muted);margin-bottom:1rem">How tender data flows from source portals into this dashboard</div>
-        <div class="pipeline-steps">
-          <div class="pipeline-step active">
-            <div>📡 Sources</div>
-            <div class="pipeline-step-label">13 portals</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step">
-            <div>🕸 Scraper</div>
-            <div class="pipeline-step-label">Python/Node</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step">
-            <div>🗄 SQLite</div>
-            <div class="pipeline-step-label">sql.js (browser)</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step active">
-            <div>🖥 UI</div>
-            <div class="pipeline-step-label">This dashboard</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step">
-            <div>🔔 Alerts</div>
-            <div class="pipeline-step-label">Email / SMS</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pipeline-banner">
-        <div class="pipeline-banner-icon">ℹ️</div>
-        <div>
-          <div class="pipeline-banner-title">Configured Data Sources (13 portals)</div>
-          <div class="pipeline-banner-text">The following Malaysian tender portals are tracked. Connect a scraper backend (Python requests + BeautifulSoup / Playwright) to auto-populate the SQLite database.</div>
-          <div class="pipeline-sources" id="pipelineTags"></div>
-        </div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
-          <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.75rem">Federal / State Portals</div>
-          <div style="display:flex;flex-direction:column;gap:0.4rem">
-            <a href="https://www.eperolehan.gov.my/quotation-tender-notice" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eperolehan.gov.my ↗</a>
-            <a href="https://tender.selangor.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tender.selangor.my ↗</a>
-            <a href="https://ep.penang.gov.my/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">ep.penang.gov.my ↗</a>
-            <a href="https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">etendernotice.sarawak.gov.my ↗</a>
-            <a href="http://www.psupsabah.gov.my/?page_id=14070" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">psupsabah.gov.my ↗</a>
-            <a href="https://eprocurement.spsb.com.my:8443/E-procurement/index.php/home" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">eprocurement.spsb.com.my ↗</a>
-            <a href="https://s3pk.perak.gov.my/IklanList.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">s3pk.perak.gov.my ↗</a>
-            <a href="https://www.kedah.gov.my/index.php/tender-sebut-harga-jabatan-negeri/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">kedah.gov.my ↗</a>
-          </div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
-          <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.75rem">PLC &amp; Bursa Portals</div>
-          <div style="display:flex;flex-direction:column;gap:0.4rem">
-            <a href="https://www.sesb.com.my/Tender.aspx" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">sesb.com.my ↗</a>
-            <a href="https://www.prasarana.com.my/tenders/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">prasarana.com.my ↗</a>
-            <a href="https://www.tnb.com.my/listings/tender_notices/" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tnb.com.my ↗</a>
-            <a href="https://www.tm.com.my/business-with-tm/tender-notices" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">tm.com.my ↗</a>
-            <a href="https://www.bursamalaysia.com/market_information/announcements/company_announcement" target="_blank" style="font-size:0.8rem;color:var(--accent);font-family:'JetBrains Mono',monospace">bursamalaysia.com (keyword: tender) ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem">
-        <div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">Scraper Notes</div>
-        <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.25rem;display:flex;flex-direction:column;gap:0.35rem">
-          <li>Most portals require <strong style="color:var(--text)">Playwright / Selenium</strong> for JS-rendered pages (ePerolehan, SPSB, Prasarana)</li>
-          <li>Sarawak &amp; Perak S3PK expose plain HTML tables — use <strong style="color:var(--text)">requests + BeautifulSoup</strong></li>
-          <li>Bursa: scrape <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">company_announcement</code> page, filter announcements containing "tender"</li>
-          <li>Store normalized rows in SQLite: <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">tenders</code> table (schema matches this app)</li>
-          <li>Export as <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">tenders.sqlite</code> and load via <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:0.78rem">sql.js</code> FileReader API</li>
-          <li>Run scraper on cron (daily at 08:00) and push updated DB to the same GitHub Pages deployment</li>
-        </ul>
-      </div>
-    </section>
-
+  <!-- Main content -->
+  <main class="content" id="mainContent">
+    <!-- Pages rendered dynamically -->
   </main>
 </div>
 
-<!-- Toast Container -->
-<div class="toast-container" id="toasts"></div>
-
-<!-- Tender Detail Modal -->
-<div class="modal-overlay" id="detailModal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title" id="modalTitle"></div>
-      <button class="modal-close" onclick="closeModal('detailModal')">✕</button>
-    </div>
-    <div id="modalBody"></div>
-    <div class="modal-actions" id="modalActions"></div>
+<!-- Notifications panel -->
+<div class="notif-panel" id="notifPanel">
+  <div class="notif-panel-header">
+    <span>Notifications</span>
+    <button onclick="markAllRead()" style="font-size:.78rem;color:var(--primary);background:none;border:none;cursor:pointer">Mark all read</button>
   </div>
+  <div id="notifList"><div class="notif-empty">No notifications yet</div></div>
 </div>
 
-<!-- Add Tender Modal -->
-<div class="modal-overlay" id="addModal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">Add New Tender</div>
-      <button class="modal-close" onclick="closeModal('addModal')">✕</button>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Tender Title *</label>
-      <input type="text" class="form-input" id="addTitle" placeholder="e.g. Supply of IT Equipment for Ministry of Education">
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group">
-        <label class="form-label">Reference No</label>
-        <input type="text" class="form-input" id="addRef" placeholder="e.g. KPM/ICT/2026/001">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Source *</label>
-        <select class="form-input" id="addSource"></select>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group">
-        <label class="form-label">Open Date</label>
-        <input type="date" class="form-input" id="addOpen">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Deadline *</label>
-        <input type="date" class="form-input" id="addDeadline">
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group">
-        <label class="form-label">Estimated Value (RM)</label>
-        <input type="number" class="form-input" id="addValue" placeholder="e.g. 500000">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Category</label>
-        <input type="text" class="form-input" id="addCategory" placeholder="e.g. ICT, Construction, Services">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Ministry / Department</label>
-      <input type="text" class="form-input" id="addMinistry" placeholder="e.g. Kementerian Pendidikan Malaysia">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Tender URL</label>
-      <input type="url" class="form-input" id="addUrl" placeholder="https://...">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Resource Documents (links, notes)</label>
-      <textarea class="form-input" id="addNotes" placeholder="Paste document links, BQ references, or notes here..."></textarea>
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-primary" onclick="saveTender()">Save Tender</button>
-      <button class="btn" onclick="closeModal('addModal')">Cancel</button>
-    </div>
-  </div>
-</div>
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
-<!-- Scrape Modal -->
-<div class="modal-overlay" id="scrapeModal">
-  <div class="modal" style="max-width:520px">
+<!-- Add/Edit Modal -->
+<div class="overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-header">
-      <div class="modal-title">Scrape Tender Portals</div>
-      <button class="modal-close" onclick="closeModal('scrapeModal')">✕</button>
+      <h3 id="modalTitle">Add Tender</h3>
+      <button class="close-btn" onclick="closeModal()">&times;</button>
     </div>
-    <p style="color:var(--muted);font-size:0.83rem;margin-bottom:1rem">
-      Simulates fetching the latest tenders from all 12 configured sources. In production, connect a Python/Node scraper backend that writes to <code style="background:var(--surface2);padding:1px 5px;border-radius:3px">tenders.sqlite</code>.
-    </p>
-    <div class="scrape-progress" id="scrapeProgress">
-      <div class="progress-title">⟳ Scraping Sources...</div>
-      <div class="progress-items" id="scrapeItems"></div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="scrapeBar" style="width:0%"></div>
-      </div>
+    <div class="modal-body">
+      <form id="tenderForm" onsubmit="saveTender(event)">
+        <input type="hidden" id="editId">
+        <div class="form-group">
+          <label>Title *</label>
+          <input type="text" id="fTitle" required placeholder="Full tender title">
+        </div>
+        <div class="form-group">
+          <label>Source</label>
+          <select id="fSource"><option value="0">Manual Entry</option></select>
+        </div>
+        <div class="form-group">
+          <label>Reference No.</label>
+          <input type="text" id="fRef" placeholder="e.g. JKR/KL/2024/001">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div class="form-group">
+            <label>Open Date</label>
+            <input type="date" id="fOpenDate">
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="date" id="fDeadline">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>URL / Link</label>
+          <input type="url" id="fUrl" placeholder="https://…">
+        </div>
+      </form>
     </div>
-    <div class="modal-actions">
-      <button class="btn btn-primary" id="startScrapeBtn" onclick="startScrape()">▶ Start Scraping</button>
-      <button class="btn" onclick="closeModal('scrapeModal')">Close</button>
-    </div>
-  </div>
-</div>
-
-<!-- Edit Modal -->
-<div class="modal-overlay" id="editModal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">Edit Tender</div>
-      <button class="modal-close" onclick="closeModal('editModal')">✕</button>
-    </div>
-    <div id="editForm"></div>
-    <div class="modal-actions">
-      <button class="btn btn-primary" onclick="updateTender()">Update</button>
-      <button class="btn btn-danger" onclick="deleteTenderConfirm()">Delete</button>
-      <button class="btn" onclick="closeModal('editModal')">Cancel</button>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-danger" id="deleteBtn" onclick="deleteCurrent()" style="display:none">Delete</button>
+      <button class="btn btn-primary" onclick="document.getElementById('tenderForm').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}))">Save</button>
     </div>
   </div>
 </div>
 
 <script>
-// ============================================================
-// SQLite Init via sql.js
-// ============================================================
-let db, SQL;
-let currentPage = 1;
-const perPage = 20;
-let currentView = 'dashboard';
-let editingId = null;
+// ── State ──────────────────────────────────────────────────────────────────
+const state = {
+  page: 'tenders',
+  status: null,
+  starred: false,
+  q: '',
+  source: '',
+  currentPage: 1,
+  limit: 50,
+  stats: {},
+  notifications: [],
+  mode: 'api', // 'api' or 'static'
+};
 
-const SOURCES = [
-  { id: 1,  name: 'ePerolehan',      short: 'ePro', type: 'Federal', color: '#0077cc', icon: '🏛️', url: 'https://www.eperolehan.gov.my/quotation-tender-notice' },
-  { id: 2,  name: 'Selangor Tender', short: 'SEL',  type: 'State',   color: '#2563eb', icon: '🏢', url: 'https://tender.selangor.my/' },
-  { id: 3,  name: 'Penang eProcure', short: 'PNG',  type: 'State',   color: '#7c3aed', icon: '🏢', url: 'https://ep.penang.gov.my/' },
-  { id: 4,  name: 'Sarawak eTender', short: 'SRW',  type: 'State',   color: '#059669', icon: '🏢', url: 'https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp' },
-  { id: 5,  name: 'Sabah PSU',       short: 'SAB',  type: 'State',   color: '#d97706', icon: '🏢', url: 'http://www.psupsabah.gov.my/?page_id=14070' },
-  { id: 6,  name: 'SPSB',            short: 'SPSB', type: 'State',   color: '#db2777', icon: '🏢', url: 'https://eprocurement.spsb.com.my:8443/E-procurement/index.php/home' },
-  { id: 7,  name: 'Perak S3PK',      short: 'PRK',  type: 'State',   color: '#0891b2', icon: '🏢', url: 'https://s3pk.perak.gov.my/IklanList.aspx' },
-  { id: 8,  name: 'Kedah Gov',       short: 'KDH',  type: 'State',   color: '#ea580c', icon: '🏢', url: 'https://www.kedah.gov.my/index.php/tender-sebut-harga-jabatan-negeri/' },
-  { id: 9,  name: 'SESB',            short: 'SESB', type: 'PLC',     color: '#dc2626', icon: '⚡', url: 'https://www.sesb.com.my/Tender.aspx' },
-  { id: 10, name: 'Prasarana',       short: 'PRS',  type: 'PLC',     color: '#9333ea', icon: '🚆', url: 'https://www.prasarana.com.my/tenders/' },
-  { id: 11, name: 'TNB',             short: 'TNB',  type: 'PLC',     color: '#ca8a04', icon: '⚡', url: 'https://www.tnb.com.my/listings/tender_notices/' },
-  { id: 12, name: 'TM',              short: 'TM',   type: 'PLC',     color: '#0284c7', icon: '📡', url: 'https://www.tm.com.my/business-with-tm/tender-notices' },
-  { id: 13, name: 'Bursa Malaysia',  short: 'BRS',  type: 'Bursa',   color: '#ea580c', icon: '📈', url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-];
+// Source metadata (icons/colors) for display
+const SOURCES_META = {
+  1:{name:'ePerolehan',icon:'🏛️',color:'#1d4ed8'},
+  2:{name:'Selangor',icon:'⭐',color:'#7c3aed'},
+  3:{name:'Penang',icon:'🏝️',color:'#0891b2'},
+  4:{name:'Sarawak',icon:'🌿',color:'#15803d'},
+  5:{name:'Sabah',icon:'🏔️',color:'#b45309'},
+  6:{name:'SPSB',icon:'📋',color:'#0284c7'},
+  7:{name:'Perak S3PK',icon:'🏗️',color:'#6d28d9'},
+  8:{name:'Kedah',icon:'🌾',color:'#065f46'},
+  9:{name:'SESB',icon:'⚡',color:'#c2410c'},
+  10:{name:'Prasarana',icon:'🚇',color:'#1e40af'},
+  11:{name:'TNB',icon:'💡',color:'#d97706'},
+  12:{name:'TM',icon:'📡',color:'#0f766e'},
+  13:{name:'Bursa',icon:'📈',color:'#dc2626'},
+};
 
-const MOCK_TENDERS = [
-  { title: 'Supply and Delivery of Computer Equipment for Ministry of Education', ref: 'KPM/ICT/2026/001', source_id: 1, deadline: daysFromNow(5),   open_date: daysFromNow(-10), value: 2500000,  category: 'ICT',              ministry: 'Kementerian Pendidikan Malaysia',        status: 'active',   url: 'https://www.eperolehan.gov.my', notes: '', starred: 0, notified: 0 },
-  { title: 'Pembinaan Kompleks Sukan Negeri Selangor Fasa 2',                    ref: 'SEL/JKR/2026/045', source_id: 2, deadline: daysFromNow(12),  open_date: daysFromNow(-5),  value: 8500000,  category: 'Construction',     ministry: 'Jabatan Kerja Raya Selangor',            status: 'active',   url: 'https://tender.selangor.my/', notes: 'Major infrastructure project', starred: 1, notified: 1 },
-  { title: 'Perkhidmatan Pembersihan dan Penyelenggaraan Bangunan Penang Hill',   ref: 'PNG/PH/2026/012',  source_id: 3, deadline: daysFromNow(3),   open_date: daysFromNow(-7),  value: 450000,   category: 'Services',         ministry: 'Penang Hill Corporation',               status: 'active',   url: 'https://ep.penang.gov.my/', notes: 'Deadline approaching!', starred: 1, notified: 1 },
-  { title: 'Sarawak Rural Internet Connectivity Infrastructure Phase 3',         ref: 'SRW/MCMC/2026/033',source_id: 4, deadline: daysFromNow(25),  open_date: daysFromNow(5),   value: 12000000, category: 'Telecommunications',ministry: 'Sarawak Digital Economy Corporation',    status: 'upcoming', url: 'https://etendernotice.sarawak.gov.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'Sabah Road Rehabilitation Programme — Coastal Highway KM32–KM48',    ref: 'SAB/JKR/2026/088', source_id: 5, deadline: daysFromNow(-3),  open_date: daysFromNow(-30), value: 15500000, category: 'Construction',     ministry: 'JKR Sabah',                             status: 'overdue',  url: 'http://www.psupsabah.gov.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'Supply of Medical Consumables for SPSB Hospitals 2026–2028',         ref: 'SPSB/HEA/2026/021',source_id: 6, deadline: daysFromNow(8),   open_date: daysFromNow(-3),  value: 3200000,  category: 'Healthcare',       ministry: 'SPSB Healthcare Division',              status: 'active',   url: 'https://eprocurement.spsb.com.my/', notes: 'Framework agreement 2 years', starred: 0, notified: 0 },
-  { title: 'Perak Smart City IoT Sensor Network Deployment',                     ref: 'PRK/DTMC/2026/007',source_id: 7, deadline: daysFromNow(18),  open_date: daysFromNow(0),   value: 6700000,  category: 'Smart City',       ministry: 'DTMC Perak',                            status: 'upcoming', url: 'https://s3pk.perak.gov.my/', notes: '', starred: 1, notified: 0 },
-  { title: 'Kedah Agrofood Processing Facility Construction Bukit Kayu Hitam',   ref: 'KDH/MADA/2026/014',source_id: 8, deadline: daysFromNow(-8),  open_date: daysFromNow(-45), value: 9800000,  category: 'Agriculture',      ministry: 'MADA Kedah',                            status: 'overdue',  url: 'https://www.kedah.gov.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'SESB Grid Upgrade Transformer Supply Sandakan Region',               ref: 'SESB/GRID/2026/019',source_id:9, deadline: daysFromNow(14),  open_date: daysFromNow(-1),  value: 4500000,  category: 'Electrical',       ministry: 'Sabah Electricity Sdn Bhd',             status: 'active',   url: 'https://www.sesb.com.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'Prasarana MRT Feeder Bus Fleet Replacement 2026',                    ref: 'PRS/BUS/2026/003', source_id: 10,deadline: daysFromNow(30),  open_date: daysFromNow(7),   value: 22000000, category: 'Transport',        ministry: 'Prasarana Malaysia Berhad',             status: 'upcoming', url: 'https://www.prasarana.com.my/', notes: 'Large fleet procurement', starred: 1, notified: 1 },
-  { title: 'TNB Smart Meter AMI Rollout Peninsular Malaysia Q3 2026',            ref: 'TNB/AMI/2026/041', source_id: 11,deadline: daysFromNow(1),   open_date: daysFromNow(-14), value: 35000000, category: 'ICT/Electrical',   ministry: 'Tenaga Nasional Berhad',                status: 'active',   url: 'https://www.tnb.com.my/', notes: 'CRITICAL — deadline tomorrow!', starred: 1, notified: 1 },
-  { title: 'TM National Fibre Broadband Network Expansion Rural Areas',          ref: 'TM/NFCP/2026/011', source_id: 12,deadline: daysFromNow(45),  open_date: daysFromNow(10),  value: 45000000, category: 'Telecommunications',ministry: 'Telekom Malaysia Berhad',                status: 'upcoming', url: 'https://www.tm.com.my/', notes: 'NFCP Phase 3', starred: 0, notified: 0 },
-  { title: 'Renovation of Government Quarters KL Putrajaya Block A–F',           ref: 'JPA/REN/2026/088', source_id: 1, deadline: daysFromNow(7),   open_date: daysFromNow(-5),  value: 1800000,  category: 'Construction',     ministry: 'Jabatan Perkhidmatan Awam',             status: 'active',   url: 'https://www.eperolehan.gov.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'Fleet Management System for Selangor State Government Vehicles',     ref: 'SEL/IT/2026/029',  source_id: 2, deadline: daysFromNow(-1),  open_date: daysFromNow(-21), value: 780000,   category: 'ICT',              ministry: 'Pejabat Setiausaha Kerajaan Selangor',  status: 'overdue',  url: 'https://tender.selangor.my/', notes: '', starred: 0, notified: 0 },
-  { title: 'Sarawak Heritage Museum Restoration and Conservation Works',         ref: 'SRW/HER/2026/006', source_id: 4, deadline: daysFromNow(60),  open_date: daysFromNow(14),  value: 3400000,  category: 'Construction',     ministry: 'Sarawak Museum Department',             status: 'upcoming', url: 'https://etendernotice.sarawak.gov.my/', notes: '', starred: 0, notified: 0 },
-];
-
-const MOCK_BURSA = [
-  { company: 'Gamuda Berhad',       announcement: 'Award of tender for LRT3 extension works valued at RM1.2B',         date: '2026-06-01', value: 'RM 1.2B',    url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-  { company: 'IJM Corporation',     announcement: 'Tender submission for PLUS highway maintenance contract 2026–2030', date: '2026-05-28', value: 'RM 450M',    url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-  { company: 'YTL Power',           announcement: 'Awarded competitive tender for new power plant Paka Terengganu',    date: '2026-05-25', value: 'RM 2.8B',    url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-  { company: 'Sunway Construction', announcement: 'Invited to tender for Penang South Reclamation infrastructure works',date: '2026-05-20', value: 'Undisclosed',url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-  { company: 'Muhibbah Engineering',announcement: 'Received letter of award for Sarawak port expansion tender',        date: '2026-05-15', value: 'RM 380M',    url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement' },
-];
-
-function daysFromNow(n) {
-  const d = new Date();
-  d.setDate(d.getDate() + n);
-  return d.toISOString().split('T')[0];
-}
-
-async function initDB() {
-  SQL = await initSqlJs({ locateFile: f => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/${f}` });
-  db = new SQL.Database();
-
-  db.run(`CREATE TABLE IF NOT EXISTS tenders (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT, ref TEXT, source_id INTEGER,
-    open_date TEXT, deadline TEXT, value REAL,
-    category TEXT, ministry TEXT, status TEXT,
-    url TEXT, notes TEXT, starred INTEGER DEFAULT 0,
-    notified INTEGER DEFAULT 0, date_added TEXT, scraped_at TEXT
-  )`);
-
-  db.run(`CREATE TABLE IF NOT EXISTS notifications (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    tender_id INTEGER, type TEXT, message TEXT,
-    created_at TEXT, read INTEGER DEFAULT 0
-  )`);
-
-  // Try to load live data from tenders.json (produced by the Python scraper).
-  // Falls back to MOCK_TENDERS if the file is absent (local dev / GitHub Pages cold start).
-  let loaded = false;
+// ── Boot ───────────────────────────────────────────────────────────────────
+async function boot() {
+  // 1. Try live API
   try {
-    const resp = await fetch('tenders.json');
-    if (resp.ok) {
-      const data = await resp.json();
-      if (data.tenders && data.tenders.length) {
-        data.tenders.forEach(t => {
-          db.run(`INSERT OR IGNORE INTO tenders
-            (id,title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added,scraped_at)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-            [t.id,t.title,t.ref,t.source_id,t.open_date,t.deadline,t.value,
-             t.category,t.ministry,t.status,t.url,t.notes,t.starred||0,t.notified||0,
-             t.date_added,t.scraped_at]);
-        });
-        (data.notifications||[]).forEach(n => {
-          db.run(`INSERT OR IGNORE INTO notifications (id,tender_id,type,message,created_at,read) VALUES (?,?,?,?,?,?)`,
-            [n.id,n.tender_id,n.type,n.message,n.created_at,n.read||0]);
-        });
-        loaded = true;
-        const ts = data.exported_at ? ' · last scraped ' + new Date(data.exported_at).toLocaleString('en-MY') : '';
-        showToast(`Live data loaded — ${data.tenders.length} tenders${ts}`, 'success');
+    const r = await fetch('/api/stats', { signal: AbortSignal.timeout(4000) });
+    if (r.ok) {
+      const json = await r.json();
+      if (typeof json.total === 'number') {
+        state.stats = json;
+        state.mode = 'api';
       }
     }
-  } catch(_) { /* fetch not available or file missing */ }
+  } catch {}
 
-  if (!loaded) {
-    const now = new Date().toISOString();
-    MOCK_TENDERS.forEach(t => {
-      db.run(`INSERT INTO tenders (title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-        [t.title,t.ref,t.source_id,t.open_date,t.deadline,t.value,t.category,t.ministry,t.status,t.url,t.notes,t.starred,t.notified,now]);
+  // 2. Always try tenders.json — use it if API mode didn't load or as supplement
+  if (state.mode !== 'api') {
+    try {
+      const r = await fetch('tenders.json', { signal: AbortSignal.timeout(8000) });
+      if (r.ok) {
+        const text = await r.text();
+        const d = JSON.parse(text);
+        if (d && Array.isArray(d.tenders) && d.tenders.length > 0) {
+          state.staticData = d;
+          state.mode = 'static';
+          computeStaticStats(d);
+        }
+      }
+    } catch (e) {
+      console.warn('tenders.json load failed:', e.message);
+    }
+  }
+
+  // 3. Last resort: seed with empty state so UI renders
+  if (!state.staticData && state.mode !== 'api') {
+    state.staticData = { tenders: [], notifications: [] };
+    state.mode = 'static';
+    computeStaticStats(state.staticData);
+  }
+
+  updateBadges();
+  showPage('tenders');
+  loadNotifications();
+}
+
+function computeStaticStats(d) {
+  const t = d.tenders || [];
+  state.stats = {
+    total: t.length,
+    active: t.filter(x=>x.status==='active').length,
+    upcoming: t.filter(x=>x.status==='upcoming').length,
+    overdue: t.filter(x=>x.status==='overdue').length,
+    starred: t.filter(x=>x.starred).length,
+    last_scrape: d.exported_at,
+  };
+}
+
+// ── Data fetching ──────────────────────────────────────────────────────────
+async function fetchTenders() {
+  if (state.mode === 'static') return fetchTendersStatic();
+  try {
+    const params = new URLSearchParams({
+      page: state.currentPage, limit: state.limit,
+      ...(state.q && {q: state.q}),
+      ...(state.status && {status: state.status}),
+      ...(state.source && {source_id: state.source}),
+      ...(state.starred && {starred: '1'}),
     });
-    const urgentTitles = [
-      { id: 11, title: 'TNB Smart Meter AMI Rollout', type: 'urgent' },
-      { id: 2,  title: 'Pembinaan Kompleks Sukan Negeri Selangor', type: 'reminder' },
-      { id: 3,  title: 'Perkhidmatan Pembersihan Penang Hill', type: 'reminder' },
-    ];
-    urgentTitles.forEach(n => {
-      db.run(`INSERT INTO notifications (tender_id,type,message,created_at,read) VALUES (?,?,?,?,?)`,
-        [n.id, n.type, `Bid deadline approaching: ${n.title}`, now, 0]);
-    });
-    showToast('Demo data loaded — run the scraper to get live tenders', 'info');
+    const r = await fetch('/api/tenders?' + params);
+    if (r.ok) return r.json();
+  } catch {}
+  // API failed mid-session — fall back to static
+  return fetchTendersStatic();
+}
+
+function fetchTendersStatic() {
+  let data = (state.staticData?.tenders || []);
+  if (state.q) data = data.filter(t => t.title?.toLowerCase().includes(state.q.toLowerCase()));
+  if (state.status) data = data.filter(t => t.status === state.status);
+  if (state.source) data = data.filter(t => String(t.source_id) === String(state.source));
+  if (state.starred) data = data.filter(t => t.starred);
+  const start = (state.currentPage - 1) * state.limit;
+  return { total: data.length, data: data.slice(start, start + state.limit) };
+}
+
+async function fetchStats() {
+  if (state.mode === 'static') return state.stats;
+  try {
+    const r = await fetch('/api/stats');
+    if (r.ok) return r.json();
+  } catch {}
+  return state.stats;
+}
+
+async function loadNotifications() {
+  if (state.mode === 'static') {
+    state.notifications = state.staticData?.notifications || [];
+  } else {
+    try {
+      const r = await fetch('/api/notifications');
+      if (r.ok) state.notifications = await r.json();
+    } catch {}
   }
-
-  updateStats();
-  renderSidebar();
-  renderTable();
-  renderSources();
-  renderBursa();
-  renderNotifications();
-  renderPipelineTags();
-  setInterval(checkNotifications, 30000);
-  showToast('Database loaded — ' + MOCK_TENDERS.length + ' tenders ready', 'success');
+  const unread = state.notifications.filter(n => !n.read).length;
+  document.getElementById('notifBadge').classList.toggle('show', unread > 0);
+  renderNotifList();
 }
 
-function query(sql, params=[]) {
-  const stmt = db.prepare(sql);
-  stmt.bind(params);
-  const rows = [];
-  while (stmt.step()) rows.push(stmt.getAsObject());
-  stmt.free();
-  return rows;
-}
-function exec(sql, params=[]) { db.run(sql, params); }
-
-// ============================================================
-// Stats
-// ============================================================
-function updateStats() {
-  const total    = query("SELECT COUNT(*) as c FROM tenders")[0].c;
-  const active   = query("SELECT COUNT(*) as c FROM tenders WHERE status='active'")[0].c;
-  const upcoming = query("SELECT COUNT(*) as c FROM tenders WHERE status='upcoming'")[0].c;
-  const overdue  = query("SELECT COUNT(*) as c FROM tenders WHERE status='overdue'")[0].c;
-  const starred  = query("SELECT COUNT(*) as c FROM tenders WHERE starred=1")[0].c;
-  const notifs   = query("SELECT COUNT(*) as c FROM notifications WHERE read=0")[0].c;
-
-  ['statTotal','statActive','statUpcoming','statOverdue','statStarred'].forEach((id,i) => {
-    document.getElementById(id).textContent = [total,active,upcoming,overdue,starred][i];
+// ── Page routing ───────────────────────────────────────────────────────────
+function showPage(page) {
+  state.page = page;
+  state.currentPage = 1;
+  state.status = ['active','upcoming','overdue'].includes(page) ? page : null;
+  state.starred = page === 'starred';
+  // update nav active state
+  const pages = ['tenders','active','upcoming','overdue','starred','sources','pipeline'];
+  pages.forEach(p => {
+    document.getElementById('nav-'+p)?.classList.toggle('active', p===page);
+    document.getElementById('dnav-'+p)?.classList.toggle('active', p===page);
   });
-  ['navTotal','navActive','navUpcoming','navOverdue','navStarred'].forEach((id,i) => {
-    document.getElementById(id).textContent = [total,active,upcoming,overdue,starred][i];
-  });
-  document.getElementById('alertBadge').textContent = notifs;
+  if (page === 'sources') renderSources();
+  else if (page === 'pipeline') renderPipeline();
+  else renderTenders();
 }
 
-// ============================================================
-// Sidebar
-// ============================================================
-function renderSidebar() {
-  const container = document.getElementById('sourceList');
-  const filterSrc = document.getElementById('filterSource');
-  const addSrc    = document.getElementById('addSource');
-  if (!container) return;
-  container.innerHTML = '';
-  if (filterSrc) filterSrc.innerHTML = '<option value="">All Sources</option>';
-  if (addSrc) addSrc.innerHTML = '';
+// ── Render tenders page ────────────────────────────────────────────────────
+async function renderTenders() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = renderStatsHTML() + renderFiltersHTML() + '<div id="tableArea"><div class="skeleton" style="height:200px;margin-top:1rem"></div></div>';
 
-  SOURCES.forEach(s => {
-    const div = document.createElement('div');
-    div.className = 'source-item';
-    div.innerHTML = `<span class="source-dot" style="background:${s.color}"></span>${s.name}`;
-    div.onclick = () => {
-      const fs = document.getElementById('filterSource');
-      if (fs) fs.value = s.short;
-      navTo('dashboard', null);
-      filterTenders();
-    };
-    container.appendChild(div);
-    if (filterSrc) filterSrc.innerHTML += `<option value="${s.short}">${s.name}</option>`;
-    if (addSrc)    addSrc.innerHTML    += `<option value="${s.id}">${s.name}</option>`;
-  });
-}
-
-// ============================================================
-// Table
-// ============================================================
-function buildWhereClause(extraFilter='') {
-  const search      = document.getElementById('searchInput')?.value || '';
-  const srcFilter   = document.getElementById('filterSource')?.value || '';
-  const statusFilter= document.getElementById('filterStatus')?.value || '';
-  const typeFilter  = document.getElementById('filterType')?.value || '';
-  const parts = ['1=1'], params = [];
-
-  if (search) {
-    parts.push('(title LIKE ? OR ref LIKE ? OR ministry LIKE ? OR category LIKE ?)');
-    const s = '%'+search+'%';
-    params.push(s,s,s,s);
+  let statsData, tData;
+  try {
+    [statsData, tData] = await Promise.all([fetchStats(), fetchTenders()]);
+  } catch (e) {
+    console.error('renderTenders fetch error:', e);
+    tData = fetchTendersStatic();
+    statsData = state.stats;
   }
-  if (srcFilter) {
-    const src = SOURCES.find(s => s.short === srcFilter);
-    if (src) { parts.push('source_id=?'); params.push(src.id); }
+  state.stats = statsData || state.stats;
+  updateBadges();
+
+  const area = document.getElementById('tableArea');
+  if (!tData?.data?.length) {
+    area.innerHTML = `<div class="empty-state"><div class="big-icon">📋</div><h3>No tenders found</h3><p>Try adjusting filters or trigger a scrape from Pipeline</p></div>`;
+    return;
   }
-  if (statusFilter) { parts.push('status=?'); params.push(statusFilter); }
-  if (typeFilter) {
-    const ids = SOURCES.filter(s => s.type === typeFilter).map(s => s.id);
-    if (ids.length) parts.push(`source_id IN (${ids.join(',')})`);
-  }
-  if (extraFilter) parts.push(extraFilter);
-  return { where: parts.join(' AND '), params };
+  area.innerHTML = `
+    <div class="table-wrap">
+      <div class="table-header">
+        <h2>Tenders</h2>
+        <span class="table-meta">${tData.total} total</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr>
+            <th style="width:36px"></th>
+            <th>Title</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Deadline</th>
+            <th>Open Date</th>
+            <th style="width:80px">Actions</th>
+          </tr></thead>
+          <tbody>${tData.data.map(renderRow).join('')}</tbody>
+        </table>
+      </div>
+      ${renderPagination(tData.total)}
+    </div>`;
 }
 
-function getSortCol() {
-  const v = document.getElementById('sortBy')?.value || 'deadline';
-  return { deadline:'deadline ASC', date_added:'date_added DESC', title:'title ASC', source:'source_id ASC' }[v] || 'deadline ASC';
+function renderStatsHTML() {
+  const s = state.stats;
+  return `<div class="stats-row">
+    <div class="stat-card"><div class="num">${s.total||0}</div><div class="lbl">Total</div></div>
+    <div class="stat-card active"><div class="num">${s.active||0}</div><div class="lbl">Active</div></div>
+    <div class="stat-card upcoming"><div class="num">${s.upcoming||0}</div><div class="lbl">Upcoming</div></div>
+    <div class="stat-card overdue"><div class="num">${s.overdue||0}</div><div class="lbl">Overdue</div></div>
+    <div class="stat-card"><div class="num">${s.starred||0}</div><div class="lbl">Starred</div></div>
+  </div>`;
 }
 
-function renderTable(extraFilter='', targetId='tenderTable') {
-  const { where, params } = buildWhereClause(extraFilter);
-  const sort = getSortCol();
-  const total = query(`SELECT COUNT(*) as c FROM tenders WHERE ${where}`, params)[0]?.c || 0;
-  const offset = (currentPage-1)*perPage;
-  const rows = query(`SELECT * FROM tenders WHERE ${where} ORDER BY ${sort} LIMIT ${perPage} OFFSET ${offset}`, params);
-  const tbody = document.getElementById(targetId);
-  if (!tbody) return;
-  tbody.innerHTML = rows.length
-    ? rows.map(renderRow).join('')
-    : `<tr><td colspan="7"><div class="empty"><div class="empty-icon">📭</div><div class="empty-title">No tenders found</div><div style="font-size:0.82rem;color:var(--muted)">Try adjusting filters or add new tenders</div></div></td></tr>`;
-  const info = document.getElementById('paginationInfo');
-  if (info) info.textContent = `Showing ${total?Math.min(offset+1,total):0}–${Math.min(offset+perPage,total)} of ${total}`;
-  renderPages(total);
+function renderFiltersHTML() {
+  const sourceOpts = Object.entries(SOURCES_META).map(([id,m])=>`<option value="${id}" ${state.source==id?'selected':''}>${m.name}</option>`).join('');
+  return `<div class="filters-bar">
+    <button class="filter-btn ${!state.status&&!state.starred?'active':''}" onclick="setFilter(null,false)">All</button>
+    <button class="filter-btn ${state.status==='active'?'active':''}" onclick="setFilter('active',false)">&#9989; Active</button>
+    <button class="filter-btn ${state.status==='upcoming'?'active':''}" onclick="setFilter('upcoming',false)">&#8987; Upcoming</button>
+    <button class="filter-btn ${state.status==='overdue'?'active':''}" onclick="setFilter('overdue',false)">&#9888; Overdue</button>
+    <button class="filter-btn ${state.starred?'active':''}" onclick="setFilter(null,true)">&#11088; Starred</button>
+    <select class="source-select" onchange="setSource(this.value)">
+      <option value="">All Sources</option>${sourceOpts}
+    </select>
+    <button class="add-btn" onclick="openModal()">&#43; <span>Add Tender</span></button>
+  </div>`;
 }
 
 function renderRow(t) {
-  const src = SOURCES.find(s => s.id === t.source_id) || { name:'Unknown', short:'?', color:'#999', type:'-' };
-  const days = daysLeft(t.deadline);
-  const daysClass = t.status==='overdue' ? 'days-overdue' : days<=3 ? 'days-critical' : days<=7 ? 'days-warn' : 'days-ok';
-  const daysText  = t.status==='overdue' ? `${Math.abs(days)}d ago` : `${days}d`;
-  const sc = { active:'status-active', upcoming:'status-upcoming', overdue:'status-overdue', closed:'status-closed' }[t.status]||'status-closed';
-  const val = t.value ? 'RM '+(t.value>=1e6?(t.value/1e6).toFixed(1)+'M':(t.value/1000).toFixed(0)+'K') : '—';
+  const src = SOURCES_META[t.source_id] || {name:'Unknown',icon:'📄',color:'#64748b'};
+  const statusClass = `status-${t.status||'active'}`;
+  const starClass = t.starred ? 'starred' : '';
+  const notifClass = t.notify ? 'notified' : '';
+  const deadline = t.deadline ? fmtDate(t.deadline) : '—';
+  const openDate = t.open_date ? fmtDate(t.open_date) : '—';
+  const url = t.url || '#';
   return `<tr>
-    <td>
-      <div class="tender-title" onclick="showDetail(${t.id})" title="${t.title}">${t.title}</div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);margin-top:2px">${t.ref||'—'} · ${val}</div>
+    <td><button class="icon-btn ${starClass}" onclick="toggleStar(${t.id})" title="Star">&#11088;</button></td>
+    <td class="title-cell">
+      <a href="${escHtml(url)}" target="_blank" rel="noopener" class="title-text" title="${escHtml(t.title)}">${escHtml(t.title)}</a>
+      ${t.ref ? `<div style="font-size:.73rem;color:var(--muted)">${escHtml(t.ref)}</div>` : ''}
     </td>
-    <td><span class="source-tag"><span style="background:${src.color};width:6px;height:6px;border-radius:50%;display:inline-block"></span> ${src.short}</span></td>
-    <td><span style="font-size:0.78rem;color:var(--muted)">${src.type}</span></td>
-    <td><span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${formatDate(t.deadline)}</span></td>
-    <td><span class="days-left ${daysClass}">${daysText}</span></td>
-    <td><span class="status-badge ${sc}">${t.status}</span></td>
+    <td><span class="source-tag" style="background:${src.color}20;color:${src.color}">${src.icon} ${src.name}</span></td>
+    <td><span class="status-badge ${statusClass}">${capitalize(t.status||'active')}</span></td>
+    <td style="white-space:nowrap">${deadline}</td>
+    <td style="white-space:nowrap">${openDate}</td>
     <td>
       <div class="action-btns">
-        <button class="icon-btn ${t.starred?'starred':''}" onclick="toggleStar(${t.id})" title="Star">★</button>
-        <button class="icon-btn ${t.notified?'notified':''}" onclick="toggleNotify(${t.id})" title="Set bid alert">🔔</button>
-        <button class="icon-btn" onclick="openEdit(${t.id})" title="Edit">✏</button>
-        ${t.url?`<a href="${t.url}" target="_blank" class="icon-btn" style="text-decoration:none" title="Open source portal">↗</a>`:''}
+        <button class="icon-btn ${notifClass}" onclick="toggleNotify(${t.id})" title="Notify">&#128276;</button>
+        <button class="icon-btn" onclick="openModal(${t.id})" title="Edit">&#9998;</button>
       </div>
     </td>
   </tr>`;
 }
 
-function daysLeft(deadline) {
-  if (!deadline) return 0;
-  const now = new Date(); now.setHours(0,0,0,0);
-  return Math.floor((new Date(deadline)-now)/86400000);
-}
-function formatDate(d) {
-  if (!d) return '—';
-  return new Date(d).toLocaleDateString('en-MY',{day:'2-digit',month:'short',year:'2-digit'});
-}
-function formatRm(v) {
-  if (!v) return '—';
-  return 'RM '+parseFloat(v).toLocaleString('en-MY');
-}
-
-function renderPages(total) {
-  const pages = Math.ceil(total/perPage);
-  const c = document.getElementById('pageButtons');
-  if (!c) return;
-  c.innerHTML = '';
-  const prev = document.createElement('button');
-  prev.className='page-btn'; prev.textContent='←'; prev.disabled=currentPage===1;
-  prev.onclick=()=>{currentPage--;renderTable();};
-  c.appendChild(prev);
-  for (let i=1;i<=Math.min(pages,7);i++) {
-    const btn=document.createElement('button');
-    btn.className='page-btn'+(i===currentPage?' active':'');
-    btn.textContent=i;
-    btn.onclick=((n)=>()=>{currentPage=n;renderTable();})(i);
-    c.appendChild(btn);
+function renderPagination(total) {
+  const pages = Math.ceil(total / state.limit);
+  if (pages <= 1) return '';
+  const cp = state.currentPage;
+  let btns = `<button class="page-btn" onclick="goPage(${cp-1})" ${cp<=1?'disabled':''}>&#8592;</button>`;
+  for (let i = Math.max(1, cp-2); i <= Math.min(pages, cp+2); i++) {
+    btns += `<button class="page-btn ${i===cp?'active':''}" onclick="goPage(${i})">${i}</button>`;
   }
-  const next=document.createElement('button');
-  next.className='page-btn'; next.textContent='→'; next.disabled=currentPage>=pages;
-  next.onclick=()=>{currentPage++;renderTable();};
-  c.appendChild(next);
+  btns += `<button class="page-btn" onclick="goPage(${cp+1})" ${cp>=pages?'disabled':''}>&#8594;</button>`;
+  return `<div class="pagination"><span class="page-info">${total} results</span>${btns}</div>`;
 }
 
-function filterTenders() {
-  currentPage=1;
-  const filters={active:"status='active'",upcoming:"status='upcoming'",overdue:"status='overdue'",starred:"starred=1",dashboard:''};
-  renderTable(filters[currentView]??'');
-}
-function setSortBy(col){document.getElementById('sortBy').value=col;filterTenders();}
-
-// ============================================================
-// Navigation
-// ============================================================
-function navTo(view, el) {
-  currentView=view; currentPage=1;
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  if (el) el.classList.add('active');
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  const secId='sec-'+view;
-  let sec=document.getElementById(secId);
-
-  if (['active','upcoming','overdue','starred'].includes(view)) {
-    const titles={active:'Active Tenders',upcoming:'Upcoming Tenders',overdue:'Overdue Tenders',starred:'Starred Tenders'};
-    sec.innerHTML=`
-      <div style="margin-bottom:1.5rem"><div class="page-title">${titles[view]}</div></div>
-      <div class="toolbar">
-        <div class="search-box"><span class="search-icon">🔍</span><input type="text" id="searchInput" placeholder="Search..." oninput="filterTenders()"></div>
-        <select id="filterSource" onchange="filterTenders()"><option value="">All Sources</option></select>
-        <select id="filterStatus" onchange="filterTenders()"><option value="">All Status</option></select>
-        <select id="filterType" onchange="filterTenders()"><option value="">All Types</option><option value="Federal">Federal</option><option value="State">State</option><option value="PLC">PLC</option></select>
-        <select id="sortBy" onchange="filterTenders()"><option value="deadline">Sort: Deadline</option><option value="title">Sort: Title</option></select>
-      </div>
-      <div class="table-wrap"><table><thead><tr><th>Tender Title</th><th>Source</th><th>Type</th><th>Deadline</th><th>Days Left</th><th>Status</th><th>Actions</th></tr></thead><tbody id="tenderTable"></tbody></table>
-      <div class="pagination"><span id="paginationInfo" style="font-family:'JetBrains Mono',monospace;font-size:0.75rem"></span><div class="page-btns" id="pageButtons"></div></div></div>`;
-    renderSidebar();
+// ── Sources page ───────────────────────────────────────────────────────────
+async function renderSources() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = '<h2 style="margin-bottom:1rem">Data Sources</h2><div class="sources-grid" id="sourcesGrid"><div class="skeleton" style="height:100px"></div></div>';
+  let rows = [];
+  if (state.mode === 'api') {
+    try { const r = await fetch('/api/sources'); if (r.ok) rows = await r.json(); } catch {}
   }
-  if (sec) sec.classList.add('active');
-  const filters={active:"status='active'",upcoming:"status='upcoming'",overdue:"status='overdue'",starred:"starred=1",dashboard:''};
-  if (filters[view]!==undefined) renderTable(filters[view]);
-  if (view==='notifications') renderNotifications();
-  if (view==='sources') renderSources();
-  if (view==='bursa') renderBursa();
-  if (view==='pipeline') renderPipelineTags();
-}
-
-// ============================================================
-// Sources Panel
-// ============================================================
-function renderSources() {
-  const grid=document.getElementById('sourcesGrid');
-  if (!grid) return;
-  grid.innerHTML=SOURCES.map(s=>{
-    const count=query('SELECT COUNT(*) as c FROM tenders WHERE source_id=?',[s.id])[0].c;
+  const grid = document.getElementById('sourcesGrid');
+  grid.innerHTML = Object.entries(SOURCES_META).map(([id, m]) => {
+    const info = rows.find(r => r.source_id == id);
+    const count = info?.tender_count || 0;
+    const error = info?.error;
+    const lastScrape = info?.scraped_at ? fmtDateTime(info.scraped_at) : 'Never';
     return `<div class="source-card">
-      <div class="source-card-header">
-        <div class="source-icon" style="background:${s.color}18;color:${s.color}">${s.icon}</div>
-        <div><div class="source-card-name">${s.name}</div><div class="source-card-type">${s.type}</div></div>
+      <div class="source-card-head">
+        <div class="source-icon" style="background:${m.color}20;color:${m.color}">${m.icon}</div>
+        <h3>${m.name}</h3>
       </div>
-      <div class="source-card-url"><a href="${s.url}" target="_blank">${s.url}</a></div>
-      <div class="source-stats">Tenders: <strong>${count}</strong></div>
-      <div style="display:flex;gap:0.5rem;margin-top:0.75rem">
-        <a href="${s.url}" target="_blank" class="btn" style="text-decoration:none;font-size:0.72rem">Open Portal ↗</a>
-        <button class="btn" style="font-size:0.72rem" onclick="scrapeSource(${s.id})">Scrape ⟳</button>
-      </div>
+      <div class="source-card-meta">${count} tenders</div>
+      <div class="source-card-meta">Last: ${lastScrape}</div>
+      ${error ? `<span class="source-status source-error">Error</span>` : `<span class="source-status source-ok">OK</span>`}
     </div>`;
   }).join('');
 }
 
-// ============================================================
-// Bursa Panel
-// ============================================================
-function renderBursa() {
-  const tbody=document.getElementById('bursaTable');
-  if (!tbody) return;
-  tbody.innerHTML=MOCK_BURSA.map(b=>`<tr>
-    <td><strong>${b.company}</strong></td>
-    <td style="max-width:300px;font-size:0.82rem">${b.announcement}</td>
-    <td><span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${b.date}</span></td>
-    <td><span style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--accent);font-weight:600">${b.value}</span></td>
-    <td><a href="${b.url}" target="_blank" class="btn" style="text-decoration:none;font-size:0.72rem">View ↗</a></td>
-  </tr>`).join('');
+// ── Pipeline page ──────────────────────────────────────────────────────────
+async function renderPipeline() {
+  const content = document.getElementById('mainContent');
+  content.innerHTML = `
+    <h2 style="margin-bottom:1rem">Data Pipeline</h2>
+    <div class="pipeline-section">
+      <h3>Overview</h3>
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:.75rem">
+        The scraper runs daily at 09:00 MYT via GitHub Actions, storing results in SQLite and exporting
+        <code>tenders.json</code> for static hosting. The Express API reads from SQLite when deployed on Railway/Render.
+      </p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#9881; Scraper</div>
+          <div style="color:var(--muted)">Node.js + Axios + Cheerio + Playwright</div>
+        </div>
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#128196; Storage</div>
+          <div style="color:var(--muted)">SQLite (better-sqlite3)</div>
+        </div>
+        <div style="background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.82rem">
+          <div style="font-weight:600;margin-bottom:.3rem">&#127760; Export</div>
+          <div style="color:var(--muted)">tenders.json → Netlify CDN</div>
+        </div>
+      </div>
+    </div>
+    <div class="pipeline-section">
+      <h3>Scrape Logs</h3>
+      <div id="logArea"><div class="skeleton" style="height:100px"></div></div>
+    </div>
+    <div class="pipeline-section">
+      <h3>Manual Trigger</h3>
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:.75rem">Run scraper for all or specific sources</p>
+      <button class="btn btn-primary" onclick="triggerScrape()" id="scrapeBtn">&#9654; Run Scraper Now</button>
+      <div id="scrapeResult" style="margin-top:.75rem;font-size:.83rem"></div>
+    </div>`;
+
+  if (state.mode === 'api') {
+    try {
+      const r = await fetch('/api/sources');
+      const rows = r.ok ? await r.json() : [];
+      const logArea = document.getElementById('logArea');
+      if (!rows.length) { logArea.innerHTML = '<div style="color:var(--muted);font-size:.85rem">No scrape history yet.</div>'; return; }
+      logArea.innerHTML = `<div class="log-list">${rows.map(row => `
+        <div class="log-item ${row.error?'log-err':'log-ok'}">
+          [${fmtDateTime(row.scraped_at)}] ${row.source_name} — ${row.new_count} new ${row.error?'❌ '+row.error:'✓'}
+        </div>`).join('')}</div>`;
+    } catch {}
+  } else {
+    document.getElementById('logArea').innerHTML = '<div style="color:var(--muted);font-size:.85rem">Pipeline logs available in API mode only.</div>';
+  }
 }
 
-// ============================================================
-// Pipeline Tags
-// ============================================================
-function renderPipelineTags() {
-  const el=document.getElementById('pipelineTags');
-  if (!el) return;
-  el.innerHTML=SOURCES.map(s=>`<span class="pipeline-tag">${s.icon} ${s.name}</span>`).join('');
+async function triggerScrape() {
+  if (state.mode !== 'api') { showToast('Scraper only available in API mode'); return; }
+  const btn = document.getElementById('scrapeBtn');
+  const res = document.getElementById('scrapeResult');
+  btn.disabled = true; btn.textContent = '⏳ Running…';
+  try {
+    const r = await fetch('/api/scrape', { method: 'POST', headers: {'Content-Type':'application/json'}, body: '{}' });
+    const d = await r.json();
+    res.innerHTML = r.ok ? `<span style="color:var(--success)">✓ Done: ${JSON.stringify(d.summary)}</span>` : `<span style="color:var(--danger)">Error: ${d.error}</span>`;
+  } catch (e) {
+    res.innerHTML = `<span style="color:var(--danger)">Error: ${e.message}</span>`;
+  }
+  btn.disabled = false; btn.innerHTML = '&#9654; Run Scraper Now';
 }
 
-// ============================================================
-// Notifications
-// ============================================================
-function renderNotifications() {
-  const list=document.getElementById('notifList');
-  if (!list) return;
-  const notifs=query('SELECT * FROM notifications ORDER BY created_at DESC');
-  if (!notifs.length) {
-    list.innerHTML=`<div class="empty"><div class="empty-icon">🔔</div><div class="empty-title">No notifications</div><div style="font-size:0.82rem;color:var(--muted)">Star a tender and set an alert to get notified</div></div>`;
+// ── Notifications ──────────────────────────────────────────────────────────
+function renderNotifList() {
+  const list = document.getElementById('notifList');
+  if (!state.notifications.length) { list.innerHTML = '<div class="notif-empty">No notifications yet</div>'; return; }
+  list.innerHTML = state.notifications.map(n => `
+    <div class="notif-item ${n.read?'':'unread'}">
+      <span class="notif-icon">&#128276;</span>
+      <div class="notif-text">
+        <div class="notif-title">${escHtml(n.tender_title || n.message || 'Notification')}</div>
+        <div class="notif-sub">${n.deadline ? 'Deadline: ' + fmtDate(n.deadline) : ''} · ${fmtDateTime(n.created_at)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleNotifPanel() {
+  document.getElementById('notifPanel').classList.toggle('open');
+}
+
+async function markAllRead() {
+  if (state.mode === 'api') {
+    state.notifications.filter(n=>!n.read).forEach(n => fetch(`/api/notifications/${n.id}/read`,{method:'PATCH'}));
+  }
+  state.notifications.forEach(n => n.read = 1);
+  document.getElementById('notifBadge').classList.remove('show');
+  renderNotifList();
+}
+
+// ── Actions ────────────────────────────────────────────────────────────────
+async function toggleStar(id) {
+  if (state.mode === 'api') {
+    await fetch(`/api/tenders/${id}/star`, {method:'PATCH'});
+  } else {
+    const t = state.staticData?.tenders?.find(t=>t.id===id);
+    if (t) t.starred = t.starred ? 0 : 1;
+    computeStaticStats(state.staticData);
+  }
+  renderTenders();
+  showToast('Updated');
+}
+
+async function toggleNotify(id) {
+  if (state.mode === 'api') {
+    const r = await fetch(`/api/tenders/${id}/notify`, {method:'PATCH'});
+    const d = await r.json();
+    showToast(d.notify ? 'Notification enabled' : 'Notification disabled');
+    loadNotifications();
+  } else {
+    showToast('Notifications require API mode');
+  }
+  renderTenders();
+}
+
+function setFilter(status, starred) {
+  state.status = status;
+  state.starred = starred;
+  state.currentPage = 1;
+  renderTenders();
+}
+
+function setSource(val) {
+  state.source = val;
+  state.currentPage = 1;
+  renderTenders();
+}
+
+let searchTimer;
+function onSearch(val) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.q = val;
+    state.currentPage = 1;
+    renderTenders();
+  }, 300);
+}
+
+function goPage(p) {
+  state.currentPage = p;
+  renderTenders();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── CRUD Modal ─────────────────────────────────────────────────────────────
+function openModal(id) {
+  const overlay = document.getElementById('modalOverlay');
+  const deleteBtn = document.getElementById('deleteBtn');
+  document.getElementById('editId').value = id || '';
+  document.getElementById('modalTitle').textContent = id ? 'Edit Tender' : 'Add Tender';
+  deleteBtn.style.display = id ? '' : 'none';
+  if (!id) {
+    ['fTitle','fRef','fUrl'].forEach(f => document.getElementById(f).value = '');
+    ['fOpenDate','fDeadline'].forEach(f => document.getElementById(f).value = '');
+    document.getElementById('fSource').value = '0';
+  } else {
+    loadForEdit(id);
+  }
+  overlay.classList.add('open');
+  // Populate source dropdown
+  const sel = document.getElementById('fSource');
+  if (sel.options.length <= 1) {
+    Object.entries(SOURCES_META).forEach(([id,m]) => {
+      const o = document.createElement('option');
+      o.value = id; o.textContent = m.name;
+      sel.appendChild(o);
+    });
+  }
+}
+
+async function loadForEdit(id) {
+  if (state.mode === 'static') {
+    const t = state.staticData?.tenders?.find(t=>t.id===id);
+    if (!t) return;
+    fillModal(t);
     return;
   }
-  list.innerHTML=notifs.map(n=>{
-    const tender=query('SELECT title,deadline FROM tenders WHERE id=?',[n.tender_id])[0];
-    const isUrgent=n.type==='urgent';
-    return `<div class="notif-card ${n.read?'':(isUrgent?'urgent':'unread')}">
-      <div class="notif-icon">${isUrgent?'🚨':'🔔'}</div>
-      <div style="flex:1">
-        <div class="notif-title">${n.message}</div>
-        ${tender?`<div class="notif-sub">Deadline: ${formatDate(tender.deadline)}</div>`:''}
-      </div>
-      <div class="notif-time">${new Date(n.created_at).toLocaleDateString('en-MY')}</div>
-    </div>`;
-  }).join('');
-  updateStats();
+  const r = await fetch(`/api/tenders/${id}`);
+  if (r.ok) fillModal(await r.json());
 }
 
-function checkNotifications() {
-  const critical=query("SELECT * FROM tenders WHERE starred=1 AND status='active' AND deadline<=?",[daysFromNow(3)]);
-  critical.forEach(t=>{
-    const exists=query('SELECT id FROM notifications WHERE tender_id=? AND type=?',[t.id,'urgent']);
-    if (!exists.length) {
-      exec('INSERT INTO notifications (tender_id,type,message,created_at,read) VALUES (?,?,?,?,?)',
-        [t.id,'urgent',`⚠️ URGENT: "${t.title}" closes in ${daysLeft(t.deadline)} day(s)!`,new Date().toISOString(),0]);
-      showToast(`Bid alert: ${t.title.substring(0,40)}...`,'warn');
-    }
-  });
-  updateStats();
+function fillModal(t) {
+  document.getElementById('fTitle').value = t.title || '';
+  document.getElementById('fRef').value = t.ref || '';
+  document.getElementById('fUrl').value = t.url || '';
+  document.getElementById('fOpenDate').value = t.open_date || '';
+  document.getElementById('fDeadline').value = t.deadline || '';
+  document.getElementById('fSource').value = t.source_id || '0';
 }
 
-function clearNotifications() {
-  exec('DELETE FROM notifications');
-  renderNotifications(); updateStats();
-  showToast('Notifications cleared','info');
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('open');
 }
 
-// ============================================================
-// Detail Modal
-// ============================================================
-function showDetail(id) {
-  const t=query('SELECT * FROM tenders WHERE id=?',[id])[0];
-  if (!t) return;
-  const src=SOURCES.find(s=>s.id===t.source_id)||{name:'?',type:'?'};
-  const days=daysLeft(t.deadline);
-  document.getElementById('modalTitle').textContent=t.title;
-  document.getElementById('modalBody').innerHTML=`
-    <div class="modal-row"><span class="modal-key">Reference</span><span class="modal-val" style="font-family:'JetBrains Mono',monospace">${t.ref||'—'}</span></div>
-    <div class="modal-row"><span class="modal-key">Source</span><span class="modal-val">${src.name} (${src.type})</span></div>
-    <div class="modal-row"><span class="modal-key">Ministry</span><span class="modal-val">${t.ministry||'—'}</span></div>
-    <div class="modal-row"><span class="modal-key">Category</span><span class="modal-val">${t.category||'—'}</span></div>
-    <div class="modal-row"><span class="modal-key">Value</span><span class="modal-val" style="color:var(--accent);font-weight:600">${formatRm(t.value)}</span></div>
-    <hr class="modal-divider">
-    <div class="modal-row"><span class="modal-key">Open Date</span><span class="modal-val">${formatDate(t.open_date)}</span></div>
-    <div class="modal-row"><span class="modal-key">Deadline</span><span class="modal-val"><strong>${formatDate(t.deadline)}</strong> — <span class="${days<0?'days-overdue':days<=3?'days-critical':days<=7?'days-warn':'days-ok'}">${days<0?`${Math.abs(days)} days overdue`:`${days} days left`}</span></span></div>
-    <div class="modal-row"><span class="modal-key">Status</span><span class="modal-val"><span class="status-badge status-${t.status}">${t.status}</span></span></div>
-    <hr class="modal-divider">
-    <div class="modal-row"><span class="modal-key">Resources / Notes</span><span class="modal-val" style="color:var(--muted);white-space:pre-wrap">${t.notes||'—'}</span></div>
-    ${t.url?`<div class="modal-row"><span class="modal-key">Portal URL</span><span class="modal-val"><a href="${t.url}" target="_blank" style="color:var(--accent)">${t.url}</a></span></div>`:''}
-  `;
-  document.getElementById('modalActions').innerHTML=`
-    <a href="${t.url||'#'}" target="_blank" class="btn btn-primary" style="text-decoration:none">Open Tender Portal ↗</a>
-    <button class="btn ${t.starred?'starred':''}" onclick="toggleStar(${t.id});closeModal('detailModal')">★ ${t.starred?'Unstar':'Star'}</button>
-    <button class="btn ${t.notified?'notified':''}" onclick="toggleNotify(${t.id});closeModal('detailModal')">🔔 ${t.notified?'Remove Alert':'Set Bid Alert'}</button>
-    <button class="btn" onclick="closeModal('detailModal');openEdit(${t.id})">✏ Edit</button>
-  `;
-  document.getElementById('detailModal').classList.add('show');
-}
-
-// ============================================================
-// Star / Notify
-// ============================================================
-function toggleStar(id) {
-  const t=query('SELECT starred FROM tenders WHERE id=?',[id])[0];
-  const nv=t.starred?0:1;
-  exec('UPDATE tenders SET starred=? WHERE id=?',[nv,id]);
-  showToast(nv?'Added to starred':'Removed from starred','info');
-  filterTenders(); updateStats();
-}
-
-function toggleNotify(id) {
-  const t=query('SELECT notified,title FROM tenders WHERE id=?',[id])[0];
-  const nv=t.notified?0:1;
-  exec('UPDATE tenders SET notified=? WHERE id=?',[nv,id]);
-  if (nv) {
-    exec('INSERT INTO notifications (tender_id,type,message,created_at,read) VALUES (?,?,?,?,?)',
-      [id,'reminder',`Bid alert set: "${t.title}"`,new Date().toISOString(),0]);
-    showToast('Bid alert enabled','success');
-  } else {
-    showToast('Bid alert removed','info');
+async function saveTender(e) {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const body = {
+    title: document.getElementById('fTitle').value,
+    ref: document.getElementById('fRef').value || null,
+    source_id: Number(document.getElementById('fSource').value),
+    open_date: document.getElementById('fOpenDate').value || null,
+    deadline: document.getElementById('fDeadline').value || null,
+    url: document.getElementById('fUrl').value || null,
+  };
+  if (state.mode === 'api') {
+    const url = id ? `/api/tenders/${id}` : '/api/tenders';
+    const method = id ? 'PUT' : 'POST';
+    await fetch(url, { method, headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
   }
-  filterTenders(); updateStats(); renderNotifications();
+  document.getElementById('modalOverlay').classList.remove('open');
+  showToast(id ? 'Tender updated' : 'Tender added');
+  renderTenders();
 }
 
-// ============================================================
-// Add / Edit / Delete
-// ============================================================
-function openAddModal() {
-  ['addTitle','addRef','addValue','addCategory','addMinistry','addUrl','addNotes'].forEach(id=>document.getElementById(id).value='');
-  ['addDeadline','addOpen'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('addModal').classList.add('show');
+async function deleteCurrent() {
+  const id = document.getElementById('editId').value;
+  if (!id || !confirm('Delete this tender?')) return;
+  if (state.mode === 'api') await fetch(`/api/tenders/${id}`, {method:'DELETE'});
+  document.getElementById('modalOverlay').classList.remove('open');
+  showToast('Deleted');
+  renderTenders();
 }
 
-function saveTender() {
-  const title=document.getElementById('addTitle').value.trim();
-  const deadline=document.getElementById('addDeadline').value;
-  if (!title||!deadline){showToast('Title and deadline are required','warn');return;}
-  const today=new Date().toISOString().split('T')[0];
-  const open=document.getElementById('addOpen').value||today;
-  const now=new Date();now.setHours(0,0,0,0);
-  const dl=new Date(deadline),op=new Date(open);
-  let status='active';
-  if (dl<now) status='overdue';
-  else if (op>now) status='upcoming';
-  exec(`INSERT INTO tenders (title,ref,source_id,open_date,deadline,value,category,ministry,status,url,notes,starred,notified,date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)`,
-    [title,document.getElementById('addRef').value,parseInt(document.getElementById('addSource').value)||1,
-     open,deadline,parseFloat(document.getElementById('addValue').value)||0,
-     document.getElementById('addCategory').value,document.getElementById('addMinistry').value,
-     status,document.getElementById('addUrl').value,document.getElementById('addNotes').value,
-     new Date().toISOString()]);
-  closeModal('addModal'); filterTenders(); updateStats();
-  showToast('Tender added successfully','success');
+// ── Helpers ────────────────────────────────────────────────────────────────
+function updateBadges() {
+  const n = state.stats.total || 0;
+  document.getElementById('totalBadge').textContent = n;
+  document.getElementById('dtotalBadge').textContent = n;
 }
 
-function openEdit(id) {
-  editingId=id;
-  const t=query('SELECT * FROM tenders WHERE id=?',[id])[0];
-  if (!t) return;
-  const srcOpts=SOURCES.map(s=>`<option value="${s.id}" ${s.id===t.source_id?'selected':''}>${s.name}</option>`).join('');
-  document.getElementById('editForm').innerHTML=`
-    <div class="form-group"><label class="form-label">Title *</label><input class="form-input" id="eTitle" value="${t.title}"></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group"><label class="form-label">Reference</label><input class="form-input" id="eRef" value="${t.ref||''}"></div>
-      <div class="form-group"><label class="form-label">Source</label><select class="form-input" id="eSrc">${srcOpts}</select></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group"><label class="form-label">Open Date</label><input type="date" class="form-input" id="eOpen" value="${t.open_date||''}"></div>
-      <div class="form-group"><label class="form-label">Deadline *</label><input type="date" class="form-input" id="eDeadline" value="${t.deadline||''}"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div class="form-group"><label class="form-label">Value (RM)</label><input type="number" class="form-input" id="eValue" value="${t.value||''}"></div>
-      <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="eCategory" value="${t.category||''}"></div>
-    </div>
-    <div class="form-group"><label class="form-label">Ministry</label><input class="form-input" id="eMinistry" value="${t.ministry||''}"></div>
-    <div class="form-group"><label class="form-label">URL</label><input class="form-input" id="eUrl" value="${t.url||''}"></div>
-    <div class="form-group"><label class="form-label">Status</label>
-      <select class="form-input" id="eStatus">${['active','upcoming','overdue','closed'].map(s=>`<option ${s===t.status?'selected':''}>${s}</option>`).join('')}</select>
-    </div>
-    <div class="form-group"><label class="form-label">Resources / Notes</label><textarea class="form-input" id="eNotes">${t.notes||''}</textarea></div>
-  `;
-  document.getElementById('editModal').classList.add('show');
+function toggleMobileSidebar() {
+  document.getElementById('mobileSidebar').classList.toggle('open');
+  document.getElementById('mobileSidebarOverlay').classList.toggle('open');
 }
 
-function updateTender() {
-  if (!editingId) return;
-  const title=document.getElementById('eTitle').value.trim();
-  if (!title){showToast('Title required','warn');return;}
-  exec(`UPDATE tenders SET title=?,ref=?,source_id=?,open_date=?,deadline=?,value=?,category=?,ministry=?,url=?,status=?,notes=? WHERE id=?`,
-    [title,document.getElementById('eRef').value,parseInt(document.getElementById('eSrc').value),
-     document.getElementById('eOpen').value,document.getElementById('eDeadline').value,
-     parseFloat(document.getElementById('eValue').value)||0,
-     document.getElementById('eCategory').value,document.getElementById('eMinistry').value,
-     document.getElementById('eUrl').value,document.getElementById('eStatus').value,
-     document.getElementById('eNotes').value,editingId]);
-  closeModal('editModal'); filterTenders(); updateStats();
-  showToast('Tender updated','success');
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-function deleteTenderConfirm() {
-  if (!editingId) return;
-  if (!confirm('Delete this tender? This cannot be undone.')) return;
-  exec('DELETE FROM tenders WHERE id=?',[editingId]);
-  exec('DELETE FROM notifications WHERE tender_id=?',[editingId]);
-  closeModal('editModal'); filterTenders(); updateStats();
-  showToast('Tender deleted','warn');
+function fmtDate(s) {
+  if (!s) return '—';
+  try { return new Date(s+'T00:00:00').toLocaleDateString('en-MY',{day:'2-digit',month:'short',year:'numeric'}); } catch { return s; }
 }
 
-// ============================================================
-// Scraping Simulation
-// ============================================================
-function openScrapeModal() {
-  document.getElementById('scrapeModal').classList.add('show');
-  document.getElementById('startScrapeBtn').disabled=false;
-  document.getElementById('startScrapeBtn').textContent='▶ Start Scraping';
-  document.getElementById('scrapeItems').innerHTML='';
-  document.getElementById('scrapeBar').style.width='0%';
+function fmtDateTime(s) {
+  if (!s) return '—';
+  try { return new Date(s).toLocaleString('en-MY',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}); } catch { return s; }
 }
 
-async function startScrape() {
-  const btn=document.getElementById('startScrapeBtn');
-  btn.disabled=true; btn.textContent='Scraping...';
-  const items=document.getElementById('scrapeItems');
-  const bar=document.getElementById('scrapeBar');
-  items.innerHTML='';
-  const srcs=SOURCES.filter(s=>s.type!=='Bursa');
-  let done=0;
-  for (const src of srcs) {
-    const div=document.createElement('div');
-    div.className='progress-item';
-    div.innerHTML=`<div class="progress-dot loading" id="dot-${src.id}"></div><span>${src.name}</span><span style="margin-left:auto;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.72rem" id="st-${src.id}">fetching...</span>`;
-    items.appendChild(div);
-    await sleep(300+Math.random()*500);
-    const ok=Math.random()>0.15;
-    document.getElementById(`dot-${src.id}`).className=`progress-dot ${ok?'done':'error'}`;
-    const cnt=ok?Math.floor(Math.random()*5)+1:0;
-    document.getElementById(`st-${src.id}`).textContent=ok?`+${cnt} new`:'error';
-    done++;
-    bar.style.width=(done/srcs.length*100)+'%';
+function capitalize(s) { return s ? s[0].toUpperCase() + s.slice(1) : ''; }
+function escHtml(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// Close panels on outside click
+document.addEventListener('click', e => {
+  const panel = document.getElementById('notifPanel');
+  if (panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('.notif-btn')) {
+    panel.classList.remove('open');
   }
-  btn.textContent='✓ Complete';
-  showToast('Scrape complete — data refreshed','success');
-}
-
-function scrapeSource(id) {
-  const src=SOURCES.find(s=>s.id===id);
-  if (src) showToast(`Scraping ${src.name}...`,'info');
-}
-function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
-
-// ============================================================
-// Export CSV
-// ============================================================
-function exportCSV() {
-  const rows=query('SELECT * FROM tenders');
-  const headers=['ID','Title','Reference','Source','Open Date','Deadline','Value','Category','Ministry','Status','URL','Notes'];
-  const csv=[headers.join(',')];
-  rows.forEach(t=>{
-    const src=SOURCES.find(s=>s.id===t.source_id)?.name||'?';
-    csv.push([t.id,`"${t.title}"`,t.ref,src,t.open_date,t.deadline,t.value,t.category,`"${t.ministry||''}"`,t.status,t.url,`"${t.notes||''}"`].join(','));
-  });
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([csv.join('\n')],{type:'text/csv'}));
-  a.download=`tenders-${new Date().toISOString().split('T')[0]}.csv`;
-  a.click();
-  showToast('CSV exported','success');
-}
-
-// ============================================================
-// Modal helpers
-// ============================================================
-function closeModal(id){document.getElementById(id).classList.remove('show');}
-document.addEventListener('click',e=>{if(e.target.classList.contains('modal-overlay'))e.target.classList.remove('show');});
-
-// ============================================================
-// Toast
-// ============================================================
-function showToast(msg,type='info'){
-  const c=document.getElementById('toasts');
-  const t=document.createElement('div');
-  t.className=`toast ${type}`; t.textContent=msg;
-  c.appendChild(t);
-  setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(120%)';t.style.transition='all 0.3s';setTimeout(()=>t.remove(),300);},3000);
-}
-
-// ============================================================
-// Add Source stub
-// ============================================================
-function openAddSourceModal(){showToast('Add source: edit the SOURCES array to register new portals','info');}
-
-// ============================================================
-// Boot
-// ============================================================
-window.addEventListener('load',()=>{
-  const bar=document.getElementById('loadBar');
-  bar.style.width='40%';
-  initDB().then(()=>{
-    bar.style.width='100%';
-    setTimeout(()=>bar.parentElement.style.opacity='0',500);
-  });
 });
+
+boot();
 </script>
 </body>
 </html>
