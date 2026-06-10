@@ -29,17 +29,28 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        # Install both chromium and firefox — ePerolehan falls back to firefox
-        # if the site's WAF blocks the chromium request from this CI IP
         run: npx playwright install chromium firefox --with-deps
+
+      - name: Start Tor (residential exit node for WAF bypass)
+        run: |
+          sudo apt-get install -y tor
+          sudo service tor start
+          # Wait until Tor has bootstrapped a circuit
+          for i in $(seq 1 30); do
+            if sudo journalctl -u tor -n 20 --no-pager 2>/dev/null | grep -q "Bootstrapped 100%"; then
+              echo "Tor ready"; break
+            fi
+            sleep 2
+          done
+          # Confirm SOCKS5 port is listening
+          ss -tlnp | grep 9050 && echo "SOCKS5 on :9050 confirmed" || echo "WARNING: 9050 not open yet"
 
       - name: Run scraper + export JSON
         run: npm run scrape:export
         env:
-          # Set EPEROLEHAN_PROXY_URL as a GitHub Secret (repository Settings →
-          # Secrets and variables → Actions) if ePerolehan blocks GitHub Actions IPs.
-          # Format: http://user:pass@host:port  or  socks5://host:port
-          EPEROLEHAN_PROXY_URL: ${{ secrets.EPEROLEHAN_PROXY_URL }}
+          # Tor SOCKS5 proxy for sites that block GitHub Actions datacenter IPs.
+          # Override with EPEROLEHAN_PROXY_URL secret to use a residential HTTP proxy instead.
+          EPEROLEHAN_PROXY_URL: ${{ secrets.EPEROLEHAN_PROXY_URL || 'socks5://127.0.0.1:9050' }}
 
       - name: Show summary and guard
         run: |
