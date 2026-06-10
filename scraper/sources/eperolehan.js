@@ -7,15 +7,12 @@ const SOURCE_ID = 1;
 const SOURCE_NAME = 'ePerolehan';
 const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
 
-// Scrape DIIKLANKAN (0) and NOTIS TELAH DIKEMASKINI (1)
 const TABS_TO_SCRAPE = [0, 1];
 
-// IDs contain ":" which breaks CSS selectors — always use getElementById in evaluate()
 function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
 function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
 function tabHref(i)    { return `#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbresultTabs`; }
 
-// "28/04/2026 12:00 PM" → "2026-04-28"
 function parseDateStr(raw) {
   if (!raw) return null;
   const m = raw.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})/);
@@ -54,7 +51,6 @@ async function extractTabRows(page, tabIdx) {
   }, tbodyId(tabIdx));
 }
 
-// Returns { current, total } from paginator text "X / Y"
 async function getPaginatorState(page, tabIdx) {
   try {
     return await page.evaluate((pgId) => {
@@ -85,9 +81,6 @@ async function clickNext(page, tabIdx) {
   } catch (_) { return false; }
 }
 
-// Wait until the paginator shows a page number different from `fromPage`.
-// Watching page number (not row count) is reliable because every page has ~20 rows,
-// so count-diff never fires — this was the original bug.
 async function waitForPageAdvance(page, tabIdx, fromPage) {
   try {
     await page.waitForFunction(
@@ -103,7 +96,6 @@ async function waitForPageAdvance(page, tabIdx, fromPage) {
       { timeout: 25000 }
     );
   } catch (_) {
-    // Fallback: flat wait longer than a typical PrimeFaces AJAX round-trip
     await page.waitForTimeout(5000);
   }
 }
@@ -141,15 +133,35 @@ async function* scrape() {
   try {
     browser = await chromium.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-features=IsolateOrigins,site-per-process',
+        '--window-size=1366,768',
+      ],
     });
+
     const ctx = await browser.newContext({
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
       locale: 'ms-MY',
+      viewport: { width: 1366, height: 768 },
+      extraHTTPHeaders: {
+        'Accept-Language': 'ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7',
+      },
     });
+
+    // Remove webdriver fingerprint before any script runs
+    await ctx.addInitScript(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+      delete navigator.__proto__.webdriver;
+      window.chrome = { runtime: {} };
+    });
+
     const page = await ctx.newPage();
 
-    // Block images/fonts/media — dramatically speeds up PrimeFaces AJAX round-trips
+    // Block images/fonts/media to speed up AJAX pagination
     await page.route('**/*', (route) => {
       const type = route.request().resourceType();
       if (['image', 'media', 'font'].includes(type)) {
@@ -160,22 +172,45 @@ async function* scrape() {
     });
 
     console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
-    // domcontentloaded: PrimeFaces loads via XHR after DOM — networkidle hangs forever
-    await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    // Boot wait for PrimeFaces JS init, then poll until rows appear
-    await page.waitForTimeout(4000);
+    // Use 'load' (not 'domcontentloaded') so PrimeFaces scripts fully execute
+    // before we start polling for rows.  'networkidle' hangs on portlet polling.
+    await page.goto(BASE_URL, { waitUntil: 'load', timeout: 90000 });
+
+    // Extra boot time for PrimeFaces XHR data load
+    await page.waitForTimeout(5000);
+
+    // Poll for rows up to 60s
     try {
       await page.waitForFunction(
         () => document.querySelectorAll('tr[data-ri]').length > 0,
         { timeout: 60000 }
       );
     } catch (_) {
-      console.warn(`[${SOURCE_NAME}] rows not visible after 64s — proceeding anyway`);
+      // Dump some debug HTML to understand what the page looks like in CI
+      const snippet = await page.evaluate(() => document.body.innerHTML.slice(0, 2000));
+      console.warn(`[${SOURCE_NAME}] rows not visible after 65s. Body snippet:\n${snippet}`);
       await page.waitForTimeout(8000);
     }
+
     const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
     console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
+
+    if (rowCount === 0) {
+      // Log paginator presence for debugging
+      const pgDebug = await page.evaluate(() => {
+        const pg = document.querySelector('[id*="nbsearchresults_paginator"]');
+        const tabs = document.querySelector('[id*="nbresultTabs"]');
+        return {
+          hasPaginator: !!pg,
+          paginatorId: pg ? pg.id : null,
+          hasTabs: !!tabs,
+          tabsId: tabs ? tabs.id : null,
+          allDataRi: document.querySelectorAll('[data-ri]').length,
+        };
+      });
+      console.warn(`[${SOURCE_NAME}] debug DOM state:`, JSON.stringify(pgDebug));
+    }
 
     const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
@@ -216,7 +251,6 @@ async function* scrape() {
             console.log(`[${SOURCE_NAME}]   next disabled — stopping at p${pn}`);
             break;
           }
-          // Watch paginator page number advance — reliable unlike watching row count
           await waitForPageAdvance(page, tabIdx, pn);
           await page.waitForTimeout(400);
         }

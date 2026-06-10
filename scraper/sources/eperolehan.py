@@ -2,11 +2,17 @@
 ePerolehan — Federal procurement portal.
 URL: https://www.eperolehan.gov.my/quotation-tender-notice
 
-Requires Playwright (JS-rendered tables parsing).
+Uses Playwright to drive the PrimeFaces/JSF portlet.
+Key implementation notes:
+  - IDs contain ":" — must use getElementById, not CSS selectors
+  - waitUntil='load' so PrimeFaces scripts execute before we poll
+  - Anti-detection: remove webdriver flag, set realistic viewport/UA
+  - Pagination: watch paginator "X / Y" text change, not row count
+    (every page has ~20 rows so count-diff never fires)
 """
+import json
 import logging
 import re
-import time
 from typing import Iterator
 
 from scraper.utils import parse_date, infer_status, now_iso
@@ -14,112 +20,261 @@ from scraper.utils import parse_date, infer_status, now_iso
 SOURCE_ID = 1
 SOURCE_NAME = "ePerolehan"
 BASE_URL = "https://www.eperolehan.gov.my/quotation-tender-notice"
+TABS_TO_SCRAPE = [0, 1]
+TAB_NAMES = ["DIIKLANKAN", "DIKEMASKINI", "DITUTUP", "SELESAI", "DIBATALKAN"]
 
 logger = logging.getLogger(__name__)
 
 
+def _tbody_id(i):
+    return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_data"
+
+def _paginator_id(i):
+    return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_paginator_bottom"
+
+def _tab_href(i):
+    return f"#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbresultTabs"
+
+
+def _parse_date_str(raw: str):
+    if not raw:
+        return None
+    m = re.match(r'^(\d{2})/(\d{2})/(\d{4})', raw.strip())
+    if m:
+        return f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+    return parse_date(raw)
+
+
+def _infer_category(title: str):
+    if not title:
+        return None
+    t = title.upper()
+    if re.match(r'^TENDER\b', t):                          return 'Tender'
+    if re.match(r'^SEBUT\s*HARGA\b|^SEBUTHARGA\b', t):    return 'Sebut Harga'
+    if re.match(r'^MEMBEKAL\b|^BEKALAN\b', t):             return 'Bekalan'
+    if re.match(r'^PERKHIDMATAN\b', t):                    return 'Perkhidmatan'
+    if re.match(r'^KERJA[\s\-]', t):                       return 'Kerja'
+    if re.match(r'^CADANGAN\b', t):                        return 'Cadangan'
+    return None
+
+
+def _extract_rows(page, tab_idx: int) -> list:
+    return page.evaluate("""(tbId) => {
+        const tbody = document.getElementById(tbId);
+        if (!tbody) return [];
+        const rows = [];
+        tbody.querySelectorAll('tr[data-ri]').forEach(tr => {
+            const tds = tr.querySelectorAll('td');
+            if (tds.length < 4) return;
+            const linkEl = tds[0].querySelector('a.ui-commandlink');
+            rows.push({
+                title:    (linkEl ? linkEl.textContent : tds[0].textContent).trim(),
+                ministry: tds[1] ? tds[1].textContent.trim() : null,
+                openRaw:  tds[2] ? tds[2].textContent.trim() : null,
+                closeRaw: tds[3] ? tds[3].textContent.trim() : null,
+            });
+        });
+        return rows;
+    }""", _tbody_id(tab_idx))
+
+
+def _get_paginator_state(page, tab_idx: int) -> dict:
+    try:
+        return page.evaluate("""(pgId) => {
+            const pg = document.getElementById(pgId);
+            if (!pg) return {current: 1, total: 1};
+            const cur = pg.querySelector('.ui-paginator-current');
+            if (!cur) return {current: 1, total: 1};
+            const m = cur.textContent.match(/(\\d+)\\s*\\/\\s*(\\d+)/);
+            return m ? {current: parseInt(m[1],10), total: parseInt(m[2],10)}
+                     : {current: 1, total: 1};
+        }""", _paginator_id(tab_idx))
+    except Exception:
+        return {"current": 1, "total": 1}
+
+
+def _click_next(page, tab_idx: int) -> bool:
+    try:
+        return page.evaluate("""(pgId) => {
+            const pg = document.getElementById(pgId);
+            if (!pg) return false;
+            const next = pg.querySelector('.ui-paginator-next');
+            if (!next || next.classList.contains('ui-state-disabled')) return false;
+            next.click();
+            return true;
+        }""", _paginator_id(tab_idx))
+    except Exception:
+        return False
+
+
+def _wait_for_page_advance(page, tab_idx: int, from_page: int):
+    """Wait until paginator 'X / Y' shows X != from_page."""
+    try:
+        page.wait_for_function(
+            """({pgId, from}) => {
+                const pg = document.getElementById(pgId);
+                if (!pg) return false;
+                const cur = pg.querySelector('.ui-paginator-current');
+                if (!cur) return false;
+                const m = cur.textContent.match(/(\\d+)\\s*\\/\\s*(\\d+)/);
+                return m && parseInt(m[1], 10) !== from;
+            }""",
+            {"pgId": _paginator_id(tab_idx), "from": from_page},
+            timeout=25000,
+        )
+    except Exception:
+        page.wait_for_timeout(5000)
+
+
+def _activate_tab(page, tab_idx: int):
+    if tab_idx == 0:
+        return
+    try:
+        href = _tab_href(tab_idx)
+        page.evaluate("""(h) => {
+            const link = document.querySelector(`.ui-tabs-nav a[href="${h}"]`);
+            if (link) link.click();
+        }""", href)
+        try:
+            page.wait_for_function(
+                """(tbId) => {
+                    const tbody = document.getElementById(tbId);
+                    return tbody && tbody.querySelectorAll('tr[data-ri]').length > 0;
+                }""",
+                _tbody_id(tab_idx),
+                timeout=30000,
+            )
+        except Exception:
+            page.wait_for_timeout(6000)
+    except Exception as e:
+        logger.warning("[%s] tab %d activation: %s", SOURCE_NAME, tab_idx, e)
+
+
 def scrape() -> Iterator[dict]:
-    """Yields normalised tender dicts."""
     try:
         yield from _scrape_playwright()
     except Exception as exc:
-        logger.error("%s Playwright scraping process failed: %s", SOURCE_NAME, exc)
+        logger.error("[%s] fatal: %s", SOURCE_NAME, exc, exc_info=True)
 
 
 def _scrape_playwright() -> Iterator[dict]:
     from playwright.sync_api import sync_playwright
 
-    # Precise structural IDs mapped dynamically from ePerolehan DOM
-    def get_tbody_selector(tab_idx):
-        return f"#_scNoticeBoard_WAR_NGePportlet_\\:form\\:j_idt282\\:{tab_idx}\\:nbsearchresults_data"
+    total_yielded = 0
+    now = now_iso()
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True, args=['--no-sandbox', '--disable-setuid-sandbox'])
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-            locale="ms-MY"
+        browser = pw.chromium.launch(
+            headless=True,
+            args=[
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-blink-features=AutomationControlled",
+                "--disable-features=IsolateOrigins,site-per-process",
+                "--window-size=1366,768",
+            ],
         )
-        page = context.new_page()
-        
-        logger.info(f"[{SOURCE_NAME}] Navigating to {BASE_URL}")
-        page.goto(BASE_URL, timeout=90000, wait_until="domcontentloaded")
-        
-        # PrimeFaces takes time to boot up structural datasets
+        ctx = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            locale="ms-MY",
+            viewport={"width": 1366, "height": 768},
+            extra_http_headers={"Accept-Language": "ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7"},
+        )
+
+        # Remove webdriver fingerprint before any page script runs
+        ctx.add_init_script("""() => {
+            Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
+            delete navigator.__proto__.webdriver;
+            window.chrome = {runtime: {}};
+        }""")
+
+        page = ctx.new_page()
+
+        # Block images/fonts/media to speed up AJAX pagination round-trips
+        def _route(route):
+            if route.request.resource_type in ("image", "media", "font"):
+                route.abort()
+            else:
+                route.continue_()
+        page.route("**/*", _route)
+
+        logger.info("[%s] loading %s", SOURCE_NAME, BASE_URL)
+
+        # 'load' waits for all scripts — PrimeFaces must execute before we poll rows
+        # 'networkidle' hangs because the portlet keeps polling the server
+        page.goto(BASE_URL, wait_until="load", timeout=90000)
         page.wait_for_timeout(5000)
-        
-        # We process Tab 0 (Diiklankan) and Tab 1 (Notis Telah Dikemaskini)
-        for tab_idx in [0, 1]:
-            logger.info(f"[{SOURCE_NAME}] Scraping tab index {tab_idx}")
-            
-            if tab_idx != 0:
-                # Click the active navigation node via dynamic client-side link execution
-                tab_href = f"#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{tab_idx}:nbresultTabs"
-                tab_selector = f"text=Notis Telah Dikemaskini" # Fallback safe selector mapping
-                try:
-                    page.click(f".ui-tabs-nav a[href='{tab_href}']", timeout=10000)
-                except Exception:
-                    page.click(tab_selector, timeout=10000)
-                page.wait_for_timeout(2000)
 
-            tbody_sel = get_tbody_selector(tab_idx)
-            try:
-                page.wait_for_selector(f"{tbody_sel} tr[data-ri]", timeout=30000)
-            except Exception:
-                logger.warning(f"[{SOURCE_NAME}] Grid elements timed out for tab {tab_idx}")
-                continue
+        # Poll until rows appear (up to 60s)
+        try:
+            page.wait_for_function(
+                "() => document.querySelectorAll('tr[data-ri]').length > 0",
+                timeout=60000,
+            )
+        except Exception:
+            snippet = page.evaluate("() => document.body.innerHTML.slice(0, 2000)")
+            logger.warning("[%s] rows not visible after 65s. Body snippet:\n%s", SOURCE_NAME, snippet)
+            page.wait_for_timeout(8000)
 
-            # Process visible page rows
-            rows = page.query_selector_all(f"{tbody_sel} tr[data-ri]")
-            logger.info(f"[{SOURCE_NAME}] Extracting {len(rows)} data components from tab grid")
-            
-            for row in rows:
-                cells = row.query_selector_all("td")
-                if len(cells) < 4:
-                    continue
-                
-                # ePerolehan structures columns as: 
-                # 0: Title, 1: Ministry, 2: Opening Date, 3: Closing Date
-                texts = [c.inner_text().strip() for c in cells]
-                
-                title = texts[0]
-                if not title or len(title) < 15:
-                    continue
+        row_count = page.evaluate("() => document.querySelectorAll('tr[data-ri]').length")
+        logger.info("[%s] page ready — %d rows visible", SOURCE_NAME, row_count)
 
-                yield _build(texts)
+        if row_count == 0:
+            pg_debug = page.evaluate("""() => {
+                const pg = document.querySelector('[id*="nbsearchresults_paginator"]');
+                const tabs = document.querySelector('[id*="nbresultTabs"]');
+                return {
+                    hasPaginator: !!pg,
+                    paginatorId: pg ? pg.id : null,
+                    hasTabs: !!tabs,
+                    allDataRi: document.querySelectorAll('[data-ri]').length,
+                };
+            }""")
+            logger.warning("[%s] debug DOM state: %s", SOURCE_NAME, json.dumps(pg_debug))
 
+        for tab_idx in TABS_TO_SCRAPE:
+            tab_name = TAB_NAMES[tab_idx] if tab_idx < len(TAB_NAMES) else str(tab_idx)
+            logger.info("[%s] ── tab %d (%s)", SOURCE_NAME, tab_idx, tab_name)
+
+            _activate_tab(page, tab_idx)
+            page.wait_for_timeout(1000)
+
+            state = _get_paginator_state(page, tab_idx)
+            total_pages = state["total"]
+            logger.info("[%s]   total pages: %d", SOURCE_NAME, total_pages)
+
+            for pn in range(1, total_pages + 1):
+                rows = _extract_rows(page, tab_idx)
+                logger.info("[%s]   p%d/%d: %d rows", SOURCE_NAME, pn, total_pages, len(rows))
+
+                for r in rows:
+                    title = r.get("title", "")
+                    if not title or len(title) < 15:
+                        continue
+                    open_date = _parse_date_str(r.get("openRaw"))
+                    deadline  = _parse_date_str(r.get("closeRaw"))
+                    yield {
+                        "source_id": SOURCE_ID,
+                        "ref": None,
+                        "title": title,
+                        "category": _infer_category(title),
+                        "ministry": r.get("ministry") or None,
+                        "open_date": open_date,
+                        "deadline": deadline,
+                        "status": infer_status(open_date, deadline),
+                        "url": BASE_URL,
+                        "scraped_at": now,
+                    }
+                    total_yielded += 1
+
+                if pn < total_pages:
+                    clicked = _click_next(page, tab_idx)
+                    if not clicked:
+                        logger.info("[%s]   next disabled — stopping at p%d", SOURCE_NAME, pn)
+                        break
+                    _wait_for_page_advance(page, tab_idx, pn)
+                    page.wait_for_timeout(400)
+
+        logger.info("[%s] done — %d records", SOURCE_NAME, total_yielded)
         browser.close()
-
-
-def infer_category(title: str) -> str:
-    if not title:
-        return None
-    t = title.upper()
-    if re.search(r'^TENDER\b', t): return 'Tender'
-    if re.search(r'^SEBUT\s*HARGA\b|^SEBUTHARGA\b', t): return 'Sebut Harga'
-    if re.search(r'^MEMBEKAL\b|^BEKALAN\b', t): return 'Bekalan'
-    if re.search(r'^PERKHIDMATAN\b', t): return 'Perkhidmatan'
-    if re.search(r'^KERJA[\s-]', t): return 'Kerja'
-    if re.search(r'^CADANGAN\b', t): return 'Cadangan'
-    return None
-
-
-def _build(cells: list) -> dict:
-    title = cells[0] if len(cells) > 0 else "Untitled"
-    ministry = cells[1] if len(cells) > 1 else None
-    
-    # Parse incoming raw Malay/UK date strings format: "DD/MM/YYYY hh:mm AM/PM"
-    open_d = parse_date(cells[2].split()[0]) if len(cells) > 2 and cells[2] else None
-    deadline = parse_date(cells[3].split()[0]) if len(cells) > 3 and cells[3] else None
-    
-    return {
-        "source_id": SOURCE_ID,
-        "ref": None,
-        "title": title,
-        "category": infer_category(title),
-        "ministry": ministry,
-        "open_date": open_d,
-        "deadline": deadline,
-        "status": infer_status(open_d, deadline),
-        "url": BASE_URL,
-        "scraped_at": now_iso(),
-    }
