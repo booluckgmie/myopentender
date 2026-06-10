@@ -9,8 +9,8 @@ const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
 
 // Only scrape these tab indices (0=DIIKLANKAN, 1=NOTIS TELAH DIKEMASKINI)
 const TABS_TO_SCRAPE = [0, 1];
-// Cap per tab to keep GH Actions runtime reasonable; upsert means no duplicates across days
-const MAX_PAGES_PER_TAB = 15;
+// No hard cap — scrape all available pages; upsert means no duplicates across days
+const MAX_PAGES_PER_TAB = 9999;
 
 // IDs contain ":" which breaks CSS selectors — always use getElementById in evaluate()
 function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
