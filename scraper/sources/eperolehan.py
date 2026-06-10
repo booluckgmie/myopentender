@@ -175,7 +175,18 @@ def _scrape_with_browser(pw, browser_type_name: str, now: str) -> Iterator[dict]
     """Try scraping with the named browser type. Yields rows or returns empty."""
     proxy_args = {}
     if PROXY_URL:
-        proxy_args["proxy"] = {"server": PROXY_URL}
+        # Playwright requires credentials separate from the server URL
+        try:
+            from urllib.parse import urlparse, unquote
+            u = urlparse(PROXY_URL)
+            proxy_cfg = {"server": f"{u.scheme}://{u.hostname}:{u.port}"}
+            if u.username:
+                proxy_cfg["username"] = unquote(u.username)
+            if u.password:
+                proxy_cfg["password"] = unquote(u.password)
+        except Exception:
+            proxy_cfg = {"server": PROXY_URL}
+        proxy_args["proxy"] = proxy_cfg
 
     if browser_type_name == "chromium":
         btype = pw.chromium

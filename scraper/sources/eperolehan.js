@@ -9,9 +9,23 @@ const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
 const TABS_TO_SCRAPE = [0, 1];
 const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
-// Optional proxy: set EPEROLEHAN_PROXY_URL in env / GitHub Secret
-// e.g. "http://user:pass@proxy.host:port" or "socks5://host:port"
+// Optional proxy: set EPEROLEHAN_PROXY_URL as GitHub Secret
+// e.g. "http://user:pass@proxy.host:port"
 const PROXY_URL = process.env.EPEROLEHAN_PROXY_URL || null;
+
+// Playwright requires credentials separate from the server URL
+function parseProxyOpt(url) {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    const opt = { server: `${u.protocol}//${u.hostname}:${u.port}` };
+    if (u.username) opt.username = decodeURIComponent(u.username);
+    if (u.password) opt.password = decodeURIComponent(u.password);
+    return opt;
+  } catch (_) {
+    return { server: url };
+  }
+}
 
 function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
 function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
@@ -233,7 +247,8 @@ async function* scrape() {
     console.log(`[${SOURCE_NAME}] using proxy: ${PROXY_URL.replace(/:[^:@]+@/, ':***@')}`);
   }
 
-  const proxyOpt = PROXY_URL ? { proxy: { server: PROXY_URL } } : {};
+  const parsedProxy = parseProxyOpt(PROXY_URL);
+  const proxyOpt = parsedProxy ? { proxy: parsedProxy } : {};
 
   // --- Attempt 1: Chromium (fastest, same engine as the site's target browser) ---
   const chromiumLaunch = {
