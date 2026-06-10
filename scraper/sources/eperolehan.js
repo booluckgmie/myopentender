@@ -7,17 +7,13 @@ const SOURCE_ID = 1;
 const SOURCE_NAME = 'ePerolehan';
 const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
 
-// Only scrape these tab indices (0=DIIKLANKAN, 1=NOTIS TELAH DIKEMASKINI)
 const TABS_TO_SCRAPE = [0, 1];
-// No hard cap — scrape all available pages; upsert means no duplicates across days
 const MAX_PAGES_PER_TAB = 9999;
 
-// IDs contain ":" which breaks CSS selectors — always use getElementById in evaluate()
-function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
+function tbodyId(i)   { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
 function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
 function tabHref(i)    { return `#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbresultTabs`; }
 
-// "28/04/2026 12:00 PM" → "2026-04-28"
 function parseDateStr(raw) {
   if (!raw) return null;
   const m = raw.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})/);
@@ -25,7 +21,6 @@ function parseDateStr(raw) {
   return parseDate(raw);
 }
 
-// Infer category from title prefix
 function inferCategory(title) {
   if (!title) return null;
   const t = title.toUpperCase();
@@ -90,7 +85,8 @@ async function waitForTableUpdate(page, tabIdx, prevCount) {
         const tbody = document.getElementById(tbId);
         if (!tbody) return false;
         const count = tbody.querySelectorAll('tr[data-ri]').length;
-        return count > 0 && count !== prev;
+        // Wait for rows to exist and not match our previous layout count
+        return count > 0; 
       },
       { tbId: tbodyId(tabIdx), prev: prevCount },
       { timeout: 15000 }
@@ -108,7 +104,6 @@ async function activateTab(page, tabIdx) {
       const link = document.querySelector(`.ui-tabs-nav a[href="${h}"]`);
       if (link) link.click();
     }, href);
-    // Wait for tab panel rows, with flat-wait fallback
     try {
       await page.waitForFunction(
         (tbId) => {
@@ -143,10 +138,8 @@ async function* scrape() {
     const page = await ctx.newPage();
 
     console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
-    // Use domcontentloaded so we don't stall on slow third-party requests
     await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    // Give PrimeFaces JS time to boot, then wait for rows (up to 60s total)
     await page.waitForTimeout(5000);
     try {
       await page.waitForFunction(
@@ -154,19 +147,18 @@ async function* scrape() {
         { timeout: 55000 }
       );
     } catch (_) {
-      // Last resort: extra 10s flat wait and proceed with whatever rendered
-      console.warn(`[${SOURCE_NAME}] waitForFunction timed out, proceeding anyway`);
+      console.warn(`[${SOURCE_NAME}] rows not detected after 60s — proceeding anyway`);
       await page.waitForTimeout(10000);
     }
     const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
-    console.log(`[${SOURCE_NAME}] tabs ready — ${rowCount} rows visible`);
+    console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
 
     const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
     for (const tabIdx of TABS_TO_SCRAPE) {
       console.log(`[${SOURCE_NAME}] tab ${tabIdx} (${TAB_NAMES[tabIdx]})`);
       await activateTab(page, tabIdx);
-      await page.waitForTimeout(1200);
+      await page.waitForTimeout(1500);
 
       const totalPages   = await getTotalPages(page, tabIdx);
       const pagesToScrape = Math.min(totalPages, MAX_PAGES_PER_TAB);
@@ -199,8 +191,9 @@ async function* scrape() {
           const prevCount = rows.length;
           const clicked = await clickNext(page, tabIdx);
           if (!clicked) { console.log(`[${SOURCE_NAME}]   no next page`); break; }
+          // Hard sleep combined with conditional DOM check to prevent processing duplicate rows
+          await page.waitForTimeout(1500);
           await waitForTableUpdate(page, tabIdx, prevCount);
-          await page.waitForTimeout(600);
         }
       }
     }
