@@ -23,6 +23,10 @@ function initDb(db) {
       title       TEXT NOT NULL,
       deadline    TEXT,
       open_date   TEXT,
+      category    TEXT,
+      ministry    TEXT,
+      value       TEXT,
+      notes       TEXT,
       status      TEXT DEFAULT 'active',
       url         TEXT,
       starred     INTEGER DEFAULT 0,
@@ -47,6 +51,15 @@ function initDb(db) {
       error       TEXT
     );
   `);
+
+  // Add new columns to existing DBs that don't have them yet
+  for (const col of ['category TEXT', 'ministry TEXT', 'value TEXT', 'notes TEXT']) {
+    try {
+      db.exec(`ALTER TABLE tenders ADD COLUMN ${col}`);
+    } catch (e) {
+      // Column already exists — ignore
+    }
+  }
 }
 
 function upsertTender(db, row) {
@@ -56,17 +69,19 @@ function upsertTender(db, row) {
 
   if (existing) {
     db.prepare(`
-      UPDATE tenders SET ref=?, deadline=?, open_date=?, status=?, url=?, scraped_at=?
+      UPDATE tenders SET ref=?, deadline=?, open_date=?, category=?, ministry=?, status=?, url=?, scraped_at=?
       WHERE id=?
     `).run(row.ref || null, row.deadline || null, row.open_date || null,
+           row.category || null, row.ministry || null,
            row.status || 'active', row.url || null, row.scraped_at, existing.id);
     return false;
   } else {
     db.prepare(`
-      INSERT INTO tenders (source_id, ref, title, deadline, open_date, status, url, scraped_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO tenders (source_id, ref, title, deadline, open_date, category, ministry, status, url, scraped_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(row.source_id, row.ref || null, row.title, row.deadline || null,
-           row.open_date || null, row.status || 'active', row.url || null, row.scraped_at);
+           row.open_date || null, row.category || null, row.ministry || null,
+           row.status || 'active', row.url || null, row.scraped_at);
     return true;
   }
 }

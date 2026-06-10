@@ -103,6 +103,9 @@ tr:hover td{background:#fafbfc}
 .cnbtn.on{color:var(--primary)}
 .cedit{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;padding:.22rem .55rem;font-size:.76rem;color:var(--text);cursor:pointer}
 
+/* category tag */
+.cat-tag{display:inline-flex;align-items:center;gap:.2rem;padding:.18rem .52rem;border-radius:20px;font-size:.73rem;font-weight:600;background:#f1f5f9;color:#475569;white-space:nowrap}
+
 /* pagination */
 .pages{display:flex;align-items:center;gap:.28rem;padding:.75rem;justify-content:center;border-top:1px solid var(--border);flex-wrap:wrap}
 .pg{padding:.28rem .55rem;border:1.5px solid var(--border);border-radius:6px;font-size:.78rem;background:var(--surface);color:var(--text);min-width:32px;text-align:center;transition:all .12s}
@@ -332,7 +335,7 @@ const SRCS={
   11:{n:'TNB',i:'💡',c:'#d97706'},12:{n:'TM',i:'📡',c:'#0f766e'},
   13:{n:'Bursa',i:'📈',c:'#dc2626'},
 };
-const S={page:'tenders',status:null,starred:false,q:'',src:'',pn:1,lim:50,stats:{},notifs:[],mode:'static',data:null};
+const S={page:'tenders',status:null,starred:false,q:'',src:'',cat:'',pn:1,lim:50,stats:{},notifs:[],mode:'static',data:null};
 
 async function boot(){
   try{
@@ -384,7 +387,7 @@ async function renderTenders(){
   area.innerHTML=`<div class="tbl-wrap">
     <div class="tbl-hd"><h2>Tenders</h2><span class="tbl-meta">${td.total} results</span></div>
     <div style="overflow-x:auto"><table>
-      <thead><tr><th style="width:30px"></th><th>Title</th><th>Source</th><th>Status</th><th>Deadline</th><th style="width:65px"></th></tr></thead>
+      <thead><tr><th style="width:30px"></th><th>Title</th><th>Source</th><th>Category</th><th>Status</th><th>Deadline</th><th style="width:65px"></th></tr></thead>
       <tbody>${td.data.map(tRow).join('')}</tbody>
     </table></div>
     <div class="cards">${td.data.map(cRow).join('')}</div>
@@ -393,19 +396,30 @@ async function renderTenders(){
 
 function localFilter(){
   let d=(S.data?.tenders||[]).slice();
-  if(S.q){const q=S.q.toLowerCase();d=d.filter(t=>t.title?.toLowerCase().includes(q)||(t.ref||'').toLowerCase().includes(q));}
+  if(S.q){const q=S.q.toLowerCase();d=d.filter(t=>t.title?.toLowerCase().includes(q)||(t.ref||'').toLowerCase().includes(q)||(t.category||'').toLowerCase().includes(q)||(t.ministry||'').toLowerCase().includes(q));}
   if(S.status)d=d.filter(t=>t.status===S.status);
   if(S.src)d=d.filter(t=>String(t.source_id)===String(S.src));
+  if(S.cat)d=d.filter(t=>normCat(t.category||'')===S.cat);
   if(S.starred)d=d.filter(t=>t.starred);
   const s=(S.pn-1)*S.lim;return{total:d.length,data:d.slice(s,s+S.lim)};
 }
 
+function normCat(c){return c.trim().toLowerCase();}
+
+function getCategories(){
+  const cats=new Set();
+  (S.data?.tenders||[]).forEach(t=>{if(t.category)cats.add(normCat(t.category));});
+  return [...cats].sort();
+}
+
 function tRow(t){
   const s=SRCS[t.source_id]||{n:'Unknown',i:'📄',c:'#64748b'};
+  const catIcon=catEmoji(t.category);
   return`<tr>
     <td><button class="ab ${t.starred?'star':''}" onclick="toggleStar(${t.id})">⭐</button></td>
     <td class="tcell"><button class="tlink" onclick="viewTender(${t.id})" title="${esc(t.title)}">${esc(t.title)}</button>${t.ref?`<div class="reftxt">${esc(t.ref)}</div>`:''}</td>
     <td><span class="stag" style="background:${s.c}18;color:${s.c}">${s.i} ${s.n}</span></td>
+    <td>${t.category?`<span class="cat-tag">${catIcon} ${esc(cap(t.category))}</span>`:'<span style="color:var(--muted);font-size:.75rem">—</span>'}</td>
     <td><span class="pill p-${t.status||'active'}">${cap(t.status||'active')}</span></td>
     <td style="white-space:nowrap;font-size:.79rem">${fd(t.deadline)}</td>
     <td><div class="ract">
@@ -424,6 +438,7 @@ function cRow(t){
     <div class="cmeta">
       <span class="stag" style="background:${s.c}18;color:${s.c}">${s.i} ${s.n}</span>
       <span class="pill p-${t.status||'active'}">${cap(t.status||'active')}</span>
+      ${t.category?`<span class="cat-tag">${catEmoji(t.category)} ${esc(cap(t.category))}</span>`:''}
     </div>
     ${t.ref?`<div style="font-size:.71rem;color:var(--muted);margin-bottom:.3rem">${esc(t.ref)}</div>`:''}
     <div class="cfoot">
@@ -451,14 +466,17 @@ function statsHTML(){
 }
 
 function filterHTML(){
-  const opts=Object.entries(SRCS).map(([id,m])=>`<option value="${id}" ${S.src==id?'selected':''}>${m.n}</option>`).join('');
+  const srcOpts=Object.entries(SRCS).map(([id,m])=>`<option value="${id}" ${S.src==id?'selected':''}>${m.n}</option>`).join('');
+  const cats=getCategories();
+  const catOpts=cats.map(c=>`<option value="${c}" ${S.cat===c?'selected':''}>${cap(c)}</option>`).join('');
   return`<div class="fbar">
     <button class="chip ${!S.status&&!S.starred?'on':''}" onclick="setFilter(null,false)">All</button>
     <button class="chip ${S.status==='active'?'on':''}" onclick="setFilter('active',false)">✅ Active</button>
     <button class="chip ${S.status==='upcoming'?'on':''}" onclick="setFilter('upcoming',false)">⏳ Upcoming</button>
     <button class="chip ${S.status==='overdue'?'on':''}" onclick="setFilter('overdue',false)">⚠️ Overdue</button>
     <button class="chip ${S.starred?'on':''}" onclick="setFilter(null,true)">⭐ Starred</button>
-    <select class="src-sel" onchange="setSrc(this.value)"><option value="">All Sources</option>${opts}</select>
+    <select class="src-sel" onchange="setSrc(this.value)"><option value="">All Sources</option>${srcOpts}</select>
+    ${cats.length?`<select class="src-sel" onchange="setCat(this.value)"><option value="">All Categories</option>${catOpts}</select>`:''}
   </div>`;
 }
 
@@ -549,6 +567,23 @@ async function toggleNotify(id){
 }
 function setFilter(st,starred){S.status=st;S.starred=starred;S.pn=1;renderTenders();}
 function setSrc(v){S.src=v;S.pn=1;renderTenders();}
+function setCat(v){S.cat=v;S.pn=1;renderTenders();}
+
+const CAT_ICONS={
+  'works':'🏗️','kerja':'🏗️','pembinaan':'🏗️','construction':'🏗️',
+  'services':'🛎️','perkhidmatan':'🛎️','service':'🛎️',
+  'supply':'📦','bekalan':'📦','goods':'📦',
+  'consultancy':'📐','perundingan':'📐','consulting':'📐',
+  'ict':'💻','it':'💻','technology':'💻','teknologi':'💻',
+  'maintenance':'🔧','penyelenggaraan':'🔧',
+  'equipment':'⚙️','peralatan':'⚙️',
+};
+function catEmoji(cat){
+  if(!cat)return'📋';
+  const k=cat.trim().toLowerCase();
+  for(const[p,e]of Object.entries(CAT_ICONS)){if(k.includes(p))return e;}
+  return'📋';
+}
 function gp(p){S.pn=p;renderTenders();window.scrollTo({top:0,behavior:'smooth'});}
 let st;function onSearch(v){clearTimeout(st);st=setTimeout(()=>{S.q=v;S.pn=1;renderTenders();},280);}
 
@@ -570,6 +605,8 @@ function viewTender(id){
   document.getElementById('det-body').innerHTML=`
     <div class="det-row"><span class="det-lbl">Source</span><span class="det-val"><span class="stag" style="background:${s.c}18;color:${s.c}">${s.i} ${s.n}</span></span></div>
     <div class="det-row"><span class="det-lbl">Status</span><span class="det-val"><span class="pill p-${t.status||'active'}">${cap(t.status||'active')}</span></span></div>
+    ${t.category?`<div class="det-row"><span class="det-lbl">Category</span><span class="det-val"><span class="cat-tag">${catEmoji(t.category)} ${esc(cap(t.category))}</span></span></div>`:''}
+    ${t.ministry?`<div class="det-row"><span class="det-lbl">Ministry</span><span class="det-val" style="font-size:.82rem">${esc(t.ministry)}</span></div>`:''}
     ${t.ref?`<div class="det-row"><span class="det-lbl">Reference</span><span class="det-val" style="font-family:monospace;font-size:.82rem">${esc(t.ref)}</span></div>`:''}
     <hr class="det-divider">
     <div class="det-row"><span class="det-lbl">Open Date</span><span class="det-val">${t.open_date?fd(t.open_date):'<span style="color:var(--muted)">Not set</span>'}</span></div>
