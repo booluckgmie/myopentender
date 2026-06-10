@@ -108,6 +108,7 @@ async function activateTab(page, tabIdx) {
       const link = document.querySelector(`.ui-tabs-nav a[href="${h}"]`);
       if (link) link.click();
     }, href);
+    // Wait for tab panel rows, with flat-wait fallback
     try {
       await page.waitForFunction(
         (tbId) => {
@@ -142,10 +143,10 @@ async function* scrape() {
     const page = await ctx.newPage();
 
     console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
-    // domcontentloaded — PrimeFaces loads via XHR after DOM ready, networkidle can hang
+    // Use domcontentloaded so we don't stall on slow third-party requests
     await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    // Flat wait for PrimeFaces JS to boot, then poll for rows
+    // Give PrimeFaces JS time to boot, then wait for rows (up to 60s total)
     await page.waitForTimeout(5000);
     try {
       await page.waitForFunction(
@@ -153,11 +154,12 @@ async function* scrape() {
         { timeout: 55000 }
       );
     } catch (_) {
-      console.warn(`[${SOURCE_NAME}] rows not detected after 60s — proceeding anyway`);
+      // Last resort: extra 10s flat wait and proceed with whatever rendered
+      console.warn(`[${SOURCE_NAME}] waitForFunction timed out, proceeding anyway`);
       await page.waitForTimeout(10000);
     }
     const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
-    console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
+    console.log(`[${SOURCE_NAME}] tabs ready — ${rowCount} rows visible`);
 
     const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
