@@ -2,16 +2,17 @@
 ePerolehan — Federal procurement portal.
 URL: https://www.eperolehan.gov.my/quotation-tender-notice
 
-Uses Playwright to drive the PrimeFaces/JSF portlet.
-Key implementation notes:
-  - IDs contain ":" — must use getElementById, not CSS selectors
-  - waitUntil='load' so PrimeFaces scripts execute before we poll
-  - Anti-detection: remove webdriver flag, set realistic viewport/UA
-  - Pagination: watch paginator "X / Y" text change, not row count
-    (every page has ~20 rows so count-diff never fires)
+The site's WAF blocks cloud/CI IPs (Azure, GitHub Actions).
+Strategy:
+  1. Try Chromium with anti-detection flags
+  2. Fall back to Firefox (different TLS fingerprint, sometimes not blocked)
+  3. Both respect EPEROLEHAN_PROXY_URL env var for a residential proxy
+
+Pagination: watch paginator "X / Y" text, not row count (every page ~20 rows).
 """
 import json
 import logging
+import os
 import re
 from typing import Iterator
 
@@ -23,17 +24,16 @@ BASE_URL = "https://www.eperolehan.gov.my/quotation-tender-notice"
 TABS_TO_SCRAPE = [0, 1]
 TAB_NAMES = ["DIIKLANKAN", "DIKEMASKINI", "DITUTUP", "SELESAI", "DIBATALKAN"]
 
+# Set EPEROLEHAN_PROXY_URL as a GitHub Secret to bypass WAF IP blocks
+# e.g. "http://user:pass@proxy.host:port" or "socks5://host:port"
+PROXY_URL = os.environ.get("EPEROLEHAN_PROXY_URL")
+
 logger = logging.getLogger(__name__)
 
 
-def _tbody_id(i):
-    return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_data"
-
-def _paginator_id(i):
-    return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_paginator_bottom"
-
-def _tab_href(i):
-    return f"#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbresultTabs"
+def _tbody_id(i):    return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_data"
+def _paginator_id(i):return f"_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbsearchresults_paginator_bottom"
+def _tab_href(i):    return f"#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:{i}:nbresultTabs"
 
 
 def _parse_date_str(raw: str):
@@ -82,12 +82,11 @@ def _get_paginator_state(page, tab_idx: int) -> dict:
     try:
         return page.evaluate("""(pgId) => {
             const pg = document.getElementById(pgId);
-            if (!pg) return {current: 1, total: 1};
+            if (!pg) return {current:1,total:1};
             const cur = pg.querySelector('.ui-paginator-current');
-            if (!cur) return {current: 1, total: 1};
+            if (!cur) return {current:1,total:1};
             const m = cur.textContent.match(/(\\d+)\\s*\\/\\s*(\\d+)/);
-            return m ? {current: parseInt(m[1],10), total: parseInt(m[2],10)}
-                     : {current: 1, total: 1};
+            return m ? {current:parseInt(m[1],10),total:parseInt(m[2],10)} : {current:1,total:1};
         }""", _paginator_id(tab_idx))
     except Exception:
         return {"current": 1, "total": 1}
@@ -108,7 +107,6 @@ def _click_next(page, tab_idx: int) -> bool:
 
 
 def _wait_for_page_advance(page, tab_idx: int, from_page: int):
-    """Wait until paginator 'X / Y' shows X != from_page."""
     try:
         page.wait_for_function(
             """({pgId, from}) => {
@@ -150,88 +148,85 @@ def _activate_tab(page, tab_idx: int):
         logger.warning("[%s] tab %d activation: %s", SOURCE_NAME, tab_idx, e)
 
 
-def scrape() -> Iterator[dict]:
+def _load_and_count_rows(page) -> int:
+    """Navigate to BASE_URL and return the number of visible data rows."""
+    def _route(route):
+        if route.request.resource_type in ("image", "media", "font"):
+            route.abort()
+        else:
+            route.continue_()
+    page.route("**/*", _route)
+
+    page.goto(BASE_URL, wait_until="load", timeout=90000)
+    page.wait_for_timeout(5000)
+
     try:
-        yield from _scrape_playwright()
-    except Exception as exc:
-        logger.error("[%s] fatal: %s", SOURCE_NAME, exc, exc_info=True)
+        page.wait_for_function(
+            "() => document.querySelectorAll('tr[data-ri]').length > 0",
+            timeout=60000,
+        )
+    except Exception:
+        pass
+
+    return page.evaluate("() => document.querySelectorAll('tr[data-ri]').length")
 
 
-def _scrape_playwright() -> Iterator[dict]:
-    from playwright.sync_api import sync_playwright
+def _scrape_with_browser(pw, browser_type_name: str, now: str) -> Iterator[dict]:
+    """Try scraping with the named browser type. Yields rows or returns empty."""
+    proxy_args = {}
+    if PROXY_URL:
+        proxy_args["proxy"] = {"server": PROXY_URL}
 
-    total_yielded = 0
-    now = now_iso()
-
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(
-            headless=True,
-            args=[
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-dev-shm-usage",
+    if browser_type_name == "chromium":
+        btype = pw.chromium
+        launch_args = {
+            "headless": True,
+            "args": [
+                "--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage",
                 "--disable-blink-features=AutomationControlled",
-                "--disable-features=IsolateOrigins,site-per-process",
                 "--window-size=1366,768",
             ],
-        )
-        ctx = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-            locale="ms-MY",
-            viewport={"width": 1366, "height": 768},
-            extra_http_headers={"Accept-Language": "ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7"},
-        )
-
-        # Remove webdriver fingerprint before any page script runs
-        ctx.add_init_script("""() => {
+            **proxy_args,
+        }
+        ctx_args = {
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "locale": "ms-MY",
+            "viewport": {"width": 1366, "height": 768},
+            "extra_http_headers": {"Accept-Language": "ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7"},
+            **proxy_args,
+        }
+        init_script = """() => {
             Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
             delete navigator.__proto__.webdriver;
             window.chrome = {runtime: {}};
-        }""")
+        }"""
+    else:
+        btype = pw.firefox
+        launch_args = {"headless": True, **proxy_args}
+        ctx_args = {
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+            "locale": "ms-MY",
+            "viewport": {"width": 1366, "height": 768},
+            "extra_http_headers": {"Accept-Language": "ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7"},
+            **proxy_args,
+        }
+        init_script = None
 
+    browser = btype.launch(**launch_args)
+    total_yielded = 0
+    try:
+        ctx = browser.new_context(**ctx_args)
+        if init_script:
+            ctx.add_init_script(init_script)
         page = ctx.new_page()
 
-        # Block images/fonts/media to speed up AJAX pagination round-trips
-        def _route(route):
-            if route.request.resource_type in ("image", "media", "font"):
-                route.abort()
-            else:
-                route.continue_()
-        page.route("**/*", _route)
-
-        logger.info("[%s] loading %s", SOURCE_NAME, BASE_URL)
-
-        # 'load' waits for all scripts — PrimeFaces must execute before we poll rows
-        # 'networkidle' hangs because the portlet keeps polling the server
-        page.goto(BASE_URL, wait_until="load", timeout=90000)
-        page.wait_for_timeout(5000)
-
-        # Poll until rows appear (up to 60s)
-        try:
-            page.wait_for_function(
-                "() => document.querySelectorAll('tr[data-ri]').length > 0",
-                timeout=60000,
-            )
-        except Exception:
-            snippet = page.evaluate("() => document.body.innerHTML.slice(0, 2000)")
-            logger.warning("[%s] rows not visible after 65s. Body snippet:\n%s", SOURCE_NAME, snippet)
-            page.wait_for_timeout(8000)
-
-        row_count = page.evaluate("() => document.querySelectorAll('tr[data-ri]').length")
-        logger.info("[%s] page ready — %d rows visible", SOURCE_NAME, row_count)
+        row_count = _load_and_count_rows(page)
+        logger.info("[%s] [%s] page ready — %d rows visible", SOURCE_NAME, browser_type_name, row_count)
 
         if row_count == 0:
-            pg_debug = page.evaluate("""() => {
-                const pg = document.querySelector('[id*="nbsearchresults_paginator"]');
-                const tabs = document.querySelector('[id*="nbresultTabs"]');
-                return {
-                    hasPaginator: !!pg,
-                    paginatorId: pg ? pg.id : null,
-                    hasTabs: !!tabs,
-                    allDataRi: document.querySelectorAll('[data-ri]').length,
-                };
-            }""")
-            logger.warning("[%s] debug DOM state: %s", SOURCE_NAME, json.dumps(pg_debug))
+            snippet = page.evaluate("() => document.body.innerText.slice(0, 300)").replace("\n", " ")
+            logger.warning("[%s] [%s] 0 rows. Page text: %s", SOURCE_NAME, browser_type_name, snippet)
+            return
 
         for tab_idx in TABS_TO_SCRAPE:
             tab_name = TAB_NAMES[tab_idx] if tab_idx < len(TAB_NAMES) else str(tab_idx)
@@ -277,4 +272,47 @@ def _scrape_playwright() -> Iterator[dict]:
                     page.wait_for_timeout(400)
 
         logger.info("[%s] done — %d records", SOURCE_NAME, total_yielded)
-        browser.close()
+    finally:
+        try:
+            browser.close()
+        except Exception:
+            pass
+
+
+def scrape() -> Iterator[dict]:
+    logger.info("[%s] loading %s", SOURCE_NAME, BASE_URL)
+    if PROXY_URL:
+        masked = re.sub(r':([^:@]+)@', ':***@', PROXY_URL)
+        logger.info("[%s] using proxy: %s", SOURCE_NAME, masked)
+
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        logger.error("[%s] playwright not installed", SOURCE_NAME)
+        return
+
+    with sync_playwright() as pw:
+        # Attempt 1: Chromium
+        got_rows = False
+        try:
+            for row in _scrape_with_browser(pw, "chromium", now_iso()):
+                got_rows = True
+                yield row
+        except Exception as e:
+            logger.warning("[%s] Chromium attempt failed: %s", SOURCE_NAME, e)
+
+        if got_rows:
+            return
+
+        # Attempt 2: Firefox (different TLS fingerprint)
+        logger.warning("[%s] Chromium yielded 0 rows — trying Firefox", SOURCE_NAME)
+        try:
+            for row in _scrape_with_browser(pw, "firefox", now_iso()):
+                yield row
+        except Exception as e:
+            logger.error("[%s] Firefox also failed: %s", SOURCE_NAME, e)
+            logger.error(
+                "[%s] Both browsers blocked by WAF. "
+                "Add EPEROLEHAN_PROXY_URL secret (residential proxy) to GitHub Actions.",
+                SOURCE_NAME,
+            )

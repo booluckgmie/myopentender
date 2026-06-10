@@ -1,13 +1,17 @@
 'use strict';
 
-const { chromium } = require('playwright');
+const { chromium, firefox } = require('playwright');
 const { parseDate, inferStatus, nowIso } = require('../utils');
 
 const SOURCE_ID = 1;
 const SOURCE_NAME = 'ePerolehan';
 const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
-
 const TABS_TO_SCRAPE = [0, 1];
+const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
+
+// Optional proxy: set EPEROLEHAN_PROXY_URL in env / GitHub Secret
+// e.g. "http://user:pass@proxy.host:port" or "socks5://host:port"
+const PROXY_URL = process.env.EPEROLEHAN_PROXY_URL || null;
 
 function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
 function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
@@ -125,94 +129,57 @@ async function activateTab(page, tabIdx) {
   }
 }
 
-async function* scrape() {
+// Try to load the page with the given browser instance.
+// Returns true if rows loaded, false if WAF-blocked.
+async function loadPage(page) {
+  await page.route('**/*', (route) => {
+    if (['image', 'media', 'font'].includes(route.request().resourceType())) {
+      route.abort();
+    } else {
+      route.continue();
+    }
+  });
+
+  await page.goto(BASE_URL, { waitUntil: 'load', timeout: 90000 });
+  await page.waitForTimeout(5000);
+
+  try {
+    await page.waitForFunction(
+      () => document.querySelectorAll('tr[data-ri]').length > 0,
+      { timeout: 60000 }
+    );
+  } catch (_) {}
+
+  const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
+  return rowCount;
+}
+
+async function* scrapeWithBrowser(browserType, launchOpts, contextOpts) {
   const now = nowIso();
   let browser = null;
   let totalYielded = 0;
 
+  browser = await browserType.launch(launchOpts);
   try {
-    browser = await chromium.launch({
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-blink-features=AutomationControlled',
-        '--disable-features=IsolateOrigins,site-per-process',
-        '--window-size=1366,768',
-      ],
-    });
+    const ctx = await browser.newContext(contextOpts);
 
-    const ctx = await browser.newContext({
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-      locale: 'ms-MY',
-      viewport: { width: 1366, height: 768 },
-      extraHTTPHeaders: {
-        'Accept-Language': 'ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7',
-      },
-    });
-
-    // Remove webdriver fingerprint before any script runs
-    await ctx.addInitScript(() => {
-      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-      delete navigator.__proto__.webdriver;
-      window.chrome = { runtime: {} };
-    });
-
-    const page = await ctx.newPage();
-
-    // Block images/fonts/media to speed up AJAX pagination
-    await page.route('**/*', (route) => {
-      const type = route.request().resourceType();
-      if (['image', 'media', 'font'].includes(type)) {
-        route.abort();
-      } else {
-        route.continue();
-      }
-    });
-
-    console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
-
-    // Use 'load' (not 'domcontentloaded') so PrimeFaces scripts fully execute
-    // before we start polling for rows.  'networkidle' hangs on portlet polling.
-    await page.goto(BASE_URL, { waitUntil: 'load', timeout: 90000 });
-
-    // Extra boot time for PrimeFaces XHR data load
-    await page.waitForTimeout(5000);
-
-    // Poll for rows up to 60s
-    try {
-      await page.waitForFunction(
-        () => document.querySelectorAll('tr[data-ri]').length > 0,
-        { timeout: 60000 }
-      );
-    } catch (_) {
-      // Dump some debug HTML to understand what the page looks like in CI
-      const snippet = await page.evaluate(() => document.body.innerHTML.slice(0, 2000));
-      console.warn(`[${SOURCE_NAME}] rows not visible after 65s. Body snippet:\n${snippet}`);
-      await page.waitForTimeout(8000);
+    if (browserType === chromium) {
+      await ctx.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+        delete navigator.__proto__.webdriver;
+        window.chrome = { runtime: {} };
+      });
     }
 
-    const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
+    const page = await ctx.newPage();
+    const rowCount = await loadPage(page);
     console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
 
     if (rowCount === 0) {
-      // Log paginator presence for debugging
-      const pgDebug = await page.evaluate(() => {
-        const pg = document.querySelector('[id*="nbsearchresults_paginator"]');
-        const tabs = document.querySelector('[id*="nbresultTabs"]');
-        return {
-          hasPaginator: !!pg,
-          paginatorId: pg ? pg.id : null,
-          hasTabs: !!tabs,
-          tabsId: tabs ? tabs.id : null,
-          allDataRi: document.querySelectorAll('[data-ri]').length,
-        };
-      });
-      console.warn(`[${SOURCE_NAME}] debug DOM state:`, JSON.stringify(pgDebug));
+      const bodySnippet = await page.evaluate(() => document.body.innerText.slice(0, 300));
+      console.warn(`[${SOURCE_NAME}] 0 rows. Page text: ${bodySnippet.replace(/\n/g, ' ')}`);
+      return;
     }
-
-    const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
     for (const tabIdx of TABS_TO_SCRAPE) {
       console.log(`[${SOURCE_NAME}] ── tab ${tabIdx} (${TAB_NAMES[tabIdx] || tabIdx})`);
@@ -247,10 +214,7 @@ async function* scrape() {
 
         if (pn < totalPages) {
           const clicked = await clickNext(page, tabIdx);
-          if (!clicked) {
-            console.log(`[${SOURCE_NAME}]   next disabled — stopping at p${pn}`);
-            break;
-          }
+          if (!clicked) { console.log(`[${SOURCE_NAME}]   next disabled — stopping at p${pn}`); break; }
           await waitForPageAdvance(page, tabIdx, pn);
           await page.waitForTimeout(400);
         }
@@ -258,11 +222,70 @@ async function* scrape() {
     }
 
     console.log(`[${SOURCE_NAME}] done — ${totalYielded} records`);
-  } catch (err) {
-    console.error(`[${SOURCE_NAME}] fatal: ${err.message}`);
-    console.error(err.stack);
   } finally {
-    if (browser) { try { await browser.close(); } catch (_) {} }
+    try { await browser.close(); } catch (_) {}
+  }
+}
+
+async function* scrape() {
+  console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
+  if (PROXY_URL) {
+    console.log(`[${SOURCE_NAME}] using proxy: ${PROXY_URL.replace(/:[^:@]+@/, ':***@')}`);
+  }
+
+  const proxyOpt = PROXY_URL ? { proxy: { server: PROXY_URL } } : {};
+
+  // --- Attempt 1: Chromium (fastest, same engine as the site's target browser) ---
+  const chromiumLaunch = {
+    headless: true,
+    args: [
+      '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
+      '--disable-blink-features=AutomationControlled',
+      '--window-size=1366,768',
+    ],
+    ...proxyOpt,
+  };
+  const chromiumCtx = {
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    locale: 'ms-MY',
+    viewport: { width: 1366, height: 768 },
+    extraHTTPHeaders: { 'Accept-Language': 'ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7' },
+    ...proxyOpt,
+  };
+
+  try {
+    let got = false;
+    for await (const row of scrapeWithBrowser(chromium, chromiumLaunch, chromiumCtx)) {
+      got = true;
+      yield row;
+    }
+    if (got) return;
+    console.warn(`[${SOURCE_NAME}] Chromium yielded 0 rows — trying Firefox`);
+  } catch (e) {
+    console.warn(`[${SOURCE_NAME}] Chromium attempt failed: ${e.message} — trying Firefox`);
+  }
+
+  // --- Attempt 2: Firefox (different TLS fingerprint — sometimes not blocked when Chromium is) ---
+  const ffLaunch = {
+    headless: true,
+    args: [],
+    ...proxyOpt,
+  };
+  const ffCtx = {
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0',
+    locale: 'ms-MY',
+    viewport: { width: 1366, height: 768 },
+    extraHTTPHeaders: { 'Accept-Language': 'ms-MY,ms;q=0.9,en-US;q=0.8,en;q=0.7' },
+    ...proxyOpt,
+  };
+
+  try {
+    for await (const row of scrapeWithBrowser(firefox, ffLaunch, ffCtx)) {
+      yield row;
+    }
+  } catch (e) {
+    console.error(`[${SOURCE_NAME}] Firefox attempt also failed: ${e.message}`);
+    console.error(`[${SOURCE_NAME}] Both browsers blocked. Set EPEROLEHAN_PROXY_URL env var to a residential proxy.`);
   }
 }
 

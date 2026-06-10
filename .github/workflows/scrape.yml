@@ -29,10 +29,17 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
+        # Install both chromium and firefox — ePerolehan falls back to firefox
+        # if the site's WAF blocks the chromium request from this CI IP
+        run: npx playwright install chromium firefox --with-deps
 
       - name: Run scraper + export JSON
         run: npm run scrape:export
+        env:
+          # Set EPEROLEHAN_PROXY_URL as a GitHub Secret (repository Settings →
+          # Secrets and variables → Actions) if ePerolehan blocks GitHub Actions IPs.
+          # Format: http://user:pass@host:port  or  socks5://host:port
+          EPEROLEHAN_PROXY_URL: ${{ secrets.EPEROLEHAN_PROXY_URL }}
 
       - name: Show summary and guard
         run: |
