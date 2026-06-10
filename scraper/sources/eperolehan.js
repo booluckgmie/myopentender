@@ -7,13 +7,15 @@ const SOURCE_ID = 1;
 const SOURCE_NAME = 'ePerolehan';
 const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
 
+// Scrape DIIKLANKAN (0) and NOTIS TELAH DIKEMASKINI (1)
 const TABS_TO_SCRAPE = [0, 1];
-const MAX_PAGES_PER_TAB = 9999;
 
-function tbodyId(i)   { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
+// IDs contain ":" which breaks CSS selectors — always use getElementById in evaluate()
+function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
 function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
 function tabHref(i)    { return `#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbresultTabs`; }
 
+// "28/04/2026 12:00 PM" → "2026-04-28"
 function parseDateStr(raw) {
   if (!raw) return null;
   const m = raw.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})/);
@@ -52,17 +54,22 @@ async function extractTabRows(page, tabIdx) {
   }, tbodyId(tabIdx));
 }
 
-async function getTotalPages(page, tabIdx) {
+// Returns { current, total } from paginator text "X / Y"
+async function getPaginatorState(page, tabIdx) {
   try {
     return await page.evaluate((pgId) => {
       const pg = document.getElementById(pgId);
-      if (!pg) return 1;
+      if (!pg) return { current: 1, total: 1 };
       const cur = pg.querySelector('.ui-paginator-current');
-      if (!cur) return 1;
+      if (!cur) return { current: 1, total: 1 };
       const m = cur.textContent.match(/(\d+)\s*\/\s*(\d+)/);
-      return m ? parseInt(m[2], 10) : 1;
+      return m
+        ? { current: parseInt(m[1], 10), total: parseInt(m[2], 10) }
+        : { current: 1, total: 1 };
     }, paginatorId(tabIdx));
-  } catch (_) { return 1; }
+  } catch (_) {
+    return { current: 1, total: 1 };
+  }
 }
 
 async function clickNext(page, tabIdx) {
@@ -78,21 +85,26 @@ async function clickNext(page, tabIdx) {
   } catch (_) { return false; }
 }
 
-async function waitForTableUpdate(page, tabIdx, prevCount) {
+// Wait until the paginator shows a page number different from `fromPage`.
+// Watching page number (not row count) is reliable because every page has ~20 rows,
+// so count-diff never fires — this was the original bug.
+async function waitForPageAdvance(page, tabIdx, fromPage) {
   try {
     await page.waitForFunction(
-      ({ tbId, prev }) => {
-        const tbody = document.getElementById(tbId);
-        if (!tbody) return false;
-        const count = tbody.querySelectorAll('tr[data-ri]').length;
-        // Wait for rows to exist and not match our previous layout count
-        return count > 0; 
+      ({ pgId, from }) => {
+        const pg = document.getElementById(pgId);
+        if (!pg) return false;
+        const cur = pg.querySelector('.ui-paginator-current');
+        if (!cur) return false;
+        const m = cur.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+        return m && parseInt(m[1], 10) !== from;
       },
-      { tbId: tbodyId(tabIdx), prev: prevCount },
-      { timeout: 15000 }
+      { pgId: paginatorId(tabIdx), from: fromPage },
+      { timeout: 25000 }
     );
   } catch (_) {
-    await page.waitForTimeout(2500);
+    // Fallback: flat wait longer than a typical PrimeFaces AJAX round-trip
+    await page.waitForTimeout(5000);
   }
 }
 
@@ -111,10 +123,10 @@ async function activateTab(page, tabIdx) {
           return tbody && tbody.querySelectorAll('tr[data-ri]').length > 0;
         },
         tbodyId(tabIdx),
-        { timeout: 25000 }
+        { timeout: 30000 }
       );
     } catch (_) {
-      await page.waitForTimeout(5000);
+      await page.waitForTimeout(6000);
     }
   } catch (e) {
     console.warn(`[${SOURCE_NAME}] tab ${tabIdx} activation: ${e.message}`);
@@ -137,18 +149,30 @@ async function* scrape() {
     });
     const page = await ctx.newPage();
 
+    // Block images/fonts/media — dramatically speeds up PrimeFaces AJAX round-trips
+    await page.route('**/*', (route) => {
+      const type = route.request().resourceType();
+      if (['image', 'media', 'font'].includes(type)) {
+        route.abort();
+      } else {
+        route.continue();
+      }
+    });
+
     console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
+    // domcontentloaded: PrimeFaces loads via XHR after DOM — networkidle hangs forever
     await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    await page.waitForTimeout(5000);
+    // Boot wait for PrimeFaces JS init, then poll until rows appear
+    await page.waitForTimeout(4000);
     try {
       await page.waitForFunction(
         () => document.querySelectorAll('tr[data-ri]').length > 0,
-        { timeout: 55000 }
+        { timeout: 60000 }
       );
     } catch (_) {
-      console.warn(`[${SOURCE_NAME}] rows not detected after 60s — proceeding anyway`);
-      await page.waitForTimeout(10000);
+      console.warn(`[${SOURCE_NAME}] rows not visible after 64s — proceeding anyway`);
+      await page.waitForTimeout(8000);
     }
     const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
     console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
@@ -156,17 +180,16 @@ async function* scrape() {
     const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
     for (const tabIdx of TABS_TO_SCRAPE) {
-      console.log(`[${SOURCE_NAME}] tab ${tabIdx} (${TAB_NAMES[tabIdx]})`);
+      console.log(`[${SOURCE_NAME}] ── tab ${tabIdx} (${TAB_NAMES[tabIdx] || tabIdx})`);
       await activateTab(page, tabIdx);
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(1000);
 
-      const totalPages   = await getTotalPages(page, tabIdx);
-      const pagesToScrape = Math.min(totalPages, MAX_PAGES_PER_TAB);
-      console.log(`[${SOURCE_NAME}]   ${totalPages} pages, scraping up to ${pagesToScrape}`);
+      const { total: totalPages } = await getPaginatorState(page, tabIdx);
+      console.log(`[${SOURCE_NAME}]   total pages: ${totalPages}`);
 
-      for (let pn = 1; pn <= pagesToScrape; pn++) {
+      for (let pn = 1; pn <= totalPages; pn++) {
         const rows = await extractTabRows(page, tabIdx);
-        console.log(`[${SOURCE_NAME}]   p${pn}: ${rows.length} rows`);
+        console.log(`[${SOURCE_NAME}]   p${pn}/${totalPages}: ${rows.length} rows`);
 
         for (const r of rows) {
           if (!r.title || r.title.length < 15) continue;
@@ -187,13 +210,15 @@ async function* scrape() {
           totalYielded++;
         }
 
-        if (pn < pagesToScrape) {
-          const prevCount = rows.length;
+        if (pn < totalPages) {
           const clicked = await clickNext(page, tabIdx);
-          if (!clicked) { console.log(`[${SOURCE_NAME}]   no next page`); break; }
-          // Hard sleep combined with conditional DOM check to prevent processing duplicate rows
-          await page.waitForTimeout(1500);
-          await waitForTableUpdate(page, tabIdx, prevCount);
+          if (!clicked) {
+            console.log(`[${SOURCE_NAME}]   next disabled — stopping at p${pn}`);
+            break;
+          }
+          // Watch paginator page number advance — reliable unlike watching row count
+          await waitForPageAdvance(page, tabIdx, pn);
+          await page.waitForTimeout(400);
         }
       }
     }
@@ -201,6 +226,7 @@ async function* scrape() {
     console.log(`[${SOURCE_NAME}] done — ${totalYielded} records`);
   } catch (err) {
     console.error(`[${SOURCE_NAME}] fatal: ${err.message}`);
+    console.error(err.stack);
   } finally {
     if (browser) { try { await browser.close(); } catch (_) {} }
   }
