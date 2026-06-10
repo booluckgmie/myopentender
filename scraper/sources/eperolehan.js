@@ -108,14 +108,18 @@ async function activateTab(page, tabIdx) {
       const link = document.querySelector(`.ui-tabs-nav a[href="${h}"]`);
       if (link) link.click();
     }, href);
-    await page.waitForFunction(
-      (tbId) => {
-        const tbody = document.getElementById(tbId);
-        return tbody && tbody.querySelectorAll('tr[data-ri]').length > 0;
-      },
-      tbodyId(tabIdx),
-      { timeout: 20000 }
-    );
+    try {
+      await page.waitForFunction(
+        (tbId) => {
+          const tbody = document.getElementById(tbId);
+          return tbody && tbody.querySelectorAll('tr[data-ri]').length > 0;
+        },
+        tbodyId(tabIdx),
+        { timeout: 25000 }
+      );
+    } catch (_) {
+      await page.waitForTimeout(5000);
+    }
   } catch (e) {
     console.warn(`[${SOURCE_NAME}] tab ${tabIdx} activation: ${e.message}`);
   }
@@ -138,15 +142,22 @@ async function* scrape() {
     const page = await ctx.newPage();
 
     console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
-    await page.goto(BASE_URL, { waitUntil: 'networkidle', timeout: 60000 });
+    // domcontentloaded — PrimeFaces loads via XHR after DOM ready, networkidle can hang
+    await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    // Wait for PrimeFaces to render the first tab's rows
-    await page.waitForFunction(
-      () => document.querySelector('.ui-tabs-nav') !== null &&
-            document.querySelectorAll('tr[data-ri]').length > 0,
-      { timeout: 30000 }
-    );
-    console.log(`[${SOURCE_NAME}] tabs ready`);
+    // Flat wait for PrimeFaces JS to boot, then poll for rows
+    await page.waitForTimeout(5000);
+    try {
+      await page.waitForFunction(
+        () => document.querySelectorAll('tr[data-ri]').length > 0,
+        { timeout: 55000 }
+      );
+    } catch (_) {
+      console.warn(`[${SOURCE_NAME}] rows not detected after 60s — proceeding anyway`);
+      await page.waitForTimeout(10000);
+    }
+    const rowCount = await page.evaluate(() => document.querySelectorAll('tr[data-ri]').length);
+    console.log(`[${SOURCE_NAME}] page ready — ${rowCount} rows visible`);
 
     const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
