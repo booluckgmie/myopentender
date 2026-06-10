@@ -31,9 +31,6 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
 
-      - name: Clean previous database
-        run: rm -f tenders.sqlite
-
       - name: Run scraper + export JSON
         run: npm run scrape:export
 
@@ -41,18 +38,28 @@ jobs:
         run: |
           node -e "
             const d = require('./tenders.json');
+            const prev = (() => { try { return require('child_process').execSync('git show HEAD:tenders.json 2>/dev/null').toString(); } catch { return null; } })();
+            const prevCount = prev ? JSON.parse(prev).tenders.length : 0;
             const count = d.tenders.length;
-            console.log('Total tenders:', count);
+            console.log('Previous count:', prevCount, '→ New count:', count);
             const by = {};
             d.tenders.forEach(t => { by[t.source_id] = (by[t.source_id]||0)+1; });
             Object.entries(by).sort((a,b)=>b[1]-a[1]).forEach(([k,v])=>console.log(' source',k+':',v));
-            if (count < 5) { console.error('Too few tenders ('+count+') — aborting commit to protect existing data'); process.exit(1); }
+            if (count < prevCount * 0.5 && prevCount > 10) {
+              console.error('Count dropped by more than 50% ('+prevCount+'→'+count+') — aborting to protect existing data');
+              process.exit(1);
+            }
+            if (count < 5) {
+              console.error('Too few tenders ('+count+') — aborting');
+              process.exit(1);
+            }
+            console.log('Guard passed — committing.');
           "
 
-      - name: Commit updated tenders.json
+      - name: Commit updated data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tenders.json public/tenders.json scraper/utils.js
+          git add tenders.json public/tenders.json tenders.sqlite
           git diff --cached --quiet || git commit -m "chore: auto-scrape $(date -u +%Y-%m-%dT%H:%M)Z"
           git push
