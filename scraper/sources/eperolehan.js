@@ -6,318 +6,197 @@ const { parseDate, inferStatus, nowIso } = require('../utils');
 const SOURCE_ID = 1;
 const SOURCE_NAME = 'ePerolehan';
 const BASE_URL = 'https://www.eperolehan.gov.my/quotation-tender-notice';
-const MAX_PAGES = 50;
 
-/**
- * Try to extract rows from whatever table selector is present on the page.
- * Returns an array of raw cell-text arrays plus the detail href for each row.
- */
-async function extractRows(page) {
-  // Multiple selector fallbacks — we cannot verify the real DOM offline
-  const tableSelectors = [
-    'table tbody tr',
-    '.table tbody tr',
-    'table tr',
-    'tr[role="row"]',
-    '[class*="table"] tr',
-  ];
+// Only scrape these tab indices (0=DIIKLANKAN, 1=NOTIS TELAH DIKEMASKINI)
+const TABS_TO_SCRAPE = [0, 1];
+// Cap per tab to keep GH Actions runtime reasonable; upsert means no duplicates across days
+const MAX_PAGES_PER_TAB = 15;
 
-  for (const sel of tableSelectors) {
-    try {
-      const rows = await page.$$(sel);
-      if (!rows.length) continue;
+// IDs contain ":" which breaks CSS selectors — always use getElementById in evaluate()
+function tbodyId(i)    { return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_data`; }
+function paginatorId(i){ return `_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbsearchresults_paginator_bottom`; }
+function tabHref(i)    { return `#_scNoticeBoard_WAR_NGePportlet_:form:j_idt282:${i}:nbresultTabs`; }
 
-      const results = [];
-      for (const row of rows) {
-        // Skip header rows (th-only rows)
-        const tds = await row.$$('td');
-        if (!tds.length) continue;
-
-        const cells = await Promise.all(tds.map(td => td.innerText().then(t => t.trim())));
-
-        // Skip rows that look like empty spacers
-        if (cells.every(c => !c)) continue;
-
-        // Grab first anchor href in the row
-        let href = null;
-        try {
-          const anchor = await row.$('a[href]');
-          if (anchor) {
-            href = await anchor.getAttribute('href');
-          }
-        } catch (_) { /* no link in row */ }
-
-        results.push({ cells, href });
-      }
-
-      if (results.length) return results;
-    } catch (_) {
-      // selector threw — try next
-    }
-  }
-
-  return [];
+// "28/04/2026 12:00 PM" → "2026-04-28"
+function parseDateStr(raw) {
+  if (!raw) return null;
+  const m = raw.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})/);
+  if (m) return `${m[3]}-${m[2]}-${m[1]}`;
+  return parseDate(raw);
 }
 
-/**
- * Build an absolute URL from a (possibly relative) href.
- */
-function absoluteUrl(href) {
-  if (!href) return BASE_URL;
-  if (/^https?:\/\//i.test(href)) return href;
-  return 'https://www.eperolehan.gov.my' + (href.startsWith('/') ? href : '/' + href);
+// Infer category from title prefix
+function inferCategory(title) {
+  if (!title) return null;
+  const t = title.toUpperCase();
+  if (/^TENDER\b/.test(t))                      return 'Tender';
+  if (/^SEBUT\s*HARGA\b|^SEBUTHARGA\b/.test(t)) return 'Sebut Harga';
+  if (/^MEMBEKAL\b|^BEKALAN\b/.test(t))         return 'Bekalan';
+  if (/^PERKHIDMATAN\b/.test(t))                return 'Perkhidmatan';
+  if (/^KERJA[\s-]/.test(t))                    return 'Kerja';
+  if (/^CADANGAN\b/.test(t))                    return 'Cadangan';
+  return null;
 }
 
-/**
- * Map a row's cells to a tender record.
- * Column order based on known ePerolehan structure:
- *   0: No. Rujukan (ref)
- *   1: Tajuk (title)
- *   2: Kategori (category)
- *   3: Kementerian (ministry)
- *   4: Tarikh Tutup (deadline)
- *   5: Tarikh Buka (open date)
- * If fewer columns are present we fall back gracefully.
- */
-function rowToRecord(cells, href, now) {
-  const get = i => (cells[i] || '').trim() || null;
-
-  // Detect short rows (e.g. only ref + title + deadline)
-  const ref      = get(0);
-  const title    = get(1) || get(0);
-  const category = cells.length > 4 ? get(2) : null;
-  const ministry = cells.length > 4 ? get(3) : null;
-  const deadlineRaw  = cells.length > 4 ? get(4) : get(2);
-  const openDateRaw  = cells.length > 5 ? get(5) : get(3);
-
-  const deadline  = parseDate(deadlineRaw);
-  const open_date = parseDate(openDateRaw);
-
-  return {
-    source_id:  SOURCE_ID,
-    ref,
-    title,
-    category,
-    ministry,
-    deadline,
-    open_date,
-    status:     inferStatus(open_date, deadline),
-    url:        absoluteUrl(href),
-    scraped_at: now,
-  };
+async function extractTabRows(page, tabIdx) {
+  return page.evaluate((tbId) => {
+    const tbody = document.getElementById(tbId);
+    if (!tbody) return [];
+    const rows = [];
+    tbody.querySelectorAll('tr[data-ri]').forEach(tr => {
+      const tds = tr.querySelectorAll('td');
+      if (tds.length < 4) return;
+      const linkEl = tds[0].querySelector('a.ui-commandlink');
+      const title    = (linkEl ? linkEl.textContent : tds[0].textContent).trim();
+      const ministry = tds[1] ? tds[1].textContent.trim() : null;
+      const openRaw  = tds[2] ? tds[2].textContent.trim() : null;
+      const closeRaw = tds[3] ? tds[3].textContent.trim() : null;
+      rows.push({ title, ministry, openRaw, closeRaw });
+    });
+    return rows;
+  }, tbodyId(tabIdx));
 }
 
-/**
- * Attempt to click the "Next page" control.
- * Returns true if a next-page action was triggered, false if we are on the last page.
- */
-async function clickNextPage(page) {
-  // Ordered list of selectors / strategies to find the "next" control.
-  // We check for disabled state before clicking.
-  const candidates = [
-    // Text-based buttons / links
-    'button:has-text("Seterusnya")',
-    'a:has-text("Seterusnya")',
-    'button:has-text("Next")',
-    'a:has-text("Next")',
-    '[aria-label*="next" i]',
-    '[aria-label*="seterusnya" i]',
-    // Common pagination ">" glyphs
-    'button:has-text(">")',
-    'a:has-text(">")',
-    // Generic next-page patterns
-    '.pagination .next a',
-    '.pagination li.next a',
-    'li.next a',
-    'a[rel="next"]',
-    '.page-next',
-    '[class*="next"]:not([disabled])',
-  ];
+async function getTotalPages(page, tabIdx) {
+  try {
+    return await page.evaluate((pgId) => {
+      const pg = document.getElementById(pgId);
+      if (!pg) return 1;
+      const cur = pg.querySelector('.ui-paginator-current');
+      if (!cur) return 1;
+      const m = cur.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+      return m ? parseInt(m[2], 10) : 1;
+    }, paginatorId(tabIdx));
+  } catch (_) { return 1; }
+}
 
-  for (const sel of candidates) {
-    try {
-      const el = await page.$(sel);
-      if (!el) continue;
-
-      // Check disabled state via attribute or aria
-      const disabled = await el.evaluate(node => {
-        return (
-          node.disabled === true ||
-          node.getAttribute('disabled') !== null ||
-          node.getAttribute('aria-disabled') === 'true' ||
-          node.classList.contains('disabled') ||
-          (node.parentElement && node.parentElement.classList.contains('disabled'))
-        );
-      });
-      if (disabled) return false;
-
-      await el.click();
+async function clickNext(page, tabIdx) {
+  try {
+    return await page.evaluate((pgId) => {
+      const pg = document.getElementById(pgId);
+      if (!pg) return false;
+      const next = pg.querySelector('.ui-paginator-next');
+      if (!next || next.classList.contains('ui-state-disabled')) return false;
+      next.click();
       return true;
-    } catch (_) {
-      // selector not present or click failed — try next
-    }
-  }
-
-  return false; // no next button found
+    }, paginatorId(tabIdx));
+  } catch (_) { return false; }
 }
 
-/**
- * Wait for the results area to be ready.
- * Tries several indicators; resolves when any one is found.
- */
-async function waitForContent(page) {
-  const indicators = [
-    'table tbody tr',
-    '.table tbody tr',
-    'table tr',
-    '[class*="no-result"]',
-    '[class*="no-data"]',
-    '[class*="empty"]',
-    'text=Tiada rekod',
-    'text=No record',
-    'text=No results',
-  ];
-
-  await page.waitForFunction(
-    (sels) => sels.some(s => {
-      try { return document.querySelector(s) !== null; } catch (_) { return false; }
-    }),
-    indicators,
-    { timeout: 30000 }
-  );
+async function waitForTableUpdate(page, tabIdx, prevCount) {
+  try {
+    await page.waitForFunction(
+      ({ tbId, prev }) => {
+        const tbody = document.getElementById(tbId);
+        if (!tbody) return false;
+        const count = tbody.querySelectorAll('tr[data-ri]').length;
+        return count > 0 && count !== prev;
+      },
+      { tbId: tbodyId(tabIdx), prev: prevCount },
+      { timeout: 15000 }
+    );
+  } catch (_) {
+    await page.waitForTimeout(2500);
+  }
 }
 
-/**
- * Attempt to submit the search form with empty/default parameters so the site
- * returns all open tenders.  This is best-effort; if it fails we fall through
- * to whatever the page already shows.
- */
-async function trySubmitForm(page) {
-  const submitSelectors = [
-    'button[type="submit"]',
-    'input[type="submit"]',
-    'button:has-text("Cari")',
-    'button:has-text("Search")',
-    'button:has-text("Semak")',
-    'a:has-text("Cari")',
-  ];
-
-  for (const sel of submitSelectors) {
-    try {
-      const el = await page.$(sel);
-      if (el) {
-        await el.click();
-        // Wait briefly for results to update
-        await page.waitForTimeout(2000);
-        return true;
-      }
-    } catch (_) { /* selector absent — continue */ }
+async function activateTab(page, tabIdx) {
+  if (tabIdx === 0) return;
+  try {
+    const href = tabHref(tabIdx);
+    await page.evaluate((h) => {
+      const link = document.querySelector(`.ui-tabs-nav a[href="${h}"]`);
+      if (link) link.click();
+    }, href);
+    await page.waitForFunction(
+      (tbId) => {
+        const tbody = document.getElementById(tbId);
+        return tbody && tbody.querySelectorAll('tr[data-ri]').length > 0;
+      },
+      tbodyId(tabIdx),
+      { timeout: 20000 }
+    );
+  } catch (e) {
+    console.warn(`[${SOURCE_NAME}] tab ${tabIdx} activation: ${e.message}`);
   }
-  return false;
 }
 
 async function* scrape() {
   const now = nowIso();
   let browser = null;
+  let totalYielded = 0;
 
   try {
     browser = await chromium.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     });
-
-    const context = await browser.newContext({
-      userAgent:
-        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 ' +
-        '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    const ctx = await browser.newContext({
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
       locale: 'ms-MY',
-      extraHTTPHeaders: {
-        'Accept-Language': 'ms-MY,ms;q=0.9,en;q=0.8',
-      },
     });
+    const page = await ctx.newPage();
 
-    const page = await context.newPage();
-
-    // Suppress non-critical console noise from the SPA
-    page.on('console', () => {});
-    page.on('pageerror', () => {});
-
-    console.log(`[${SOURCE_NAME}] navigating to ${BASE_URL}`);
+    console.log(`[${SOURCE_NAME}] loading ${BASE_URL}`);
     await page.goto(BASE_URL, { waitUntil: 'networkidle', timeout: 60000 });
 
-    // Wait for any content to appear
-    try {
-      await waitForContent(page);
-    } catch (waitErr) {
-      console.error(`[${SOURCE_NAME}] timeout waiting for content: ${waitErr.message}`);
-      // Continue anyway — maybe something is still there
-    }
+    // Wait for PrimeFaces to render the first tab's rows
+    await page.waitForFunction(
+      () => document.querySelector('.ui-tabs-nav') !== null &&
+            document.querySelectorAll('tr[data-ri]').length > 0,
+      { timeout: 30000 }
+    );
+    console.log(`[${SOURCE_NAME}] tabs ready`);
 
-    // Best-effort: submit the form with empty params to get all results
-    const submitted = await trySubmitForm(page);
-    if (submitted) {
-      console.log(`[${SOURCE_NAME}] submitted search form`);
-      try {
-        await waitForContent(page);
-      } catch (_) { /* carry on */ }
-    }
+    const TAB_NAMES = ['DIIKLANKAN', 'DIKEMASKINI', 'DITUTUP', 'SELESAI', 'DIBATALKAN'];
 
-    let pageNum = 0;
-    let totalYielded = 0;
+    for (const tabIdx of TABS_TO_SCRAPE) {
+      console.log(`[${SOURCE_NAME}] tab ${tabIdx} (${TAB_NAMES[tabIdx]})`);
+      await activateTab(page, tabIdx);
+      await page.waitForTimeout(1200);
 
-    while (pageNum < MAX_PAGES) {
-      pageNum++;
-      console.log(`[${SOURCE_NAME}] scraping page ${pageNum}`);
+      const totalPages   = await getTotalPages(page, tabIdx);
+      const pagesToScrape = Math.min(totalPages, MAX_PAGES_PER_TAB);
+      console.log(`[${SOURCE_NAME}]   ${totalPages} pages, scraping up to ${pagesToScrape}`);
 
-      // Small stabilisation pause — the SPA may still be rendering
-      await page.waitForTimeout(500);
+      for (let pn = 1; pn <= pagesToScrape; pn++) {
+        const rows = await extractTabRows(page, tabIdx);
+        console.log(`[${SOURCE_NAME}]   p${pn}: ${rows.length} rows`);
 
-      const rows = await extractRows(page);
+        for (const r of rows) {
+          if (!r.title || r.title.length < 15) continue;
+          const open_date = parseDateStr(r.openRaw);
+          const deadline  = parseDateStr(r.closeRaw);
+          yield {
+            source_id: SOURCE_ID,
+            ref: null,
+            title: r.title,
+            category: inferCategory(r.title),
+            ministry: r.ministry || null,
+            open_date,
+            deadline,
+            status: inferStatus(open_date, deadline),
+            url: BASE_URL,
+            scraped_at: now,
+          };
+          totalYielded++;
+        }
 
-      if (!rows.length) {
-        console.log(`[${SOURCE_NAME}] no rows found on page ${pageNum}, stopping`);
-        break;
-      }
-
-      for (const { cells, href } of rows) {
-        const record = rowToRecord(cells, href, now);
-        // Skip rows that have no meaningful title
-        if (!record.title) continue;
-        totalYielded++;
-        yield record;
-      }
-
-      // Attempt to navigate to the next page
-      const advanced = await clickNextPage(page);
-      if (!advanced) {
-        console.log(`[${SOURCE_NAME}] no next page found after page ${pageNum}`);
-        break;
-      }
-
-      // Wait for the table to re-render after pagination click
-      try {
-        await page.waitForFunction(
-          () => {
-            const sels = ['table tbody tr', '.table tbody tr', 'table tr'];
-            return sels.some(s => {
-              try { return document.querySelector(s) !== null; } catch (_) { return false; }
-            });
-          },
-          { timeout: 15000 }
-        );
-      } catch (_) {
-        // Table may have momentarily disappeared during load — give it an extra second
-        await page.waitForTimeout(1000);
+        if (pn < pagesToScrape) {
+          const prevCount = rows.length;
+          const clicked = await clickNext(page, tabIdx);
+          if (!clicked) { console.log(`[${SOURCE_NAME}]   no next page`); break; }
+          await waitForTableUpdate(page, tabIdx, prevCount);
+          await page.waitForTimeout(600);
+        }
       }
     }
 
-    console.log(`[${SOURCE_NAME}] done — yielded ${totalYielded} records across ${pageNum} page(s)`);
+    console.log(`[${SOURCE_NAME}] done — ${totalYielded} records`);
   } catch (err) {
-    console.error(`[${SOURCE_NAME}] fatal error: ${err.message}`);
+    console.error(`[${SOURCE_NAME}] fatal: ${err.message}`);
   } finally {
-    if (browser) {
-      try { await browser.close(); } catch (_) { /* ignore close errors */ }
-    }
+    if (browser) { try { await browser.close(); } catch (_) {} }
   }
 }
 

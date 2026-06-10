@@ -143,27 +143,28 @@ async function* scrape() {
       // Click next page if not on last page
       if (pageNum < totalPages) {
         try {
-          // "Kemudian" next button — only click if not disabled
-          const nextLi = await page.$('#DataTables_Table_0_paginate li.next');
-          if (!nextLi) break;
-          const isDisabled = await nextLi.evaluate(el => el.classList.contains('disabled'));
-          if (isDisabled) break;
+          // Use JS click to bypass visibility check (paginator may be off-screen)
+          const clicked = await page.evaluate(() => {
+            const nextLi = document.querySelector('#DataTables_Table_0_paginate li.next');
+            if (!nextLi || nextLi.classList.contains('disabled')) return false;
+            const a = nextLi.querySelector('a');
+            if (a) { a.click(); return true; }
+            nextLi.click();
+            return true;
+          });
+          if (!clicked) break;
 
-          await nextLi.click();
-
-          // Wait for the page number info to update
+          // Wait for DataTables to re-render rows
           await page.waitForFunction(
-            (pn) => {
+            () => {
               const info = document.querySelector('#DataTables_Table_0_info')?.textContent || '';
-              // After clicking next, "dari X rekod" stays the same but rows change
               return info.includes('rekod') && document.querySelectorAll('#DataTables_Table_0 tbody tr').length > 0;
             },
-            pageNum,
             { timeout: 20000 }
           );
 
           // Extra wait for DataTables animation
-          await page.waitForTimeout(1500);
+          await page.waitForTimeout(1200);
         } catch (e) {
           console.warn(`[${SOURCE_NAME}] pagination error on page ${pageNum}: ${e.message}`);
           break;
