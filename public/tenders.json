@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-06-30T05:06:49Z",
+  "exported_at": "2026-07-01T05:24:51Z",
   "tenders": [
     {
       "id": 8,
@@ -161,7 +161,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": "2026-06-08T12:51:14Z",
-      "scraped_at": "2026-06-30T05:06:20Z"
+      "scraped_at": "2026-07-01T05:24:24Z"
     },
     {
       "id": 53,
@@ -3152,24 +3152,6 @@
       "scraped_at": "2026-06-18T05:58:20Z"
     },
     {
-      "id": 281,
-      "title": "Cadangan Perkhidmatan Penyelenggaraan Sistem Tempahan Online (STO) Di Majlis Perbandaran Selayang Bagi Tempoh 2 Tahun",
-      "ref": "MPS/SH/112/26",
-      "source_id": 2,
-      "open_date": "2026-06-12",
-      "deadline": "2026-06-18",
-      "value": null,
-      "category": "MOF: 210103 DAN 210104",
-      "ministry": "Majlis Perbandaran Selayang",
-      "status": "active",
-      "url": "https://tender.selangor.my/tenders/86860",
-      "notes": null,
-      "starred": 0,
-      "notified": 0,
-      "date_added": null,
-      "scraped_at": "2026-06-18T05:58:20Z"
-    },
-    {
       "id": 282,
       "title": "Naik Taraf Kolam Renang Di Kompleks Sukan Seri Siantan, Batu Caves, Selangor (Iklan Semula)",
       "ref": "MPS/SH/106/26",
@@ -4394,24 +4376,6 @@
       "scraped_at": "2026-06-25T05:08:11Z"
     },
     {
-      "id": 367,
-      "title": "CADANGAN MAJLIS MAKAN TENGAH HARI BAGI PENERIMA ANUGERAH 'REWARD' YANG DIPERTUA TAHUN 2025",
-      "ref": "MPS/SH/137/26",
-      "source_id": 2,
-      "open_date": "2026-06-19",
-      "deadline": "2026-06-25",
-      "value": null,
-      "category": "MOF: 222501",
-      "ministry": "Majlis Perbandaran Selayang",
-      "status": "active",
-      "url": "https://tender.selangor.my/tenders/86951",
-      "notes": null,
-      "starred": 0,
-      "notified": 0,
-      "date_added": null,
-      "scraped_at": "2026-06-25T05:08:11Z"
-    },
-    {
       "id": 370,
       "title": "PERKHIDMATAN MENAIKTARAF SISTEM TELEFON PABX KEPADA VOIP PHONE SYSTEM DI KOMPLEKS PEJABAT DAERAH DAN TANAH KUALA SELANGOR",
       "ref": "PDTKS/BKP/3/2026",
@@ -5237,7 +5201,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 307,
@@ -5255,7 +5219,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 308,
@@ -5273,7 +5237,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 309,
@@ -5291,7 +5255,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 310,
@@ -5309,7 +5273,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 311,
@@ -5327,7 +5291,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 363,
@@ -5345,7 +5309,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 364,
@@ -5363,7 +5327,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 369,
@@ -5381,7 +5345,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 379,
@@ -5399,7 +5363,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 407,
@@ -5411,13 +5375,13 @@
       "value": null,
       "category": "Gred CIDB: G1 / CE21 / CE36",
       "ministry": "Jabatan Pengairan dan Saliran Daerah Kuala Langat",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/86990",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 432,
@@ -5429,13 +5393,13 @@
       "value": null,
       "category": "Gred CIDB: G1 / CE21 / CE36",
       "ministry": "Jabatan Pengairan dan Saliran Daerah Sepang",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/86994",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 447,
@@ -5453,7 +5417,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 266,
@@ -5471,7 +5435,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 289,
@@ -5489,7 +5453,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 292,
@@ -5507,7 +5471,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 293,
@@ -5525,7 +5489,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 294,
@@ -5543,7 +5507,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 295,
@@ -5561,7 +5525,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 316,
@@ -5579,7 +5543,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 317,
@@ -5597,7 +5561,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 318,
@@ -5615,7 +5579,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 319,
@@ -5633,7 +5597,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 320,
@@ -5651,7 +5615,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 321,
@@ -5669,7 +5633,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 322,
@@ -5687,7 +5651,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 330,
@@ -5705,7 +5669,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 331,
@@ -5723,7 +5687,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 332,
@@ -5741,7 +5705,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 333,
@@ -5759,7 +5723,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 334,
@@ -5777,7 +5741,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 335,
@@ -5795,7 +5759,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 336,
@@ -5813,7 +5777,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 337,
@@ -5831,7 +5795,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 338,
@@ -5849,7 +5813,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 339,
@@ -5867,7 +5831,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 340,
@@ -5885,7 +5849,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 341,
@@ -5903,7 +5867,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 361,
@@ -5921,7 +5885,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 362,
@@ -5939,7 +5903,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 368,
@@ -5957,7 +5921,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 380,
@@ -5975,7 +5939,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 381,
@@ -5993,7 +5957,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 382,
@@ -6011,7 +5975,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 383,
@@ -6029,7 +5993,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 384,
@@ -6047,7 +6011,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 385,
@@ -6065,7 +6029,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 387,
@@ -6083,7 +6047,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 417,
@@ -6101,7 +6065,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 418,
@@ -6119,7 +6083,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 419,
@@ -6137,7 +6101,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 397,
@@ -6155,7 +6119,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 406,
@@ -6173,7 +6137,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 415,
@@ -6191,7 +6155,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 416,
@@ -6209,7 +6173,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 170,
@@ -6227,7 +6191,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 232,
@@ -6248,6 +6212,24 @@
       "scraped_at": "2026-06-16T06:36:02Z"
     },
     {
+      "id": 281,
+      "title": "Cadangan Perkhidmatan Penyelenggaraan Sistem Tempahan Online (STO) Di Majlis Perbandaran Selayang Bagi Tempoh 2 Tahun",
+      "ref": "MPS/SH/112/26",
+      "source_id": 2,
+      "open_date": "2026-06-30",
+      "deadline": "2026-07-06",
+      "value": null,
+      "category": "MOF: 210103 DAN 210104",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/86985",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
       "id": 353,
       "title": "(ADDENDUM NO.1) MENAIKTARAF JALAN NEGERI B27 (MISSING LINK), JALAN RAWANG - BATANG BERJUNTAI, GOMBAK, SELANGOR.",
       "ref": "JKR/SEL/(N)/005(T)/2026",
@@ -6263,7 +6245,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 376,
@@ -6281,7 +6263,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 377,
@@ -6299,7 +6281,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 413,
@@ -6317,7 +6299,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 414,
@@ -6335,7 +6317,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 426,
@@ -6353,7 +6335,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 427,
@@ -6371,7 +6353,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 428,
@@ -6389,7 +6371,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 429,
@@ -6407,7 +6389,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 430,
@@ -6425,7 +6407,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 431,
@@ -6443,7 +6425,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 464,
@@ -6461,7 +6443,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 465,
@@ -6479,7 +6461,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 466,
@@ -6497,7 +6479,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 467,
@@ -6509,13 +6491,67 @@
       "value": null,
       "category": "MOF: 221302 / 221303",
       "ministry": "Universiti Islam Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87028",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 523,
+      "title": "Cadangan Kerja-Kerja Ubahsuai Kediaman Rasmi Tuan Yang Dipertua Di Taman Templer Villas, Templer Park, Mukim Batu, Selangor Darul Ehsan.",
+      "ref": "MPS/SH/141/26",
+      "source_id": 2,
+      "open_date": "2026-06-30",
+      "deadline": "2026-07-06",
+      "value": null,
+      "category": "Gred CIDB: G1 / B04 DAN CE21",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87107",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 545,
+      "title": "Cadangan Kerja-Kerja Membaikpulih Dan Menaiktaraf Pelbagai Kerosakan Di Bengkel MPS Rawang Integrated, Mukim Rawang, Majlis Perbandaran Selayang",
+      "ref": "MPS/SH/127/26",
+      "source_id": 2,
+      "open_date": "2026-06-29",
+      "deadline": "2026-07-06",
+      "value": null,
+      "category": "Gred CIDB: G2 / B04",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87087",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 546,
+      "title": "Cadangan Membina Laluan Pejalan Kaki, Memasang Par Course Serta Lain – Lain Kerja Berkaitan Di Kawasan Jalan 4/16, Taman Rawang Jaya, Rawang, Selangor",
+      "ref": "MPS/SH/128/26",
+      "source_id": 2,
+      "open_date": "2026-06-29",
+      "deadline": "2026-07-06",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE14 DAN CE21",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87088",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 169,
@@ -6533,7 +6569,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 367,
+      "title": "CADANGAN MAJLIS MAKAN TENGAH HARI BAGI PENERIMA ANUGERAH 'REWARD' YANG DIPERTUA TAHUN 2025",
+      "ref": "MPS/SH/137/26",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-07",
+      "value": null,
+      "category": "MOF: 222501",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87141",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 408,
@@ -6545,13 +6599,13 @@
       "value": null,
       "category": "Gred CIDB: G2 / M02",
       "ministry": "Pejabat SUK Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/86977",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 409,
@@ -6569,7 +6623,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 410,
@@ -6587,7 +6641,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 411,
@@ -6605,7 +6659,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 422,
@@ -6617,13 +6671,13 @@
       "value": null,
       "category": "Gred CIDB: G3 / B24",
       "ministry": "Jabatan Kerja Raya Kuala Langat",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87004",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 444,
@@ -6641,7 +6695,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 445,
@@ -6659,7 +6713,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 446,
@@ -6677,7 +6731,61 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 482,
+      "title": "Cadangan Perkhidmatan Penggunaan Portal Penghantaran Notifikasi Sistem Pesanan Ringkas (SMS) Untuk Majlis Perbandaran Selayang",
+      "ref": "MPS/SH/109/26",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-07",
+      "value": null,
+      "category": "MOF: 210103 DAN 210104",
+      "ministry": "Majlis Perbandaran Selayang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87127",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 521,
+      "title": "KERJA-KERJA MENAIKTARAF KEMUDAHAN TANDAS AWAM DAN SURAU PELANCONGAN MUSLIM DI SKY MIRROR KUALA SELANGOR, JETI PEKAN LAMA, DAERAH KUALA SELANGOR, SELANGOR DARUL EHSAN",
+      "ref": "MPKS SH 70 / 2026",
+      "source_id": 2,
+      "open_date": "2026-06-30",
+      "deadline": "2026-07-07",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE21",
+      "ministry": "Majlis Perbandaran Kuala Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87099",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 522,
+      "title": "PEMBEKALAN DAN PENGHANTARAN ALAT GANTI KELENGKAPAN DAN PERALATAN ELEKTRIK BAGI KERJA SENGGARAAN KEM TENTERA DARAT UNIT TENTERA JKR SELANGOR TAHUN 2026",
+      "ref": "QT260000000019581",
+      "source_id": 2,
+      "open_date": "2026-06-30",
+      "deadline": "2026-07-07",
+      "value": null,
+      "category": "MOF: 140502 DAN 140503 DAN 140301 DAN 140302",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87094",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 356,
@@ -6695,7 +6803,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 405,
@@ -6713,7 +6821,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 425,
@@ -6731,7 +6839,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 437,
@@ -6743,13 +6851,13 @@
       "value": null,
       "category": "Gred CIDB: G4 / CE01 / CE21",
       "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87017",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 438,
@@ -6761,13 +6869,13 @@
       "value": null,
       "category": "Gred CIDB: G2 / CE01 / CE21",
       "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87019",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 442,
@@ -6779,13 +6887,13 @@
       "value": null,
       "category": "Gred CIDB: G3 / B04",
       "ministry": "Jabatan Kerja Raya Hulu Langat",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87013",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 443,
@@ -6795,15 +6903,15 @@
       "open_date": "2026-07-01",
       "deadline": "2026-07-08",
       "value": null,
-      "category": "Gred CIDB: G4 / CE21 DAN CE01",
+      "category": "Gred CIDB: G4 / CE01 DAN CE21",
       "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87024",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 452,
@@ -6821,7 +6929,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 453,
@@ -6839,7 +6947,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 454,
@@ -6857,7 +6965,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 455,
@@ -6875,7 +6983,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 456,
@@ -6893,7 +7001,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 457,
@@ -6911,7 +7019,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 458,
@@ -6929,7 +7037,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 459,
@@ -6947,7 +7055,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 460,
@@ -6965,7 +7073,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 461,
@@ -6983,7 +7091,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 462,
@@ -7001,7 +7109,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 463,
@@ -7022,6 +7130,96 @@
       "scraped_at": "2026-06-29T05:52:56Z"
     },
     {
+      "id": 519,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 12 BD TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN TAMAN PELANGI SEMENYIH, DAERAH HULU LANGAT, SELANGOR DARUL EHSAN - PAKEJ B",
+      "ref": "JKR/DHL/P056/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-08",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Hulu Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87105",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 520,
+      "title": "KERJA-KERJA MENURAP SEMULA JALAN DI JALAN DATO YUSUF SHAHBUDIN 10, 10A, 10B, 10C, 11, 12, 13, 14, 15, 16, 16A, 16B, LINTANG DATO YUSUF SHAHBUDIN 2, 3, 4 DAN SOLOK DATO YUSUF SHAHBUDIN 16, BANDAR SENTOSA, KLANG SELATAN SERTA KERJA-KERJA BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ 600-7/4/17",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-08",
+      "value": null,
+      "category": "Gred CIDB: G4 / CE01 DAN CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87090",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 544,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027: PEMBINAAN 6BD TAMBAHAN (ALIRAN PERDANA)  DI SEKOLAH KEBANGSAAN TELOK GADONG, DAERAH KLANG, SELANGOR DARUL EHSAN",
+      "ref": "JKR/KLG/SH/63/2026(P)",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-08",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Klang",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87029",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 547,
+      "title": "KERJA-KERJA MENURAP SEMULA JALAN DI LEBUH KANGAR, JALAN LABIS 65 DAN JALAN KANGAR 85, 86, 87, 88, KLANG UTARA, SERTA KERJA-KERJA YANG BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ.600-7/4/16",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-08",
+      "value": null,
+      "category": "Gred CIDB: G3 / CE01 DAN CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87130",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 548,
+      "title": "KERJA-KERJA MENURAP SEMULA JALAN DI SEBAHAGIAN JALAN SULTANAH DAN SEBAHAGIAN JALAN SULTAN ABDUL SAMAD 40, KAWASAN PERINDUSTRIAN BANDAR SULTAN SULEIMAN SERTA KERJA-KERJA BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ 600-7/4/12",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-08",
+      "value": null,
+      "category": "Gred CIDB: G3 / CE01 ATAU CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87109",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
       "id": 315,
       "title": "PERKHIDMATAN KAWALAN KESELAMATAN TANPA SENJATA API BAGI PEJABAT DAN PREMIS MPHS BAGI TEMPOH 24 BULAN UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
       "ref": "MPHS/TD/KP/8/2026",
@@ -7037,7 +7235,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 355,
@@ -7055,7 +7253,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 402,
@@ -7073,7 +7271,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 403,
@@ -7091,7 +7289,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 404,
@@ -7109,7 +7307,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 420,
@@ -7127,7 +7325,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 421,
@@ -7145,7 +7343,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 436,
@@ -7163,7 +7361,133 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 480,
+      "title": "KERJA-KERJA PENGGANTIAN 1 UNIT LIF DAN KERJA-KERJA BERKAITAN DI BLOK A PANGSAPURI TAMAN PERMAI INDAH",
+      "ref": "MBDK.JKEJ.600-7/2/19",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G3 / M03",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87092",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 481,
+      "title": "KERJA-KERJA PENGGANTIAN 1 UNIT LIF DAN KERJA-KERJA BERKAITAN DI BLOK A, PANGSAPURI IDAMAN SENTOSA",
+      "ref": "MBDK.JKEJ.600-7/2/20",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G3 / M03",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87093",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 539,
+      "title": "SISTEM PENCEGAH KEBAKARAN DAN PAM PENGGALAK BAGI PEMBINAAN KLINIK KESIHATAN (JENIS 3) SIJANGKANG, DAERAH KUALA LANGAT, SELANGOR DARUL EHSAN.",
+      "ref": "JKR/PER/SEL/60/2026(MEK)",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G3 / M02 DAN M22",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87095",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 540,
+      "title": "KERJA-KERJA PEMBAIKAN MODULER AIR COOLED CHILLER TERMASUK KERJA BERKAITAN DI BANGUNAN IBU PEJABAT PERTAHANAN AWAM MALAYSIA, KAJANG, SELANGOR DARUL EHSAN.",
+      "ref": "JKR/PER/SEL/64/2026(MEK)",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G2 / M01",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87096",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 541,
+      "title": "SISTEM PENYAMAN UDARA DAN PENGUDARAAN MEKANIKAL SERTA PAM PENGGALAK BAGI PROJEK MEMBINA DAN MENYIAPKAN BANGUNAN BARU MASJID AL-EHSAN, KAMPUNG SUNGAI SERAI DAN KERJA-KERJA BERKAITAN, DAERAH HULU LANGAT, SELANGOR DARUL EHSAN.",
+      "ref": "JKR/SEL/14/2026 (MEK)",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G2 / M01 DAN M22",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87097",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 542,
+      "title": "PELANTIKAN KONTRAKTOR PANEL TAMBAHAN BAGI KERJA-KERJA PENYELENGGARAAN PENYAMAN UDARA JABATAN KEJURUTERAAN, MAJLIS PERBANDARAN HULU SELANGOR BAGI TAHUN 2026",
+      "ref": "MPHS/SH/K/74/2026",
+      "source_id": 2,
+      "open_date": "2026-06-29",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G1 / M01 / E11",
+      "ministry": "Majlis Perbandaran Hulu Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87075",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 543,
+      "title": "PELANTIKAN KONTRAKTOR PANEL TAMBAHAN BAGI KERJA-KERJA PENYELENGGARAAN LAMPU JALAN DAN LAMPU ISYARAT JABATAN KEJURUTERAAN, MAJLIS PERBANDARAN HULU SELANGOR BAGI TAHUN 2026",
+      "ref": "MPHS/SH/K/75/2026",
+      "source_id": 2,
+      "open_date": "2026-06-29",
+      "deadline": "2026-07-09",
+      "value": null,
+      "category": "Gred CIDB: G2 / E04 / E11 / E16",
+      "ministry": "Majlis Perbandaran Hulu Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87101",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 451,
@@ -7181,7 +7505,385 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 475,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 2BD TAMBAHAN (ALIRAN PPKI) DAN LAIN-LAIN KERJA BERKAITAN DI SEKOLAH  KEBANGSAAN SRI DAMAI, PETALING JAYA,  DAERAH PETALING, SELANGOR DARUL EHSAN",
+      "ref": "JKR/PET/29P/12/2026",
+      "source_id": 2,
+      "open_date": "2026-07-03",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G3 / B04",
+      "ministry": "Jabatan Kerja Raya Petaling",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87135",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 476,
+      "title": "PROGRAM BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027: PEMBINAAN 8BD TAMBAHAN (ALIRAN PERDANA) DAN LAIN-LAIN KERJA BERKAITAN DI SEKOLAH KEBANGSAAN SETIA ALAM, SHAH ALAM, DAERAH PETALING, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "JKR/PET/30P/12/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Petaling",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87136",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 477,
+      "title": "PROGRAM BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 4BD TAMBAHAN (ALIRAN PERDANA) DAN LAIN-LAIN KERJA BERKAITAN DI SEKOLAH KEBANGSAAN SETIA ALAM, SHAH ALAM, DAERAH PETALING, SELANGOR DARUL EHSAN (PAKEJ B)",
+      "ref": "JKR/PET/31P/12/2026",
+      "source_id": 2,
+      "open_date": "2026-07-03",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Petaling",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87137",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 478,
+      "title": "PROGRAM BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 8BD TAMBAHAN (ALIRAN PERDANA) DAN LAIN-LAIN KERJA BERKAITAN DI SEKOLAH KEBANGSAAN SEKSYEN 7, SHAH ALAM, DAERAH PETALING, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "JKR/PET/32P/12/2026",
+      "source_id": 2,
+      "open_date": "2026-07-03",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Petaling",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87138",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 479,
+      "title": "PROGRAM BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 4BD TAMBAHAN (ALIRAN PERDANA) DAN LAIN-LAIN KERJA BERKAITAN DI SEKOLAH KEBANGSAAN SEKSYEN 7, SHAH ALAM, DAERAH PETALING, SELANGOR DARUL EHSAN (PAKEJ B)",
+      "ref": "JKR/PET/33P/12/2026",
+      "source_id": 2,
+      "open_date": "2026-07-03",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Petaling",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87139",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 517,
+      "title": "PEMASANGAN ELEKTRIK BAGI CADANGAN MENAIKTARAF PEPRUSTAKAAN PEKAN KAMPUNG LAKSAMANA BATU CAVES, DAERAH GOMBAK, SELANGOR DARUK EHSAN",
+      "ref": "JKR(ES)GK/600-1/4/SN 61/26",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G2  G3  G4  G5  G6  G7 / E01 DAN E04 DAN E11 DAN E17",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87118",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 518,
+      "title": "MENYEDIA DAN MEMBEKAL KEPERLUAN BAGI KEMPEN KESEDARAN MEMELIHARA SUMBER AIR KITA LEMBAGA URUS AIR SELANGOR (LUAS) 2026",
+      "ref": "LUAS/S/18/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "MOF: 221615 ATAU 222004 ATAU 221601 ATAU 020699",
+      "ministry": "Lembaga Urus Air Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87134",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 525,
+      "title": "KERJA-KERJA MENGECAT DINDING LUAR BANGUNAN BLOK C DI IBU PEJABAT AGENSI ANTI DADAH KEBANGSAAN (AADK), SUNGAI MERAB, SEPANG, SELANGOR DARUL EHSAN.",
+      "ref": "JKR (N). SPG. BIL. 39/2026",
+      "source_id": 2,
+      "open_date": "2026-07-03",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G2 / B24",
+      "ministry": "Jabatan Kerja Raya Sepang",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87045",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 526,
+      "title": "KERJA-KERJA MEMBAIKPULIH DAN MENAIKTARAF PAGAR PERIMETER, PADANG KAWAD DAN ASTAKA DI AKADEMI LATIHAN PERTAHANAN AWAM (ALPHA) BANGI, SELANGOR.",
+      "ref": "JKR (P) SPG. BIL. 40/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G3 / B24",
+      "ministry": "Jabatan Kerja Raya Sepang",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87098",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 527,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN (1) GOMBAK, JALAN GOMBAK, KUALA LUMPUR (PAKEJ C)",
+      "ref": "PER/BGN/30/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87043",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 528,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN KUANG, RAWANG SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/31/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87044",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 529,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN KUANG, RAWANG SELANGOR DARUL EHSAN (PAKEJ C)",
+      "ref": "PER/BGN/32/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87048",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 530,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN TAMAN MELAWATI, HULU KELANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/33/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87049",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 531,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN TAMAN MELAWATI 2, HULU KELANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/34/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87050",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 532,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN SG. SERAI, RAWANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/35/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87051",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 533,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN TAMAN DESA 2, RAWANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/36/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87052",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 534,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH JENIS KEBANGSAAN (TAMIL), RAWANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/37/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87053",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 535,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN SELAYANG BARU (2), BATU CAVES, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/38/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87054",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 536,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN SUNGAI BULOH, SUNGAI BULOH, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/39/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87055",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 537,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN BUKIT RAHMAN PUTRA, SUNGAI BULOH, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/40/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87056",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 538,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027 : PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN SERI KUNDANG, RAWANG, SELANGOR DARUL EHSAN (PAKEJ A)",
+      "ref": "PER/BGN/41/2026",
+      "source_id": 2,
+      "open_date": "2026-07-02",
+      "deadline": "2026-07-10",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Gombak",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87057",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 168,
@@ -7199,7 +7901,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 204,
@@ -7217,7 +7919,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 386,
@@ -7235,7 +7937,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 396,
@@ -7247,13 +7949,67 @@
       "value": null,
       "category": "Gred CIDB: G4 / CE21",
       "ministry": "Majlis Bandaraya Subang Jaya",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/86963",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 474,
+      "title": "KERJA PEMBAIKAN CERUN DI JALAN ULU YAM BAHARU - BATU CAVES (B23) SEKSYEN 19.00, DAERAH HULU SELANGOR, SELANGOR DARUL EHSAN.",
+      "ref": "JKR/SEL/SH/(N)/17/2026",
+      "source_id": 2,
+      "open_date": "2026-07-06",
+      "deadline": "2026-07-13",
+      "value": null,
+      "category": "Gred CIDB: G4 / CE01 DAN CE08 DAN CE10 DAN CE21",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87126",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 515,
+      "title": "CADANGAN PEMBELIAN KOMPUTER RIBA UNTUK KEGUNAAN MAJLIS PERBANDARAN KUALA LANGAT",
+      "ref": "MPKL/JTM/2026/SH.5",
+      "source_id": 2,
+      "open_date": "2026-07-06",
+      "deadline": "2026-07-13",
+      "value": null,
+      "category": "MOF: 210101",
+      "ministry": "Majlis Perbandaran Kuala Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87123",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 516,
+      "title": "CADANGAN MEMBEKAL DAN MEMASANG PAPARAN \"BILLBOARD\" UNTUK MAJLIS PERBANDARAN KUALA LANGAT BAGI TAHUN 2027-2028",
+      "ref": "MPKL/JKPM/SH/07",
+      "source_id": 2,
+      "open_date": "2026-07-06",
+      "deadline": "2026-07-13",
+      "value": null,
+      "category": "MOF: 222003",
+      "ministry": "Majlis Perbandaran Kuala Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87120",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 167,
@@ -7271,7 +8027,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 450,
@@ -7289,7 +8045,223 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 471,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027: PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN DESA AMAN KUALA SELANGOR, SELANGOR",
+      "ref": "31/2026 (F)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Kuala Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87119",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 472,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027: PEMBINAAN 6 BILIK DARJAH TAMBAHAN (ALIRAN PPKI) DI SEKOLAH KEBANGSAAN SERI PRISTANA KUALA SELANGOR, SELANGOR",
+      "ref": "32/2026 (F)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Kuala Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87121",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 473,
+      "title": "PROJEK BILIK DARJAH TAMBAHAN TAHUN 1 SESI 2027: PEMBINAAN 10 BILIK DARJAH TAMBAHAN (ALIRAN PERDANA) DI SEKOLAH KEBANGSAAN SERI PRISTANA KUALA SELANGOR, SELANGOR",
+      "ref": "33/2026 (F)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G4 / B04",
+      "ministry": "Jabatan Kerja Raya Kuala Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87125",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 507,
+      "title": "KONTRAK BERJADUAL BAGI KERJA-KERJA PENYELENGGARAAN SECARA KOMPREHENSIF SISTEM LIF PENUMPANG DUA (2) UNIT DAN KERJA BERKAITAN UNTUK TEMPOH DUA PULUH EMPAT (24) BULAN DI PUSAT HIDROGRAFI NASIONAL (PHN) PULAU INDAH, KLANG, SELANGOR DARUL EHSAN",
+      "ref": "JKR.UTS.SH/PHN/M-49/2026",
+      "source_id": 2,
+      "open_date": "2026-07-08",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G1  G2  G3  G4  G5 / M03",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87103",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 508,
+      "title": "KERJA-KERJA MEMBAIKPULIH TANDAS DAN PENGGANTIAN PAIP AIR UTAMA DAN LAIN-LAIN KERJA BERKAITAN DI STOR LADANG AIR MANIS JKR DAERAH SABAK BERNAM  SELANGOR DARUL EHSAN",
+      "ref": "19/2026",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE21",
+      "ministry": "Jabatan Kerja Raya Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87112",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 509,
+      "title": "PROGRAM PEMBINAAN BANGUNAN MODULAR DAN IBS DI INSTITUTI KPM RMK13 – PEMBINAAN DUA (2) BILIK DARJAH TAMBAHAN (ALIRAN PPKI) DAN SATU (1) BLOK TANDAS DI SEKOLAH KEBANGSAAN SIMPANG LIMA, SABAK BERNAM, SELANGOR",
+      "ref": "18/2026",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G3 / B04",
+      "ministry": "Jabatan Kerja Raya Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87111",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 510,
+      "title": "KERJA-KERJA MENAIKTARAF JALAN PERTANIAN DI KG PARIT 1 TIMUR SERTA KERJA BERKAITAN DI KAWASAN PENGAIRAN PANCHANG BEDENA  DAERAH SABAK BERNAM",
+      "ref": "JPS/P/SB/P21/32/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE01 / CE21",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87113",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 511,
+      "title": "KERJA-KERJA MEMBAIKPULIH JALAN PERTANIAN PARIT PAKAT PPP7 PARIT 11 & JALAN KSB PARIT 11 KE PARIT 12 SERTA KERJA-KERJA BERKAITAN DI KAMPUNG PARIT 11 PASIR PANJANG KAWASAN PENGAIRAN PASIR PANJANG DAERAH SABAK BERNAM",
+      "ref": "JPS/P/SB/P21/33/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE01 / CE21",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87114",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 512,
+      "title": "KERJA - KERJA MEMBAIKPULIH DI JALAN SUNGAI NIPAH BAROH, KAMPUNG SUNGAI HAJI DORANI, SUNGAI BESAR JALAN LADANG PEKEBUN KECIL (JLPK) PERSENDIRIAN DI BAWAH KEMENTERIAN PERLADANGAN DAN KOMODITI (KPK) TAHUN 2026 FASA 1,  DAERAH SABAK BERNAM",
+      "ref": "JPS/P/SB/JLPK/35/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE01 / CE21",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87116",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 513,
+      "title": "KERJA - KERJA MEMBAIKPULIH DI JALAN PARIT CHANGKAT, SUNGAI BESAR. JALAN LADANG PEKEBUN KECIL (JLPK) PERSENDIRIAN DI BAWAH KEMENTERIAN PERLADANGAN DAN KOMODITI (KPK) TAHUN 2026 FASA 1, DAERAH SABAK BERNAM",
+      "ref": "JPS/P/SB/JLPK/36/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE01 / CE21",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87117",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 514,
+      "title": "KERJA-KERJA MEMBAIKPULIH JALAN LADANG KAMPUNG PARIT 13 SERTA KERJA BERKAITAN DI SUNGAI PANJANG, DAERAH SABAK BERNAM.",
+      "ref": "JPS/P/SB/P21/34/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE01 / CE21",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Sabak Bernam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87115",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 524,
+      "title": "SEBUT HARGA KERJA MENAIK TARAF RANGKAIAN INFRASTRUKTUR TALIAN TELEFON KEPADA IP PBX SYSTEM (VOIP)  DI PEJABAT SETIAUSAHA KERAJAAN NEGERI SELANGOR",
+      "ref": "SH/SUKSEL/27-2026",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-14",
+      "value": null,
+      "category": "Gred CIDB: G3  G4 / E07",
+      "ministry": "Pejabat SUK Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87100",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 354,
@@ -7301,13 +8273,13 @@
       "value": null,
       "category": null,
       "ministry": "Pengurusan Air Selangor Sdn Bhd",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/86933",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 424,
@@ -7325,7 +8297,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 505,
+      "title": "KERJA-KERJA MEMBINA KUARTERS PINTU AIR JALAN PAPAN SERTA KERJA-KERJA BERKAITAN, DAERAH KLANG, SELANGOR DARUL EHSAN",
+      "ref": "JPS/N/KLG/P13/48/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-08",
+      "deadline": "2026-07-15",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE21 / CE36",
+      "ministry": "Jabatan Pengairan dan Saliran Daerah Klang",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87104",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 506,
+      "title": "MEMBEKAL DAN MEMASANG KEMUDAHAN RIADAH DI (1) JALAN 10, TAMAN PERKASA FASA 1, (2) JALAN 1, TAMAN TITIWANGSA, (3) JALAN 4, TAMAN DESA SAUJANA, (4) JALAN TPS 2/3, TAMAN PELANGI SEMENYIH, (5) JALAN TPS 4/10, TAMAN PELANGI SEMENYIH, DAN (6) JALAN SRI TANJUNG 12, TAMAN SRI TANJUNG, MUKIM HULU LANGAT DAN SEMENYIH, DAERAH HULU LANGAT, SELANGOR DARUL EHSAN",
+      "ref": "MPKj S105/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-15",
+      "value": null,
+      "category": "MOF: 080101 ATAU 080199",
+      "ministry": "Majlis Perbandaran Kajang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87106",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 433,
@@ -7343,7 +8351,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 434,
@@ -7361,7 +8369,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 435,
@@ -7379,7 +8387,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 440,
@@ -7397,7 +8405,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 441,
@@ -7415,7 +8423,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 503,
+      "title": "KERJA-KERJA MEMBAIKPULIH LONGKANG DI SEBAHAGIAN JALAN MATA KUCHING, TAMAN GEMBIRA SEERTA KERJA-KERJA BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ.600-7/1/175",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-16",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87089",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 504,
+      "title": "KERJA-KERJA MENAIKTARAF SISTEM PERPARITAN DI SEBAHAGIAN JALAN JELAI, KLANG SELATAN SERTA KERJA-KERJA LAIN YANG BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ.600-7/1/174",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-16",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87122",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 215,
@@ -7433,7 +8477,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 468,
@@ -7445,13 +8489,31 @@
       "value": null,
       "category": "MOF: 221001 DAN 221002 DAN 221003",
       "ministry": "Pejabat SUK Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87074",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 502,
+      "title": "KERJA-KERJA MENGGANTI LAPISAN WATERPROOFING SEDIA ADA DAN MENAIK TARAF STRUKTUR PANEL SOLAR DI DEWAN JUBLI PERAK",
+      "ref": "SH/SUKSEL/24-2026",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-21",
+      "value": null,
+      "category": "Gred CIDB: G3 / B08 DAN B24",
+      "ministry": "Pejabat SUK Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87102",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 423,
@@ -7469,7 +8531,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 166,
@@ -7487,7 +8549,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 448,
@@ -7505,7 +8567,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 449,
@@ -7523,7 +8585,331 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 485,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 7 (Seksyen U1, U5, U8, U9, U10, U11, U19 Dan U20), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 145/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87071",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 486,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 6 (Seksyen 30, 31, 32, 33, 34, 35 Dan 36), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 144/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87070",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 487,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 5 (Seksyen 23, 24, 25, 26, 27, 28 Dan 29), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 143/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87069",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 488,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 4 (Seksyen 15, 16, 17, 18, 19, 20, 21 Dan 22), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 142/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87068",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 489,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 3 (Seksyen 2, 3, 4, 5, 6, 7, 8 Dan U12), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 141/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87067",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 490,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 2 (Seksyen 9, 10, 11, 12, 13, 14, U13 Dan U14), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 140/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87066",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 491,
+      "title": "Cadangan Kerja-Kerja Membekal, Menyewa Dan Menyelenggara Dua Puluh Lima (25) Unit Mesin Penyalin Digital (Fotostat) Warna “Medium Duty” Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 138/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 020201 DAN 220201",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87064",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 492,
+      "title": "Cadangan Perkhidmatan Pembersihan Longkang Besar Di Zon SA-LB26 Sungai Renggam (Seksyen 2, Seksyen 15, Seksyen 17 Dan Seksyen 18) Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 137/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87063",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 493,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Dan Pasar Majlis Di Zon SA-GP1, Seksyen U19, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 136/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87062",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 494,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di ZON SA-G21, Seksyen U19, (U19A, U19B & U19C) Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 134/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87060",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 495,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G19, Seksyen U5 (U5A, U5B & U5C), Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 133/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87059",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 496,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G13 Seksyen 27, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 132/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87058",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 497,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G12 Seksyen 24 (24A, 24B & 24C), Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 131/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87047",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 498,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G7 Seksyen 19, Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 130/2026)",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87046",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 499,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G5 Seksyen 16, Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 129/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87042",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 500,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G4 Seksyen 15 (15B) , Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 128/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/86885",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 501,
+      "title": "Cadangan Perkhidmatan Pembersihan Gerai Majlis Di Zon SA-G22, Seksyen 19, Hentian Akhir Bandar (HAB), Shah Alam Untuk Majlis Bandaraya Shah Alam.",
+      "ref": "T 135/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 DAN 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87061",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 484,
+      "title": "Cadangan Melantik Kuari Sebagai Panel Pembekal Premix Di Zon 1 (Seksyen U2, U3, U4, U6, U15, U16, U17 Dan U18), Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 139/2026",
+      "source_id": 2,
+      "open_date": "2026-07-01",
+      "deadline": "2026-07-26",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87065",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 439,
@@ -7541,7 +8927,61 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 469,
+      "title": "TAWARAN PERKHIDMATAN PEMBERSIHAN DAN PENCUCIAN SERTA LANDSKAP DI MENARA YAYASAN SELANGOR PETALING JAYA MILIK YAYASAN SELANGOR",
+      "ref": "YS/P/SH09/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-07-28",
+      "value": null,
+      "category": "MOF: 221001",
+      "ministry": "Yayasan Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87133",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 470,
+      "title": "TAWARAN PERKHIDMATAN PEMBERSIHAN DAN PENCUCIAN SERTA LANDSKAP DI BANGUNAN YAYASAN SELANGOR KAMPUNG BARU KUALA LUMPUR MILIK YAYASAN SELANGOR",
+      "ref": "YS/P/SH08/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-07-28",
+      "value": null,
+      "category": "MOF: 221001",
+      "ministry": "Yayasan Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87132",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
+    },
+    {
+      "id": 483,
+      "title": "KERJA-KERJA PENGGANTIAN 14 UNIT LIF DI JABATAN KASTAM DIRAJA MALAYSIA WILAYAH PERSEKUTUAN KUALA LUMPUR",
+      "ref": "JKR/SEL/(P)/009)/2026",
+      "source_id": 2,
+      "open_date": "2026-07-07",
+      "deadline": "2026-07-28",
+      "value": null,
+      "category": "Gred CIDB: G6  G7 / M03",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87131",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 291,
@@ -7559,7 +8999,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 165,
@@ -7577,7 +9017,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 255,
@@ -7595,7 +9035,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     },
     {
       "id": 259,
@@ -7613,7 +9053,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-06-29T05:52:56Z"
+      "scraped_at": "2026-07-01T05:23:45Z"
     }
   ],
   "notifications": []
