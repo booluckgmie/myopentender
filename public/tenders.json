@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-07-09T04:56:28Z",
+  "exported_at": "2026-07-10T04:56:24Z",
   "tenders": [
     {
       "id": 8,
@@ -161,7 +161,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": "2026-06-08T12:51:14Z",
-      "scraped_at": "2026-07-09T04:55:56Z"
+      "scraped_at": "2026-07-10T04:55:51Z"
     },
     {
       "id": 53,
@@ -1028,24 +1028,6 @@
       "scraped_at": "2026-06-10T13:55:02Z"
     },
     {
-      "id": 200,
-      "title": "KERJA MEMBINA DINDING BATU SANGKAR (GABION WALL) UNTUK MEMBAIK PULIH RUNTUHAN TEBING DI REZAB PARIT UTAMA BERSEBELAHAN JALAN SERI PAGI 4, BANDAR BUKIT SENTOSA UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
-      "ref": "MPHS/SH/K/59/2026",
-      "source_id": 2,
-      "open_date": "2026-06-03",
-      "deadline": "2026-06-10",
-      "value": null,
-      "category": "Gred CIDB: G1 / CE08 DAN CE21",
-      "ministry": "Majlis Perbandaran Hulu Selangor",
-      "status": "active",
-      "url": "https://tender.selangor.my/tenders/86739",
-      "notes": null,
-      "starred": 0,
-      "notified": 0,
-      "date_added": null,
-      "scraped_at": "2026-06-10T13:55:02Z"
-    },
-    {
       "id": 201,
       "title": "KERJA MEMBAIK PULIH CERUN SERTA KERJA BERKAITAN DI KAMPUNG MELAYU RASA TAMBAHAN UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
       "ref": "MPHS/SH/K/60/2026",
@@ -1352,24 +1334,6 @@
       "scraped_at": "2026-06-10T13:55:02Z"
     },
     {
-      "id": 244,
-      "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN TOYOTA INNOVA 2.0 (A) BERNOMBOR PENDAFTARAN – BKE 6102",
-      "ref": "MBSJ.KUB.400-5/6/729",
-      "source_id": 2,
-      "open_date": "2026-05-18",
-      "deadline": "2026-06-10",
-      "value": null,
-      "category": null,
-      "ministry": "Majlis Bandaraya Subang Jaya",
-      "status": "active",
-      "url": "https://tender.selangor.my/tenders/86554",
-      "notes": null,
-      "starred": 0,
-      "notified": 0,
-      "date_added": null,
-      "scraped_at": "2026-06-10T13:55:02Z"
-    },
-    {
       "id": 245,
       "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN PROTON SAGA 1.3 (A) BERNOMBOR PENDAFTARAN – BKV 1104",
       "ref": "MBSJ.KUB.400-5/6/727",
@@ -1471,24 +1435,6 @@
       "ministry": "Majlis Bandaraya Subang Jaya",
       "status": "active",
       "url": "https://tender.selangor.my/tenders/86548",
-      "notes": null,
-      "starred": 0,
-      "notified": 0,
-      "date_added": null,
-      "scraped_at": "2026-06-10T13:55:02Z"
-    },
-    {
-      "id": 251,
-      "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN NISSAN X-TRAIL 2.5 (A) BERNOMBOR PENDAFTARAN – BHW 1122",
-      "ref": "MBSJ.KUB.400-5/6/721",
-      "source_id": 2,
-      "open_date": "2026-05-18",
-      "deadline": "2026-06-10",
-      "value": null,
-      "category": null,
-      "ministry": "Majlis Bandaraya Subang Jaya",
-      "status": "active",
-      "url": "https://tender.selangor.my/tenders/86547",
       "notes": null,
       "starred": 0,
       "notified": 0,
@@ -7649,7 +7595,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 451,
@@ -7667,7 +7613,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 475,
@@ -7685,7 +7631,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 476,
@@ -7703,7 +7649,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 477,
@@ -7721,7 +7667,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 478,
@@ -7739,7 +7685,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 479,
@@ -7757,7 +7703,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 517,
@@ -7775,7 +7721,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 518,
@@ -7793,7 +7739,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 519,
@@ -7811,7 +7757,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 525,
@@ -7829,7 +7775,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 526,
@@ -7847,7 +7793,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 527,
@@ -7865,7 +7811,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 528,
@@ -7883,7 +7829,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 529,
@@ -7901,7 +7847,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 530,
@@ -7919,7 +7865,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 531,
@@ -7937,7 +7883,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 532,
@@ -7955,7 +7901,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 533,
@@ -7973,7 +7919,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 534,
@@ -7991,7 +7937,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 535,
@@ -8009,7 +7955,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 536,
@@ -8027,7 +7973,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 537,
@@ -8045,7 +7991,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 538,
@@ -8063,7 +8009,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 552,
@@ -8081,7 +8027,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 581,
@@ -8099,7 +8045,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 582,
@@ -8117,7 +8063,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 583,
@@ -8135,7 +8081,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 584,
@@ -8153,7 +8099,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 593,
@@ -8171,7 +8117,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 594,
@@ -8189,7 +8135,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 132,
@@ -8207,7 +8153,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 168,
@@ -8225,7 +8171,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 204,
@@ -8243,7 +8189,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 386,
@@ -8261,7 +8207,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 396,
@@ -8279,7 +8225,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 474,
@@ -8297,7 +8243,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 515,
@@ -8315,7 +8261,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 516,
@@ -8333,7 +8279,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 560,
@@ -8351,7 +8297,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 561,
@@ -8369,7 +8315,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 562,
@@ -8387,7 +8333,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 563,
@@ -8405,7 +8351,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 564,
@@ -8423,7 +8369,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 565,
@@ -8441,7 +8387,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 566,
@@ -8459,7 +8405,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 567,
@@ -8477,7 +8423,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 568,
@@ -8495,7 +8441,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 569,
@@ -8513,7 +8459,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 570,
@@ -8531,7 +8477,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 571,
@@ -8549,7 +8495,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 578,
@@ -8567,7 +8513,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 579,
@@ -8585,7 +8531,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 580,
@@ -8603,7 +8549,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 592,
@@ -8621,7 +8567,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 600,
@@ -8639,7 +8585,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 607,
@@ -8657,7 +8603,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 627,
@@ -8675,7 +8621,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 628,
@@ -8693,7 +8639,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 629,
@@ -8711,7 +8657,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 167,
@@ -8729,7 +8675,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 450,
@@ -8747,7 +8693,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 471,
@@ -8765,7 +8711,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 472,
@@ -8783,7 +8729,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 473,
@@ -8801,7 +8747,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 507,
@@ -8819,7 +8765,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 508,
@@ -8837,7 +8783,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 509,
@@ -8855,7 +8801,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 510,
@@ -8873,7 +8819,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 511,
@@ -8891,7 +8837,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 512,
@@ -8909,7 +8855,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 513,
@@ -8927,7 +8873,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 514,
@@ -8945,7 +8891,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 524,
@@ -8963,7 +8909,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 551,
@@ -8981,7 +8927,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 576,
@@ -8999,7 +8945,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 577,
@@ -9017,7 +8963,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 626,
@@ -9035,7 +8981,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 272,
@@ -9053,7 +8999,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 354,
@@ -9071,7 +9017,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 424,
@@ -9089,7 +9035,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 505,
@@ -9107,7 +9053,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 506,
@@ -9125,7 +9071,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 574,
@@ -9143,7 +9089,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 575,
@@ -9161,7 +9107,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 589,
@@ -9179,7 +9125,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 590,
@@ -9197,7 +9143,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 591,
@@ -9215,7 +9161,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 641,
@@ -9225,7 +9171,7 @@
       "open_date": "2026-07-09",
       "deadline": "2026-07-15",
       "value": null,
-      "category": "MOF: 221303 DAN 221304 DAN 221305 DAN 222602",
+      "category": "MOF: 221303 DAN 221304 DAN 221305 DAN 221511",
       "ministry": "Jabatan Agama Islam Selangor",
       "status": "active",
       "url": "https://tender.selangor.my/tenders/87225",
@@ -9233,7 +9179,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 642,
@@ -9251,7 +9197,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 643,
@@ -9269,7 +9215,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 648,
@@ -9287,7 +9233,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 649,
@@ -9305,7 +9251,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 200,
+      "title": "KERJA MEMBINA DINDING BATU SANGKAR (GABION WALL) UNTUK MEMBAIK PULIH RUNTUHAN TEBING DI REZAB PARIT UTAMA BERSEBELAHAN JALAN SERI PAGI 4, BANDAR BUKIT SENTOSA UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
+      "ref": "MPHS/SH/K/59/2026 REV.1",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-16",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE08 DAN CE21",
+      "ministry": "Majlis Perbandaran Hulu Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87256",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 433,
@@ -9323,7 +9287,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 434,
@@ -9341,7 +9305,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 435,
@@ -9359,7 +9323,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 440,
@@ -9377,7 +9341,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 441,
@@ -9395,7 +9359,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 503,
@@ -9413,7 +9377,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 504,
@@ -9431,7 +9395,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 573,
@@ -9443,13 +9407,13 @@
       "value": null,
       "category": "Gred CIDB: G3 / B07 DAN B24",
       "ministry": "Jabatan Kerja Raya Negeri Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87176",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 586,
@@ -9461,13 +9425,13 @@
       "value": null,
       "category": "Gred CIDB: G1 / B04 ATAU B24",
       "ministry": "Jabatan Kerja Raya Negeri Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87162",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 587,
@@ -9479,13 +9443,13 @@
       "value": null,
       "category": "Gred CIDB: G1 / B04 ATAU B24",
       "ministry": "Jabatan Kerja Raya Negeri Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87164",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 588,
@@ -9497,13 +9461,13 @@
       "value": null,
       "category": "Gred CIDB: G1 / B04 ATAU B24",
       "ministry": "Jabatan Kerja Raya Negeri Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87165",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 605,
@@ -9521,7 +9485,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 606,
@@ -9539,7 +9503,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 611,
@@ -9557,7 +9521,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 612,
@@ -9575,7 +9539,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 613,
@@ -9593,7 +9557,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 623,
@@ -9605,13 +9569,13 @@
       "value": null,
       "category": "MOF: 220801",
       "ministry": "Jabatan Kehakiman Syariah Selangor Darul Ehsan",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87199",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-07T04:54:56Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 624,
@@ -9629,7 +9593,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 625,
@@ -9647,7 +9611,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 637,
@@ -9665,7 +9629,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 638,
@@ -9683,7 +9647,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 639,
@@ -9701,7 +9665,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 640,
@@ -9719,7 +9683,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 658,
+      "title": "JADUAL KADAR HARGA BAGI MEMBEKAL DAN MENGHANTAR PERALATAN WORKSHOP DAN ALAT SPANAR UNTUK KEGUNAAN PEMBANTU KEMAHIRAN MAJLIS BANDARAYA PETALING JAYA UNTUK TEMPOH 24 BULAN",
+      "ref": "MBPJ/SH/B/143/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-16",
+      "value": null,
+      "category": "MOF: 130101",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87231",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 550,
@@ -9737,7 +9719,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 617,
@@ -9749,13 +9731,31 @@
       "value": null,
       "category": "Gred CIDB: G1 / CE21 / E11",
       "ministry": "Jabatan Pertanian Selangor",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87204",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 657,
+      "title": "KERJA-KERJA MENURAP SEMULA JALAN SERTA KERJA-KERJA BERKAITAN DI SEBAHAGIAN JALAN JENDERAM/SEPANG (B48), SEKSYEN 15.00 HINGGA SEKSYEN 20.00 (LOCALIZED), DAERAH SEPANG, SELANGOR DARUL EHSAN",
+      "ref": "JKR (N) SPG. BIL. 41/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-17",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE01 DAN CE42",
+      "ministry": "Jabatan Kerja Raya Sepang",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87242",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 601,
@@ -9773,7 +9773,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 602,
@@ -9791,7 +9791,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 603,
@@ -9809,7 +9809,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 604,
@@ -9827,7 +9827,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 616,
@@ -9845,7 +9845,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 619,
@@ -9863,7 +9863,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 620,
@@ -9881,7 +9881,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 621,
@@ -9899,7 +9899,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 622,
@@ -9917,7 +9917,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 647,
@@ -9935,7 +9935,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 215,
@@ -9953,7 +9953,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 468,
@@ -9971,7 +9971,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 502,
@@ -9989,7 +9989,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 636,
@@ -10007,7 +10007,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 645,
@@ -10025,7 +10025,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 646,
@@ -10043,7 +10043,61 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 656,
+      "title": "KERJA-KERJA BAIKPULIH SISTEM PENCEGAH KEBAKARAN DI KOMPLEKS PEJABAT KASTAM DIRAJA MALAYSIA WILAYAH PERSEKUTUAN KUALA LUMPUR, KELANA JAYA, NEGERI SELANGOR.",
+      "ref": "JKR/PER/SEL/68/2026(MEK)",
+      "source_id": 2,
+      "open_date": "2026-07-14",
+      "deadline": "2026-07-21",
+      "value": null,
+      "category": "Gred CIDB: G2 / M02",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87259",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 244,
+      "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN TOYOTA INNOVA 2.0 (A) BERNOMBOR PENDAFTARAN – BKE 6102",
+      "ref": "MBSJ.KUB.400-5/6/729",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-22",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Subang Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87240",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 251,
+      "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN NISSAN X-TRAIL 2.5 (A) BERNOMBOR PENDAFTARAN – BHW 1122",
+      "ref": "MBSJ.KUB.400-5/6/721",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-22",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Subang Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87238",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 423,
@@ -10061,7 +10115,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 615,
@@ -10079,7 +10133,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 618,
@@ -10097,7 +10151,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 635,
@@ -10115,7 +10169,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 644,
@@ -10133,7 +10187,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 655,
+      "title": "KERJA-KERJA MENAIKTARAF DAN MEMBAIKPULIH KEMUDAHAN AWAM SERTA LAIN-LAIN KERJA BERKAITAN DI PUSAT REKREASI SUNGAI KEDONDONG BATANG KALI, DAERAH HULU SELANGOR, SELANGOR DARUL EHSAN",
+      "ref": "JKR/HS/21/2026(N)",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-07-22",
+      "value": null,
+      "category": "Gred CIDB: G3 / B24 / CE01 / E04 / E11 / E16",
+      "ministry": "Jabatan Kerja Raya Hulu Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87269",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 676,
+      "title": "PELUPUSAN KENDERAAN MAJLIS BANDARAYA SUBANG JAYA BIL.1/2026 BAGI KENDERAAN NISSAN X-TRAIL 2.5 (A) BERNOMBOR PENDAFTARAN – BLX 3553",
+      "ref": "MBSJ.KUB.400-5/6/723",
+      "source_id": 2,
+      "open_date": "2026-07-09",
+      "deadline": "2026-07-22",
+      "value": null,
+      "category": null,
+      "ministry": "Majlis Bandaraya Subang Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87239",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 166,
@@ -10151,7 +10241,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 448,
@@ -10169,7 +10259,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 449,
@@ -10187,7 +10277,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 484,
@@ -10205,7 +10295,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 485,
@@ -10223,7 +10313,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 486,
@@ -10241,7 +10331,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 487,
@@ -10259,7 +10349,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 488,
@@ -10277,7 +10367,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 489,
@@ -10295,7 +10385,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 490,
@@ -10313,7 +10403,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 491,
@@ -10331,7 +10421,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 492,
@@ -10349,7 +10439,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 493,
@@ -10367,7 +10457,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 494,
@@ -10385,7 +10475,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 495,
@@ -10403,7 +10493,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 496,
@@ -10421,7 +10511,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 497,
@@ -10439,7 +10529,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 498,
@@ -10457,7 +10547,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 499,
@@ -10475,7 +10565,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 500,
@@ -10493,7 +10583,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 501,
@@ -10511,7 +10601,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 572,
@@ -10529,7 +10619,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 632,
@@ -10547,7 +10637,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 633,
@@ -10565,7 +10655,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 634,
@@ -10583,7 +10673,169 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 651,
+      "title": "PERKHIDMATAN PENURUNAN, PEMBERSIHAN DAN PELUPUSAN IKLAN/POSTER DI KAWASAN PB 4, PETALING JAYA BAGI TEMPOH 24 BULAN",
+      "ref": "MBPJ/SH/P/147/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87247",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 652,
+      "title": "PERKHIDMATAN PENURUNAN, PEMBERSIHAN DAN PELUPUSAN IKLAN/POSTER DI KAWASAN PB 3, PETALING JAYA BAGI TEMPOH 24 BULAN",
+      "ref": "MBPJ/SH/P/146/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87234",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 653,
+      "title": "PERKHIDMATAN PENURUNAN, PEMBERSIHAN DAN PELUPUSAN IKLAN/POSTER DI KAWASAN PB 2, PETALING JAYA BAGI TEMPOH 24 BULAN",
+      "ref": "MBPJ/SH/P/145/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87233",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 654,
+      "title": "PERKHIDMATAN PENURUNAN, PEMBERSIHAN DAN PELUPUSAN IKLAN/POSTER DI KAWASAN PB 1, PETALING JAYA BAGI TEMPOH 24 BULAN",
+      "ref": "MBPJ/SH/P/144/2026",
+      "source_id": 2,
+      "open_date": "2026-07-10",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221002 DAN 221003",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87232",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 671,
+      "title": "KERJA-KERJA BERKALA TOLOK BANJIR TELEMETRI DAN LAIN-LAIN KERJA YANG BERKAITAN DI STESEN TOLOK BANJIR JPS NEGERI SELANGOR",
+      "ref": "JPS/N/BPSAH/B(13)/21/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "Gred CIDB: G1 / M23",
+      "ministry": "Jabatan Pengairan dan Saliran",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87237",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 672,
+      "title": "PERKHIDMATAN PENGUTIPAN DAN PENGUMPULAN DATA SUKAT LUAH (GAUGING) BERJADUAL, PENYELENGGARAAN SERTA LAIN-LAIN KERJA YANG BERKAITAN DI STESEN SUKAT LUAH NEGERI SELANGOR",
+      "ref": "JPS/N/BPSAH/B(13)/22/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 100101 / 220503",
+      "ministry": "Jabatan Pengairan dan Saliran",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87241",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 673,
+      "title": "PENYELENGGARAAN  LAMAN WEB BAGI PEMANTAUAN DAN AMARAN BANJIR (24 JAM) SERTA LAIN-LAIN KERJA YANG BERKAITAN DI NEGERI SELANGOR",
+      "ref": "JPS/N/BPSAH/B(13)/23/2026(SH)",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 210104",
+      "ministry": "Jabatan Pengairan dan Saliran",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87243",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 674,
+      "title": "CADANGAN PERKHIDMATAN MEMBERSIH DAN MENCUCI DI BANGUNAN MILIK MPAJ ZON F (STADIUM MPAJ, BENGKEL MPAJ, LAMAN NIAGA, PASAR KUALA AMPANG)",
+      "ref": "MPAJ 3800/03/04/207/2026",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "MOF: 221001 / 221002",
+      "ministry": "Majlis Perbandaran Ampang Jaya",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87255",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 675,
+      "title": "KERJA-KERJA MEMBINA KOLAM TADAHAN DI JALAN HULUBALANG 37B, TAMAN MILLENIUM SENTOSA, KLANG SELATAN SERTA KERJA-KERJA BERKAITAN DENGANNYA",
+      "ref": "MBDK.JKEJ.600-7/1/254",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-23",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/86485",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 631,
@@ -10601,7 +10853,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 650,
+      "title": "CADANGAN KERJA PEMBAIKAN CERUN DAN KERJA-KERJA LAIN BERKAITAN DI LALUAN B66 SEKSYEN 13.20, JALAN BATANG KALI-GENTING HIGHLANDS, DAERAH HULU SELANGOR, SELANGOR DARUL EHSAN.",
+      "ref": "JKR/HS/20/2026(N)",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-24",
+      "value": null,
+      "category": "Gred CIDB: G3 / CE08",
+      "ministry": "Jabatan Kerja Raya Hulu Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87258",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 439,
@@ -10619,7 +10889,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 469,
@@ -10637,7 +10907,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 470,
@@ -10655,7 +10925,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 483,
@@ -10673,7 +10943,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 241,
@@ -10691,7 +10961,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 291,
@@ -10709,7 +10979,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 630,
@@ -10727,7 +10997,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 669,
+      "title": "CADANGAN MENAIKTARAF PADANG PERMAINAN DAN KEMUDAHAN AWAM SERTA KERJA-KERJA BERKAITAN DI JALAN CEMPAKA 30, TAMAN CEMPAKA UNTUK MAJLIS PERBANDARAN AMPANG JAYA",
+      "ref": "MPAJ 1600/01/02/216/2026",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-30",
+      "value": null,
+      "category": "Gred CIDB: G4 / CE21 / CE14",
+      "ministry": "Majlis Perbandaran Ampang Jaya",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87265",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 670,
+      "title": "CADANGAN MENAIK TARAF DATARAN REKREASI JALAN H12, TAMAN MELAWATI UNTUK MAJLIS PERBANDARAN AMPANG JAYA",
+      "ref": "MPAJ 1600/01/02/213/2026",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-07-30",
+      "value": null,
+      "category": "Gred CIDB: G4 / CE14 / CE21",
+      "ministry": "Majlis Perbandaran Ampang Jaya",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87268",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 608,
@@ -10745,7 +11051,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 609,
@@ -10763,7 +11069,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 610,
@@ -10781,7 +11087,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 585,
@@ -10799,7 +11105,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 614,
@@ -10817,7 +11123,187 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 660,
+      "title": "Cadangan Pelupusan Aset Alih Kerajaan (Kenderaan, Jentera  Berat Dan Ganset) Secara Kaedah Skrap Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 154/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 221902",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87254",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 661,
+      "title": "Cadangan Pelupusan Kenderaan Berat Terbiar / Buruk / Terbengkalai Hasil Penyitaan Jabatan Penguatkuasaan Yang Telah Melebihi Tempoh Tahanan Di Depoh Penyimpanan Kenderaan Terbengkalai Di Seksyen U16, Seksyen 17 Dan Seksyen 31, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 153/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 221902",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87253",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 662,
+      "title": "Cadangan Pelupusan Kenderaan Berat Terbiar / Buruk / Terbengkalai Hasil Penyitaan Jabatan Penguatkuasaan Yang Telah Melebihi Tempoh Tahanan Di Depoh Penyimpanan Kenderaan Terbengkalai Di Seksyen U16, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 152/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 221902",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87251",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 663,
+      "title": "Cadangan Kerja-Kerja Menyelenggara Pepasangan Elektrik Sistem Voltan Tinggi 11KV Dan Kerja-Kerja Berkaitan Di Bangunan Wisma MBSA, Seksyen 14, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 151/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "Gred CIDB: G4  G5  G6  G7 / E04 DAN E05 DAN E11",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87250",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 664,
+      "title": "Cadangan Kerja-Kerja Perkhidmatan Pengurusan Dan Penyelenggaraan Sistem Mekanikal Dan Elektrikal Secara Komprehensif Di Bangunan Pusat Konvensyen MBSA, Seksyen 13, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 150/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "Gred CIDB: G4  G5  G6  G7 / M01 DAN E04 DAN E11",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87249",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 665,
+      "title": "Cadangan Kerja-Kerja Penyelenggaran Secara Komprehensif Bagi Lif Di Bangunan Wisma MBSA, Auditorium, Dewan Bankuet, Pasar Moden Seksyen 25, Kuaters Seksyen 20 Dan Pusat Konvensyen MBSA Seksyen 13, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 149/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "Gred CIDB: G4  G5  G6  G7 / M03 DAN E04 DAN E11",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87248",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 666,
+      "title": "Cadangan Kerja-Kerja Penyiraman Pokok Di Zon A (Persiaran Masjid, Sebahagian Persiaran Dato’ Menteri, Persiaran Tasik, Jalan Indah, Persiaran Perbandaran, Persiaran Damai, Persiaran Bandaraya Dan Jalan 14/2 Serta Kawasan Berhampiran Shah Alam Untuk Majis Bandaraya Shah Alam",
+      "ref": "T 148/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 221002",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87246",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 667,
+      "title": "Cadangan Kerja-Kerja Membekal, Menghantar, Memasang Dan Mengujiterima Persian 98 Unit Autocad Versi Terkini Bagi Tempoh Dua (2) Tahun  Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 147/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 210103",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87245",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 668,
+      "title": "Cadangan Kerja-Kerja Khidmat Sokongan, Penambahbaikan, Penyelenggaraan Pembetulan Dan Penyelenggaraan Pencegahan Sistem Aplikasi Web Dan Mudah Alih, Perisian Dan Perkakasan  Sistem Perkhidmatan Atas Talian myMBSA, Sistem Utama Loyalty (eLoyalti) Dan Sistem Utama Tempahan Dewan Serbagunadan Padang Serta Sistem Utama Jualan Serbaguna Dan Padang Serta Sistem Utama Jualan (eShop) Untuk Majlis Bandaraya Shah Alam",
+      "ref": "T 146/2026",
+      "source_id": 2,
+      "open_date": "2026-07-15",
+      "deadline": "2026-08-05",
+      "value": null,
+      "category": "MOF: 210101 DAN 210102 DAN 210103",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87244",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
+    },
+    {
+      "id": 659,
+      "title": "CADANGAN MEMBERSIH DAN MENCUCI DI BANGUNAN MENARA MPAJ",
+      "ref": "MPAJ 3800/03/04/207/2026",
+      "source_id": 2,
+      "open_date": "2026-07-16",
+      "deadline": "2026-08-06",
+      "value": null,
+      "category": "MOF: 221001 / 221002",
+      "ministry": "Majlis Perbandaran Ampang Jaya",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87252",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 165,
@@ -10835,7 +11321,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 255,
@@ -10853,7 +11339,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     },
     {
       "id": 259,
@@ -10871,7 +11357,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-07-09T04:55:05Z"
+      "scraped_at": "2026-07-10T04:54:53Z"
     }
   ],
   "notifications": []
