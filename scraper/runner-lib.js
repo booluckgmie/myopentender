@@ -15,6 +15,9 @@ const SOURCES = {
   11: require('./sources/tnb'),
   12: require('./sources/tm'),
   13: require('./sources/bursa'),
+  14: require('./sources/johor'),
+  15: require('./sources/mahb'),
+  16: require('./sources/petronas'),
 };
 
 async function scrapeAll(db, sourceIds) {

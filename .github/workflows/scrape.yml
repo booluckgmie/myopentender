@@ -25,31 +25,40 @@ jobs:
           node-version: "20"
           cache: npm
 
-      - name: Install dependencies
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Node dependencies
         run: npm ci
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
 
       - name: Install Playwright browsers
         run: npx playwright install chromium firefox --with-deps
 
-      - name: Start Tor (residential exit node for WAF bypass)
+      - name: Install Python Playwright browsers
+        run: python -m playwright install chromium firefox
+
+      - name: Start Tor (residential exit node for WAF bypass on ePerolehan)
         run: |
           sudo apt-get install -y tor
           sudo service tor start
-          # Wait until Tor has bootstrapped a circuit
           for i in $(seq 1 30); do
-            if sudo journalctl -u tor -n 20 --no-pager 2>/dev/null | grep -q "Bootstrapped 100%"; then
-              echo "Tor ready"; break
-            fi
+            sudo journalctl -u tor -n 20 --no-pager 2>/dev/null | grep -q "Bootstrapped 100%" && echo "Tor ready" && break
             sleep 2
           done
-          # Confirm SOCKS5 port is listening
-          ss -tlnp | grep 9050 && echo "SOCKS5 on :9050 confirmed" || echo "WARNING: 9050 not open yet"
+          ss -tlnp | grep 9050 && echo "SOCKS5 :9050 confirmed" || echo "WARNING: Tor not ready"
 
       - name: Run scraper + export JSON
         run: npm run scrape:export
         env:
-          # Tor SOCKS5 proxy for sites that block GitHub Actions datacenter IPs.
-          # Override with EPEROLEHAN_PROXY_URL secret to use a residential HTTP proxy instead.
+          # curl_cffi is tried first (no proxy needed — uses Chrome TLS fingerprint).
+          # If still blocked, Tor SOCKS5 is used as fallback for the browser approach.
+          # Override with a residential proxy URL via EPEROLEHAN_PROXY_URL secret.
           EPEROLEHAN_PROXY_URL: ${{ secrets.EPEROLEHAN_PROXY_URL || 'socks5://127.0.0.1:9050' }}
 
       - name: Show summary and guard
