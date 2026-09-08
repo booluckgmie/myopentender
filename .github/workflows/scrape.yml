@@ -40,15 +40,16 @@ jobs:
       - name: Install Playwright browsers (Chromium + Firefox with OS deps)
         run: npx playwright install chromium firefox --with-deps
 
-      - name: Start Tor (residential exit node for WAF bypass on ePerolehan)
+      - name: Start Tor (SOCKS5 proxy for ePerolehan WAF bypass)
         run: |
-          sudo apt-get install -y tor
-          sudo service tor start
+          sudo apt-get install -y tor 2>/dev/null
+          sudo service tor start || true
+          # Wait up to 60s for Tor to bootstrap, but don't block the job if it's slow
           for i in $(seq 1 30); do
-            sudo journalctl -u tor -n 20 --no-pager 2>/dev/null | grep -q "Bootstrapped 100%" && echo "Tor ready" && break
+            ss -tlnp 2>/dev/null | grep -q 9050 && echo "Tor SOCKS5 :9050 ready" && break
             sleep 2
           done
-          ss -tlnp | grep 9050 && echo "SOCKS5 :9050 confirmed" || echo "WARNING: Tor not ready"
+          ss -tlnp 2>/dev/null | grep -q 9050 || echo "WARNING: Tor not ready — scraper will skip Tor tier"
 
       - name: Run scraper + export JSON
         run: npm run scrape:export
