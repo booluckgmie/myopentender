@@ -128,11 +128,10 @@ app.patch('/api/notifications/:id/read', (req, res) => {
 
 // ── On-demand scrape ──────────────────────────────────────────────────────────
 
-const { scrapeAll, SOURCES: ALL_SOURCES } = require('./scraper/runner-lib');
-
 app.post('/api/scrape', async (req, res) => {
   const { source_ids } = req.body;
   try {
+    const { scrapeAll, SOURCES: ALL_SOURCES } = require('./scraper/runner-lib');
     const ids = source_ids || Object.keys(ALL_SOURCES).map(Number);
     const summary = await scrapeAll(db, ids);
     res.json({ ok: true, summary });
