@@ -37,14 +37,27 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install Playwright browsers (Chromium + Firefox with OS deps)
-        run: npx playwright install chromium firefox --with-deps
+      - name: Get Playwright version for cache key
+        run: echo "PW_VERSION=$(node -e "console.log(require('./node_modules/playwright/package.json').version)")" >> $GITHUB_ENV
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ env.PW_VERSION }}-chromium-firefox-linux
+
+      - name: Install Playwright OS dependencies
+        run: npx playwright install-deps chromium firefox
+
+      - name: Install Playwright browsers (skip if cached)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium firefox
 
       - name: Start Tor (SOCKS5 proxy for ePerolehan WAF bypass)
         run: |
           sudo apt-get install -y tor 2>/dev/null
           sudo service tor start || true
-          # Wait up to 60s for Tor to bootstrap, but don't block the job if it's slow
           for i in $(seq 1 30); do
             ss -tlnp 2>/dev/null | grep -q 9050 && echo "Tor SOCKS5 :9050 ready" && break
             sleep 2
@@ -54,9 +67,6 @@ jobs:
       - name: Run scraper + export JSON
         run: npm run scrape:export
         env:
-          # curl_cffi is tried first (no proxy needed — uses Chrome TLS fingerprint).
-          # If still blocked, Tor SOCKS5 is used as fallback for the browser approach.
-          # Override with a residential proxy URL via EPEROLEHAN_PROXY_URL secret.
           EPEROLEHAN_PROXY_URL: ${{ secrets.EPEROLEHAN_PROXY_URL || 'socks5://127.0.0.1:9050' }}
 
       - name: Show summary and guard
