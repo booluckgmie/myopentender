@@ -1,12 +1,18 @@
 const Database = require('better-sqlite3');
 const path = require('path');
+const fs = require('fs');
 
-const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'tenders.sqlite');
+const BUNDLE_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'tenders.sqlite');
+// Vercel's deployment bundle is read-only; WAL mode needs a writable directory
+const DB_PATH = process.env.VERCEL ? '/tmp/tenders.sqlite' : BUNDLE_PATH;
 
 let _conn = null;
 
 function getConn() {
   if (!_conn) {
+    if (process.env.VERCEL && !fs.existsSync(DB_PATH) && fs.existsSync(BUNDLE_PATH)) {
+      fs.copyFileSync(BUNDLE_PATH, DB_PATH);
+    }
     _conn = new Database(DB_PATH);
     _conn.pragma('journal_mode = WAL');
     _conn.pragma('foreign_keys = ON');
