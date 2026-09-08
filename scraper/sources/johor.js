@@ -1,16 +1,19 @@
 'use strict';
 
+// Johor Port Berhad — Tenders
+// https://www.johorport.com.my/Resources-Center/Tenders
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { parseDate, inferStatus, nowIso } = require('../utils');
 
 const SOURCE_ID = 14;
-const SOURCE_NAME = 'Johor';
-const BASE_URL = 'https://www.johor.gov.my/tender';
+const SOURCE_NAME = 'Johor Port';
+const BASE_URL = 'https://www.johorport.com.my/Resources-Center/Tenders';
 
 const HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  'Accept-Language': 'ms-MY,ms;q=0.9,en;q=0.8',
+  'Accept': 'text/html,application/xhtml+xml,*/*;q=0.9',
+  'Accept-Language': 'en-US,en;q=0.9,ms;q=0.8',
 };
 
 async function* scrape() {
@@ -18,56 +21,56 @@ async function* scrape() {
   let totalYielded = 0;
 
   try {
-    let page = 1;
-    while (true) {
-      const url = page === 1 ? BASE_URL : `${BASE_URL}?page=${page}`;
-      const { data, status } = await axios.get(url, { headers: HEADERS, timeout: 30000 });
-      if (status !== 200) break;
+    const { data } = await axios.get(BASE_URL, { headers: HEADERS, timeout: 30000 });
+    const $ = cheerio.load(data);
 
-      const $ = cheerio.load(data);
-      const rows = [];
+    // Each tender is a section under an h4 heading with the tender ref (e.g. JPB/20/2026)
+    // followed by a strong/p containing the title and key dates
+    const items = [];
 
-      // Try common Joomla/WordPress table patterns
-      $('table tr, .tender-item, .views-row, article.tender').each((_, el) => {
-        const cells = $(el).find('td');
-        if (cells.length >= 3) {
-          const title = $(cells[0]).text().trim() || $(el).find('.views-field-title, .tender-title, h2, h3').first().text().trim();
-          const closeRaw = $(cells[cells.length - 1]).text().trim();
-          const link = $(el).find('a').first().attr('href');
-          if (title && title.length >= 15) {
-            rows.push({ title, closeRaw, url: link ? new URL(link, BASE_URL).href : BASE_URL });
-          }
-        } else {
-          const title = $(el).find('.views-field-title, .tender-title, h2, h3, a').first().text().trim();
-          const closeRaw = $(el).find('.views-field-field-tarikh-tutup, .closing-date, time').first().text().trim();
-          const link = $(el).find('a').first().attr('href');
-          if (title && title.length >= 15) {
-            rows.push({ title, closeRaw, url: link ? new URL(link, BASE_URL).href : BASE_URL });
-          }
+    $('h4').each((_, h4) => {
+      const refText = $(h4).text().trim();
+      if (!/^[A-Z]{2,}\/\d+\/\d{4}/.test(refText)) return;
+      const ref = refText.replace(/\*/g, '').trim();
+
+      // Collect sibling text until next h4 or hr
+      let titleParts = [];
+      let closingRaw = null;
+      let ittRaw = null;
+
+      let el = $(h4).next();
+      while (el.length && !['H4', 'HR'].includes(el[0].tagName?.toUpperCase())) {
+        const text = el.text().trim();
+        if (/^Closing Date:/i.test(text)) {
+          closingRaw = text.replace(/^Closing Date:\s*/i, '').trim();
+        } else if (/^ITT Date:/i.test(text)) {
+          ittRaw = text.replace(/^ITT Date:\s*/i, '').trim();
+        } else if (/^TENDER NO\./i.test(text)) {
+          // skip — just the ref repeated
+        } else if (text.length > 20 && !text.startsWith('Sale of Documents') && !text.startsWith('Tender Briefing') && !text.startsWith('Venue') && !text.startsWith('Tender Fee') && !text.startsWith('Tender Security') && !text.startsWith('Requirement') && !text.startsWith('Financial') && !text.startsWith('Please') && !text.startsWith('Kindly') && !text.startsWith('Bank') && !text.startsWith('A non-refundable')) {
+          titleParts.push(text);
         }
-      });
-
-      console.log(`[${SOURCE_NAME}] page ${page}: ${rows.length} rows`);
-      if (rows.length === 0) break;
-
-      for (const r of rows) {
-        const deadline = parseDate(r.closeRaw);
-        yield {
-          source_id: SOURCE_ID, ref: null,
-          title: r.title, category: null, ministry: null,
-          open_date: null, deadline,
-          status: inferStatus(null, deadline),
-          url: r.url || BASE_URL, scraped_at: now,
-        };
-        totalYielded++;
+        el = el.next();
       }
 
-      // Stop if no pagination link to next page
-      const hasNext = $(`a[href*="page=${page + 1}"], .pager-next a, .next a`).length > 0;
-      if (!hasNext) break;
-      page++;
-      if (page > 20) break;
+      const title = titleParts[0] || `Tender ${ref}`;
+      const deadline = parseDate(closingRaw);
+      const open_date = parseDate(ittRaw);
+
+      items.push({ ref, title, deadline, open_date });
+    });
+
+    for (const item of items) {
+      yield {
+        source_id: SOURCE_ID, ref: item.ref,
+        title: item.title, category: null, ministry: 'Johor Port',
+        open_date: item.open_date, deadline: item.deadline,
+        status: inferStatus(item.open_date, item.deadline),
+        url: BASE_URL, scraped_at: now,
+      };
+      totalYielded++;
     }
+
     console.log(`[${SOURCE_NAME}] done — ${totalYielded} records`);
   } catch (err) {
     console.error(`[${SOURCE_NAME}] fatal: ${err.message}`);
