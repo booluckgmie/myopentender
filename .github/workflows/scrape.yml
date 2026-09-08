@@ -37,11 +37,8 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install Playwright browsers
+      - name: Install Playwright browsers (Chromium + Firefox with OS deps)
         run: npx playwright install chromium firefox --with-deps
-
-      - name: Install Python Playwright browsers
-        run: python -m playwright install chromium firefox
 
       - name: Start Tor (residential exit node for WAF bypass on ePerolehan)
         run: |
