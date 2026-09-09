@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-08T05:43:30Z",
+  "exported_at": "2026-09-09T05:48:43Z",
   "tenders": [
     {
       "id": 8,
@@ -154,14 +154,14 @@
       "deadline": null,
       "value": null,
       "category": null,
-      "ministry": null,
+      "ministry": "Kedah",
       "status": "active",
       "url": "https://www.kedah.gov.my/wp-content/uploads/2025/05/IKLAN-TENDER-REE.pdf",
       "notes": "",
       "starred": 0,
       "notified": 0,
       "date_added": "2026-06-08T12:51:14Z",
-      "scraped_at": "2026-09-08T05:42:49Z"
+      "scraped_at": "2026-09-09T05:47:44Z"
     },
     {
       "id": 53,
@@ -990,6 +990,1842 @@
       "notified": 0,
       "date_added": "2026-06-08T13:58:46Z",
       "scraped_at": "2026-06-08T13:58:46Z"
+    },
+    {
+      "id": 1340,
+      "title": "Sabtu, Ahad & Cuti Umum",
+      "ref": "Sabtu, Ahad & Cuti Umum",
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1341,
+      "title": "KEPUTUSAN SEBUT HARGA (BANTAHAN) MBPP - MBPP.S.NO.127/2026(P))",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=berita&mod=detail&id=67574",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1342,
+      "title": "Majlis Bandaraya Seberang PeraiS0426049SEBUT HARGA KERJA-KERJA MENAIKTARAF TANGKI AIR, SISTEM RETIKULASI DAN KERJA BERKAITAN DI FLAT TAMAN BAGAN, SEBERANG PERAI UTARA DI BAWAH PROGRAM INTERVENSI PENYELENGGARAAN INFRASTRUKTUR AIR (PRIHATIN) TAHUN 2026 (SEBUT HARGA SEMULA)Lawatan TapakSyarat : WAJIBTarikh & Masa : 27/08/2026 10:30 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32422&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1343,
+      "title": "Jabatan Kerja RayaJKR.DBD.(S)600-2026/1/101/(J/N)KERJA-KERJA PENYELENGGARAAN UNTUK MEMBAIKI, MENAMPAL JALAN, HEAVY PATCHING DAN GARISAN JALAN DI JALAN-JALAN NEGERI DI JALAN PINTASAN BAHAGIA DAN DI KAWASAN SEKITARNYA DI DALAM DAERAH BARAT DAYA,\nPULAU PINANG.Lawatan TapakSyarat : WAJIBTarikh & Masa : 27/08/2026 09:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32464&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1344,
+      "title": "Jabatan Kerja RayaJKR.DBD.(S)600-2026/1/102/(J/N)KERJA-KERJA PENYELENGGARAAN UNTUK MEMBAIKI,MENAMPAL JALAN,HEAVY PATCHING DAN GARISAN JALAN DI JALAN-JALAN NEGERI DI SOLOK KAMPUNG JAWA DAN DI KAWASAN SEKITARNYA DI DALAM DAERAH BARAT DAYA,PULAU PINANGLawatan TapakSyarat : WAJIBTarikh & Masa : 27/08/2026 09:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32473&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1345,
+      "title": "Jabatan Kehakiman Syariah NegeriJKSNPP/KK/IP/BIL.5/2026SEBUT HARGA KONTRAK PERKHIDMATAN KAWALAN KESELAMATAN KOMPLEKS KEHAKIMAN SYARIAH NEGERI PULAU PINANG BAGI TEMPOH DUA (2) TAHUN MULAI 1 NOVEMBER 2026 HINGGA 31 OKTOBER 2028",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32485&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1346,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.143/2026(K)SEBUT HARGA TAHUNAN BAGI KERJA-KERJA PENYELENGGARAAN DAN PEMBAIKAN:\n1.\tLAMPU JALAN AWAM;\n2.\tLAMPU HIASAN;\n3.\tLAMPU SOLAR;  \n4.\tKABEL BAWAH TANAH; DAN\n5.\tKABEL TALIAN ATAS\nSERTA AKSESORI-AKSESORI BERKAITAN UNTUK ZON E1 TAHUN 2027.\nLawatan TapakSyarat : WAJIBTarikh & Masa : 24/08/2026 10:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32343&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1347,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.142/2026(K)SEBUT HARGA TAHUNAN BAGI KERJA-KERJA PENYELENGGARAAN DAN PEMBAIKAN:\n1.\tLAMPU JALAN AWAM;\n2.\tLAMPU HIASAN;\n3.\tLAMPU SOLAR;  \n4.\tKABEL BAWAH TANAH; DAN\n5.KABEL TALIAN ATAS\nSERTA AKSESORI-AKSESORI BERKAITAN UNTUK ZON D TAHUN 2027.\nLawatan TapakSyarat : WAJIBTarikh & Masa : 24/08/2026 10:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32344&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1348,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.144/2026(K)SEBUT HARGA TAHUNAN BAGI KERJA-KERJA PENYELENGGARAAN DAN PEMBAIKAN:\n1.\tLAMPU JALAN AWAM;\n2.\tLAMPU HIASAN;\n3.\tLAMPU SOLAR;  \n4.\tKABEL BAWAH TANAH; DAN\n5.\tKABEL TALIAN ATAS\nSERTA AKSESORI-AKSESORI BERKAITAN UNTUK ZON E2 TAHUN 2027.\nLawatan TapakSyarat : WAJIBTarikh & Masa : 24/08/2026 10:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32345&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1349,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.145/2026(K)SEBUT HARGA TAHUNAN BAGI KERJA-KERJA PENYELENGGARAAN DAN PEMBAIKAN:\n1.\tLAMPU JALAN AWAM;\n2.\tLAMPU HIASAN;\n3.\tLAMPU SOLAR;  \n4.\tKABEL BAWAH TANAH; DAN\n5.\tKABEL TALIAN ATAS\nSERTA AKSESORI-AKSESORI BERKAITAN UNTUK ZON F1 TAHUN 2027.\nLawatan TapakSyarat : WAJIBTarikh & Masa : 24/08/2026 10:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32346&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1350,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.146/2026(K)SEBUT HARGA TAHUNAN BAGI KERJA-KERJA PENYELENGGARAAN DAN PEMBAIKAN:\n1.\tLAMPU JALAN AWAM;\n2.\tLAMPU HIASAN;\n3.\tLAMPU SOLAR;  \n4.\tKABEL BAWAH TANAH; DAN\n5.\tKABEL TALIAN ATAS\nSERTA AKSESORI-AKSESORI BERKAITAN UNTUK ZON F2 TAHUN 2027.\nLawatan TapakSyarat : WAJIBTarikh & Masa : 24/08/2026 10:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32347&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1351,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.169/2026(K)CADANGAN MENAIKTARAF TAPAK PENJAJA SEMENTARA LENGKOK BATU MAUNG (TAMAN IPING), DI ATAS LOT 11534, LENGKOK BATU MAUNG 1, MUKIM 12, DAERAH BARAT DAYA, PULAU PINANG. Lawatan TapakSyarat : WAJIBTarikh & Masa : 07/09/2026 03:30 PM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32439&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1352,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.171/2026(K)SEBUT HARGA TAHUNAN UNTUK MEMBINA & MENYELENGGARA PARIT DI DALAM KAWASAN BANDARAYA ZON A DAN KAWASAN PENTADBIRAN MAJLIS BANDARAYA PULAU PINANG (MBPP) TAHUN  2027. JK(J)/ST(K)/87/2026",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32453&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1353,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.172/2026(K)SEBUT HARGA TAHUNAN UNTUK MEMBINA & MENYELENGGARA PARIT DI DALAM KAWASAN BANDARAYA ZON B DAN KAWASAN PENTADBIRAN MAJLIS BANDARAYA PULAU PINANG (MBPP) TAHUN  2027. JK(J)/ST(K)/88/2026.",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32455&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1354,
+      "title": "Majlis Bandaraya Pulau PinangMBPP.S.NO.173/2026(K)SEBUT HARGA TAHUNAN UNTUK MEMBINA & MENYELENGGARA PARIT DI DALAM KAWASAN BANDARAYA ZON C DAN KAWASAN PENTADBIRAN MAJLIS BANDARAYA PULAU PINANG (MBPP) TAHUN  2027. JK(J)/ST(K)/89/2026",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32456&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1355,
+      "title": "Jabatan Kerja RayaJKR.DBD.(S)600-2026/1/103/(J/N)KERJA-KERJA PENYELENGGARAAN UNTUK MEMBAIKI,MENAMPAL JALAN,HEAVY PATCHING DAN GARISAN JALAN DI JALAN-JALAN NEGERI DI JALAN TELUK TEMPOYAK DAN DI KAWASAN SEKITARNYA DI DALAM DAERAH BARAT DAYA, PULAU PINANGLawatan TapakSyarat : WAJIBTarikh & Masa : 27/08/2026 09:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32452&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1356,
+      "title": "Jabatan Kerja RayaJKR.DBD.(S)600-2026/1/104/(J/N)KERJA-KERJA PENYELENGGARAAN UNTUK MEMBAIKI, MENAMPAL JALAN, HEAVY PATCHING DAN GARISAN JALAN DI JALAN-JALAN NEGERI DI JALAN JELITI DAN DI KAWASAN SEKITARNYA DI DALAM DAERAH BARAT DAYA, PULAU PINANG.Lawatan TapakSyarat : WAJIBTarikh & Masa : 27/08/2026 09:00 AM",
+      "ref": null,
+      "source_id": 3,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Penang",
+      "status": "active",
+      "url": "https://ep.penang.gov.my?action=senarai_detail&mod=view_utama&id=32466&page=1#perolehan_detail",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:01Z"
+    },
+    {
+      "id": 1357,
+      "title": "function MedWindow(URL)\n{\npopwin = window.open(URL,'win1','width=700,height=500,top=100,bottom=100,left=150,scrollbars=yes');\nif (popwin){popwin.opener=this;}\n}\n\n\n\n\n\n\n\n\n \n\n \n\n\n\n     \n Available Tender Notice(s) \n    \n\n\n\n\n\n\n  86 record(s) found. \n  \n  * Click on the Title to view details.\n  \n  \n  \n\n  \n  \n    \n       \n        \n           \n           \n            Posted Date\n            Closing Date\n            Type\n            Ministry/Department\n            Reference No/Title\n          \n          \n          \n          document.write('<tr bgcolor='+(1%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            05-09-2026\n            07-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/463/09/2026)Penyiapan Baki Kerja Bagi Cadangan Perpindahan dan Pembinaan Semula SK Penasu, Daro, MukahNotes:Please refer to State Rescue Contractor Tender Advertisement at JKR Sarawak Homepage Announcement.\n          \n          \n          \n          document.write('<tr bgcolor='+(2%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            05-09-2026\n            07-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/461/09/2026)Menyiapkan Baki Kerja Retender : Pembinaan Medan Hospital Di Tapak Gelanggang Tenis Sedia Ada, Hospital Umum Sarawak, Kuching, Sarawak.Notes:Please refer to State Rescue Contractor Tender Advertisement at JKR Sarawak Homepage Announcement.\n          \n          \n          \n          document.write('<tr bgcolor='+(3%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            05-09-2026\n            07-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/460/09/2026)Supply and Installation of Heavy Epoxy Flooring Coating for Chiller Room at Dewan Undangan Negeri Sarawak, Kuching.Notes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/460/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(4%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            05-09-2026\n            14-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/459/08/2026)Cadangan Pembinaan Masjid Taman Desa Ilmu,Samarahan, Sarawak.Notes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/459/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(5%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            05-09-2026\n            30-09-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/462/09/2026)Naiktaraf Jambatan Kampung WawasanNotes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/462/09/2026 at JKR Sarawak Homepage\n          \n          \n           \n        \n  \n    \n  \n  \n  \n  [Home] Records \n  \n            1 - 5 ||\n          \n       \n          6 - 10 ||\n         \n       \n          11 - 15 ||\n         \n       \n          16 - 20 ||\n         \n       \n          21 - 25 ||\n         \n       \n          26 - 30 ||\n         \n       \n          31 - 35 ||\n         \n       \n          36 - 40 ||\n         \n       \n          41 - 45 ||\n         \n       \n          46 - 50 ||\n         \n       \n          51 - 55 ||\n         \n       \n          56 - 60 ||\n         \n       \n          61 - 65 ||\n         \n       \n          66 - 70 ||\n         \n       \n          71 - 75 ||\n         \n       \n          76 - 80 ||\n         \n       \n          81 - 85 ||\n         \n       \n                   86 - 86",
+      "ref": null,
+      "source_id": 4,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "javascript:MedWindow('public_tender_view.jsp?TenderId=270872');",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:05Z"
+    },
+    {
+      "id": 1358,
+      "title": "07-10-2026 at 12:00 noon",
+      "ref": null,
+      "source_id": 4,
+      "open_date": "2026-09-05",
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:05Z"
+    },
+    {
+      "id": 1359,
+      "title": "14-10-2026 at 12:00 noon",
+      "ref": null,
+      "source_id": 4,
+      "open_date": "2026-09-05",
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:05Z"
+    },
+    {
+      "id": 1360,
+      "title": "30-09-2026 at 12:00 noon",
+      "ref": null,
+      "source_id": 4,
+      "open_date": "2026-09-05",
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:05Z"
+    },
+    {
+      "id": 1361,
+      "title": "SUPS/1/2026 & SUPS/2/2026",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/wp-content/uploads/2026/03/IKLAN-SUPS-1-DAN-SUPS-2-BERMASA-DAN-TEMBOK-IP.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1362,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN DI KUARTERS POLITEKNIK KOTA KINABALU (PKK) DAN KUARTERS INSTITUSI PENDIDIKAN SABAH (KIPS) BERMASA.",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/wp-content/uploads/2026/03/IKLAN-SUPS-3-BERMASA-PKK-N-KIPS.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1363,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PEYELENGGARAAN DI KUARTERS PERSEKUTUAN LIKAS KM5, KOTA KINABALU BERMASA.",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/wp-content/uploads/2026/03/IKLAN-SUPS-4-BERMASA-KM5.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1364,
+      "title": "KERJA-KERJA PENGGANTIAN HANDRAIL VERANDAH RUANG TAMU, VERANDAH PINTU MASUK DAN VERANDAH DAPUR DI KUARTERS POLITEKNIK KOTA KINABALU (PKK)",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1365,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN BAGI PANGSAPURI TELUK LIKAS, KOTA KINABALU, SABAH",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1366,
+      "title": "KERJA-KERJA PENYELENGGARAAN PAGAR SERTA LAIN-LAIN KERJA BERKAITAN BAGI KUARTERS PERSEKUTUAN INDAH PERMAI, KOTA KINABALU, SABAH (FASA 3)",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1367,
+      "title": "KERJA-KERJA PENYELENGARAAN AWNING BAGI KUARTERS PERSEKUTUAN INDAH PERMAI, KOTA KINABALU, SABAH (FASA 2)",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1368,
+      "title": "KERJA-KERJA PEMBAIKAN KEROSAKAN TANGKI SEPTIK DI KUARTERS FLAT PERSEKUTUAN SANDAKAN P&P (KUMPULAN I)",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1369,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN BAGI FLAT PERSEKUTUAN SANDAKAN (KUMPULAN I,II DAN III)",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1370,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN BAGI KUARTERS POLITEKNIK KOTA KINABALU (PKK) DAN KUARTERS INSTITUSI PENDIDIKAN SABAH (KIPS) SABAH BERMASA",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1371,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN BAGI KUARTERS PERSEKUTUAN KM5 SERTA KERJA-KERJA BERKAITAN BERMASA",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1372,
+      "title": "KERJA-KERJA PEMBAIKAN KECIL DAN PENYELENGGARAAN BAGI KUARTERS PERSEKUTUAN INDAH PERMAI, KOTA KINABALU, SABAH BERMASA",
+      "ref": null,
+      "source_id": 5,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Sabah PSU",
+      "status": "active",
+      "url": "https://www.psupsabah.gov.my/tender-sebutharga/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:08Z"
+    },
+    {
+      "id": 1373,
+      "title": "DEVELOPMENT AND PRODUCTION OF NCER ANNUAL REPORT FOR THE YEAR 2026, 2027 AND WITH OPTION TO EXTEND FOR YEAR 2028",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2026/09/TENDER-NOTICE-ANNUAL-REPORT.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1374,
+      "title": "CADANGAN KERJAKERJA PENURAPAN \nPREMIX DAN \nMENAIKTARAF \nPAGAR DI PADANG \nKOMPLEKS \nLEMBAGA ZAKAT \nNEGERI KEDAH \nSERTA LAIN-LAIN \nKERJA BERKAITAN",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2026/08/4-IKLAN-TENDER.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1375,
+      "title": "PERKHIDMATAN MEMOTONG RUMPUT DAN SEMAK SAMUN DI KAWASAN PLATFORM KRC FASA 1, BANGUNAN EP-STP DAN BANGUNAN EP-IETS DI TAMAN INDUSTRI KEDAH RUBBER CITY (KRC) BAGI TAHUN 2026/2027 DENGAN OPSYEN LANJUTAN 1 TAHUN",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2026/03/0009-TENDER-NOTICE-KRC-GRASS-CUTTING.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1376,
+      "title": "THE CONSTRUCTION AND COMPLETION FOR THE DEVELOPMENT OF SURAU\nHAJI OSMAN AT KAMPUNG TELUK NIBONG, JITRA, KEDAH DARUL AMAN\nUNDER PROGRAM KAMPUNG ANGKAT MADANI FOR THE NORTHERN\nCORRIDOR IMPLEMENTATION AUTHORITY (NCIA)",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2026/02/Tender-Notice_Kampung-Angkat-Madani-Surau-Haji-Osman-Jitra.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1377,
+      "title": "THE APPOINTMENT OF SERVICE PROVIDER TO SET UP AND MANAGE A CENTRAL\nKITCHEN PROJECT AND DEVELOP FOOD & BEVERAGE FOR MICRO SMALL MEDIUM\nENTERPRISE (MSME) IN THE BARAT DAYA DISTRICT OF PULAU PINANG",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2025/08/Tender-Notice_-Central-Kitchen-BD.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1378,
+      "title": "PERLAWAAN MENGEMUKAKAN CADANGAN \"REQUEST FOR PROPOSAL\" (RFP) PEMBANGUNAN KOMERSIAL DI ATAS LOT 107, 60316, SEKSYEN 4, CHENANG, BANDAR PADANG MAT SIRAT DAERAH LANGKAWI, KEDAH DARUL AMAN",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://www.kedah.gov.my/wp-content/uploads/2025/05/RFP-PDG-MAT-SIRAT-LANGKAWI.jpeg",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1379,
+      "title": "PERLAWAAN MENGEMUKAKAN CADANGAN \"REQUEST FOR PROPOSAL\" (FRP) PEMBANGUNAN  KOMERSIAL DI ATAS LOT 2537, BANDAR  KUALA NERANG, DAERAH PADANG TERAP, KEDAH DARUL AMAN",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://royal-elementor-addons.com/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1380,
+      "title": "PERLAWAAN MENGEMUKAKAN CADANGAN \"REQUEST FOR PROPOSAL\" (FRP) PEMBANGUNAN  KOMERSIAL DI ATAS LOT 319, LIMBONG KAPAL, DAERAH KOTA SETAR, KEDAH DARUL AMAN",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://royal-elementor-addons.com/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1381,
+      "title": "THE CONSTRUCTION AND COMPLETION OF THE INTEGRATED BUSINESS CENTRE (IBC) AT PLOT PT2217, KEDAH RUBBER CITY (KRC), PADANG TERAP, KEDAH DARUL AMAN FOR THE NORTHERN CORRIDOR IMPLEMENTATION AUTHORITY (NCIA)",
+      "ref": null,
+      "source_id": 8,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Kedah",
+      "status": "active",
+      "url": "https://royal-elementor-addons.com/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:47:44Z"
+    },
+    {
+      "id": 1382,
+      "title": "REPLACEMENT OF EXISTING SECURITY FENCING TO ANTI-CLIMB FENCING SYSTEM AND ASSOCIATED WORKS AT AT-GRADE SECTION, TPSS, STP AND SUBANG DEPOT FOR KELANA JAYA LINE (KJL)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/replacement-of-existing-security-fencing-to-anti-climb-fencing-system-and-associated-works-at-atgrade-section-tpss-stp-and-subang-depot-for-kelana-jaya-line-kjl/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1383,
+      "title": "OUTSOURCE SUPPLY, INSTALL AND SERVICING NEW TYRE FOR ROD VAN UNDER RAPID BUS SDN. BHD. (CENTRAL AND NORTHERN REGION)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/outsource-supply-install-and-servicing-new-tyre-for-rod-van-under-rapid-bus-sdn-bhd-central-and-northern-region/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1384,
+      "title": "SUPPLY, DELIVER AND MAINTAIN DIESEL EXHAUST FLUID (DEF) FOR RAPID BUS SDN. BHD.",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/supply-deliver-and-maintain-diesel-exhaust-fluid-def-for-rapid-bus-sdn-bhd/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1385,
+      "title": "APPOINTMENT OF THE CONTRACTOR TO PERFORM THE CLEANING SERVICES FOR AMPANG LINE (“AGL”)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/appointment-of-the-contractor-to-perform-the-cleaning-services-for-ampang-line-agl/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1386,
+      "title": "APPOINTMENT OF THE CONTRACTOR TO PERFORM THE CLEANING SERVICES FOR RAPID BUS AND ROD VAN (“RKL & MRT FEEDER”)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/appointment-of-the-contractor-to-perform-the-cleaning-services-for-rapid-bus-and-rod-van-rkl-mrt-feeder/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1387,
+      "title": "APPOINTMENT OF THE CONTRACTOR TO PERFORM THE CLEANING SERVICES FOR KELANA JAYA LINE (“KJL”)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/appointment-of-the-contractor-to-perform-the-cleaning-services-for-kelana-jaya-line-kjl/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1388,
+      "title": "DESIGN, SUPPLY, DELIVER, CONFIGURE, TESTING, COMMISSIONING, TRAINING, WARRANTY AND MANAGED SERVICES FOR PRIVATE WIRELESS NETWORK INFRASTRUCTURE FOR ALL LRT, MONORAIL STATIONS AND DEPOTS",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/design-supply-deliver-configure-testing-commissioning-training-warranty-and-managed-services-for-private-wireless-network-infrastructure-for-all-lrt-monorail-stations-and-depots/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1389,
+      "title": "NOTICE FOR REQUEST FOR PROPOSAL (RFP) RTS OPERATIONS (RTSO) WOODLANDS JOHOR BAHRU – BUKIT CHAGAR",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/notice-for-request-for-proposal-rfp-rts-operations-rtso-woodlands-johor-bahru-bukit-chagar/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1390,
+      "title": "DESIGN, SUPPLY, DELIVER, TESTING & COMMISSIONING AND WARRANT ONE (1) UNIT OF NEW SHUNTING LOCOMOTIVE TRACK VEHICLE FOR AMPANG LINE (SLTV AGL)",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/design-supply-deliver-testing-commissioning-and-warrant-one-1-unit-of-new-shunting-locomotive-track-vehicle-for-ampang-line-sltv-agl/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1391,
+      "title": "Loading Tender ...",
+      "ref": null,
+      "source_id": 10,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Prasarana",
+      "status": "active",
+      "url": "https://www.prasarana.com.my/tenders/",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:15Z"
+    },
+    {
+      "id": 1392,
+      "title": "MANPOWER OUTSOURCING MANAGED SERVICES AGREEMENT FOR CALL MANAGEMENT CENTER (CMC) AND DEBT PAYMENT REMINDER FUNCTIONS FOR TNB CARELINE",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/T-29421_4000054228_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1393,
+      "title": "TENDER NOTICE RFX 4000054185 - SERVICE WEIR ACTUATORS DURING MAJOR OVERHAUL 2027 FOR CONTROL & INSTRUMENTS SECTION, MANJUNG 5 POWER PLANT SJSAS",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Genco_Tender_Notice_RFX_4000054185.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1394,
+      "title": "ONE (1) YEAR CONTRACT PROVISION OF SURUHANJAYA TENAGA CERTIFIED 33/11KV CHARGEMAN SERVICES FOR MEDIUM VOLTAGE FACILITIES",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-TNB_LABS_Q23_2026_v4.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1395,
+      "title": "MEMBEKAL PERALATAN & AKSESORI AUDIO VIDEO UNTUK KEGUNAAN TNB INTEGRATED LEARNING SOLUTION SDN. BHD.  - ILSAS",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/IKLAN_-_DCC%28S%293192026_%28IIS_TNB_ILS_HOPE_F_00242026%29.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1396,
+      "title": "SUPPLY, DELIVERY, TESTING, COMMISSIONING AND PILOT TESTING OF A ELECTROMAGNETIC UNDERGROUND UTILITY LOCATING SYSTEM FOR TNB RESEARCH PROJECT",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-TNBR_Q31_2026.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1397,
+      "title": "CONSTRUCTION OF NEW REMACO BUILDING AT PASIR GUDANG POWER STATION, JOHOR.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-_RFx_No._4000054251.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1398,
+      "title": "SUPPLY AND DELIVERY OF TOOLS AND EQUIPMENT FOR DISTRIBUTION NETWORK, TNB: \ni. PRIMARY CURRENT INJECTION SET\nii. CURRENT INJECTION 3 PHASE SECONDARY \niii. CURRENT TRANSFORMER ANALYZER",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29431_4000054237_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1399,
+      "title": "SUPPLY, DESIGN, DEVELOPMENT AND FABRICATION OF A MOBILE EMISSION MONITORING SYSTEM\n(MEMS) FOR CONTINUOUS EMISSION MONITORING SYSTEM (CEMS)",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-TNB_LABS_T5A_2026.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1400,
+      "title": "TWO(2)YEARS SERVICE CONTRACT FOR DRIVE UNIT REPLACEMENT FOR FUEL MANAGEMENT MECHANICAL CSY M4, TECHNICAL SHARED SERVICES, TNB JANAMANJUNG SDN.BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/Tender_Notice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1401,
+      "title": "[OUTAGE 2027] TO SUPPLY SPX COPES VULCAN BOILER SPRAY WATER FOR BMS - MANJUNG 4 AT STESEN JANAKUASA SULTAN AZLAN SHAH, TNB JANAMANJUNG SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/files/Tender_Notice_RFX_4000054272_Addendum_No.1.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1402,
+      "title": "PENUKARAN PERALATAN PAPARAN DI BILIK LATIHAN DARIPADA PROJEKTOR KEPADA INTERACTIVE PANEL DI TNB INTEGRATED LEARNING SOLUTION SDN. BHD. - ILSAS BANGI, SELANGOR.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/IKLAN_-_TNB_ILS_DCC_318_2026_%28IIS_TNB_ILS_HOPE_F_0023_2026%29.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1403,
+      "title": "PRIMARY AND SECONDARY SUBMERGED SCRAPER CONVEYOR (SSC) INSPECTION, SERVICING, REPAIR AND REPLACEMENT WORKS DURING THE 2027 MAJOR OVERHAUL OF MANJUNG 5 AT SULTAN AZLAN SHAH POWER STATION (SJSAS)",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/02_Iklan.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1404,
+      "title": "CADANGAN MEREKA BENTUK, MEMBINA DAN MENYIAPKAN BANGUNAN IKONIK DUA (2) TINGKAT PENCAWANG PEMBAHAGIAN UTAMA (PPU) 33/11kV PERHENTIAN DI ATAS LOT PT 907, MUKIM PULAU PERHENTIAN, DAERAH BESUT, TERENGGANU UNTUK TETUAN TENAGA NASIONAL BERHAD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-_RFx_No._4000054200.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1405,
+      "title": "PEMBEKALAN DAN PENGHANTARAN ALAT GANTI FABRIKASI KENDERAAN HIDRAULIK TNB DI UNIT WORKSHOP SERVICES, CAWANGAN GONG BADAK, TERENGGANU, JABATAN FLEET MANAGEMENT, TNB GLOBAL BUSINESS SOLUTIONS",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29192_4000054087_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1406,
+      "title": "PURCHASE OF ELECTRICAL TEST EQUIPMENT (OMICRON CMC 500 & VARIABLE DC POWER SUPPLY) FOR TNB REPAIR AND MAINTENANCE SDN BHD, KLANG, SELANGOR.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/files/Tender_Notice_RFx_4000054277.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1407,
+      "title": "CADANGAN KERJA-KERJA MENAIKTARAF PUNCA BEKALAN LAB B DAN LAB A DI BLOK BG (UNITEN) SERTA KERJA-KERJA BERKAITAN DI TNB INTEGRATED LEARNING SOLUTIONS SDN. BHD. – ILSAS, BANGI, SELANGOR DARUL EHSAN.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/IKLAN_%3A_TNBILSEETC%28S%29_2952026_%28IIS-TNBILSEETC_F_00212026%29_.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1408,
+      "title": "SUPPLY OF MILL SPARE PARTS FOR PUMP AND ACCESSORIES FOR MILL AND ASH, MANJUNG 5 AT SULTAN AZLAN SHAH POWER STATION (SJSAS)",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notis_RFX4000054222_Addendum.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1409,
+      "title": "KERJA-KERJA PENYELENGGARAAN DAN PEMBERSIHAN PENCAWANG MASUK UTAMA BAGI GRID MAINTENANCE SOUTH BAHAGIAN GRID, TENAGA NASIONAL BERHAD.\n1) SUBZONE JOHOR BAHRU- PAKEJ A\n2) SUBZONE JOHOR BAHRU- PAKEJ B\n3) SUBZONE KLUANG- A\n4) SUBZONE KLUANG- B\n5) SUBZONE KLUANG- C",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-_RFx_No._4000054254.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1410,
+      "title": "TO SUPPLY AND DELIVER  SAMSHIN VALVES SPARE  PARTS AND CONSUMABLES  FOR TURBINE  MAINTENANCE SECTION,  MANJUNG 5, TNB POWER  GENERATION SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/NOTICE_TENDER_RFX4000054234.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1411,
+      "title": "THE SUPPLY AND DELIVERY OF METER BOX, MULTIPLE SIZE IN THE DISTRIBUTION NETWORK, TNB. (LEVEL 3 PRODUCT)",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29436_4000054244_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1412,
+      "title": "NOTICE OF PRE-QUALIFICATION EXTERNAL RESOURCE MANAGEMENT SERVICES FOR TENAGA NASIONAL BERHAD",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Notis_Pra_Kelayakan_PRE_QUALIFICATION_EXTERNAL_RESOURCE_MANAGEMENT_SERVICES_FOR_TENAGA_NASIONAL_BERHAD.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1413,
+      "title": "SALES OF RETIRED UNIT 1 TURBINE RUNNER FROM CHENDEROH POWER STATION, SAUK, PERAK DARUL RIDZUAN, TNB POWER GENERATION SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T3002426_Tender_Notice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1414,
+      "title": "PMU 132/33KV CHERAS JAYA, KUALA LUMPUR - ASSET REPLACEMENT AND REFURBISHMENT FOR PRIMARY AND SECONDARY COMBINE EQUIPMENT",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29418_1_4000054224_TenderNotice_1.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1415,
+      "title": "TWO (2) YEARS CONTRACT FOR REPAIR WORKS OF COAL BUNKERS AT MILL MAINTENANCE SECTION GF1, STESEN JANAKUASA SULTAN AZLAN SHAH, TNB JANAMANJUNG SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/0_Tender_Notice_RFX4000054143.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1416,
+      "title": "RED HAT LICENSE SUBSCRIPTION PRICE AGREEMENT",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29429_4000054236_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1417,
+      "title": "ONE(1) YEAR CONTRACT WITH AN OPTION OF ONE(1) YEAR EXTENSION FOR THE SUPPLY OF BULK CHEMICAL FOR TNB REPAIR AND MAINTENANCE SDN.BHD. POWER PLANTS",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/Tender_Notice_RFX_4000054196.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1418,
+      "title": "DETAILED HYDROGRAPHIC, GEOPHYSICAL AND GEOTECHNICAL SURVEY WORKS FOR PROPOSED SUBMARINE CABLE ROUTES 33kV AT PULAU PERHENTIAN AND PULAU REDANG FOR SBU ASSET DEVELOPMENT, DISTRIBUTION NETWORK DIVISION, TNB",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29482_4000054291_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1419,
+      "title": "PEMBEKALAN LINK, CARRIER FOR FP & LVBD, 800A UNTUK DISTRIBUTION NETWORK, TNB",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29486_4000054306_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1420,
+      "title": "Identification of Potential Land for Future Large Scale Solar (LSS) Projects in Peninsular Malaysia",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Advertisement_Template-TRe_Land_072026.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1421,
+      "title": "SALE OF RETIRED CRANES FROM TEMENGOR, BERSIA AND KENERING POWER STATIONS, SUNGAI PERAK POWER  STATION",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_Sales_of_Retired_Crane_from_SGPK_TBK.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1422,
+      "title": "To Supply Spares VM1 Circuit Breaker For Fuel Management E/C&I GF2, Stesen Janakuasa Sultan Azlan Shah",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/Tender_Notice_RFX400054169.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1423,
+      "title": "PMU 132/33KV ENSTEK, NEGERI SEMBILAN – EXTENSION OF 2 X 132KV OVERHEAD LINE BAYS",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29484_4000054304_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:17Z"
+    },
+    {
+      "id": 1424,
+      "title": "AMENDMENT: REQUEST FOR INFORMATION (RFI)   ON ENTERPRISE KEY   MANAGEMENT SYSTEMS",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-09/Amendment%20to%20RFI%20Notice%20_EKMS.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1425,
+      "title": "REGISTRATION OF INTEREST ACQUISITION OF SOCIAL MEDIA TOOLS LICENSE SUBSCRIPTION AND SUPPORT FOR TM TECHNOLOGY SERVICES SDN. BHD",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/Request%20of%20Interest%20Notice_%20Social%20Media%20Tool%20License.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1426,
+      "title": "REGISTRATION OF INTEREST OPEN TENDER FOR THE APPOINTMENT OF MEDIA MANAGEMENT PARTNERS (TRADITIONAL AND DIGITAL) FOR TM  TECHNOLOGY SERVICES SDN. BHD.",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/Tender_Interest_Notice_Media%20%28Traditional%20%20Digital%29%202026.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1427,
+      "title": "REQUEST FOR INFORMATION  (RFI)  ON  ENTERPRISE KEY  MANAGEMENT SYSTEMS",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/RFI%20Notice%20Advertisement_KMS_v2_signed.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1428,
+      "title": "REGISTRATION OF INTEREST HUMANOID ROBOTICS PLATFORM FOR MCMC ARTIFICIAL INTELLIGENCE EXCELLENCE (AIX) LABORATORY FOR MULTIMEDIA UNIVERSITY (MMU)",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/Tender_Interest_Notice_Robotic%20Humanoid_Final.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1429,
+      "title": "REQUEST FOR INFORMATION  (RFI) FOR SUPPLY, DELIVER  AND INSTALL LIQUID COOLING  SOLUTION (DIRECT TO CHIP &  REAR DOOR HEAT  EXCHANGER) OF DATA CENTRE  FOR TM TECHNOLOGY  SERVICES SDN BHD",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/RFI%20Notice%20v2.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1430,
+      "title": "OPEN TENDER FOR THE SUPPLY OF IOT CAMERA FOR TM TECHNOLOGY SERVICES SDN. BHD.",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/Ariba_Tender_Advertisement_IOT%20Camera.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1431,
+      "title": "REGISTRATION OF INTEREST FOR EUC (DESKTOP & LAPTOP) FOR AIX LAB MMU",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-08/Tender_Interest_EUC%20AIX%20Lab%20for%20MMU.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1432,
+      "title": "Ethics & Integrity",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/ethics-integrity",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1433,
+      "title": "Investor Relations",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/investor-relations",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1434,
+      "title": "Business with TM",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/business-with-tm/overview",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1435,
+      "title": "TM Social Media",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/corporate/corporate-contact#social-media",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1436,
+      "title": "Privacy Notice Infographic",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/Documents/Privacy%20Notice%20Infographic.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1437,
+      "title": "Terms & Conditions",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/Documents/TM_Website_Use_2013_0.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:25Z"
+    },
+    {
+      "id": 1438,
+      "title": "THE DESIGN, SUPPLY, DELIVERY, TESTING AND COMMISSIONING OF ONE (1) UNIT CONTINUOUS UNLOADER (CU) AT BULK AND BREAKBULK TERMINAL, JOHOR PORT",
+      "ref": "JPB/20/2026",
+      "source_id": 14,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Johor Port",
+      "status": "active",
+      "url": "https://www.johorport.com.my/Resources-Center/Tenders",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:35Z"
+    },
+    {
+      "id": 1439,
+      "title": "THE SUPPLY OF CONVENTIONAL LORRIES AND TRAILERS AT BULK & BREAK BULK TERMINAL, JOHOR PORT, PASIR GUDANG, JOHOR.",
+      "ref": "JPB/29/2026",
+      "source_id": 14,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Johor Port",
+      "status": "active",
+      "url": "https://www.johorport.com.my/Resources-Center/Tenders",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:35Z"
+    },
+    {
+      "id": 1440,
+      "title": "THE SUPPLY OF VARIOUS CAPACITY FORKLIFTS AT JOHOR PORT, PASIR GUDANG, JOHOR",
+      "ref": "JPB/24/2026",
+      "source_id": 14,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Johor Port",
+      "status": "active",
+      "url": "https://www.johorport.com.my/Resources-Center/Tenders",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:35Z"
+    },
+    {
+      "id": 1441,
+      "title": "THE DESIGN, SUPPLY, DELIVER, TEST AND COMMISSION OF FOUR (4) UNITS HYBRID RUBBER TYRED GANTRY CRANE AT CONTAINER TERMINAL, JOHOR PORT, PASIR GUDANG, JOHOR, MALAYSIA",
+      "ref": "JPB/19/2026",
+      "source_id": 14,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "Johor Port",
+      "status": "active",
+      "url": "https://www.johorport.com.my/Resources-Center/Tenders",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:48:35Z"
     },
     {
       "id": 164,
@@ -20231,7 +22067,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1072,
@@ -20249,7 +22085,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1163,
@@ -20267,7 +22103,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1193,
@@ -20285,7 +22121,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1203,
@@ -20303,7 +22139,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1215,
@@ -20321,7 +22157,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1243,
@@ -20339,7 +22175,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1253,
@@ -20357,7 +22193,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1254,
@@ -20375,7 +22211,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1255,
@@ -20393,7 +22229,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1256,
@@ -20411,7 +22247,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1257,
@@ -20429,7 +22265,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1264,
@@ -20447,7 +22283,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1265,
@@ -20465,7 +22301,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1266,
@@ -20475,7 +22311,7 @@
       "open_date": "2026-09-03",
       "deadline": "2026-09-09",
       "value": null,
-      "category": "MOF: 221303 ATAU 221304 ATAU 221305 ATAU 020302",
+      "category": "MOF: 020302 DAN 221303 DAN 221304 DAN 221305",
       "ministry": "Jabatan Agama Islam Selangor",
       "status": "active",
       "url": "https://tender.selangor.my/tenders/87841",
@@ -20483,7 +22319,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 968,
@@ -20501,7 +22337,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1118,
@@ -20537,7 +22373,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1172,
@@ -20555,7 +22391,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1173,
@@ -20573,7 +22409,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1174,
@@ -20591,7 +22427,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1175,
@@ -20609,7 +22445,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1176,
@@ -20627,7 +22463,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1177,
@@ -20663,7 +22499,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1179,
@@ -20681,7 +22517,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1180,
@@ -20699,7 +22535,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1181,
@@ -20717,7 +22553,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1182,
@@ -20771,7 +22607,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1185,
@@ -20789,7 +22625,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1186,
@@ -20807,7 +22643,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1189,
@@ -20825,7 +22661,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1190,
@@ -20843,7 +22679,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1191,
@@ -20861,7 +22697,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1192,
@@ -20879,7 +22715,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1201,
@@ -20897,7 +22733,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1202,
@@ -20915,7 +22751,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1205,
@@ -20933,7 +22769,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1210,
@@ -20951,7 +22787,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1211,
@@ -20969,7 +22805,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1212,
@@ -20987,7 +22823,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1213,
@@ -21005,7 +22841,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1214,
@@ -21023,7 +22859,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1238,
@@ -21059,7 +22895,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1269,
@@ -21077,7 +22913,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1270,
@@ -21095,7 +22931,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1271,
@@ -21113,7 +22949,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1272,
@@ -21131,7 +22967,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1284,
@@ -21149,7 +22985,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1306,
@@ -21167,7 +23003,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1338,
+      "title": "Cadangan Kerja-Kerja Perkhidmatan Pencucian Dan Pembersihan Luar Dan Dalam Bangunan Pejabat Serta Depoh Tunda Serta Kerja-Kerja Berkaitan Di Pejabat Cawangan Sungai Buloh, Seksyen U20, Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "SH 171/2026",
+      "source_id": 2,
+      "open_date": "2026-08-27",
+      "deadline": "2026-09-10",
+      "value": null,
+      "category": "MOF: 221001 / 221002",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87754",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1339,
+      "title": "Cadangan Kerja-Kerja Perkhidmatan Membekal dan Menghantar Pokok Teduhan Dan Pokok Buah-Buahan Ke Tapak Semaian MBSA Seksyen 17 Dan Seksyen 20 Shah Alam Untuk Majlis Bandaraya Shah Alam",
+      "ref": "SH 167/2026",
+      "source_id": 2,
+      "open_date": "2026-08-27",
+      "deadline": "2026-09-10",
+      "value": null,
+      "category": "MOF: 070201",
+      "ministry": "Majlis Bandaraya Shah Alam",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87750",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1060,
@@ -21185,7 +23057,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1187,
@@ -21203,7 +23075,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1188,
@@ -21221,7 +23093,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1209,
@@ -21239,7 +23111,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1282,
@@ -21257,7 +23129,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1283,
@@ -21275,7 +23147,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1315,
@@ -21293,7 +23165,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1070,
@@ -21311,7 +23183,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1071,
@@ -21329,7 +23201,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1216,
@@ -21347,7 +23219,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1262,
@@ -21365,7 +23237,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1263,
@@ -21383,7 +23255,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1280,
@@ -21401,7 +23273,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1281,
@@ -21419,7 +23291,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1303,
@@ -21437,7 +23309,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1304,
@@ -21455,7 +23327,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1305,
@@ -21473,7 +23345,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1318,
@@ -21491,7 +23363,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1319,
@@ -21509,7 +23381,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1320,
@@ -21527,7 +23399,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1321,
@@ -21545,7 +23417,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1322,
@@ -21563,7 +23435,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1323,
@@ -21581,7 +23453,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1324,
@@ -21599,7 +23471,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1325,
@@ -21617,7 +23489,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1326,
@@ -21635,7 +23507,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1327,
@@ -21653,7 +23525,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1328,
@@ -21671,7 +23543,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1251,
@@ -21689,7 +23561,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1261,
@@ -21701,13 +23573,13 @@
       "value": null,
       "category": "Gred CIDB: G2 / CE14 DAN CE21",
       "ministry": "Majlis Bandaraya Petaling Jaya",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87851",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1276,
@@ -21719,13 +23591,13 @@
       "value": null,
       "category": "Gred CIDB: G2 / CE14 DAN CE21",
       "ministry": "Majlis Bandaraya Petaling Jaya",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87850",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1286,
@@ -21737,13 +23609,13 @@
       "value": null,
       "category": "Gred CIDB: G2 / CE14 DAN CE21",
       "ministry": "Majlis Bandaraya Petaling Jaya",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87852",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1314,
@@ -21761,7 +23633,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1110,
@@ -21779,7 +23651,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1142,
@@ -21797,7 +23669,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1206,
@@ -21815,7 +23687,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1260,
@@ -21833,7 +23705,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1279,
@@ -21851,7 +23723,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1301,
@@ -21869,7 +23741,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1302,
@@ -21887,7 +23759,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1309,
@@ -21905,25 +23777,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1310,
       "title": "Cadangan Perlantikan Pembekalan Bahan Premix Dan Lain-Lain Yang Berkaitan Untuk Kegunaan Unit Road Gang, Jabatan Kejuruteraan, Majlis Perbandaran Selayang Bagi Tahun 2026 / 2027.",
       "ref": "MPS/SH/185/26",
       "source_id": 2,
-      "open_date": "2026-09-08",
+      "open_date": "2026-09-10",
       "deadline": "2026-09-17",
       "value": null,
       "category": "MOF: 090101",
       "ministry": "Majlis Perbandaran Selayang",
-      "status": "active",
+      "status": "upcoming",
       "url": "https://tender.selangor.my/tenders/87905",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1311,
@@ -21941,7 +23813,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1312,
@@ -21959,7 +23831,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1313,
@@ -21977,7 +23849,43 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1335,
+      "title": "KERJA-KERJA MENAIK TARAF DAN MEMBAIK PULIH TANDAS DI MEDAN SELERA KAWASAN PERINDUSTRIAN MEIL BATANG KALI UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
+      "ref": "MPHS/SH/K/93/2026",
+      "source_id": 2,
+      "open_date": "2026-09-08",
+      "deadline": "2026-09-17",
+      "value": null,
+      "category": "Gred CIDB: G1 / B04 DAN CE12",
+      "ministry": "Majlis Perbandaran Hulu Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87910",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1336,
+      "title": "KERJA-KERJA MENAIK TARAF DAN MEMBAIK PULIH KEROSAKAN DI GERAI PLB KAMPUNG GESIR TENGAH UNTUK MAJLIS PERBANDARAN HULU SELANGOR.",
+      "ref": "MPHS/SH/K/94/2026",
+      "source_id": 2,
+      "open_date": "2026-09-08",
+      "deadline": "2026-09-17",
+      "value": null,
+      "category": "Gred CIDB: G2 / B04 DAN CE21",
+      "ministry": "Majlis Perbandaran Hulu Selangor",
+      "status": "active",
+      "url": "https://tender.selangor.my/tenders/87912",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1066,
@@ -21995,7 +23903,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1067,
@@ -22013,7 +23921,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1068,
@@ -22031,7 +23939,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1069,
@@ -22049,7 +23957,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1147,
@@ -22067,7 +23975,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1244,
@@ -22085,7 +23993,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1245,
@@ -22103,7 +24011,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1246,
@@ -22121,7 +24029,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1247,
@@ -22139,7 +24047,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1248,
@@ -22157,7 +24065,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1249,
@@ -22175,7 +24083,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1250,
@@ -22193,7 +24101,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1267,
@@ -22211,7 +24119,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1268,
@@ -22229,7 +24137,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1278,
@@ -22247,7 +24155,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1287,
@@ -22265,7 +24173,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1146,
@@ -22283,7 +24191,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1288,
@@ -22301,7 +24209,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1289,
@@ -22319,7 +24227,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1290,
@@ -22337,7 +24245,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1291,
@@ -22355,7 +24263,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1292,
@@ -22373,7 +24281,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1293,
@@ -22391,7 +24299,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1294,
@@ -22409,7 +24317,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1295,
@@ -22427,7 +24335,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1296,
@@ -22445,7 +24353,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1297,
@@ -22463,7 +24371,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1298,
@@ -22481,7 +24389,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1299,
@@ -22499,7 +24407,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1300,
@@ -22517,7 +24425,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1308,
@@ -22535,7 +24443,115 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1330,
+      "title": "KERJA-KERJA PEMBAIKAN AWAM DAN ELEKTRIKAL SERTA KERJA LAIN BERKAITAN DI GALERI DIRAJA SULTAN ABDUL AZIZ, KLANG",
+      "ref": "MBDK.JKEJ.600-7/2/22",
+      "source_id": 2,
+      "open_date": "2026-09-14",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE21 / E04 / E11",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87909",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1331,
+      "title": "MENAIKTARAF TAMAN AWAM DI JALAN KERIS 18, TAMAN RASHNA, KLANG, SELANGOR",
+      "ref": "MBDK.JLR.600-7/1/354",
+      "source_id": 2,
+      "open_date": "2026-09-14",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "Gred CIDB: G2 / CE14 DAN CE21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87913",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1332,
+      "title": "PEMBEKALAN CENDERAHATI UNTUK ORANG AWAM BAGI PEMBAYARAN CUKAI SETAHUN UNTUK KEGUNAAN JABATAN KEWANGAN",
+      "ref": "MBDK.JKEW 100-10/6/3 Jld.2",
+      "source_id": 2,
+      "open_date": "2026-09-14",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "MOF: 030201",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87914",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1333,
+      "title": "KERJA-KERJA PEMBAIKAN DAN PENSTABILAN JAMBATAN DAN KOMPONEN JAMBATAN DI JALAN PERSIARAN DAMANSARA INDAH, PJU 3, PETALING JAYA, SELANGOR.",
+      "ref": "MBPJ/SH/K/191/2026",
+      "source_id": 2,
+      "open_date": "2026-09-15",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "Gred CIDB: G3 / CE08 DAN CE21",
+      "ministry": "Majlis Bandaraya Petaling Jaya",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87907",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1334,
+      "title": "KERJA-KERJA PEMASANGAN LAMPU HIASAN UNTUK HARI KEPUTERAAN DI JALAN ISTANA DAN SEKITARNYA",
+      "ref": "MBDK.JKEJ.600-7/3/6",
+      "source_id": 2,
+      "open_date": "2026-09-14",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "Gred CIDB: G2  G3  G4  G5  G6  G7 / E04 / E11 / E16 / E17 / E21",
+      "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87915",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1337,
+      "title": "PEMASANGAN ELEKTRIK BAGI PEMBINAAN TABIKA KEMAS TAMAN BUKIT BELIMBING INDAH, KG. BUKIT BELIMBING, TANJONG KARANG, SELANGOR",
+      "ref": "JKR(ES)KS/600-1/3/SP 74/26",
+      "source_id": 2,
+      "open_date": "2026-09-14",
+      "deadline": "2026-09-21",
+      "value": null,
+      "category": "Gred CIDB: G1  G2  G3 / E04 DAN E11",
+      "ministry": "Jabatan Kerja Raya Negeri Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87916",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 852,
@@ -22553,7 +24569,25 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
+    },
+    {
+      "id": 1329,
+      "title": "KERJA-KERJA MEMBINA JALAN KONKRIT SERTA KERJA-KERJA BERKAITAN DI KALUMPANG AGROPARK, DAERAH HULU SELANGOR",
+      "ref": "PPN.SEL.19/2026",
+      "source_id": 2,
+      "open_date": "2026-09-17",
+      "deadline": "2026-09-23",
+      "value": null,
+      "category": "Gred CIDB: G1 / CE21",
+      "ministry": "Jabatan Pertanian Selangor",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87917",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1237,
@@ -22571,7 +24605,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1274,
@@ -22589,7 +24623,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1275,
@@ -22607,7 +24641,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1145,
@@ -22625,7 +24659,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1259,
@@ -22643,7 +24677,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1277,
@@ -22661,7 +24695,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1285,
@@ -22679,7 +24713,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1207,
@@ -22697,7 +24731,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1208,
@@ -22715,7 +24749,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1317,
@@ -22733,7 +24767,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1064,
@@ -22751,7 +24785,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1065,
@@ -22769,7 +24803,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1161,
@@ -22781,13 +24815,13 @@
       "value": null,
       "category": "MOF: 221502",
       "ministry": "Majlis Bandaraya Diraja Klang (MBDK)",
-      "status": "upcoming",
+      "status": "active",
       "url": "https://tender.selangor.my/tenders/87704",
       "notes": null,
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1235,
@@ -22805,7 +24839,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1236,
@@ -22823,7 +24857,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1063,
@@ -22841,7 +24875,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1307,
@@ -22859,7 +24893,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1258,
@@ -22877,7 +24911,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1273,
@@ -22895,7 +24929,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1316,
@@ -22913,7 +24947,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1234,
@@ -22931,7 +24965,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1228,
@@ -22949,7 +24983,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1229,
@@ -22967,7 +25001,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1230,
@@ -22985,7 +25019,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1231,
@@ -23003,7 +25037,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1232,
@@ -23021,7 +25055,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1233,
@@ -23039,7 +25073,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 1144,
@@ -23057,7 +25091,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 255,
@@ -23075,7 +25109,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     },
     {
       "id": 259,
@@ -23093,7 +25127,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-08T05:41:28Z"
+      "scraped_at": "2026-09-09T05:46:35Z"
     }
   ],
   "notifications": []
