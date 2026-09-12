@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-09-11T05:42:30Z",
+  "exported_at": "2026-09-12T05:29:26Z",
   "tenders": [
     {
       "id": 8,
@@ -161,7 +161,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": "2026-06-08T12:51:14Z",
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 53,
@@ -1007,7 +1007,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1341,
@@ -1025,7 +1025,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1342,
@@ -1115,7 +1115,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1347,
@@ -1133,7 +1133,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1348,
@@ -1151,7 +1151,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1349,
@@ -1169,7 +1169,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1350,
@@ -1187,7 +1187,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1351,
@@ -1223,7 +1223,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1353,
@@ -1241,7 +1241,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1354,
@@ -1259,7 +1259,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1355,
@@ -1277,7 +1277,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1356,
@@ -1295,7 +1295,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1357,
@@ -1320,7 +1320,7 @@
       "title": "07-10-2026 at 12:00 noon",
       "ref": null,
       "source_id": 4,
-      "open_date": "2026-09-05",
+      "open_date": "2026-09-12",
       "deadline": null,
       "value": null,
       "category": null,
@@ -1331,14 +1331,14 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:49Z"
+      "scraped_at": "2026-09-12T05:27:50Z"
     },
     {
       "id": 1359,
       "title": "14-10-2026 at 12:00 noon",
       "ref": null,
       "source_id": 4,
-      "open_date": "2026-09-05",
+      "open_date": "2026-09-12",
       "deadline": null,
       "value": null,
       "category": null,
@@ -1349,7 +1349,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:49Z"
+      "scraped_at": "2026-09-12T05:27:50Z"
     },
     {
       "id": 1360,
@@ -1385,7 +1385,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1362,
@@ -1403,7 +1403,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1363,
@@ -1421,7 +1421,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1364,
@@ -1439,7 +1439,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1365,
@@ -1457,7 +1457,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1366,
@@ -1475,7 +1475,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1367,
@@ -1493,7 +1493,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1368,
@@ -1511,7 +1511,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1369,
@@ -1529,7 +1529,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1370,
@@ -1547,7 +1547,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1371,
@@ -1565,7 +1565,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1372,
@@ -1583,7 +1583,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:54Z"
+      "scraped_at": "2026-09-12T05:27:53Z"
     },
     {
       "id": 1373,
@@ -1601,7 +1601,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1374,
@@ -1619,7 +1619,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1375,
@@ -1637,7 +1637,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1376,
@@ -1655,7 +1655,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1377,
@@ -1673,7 +1673,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1378,
@@ -1691,7 +1691,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1379,
@@ -1709,7 +1709,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1380,
@@ -1727,7 +1727,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1381,
@@ -1745,7 +1745,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:41:31Z"
+      "scraped_at": "2026-09-12T05:28:29Z"
     },
     {
       "id": 1382,
@@ -1763,7 +1763,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1383,
@@ -1781,7 +1781,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1384,
@@ -1799,7 +1799,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1385,
@@ -1817,7 +1817,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1386,
@@ -1835,7 +1835,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1387,
@@ -1853,7 +1853,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1388,
@@ -1871,7 +1871,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1389,
@@ -1889,7 +1889,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1390,
@@ -1907,7 +1907,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1391,
@@ -1925,7 +1925,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:04Z"
+      "scraped_at": "2026-09-12T05:29:01Z"
     },
     {
       "id": 1392,
@@ -1943,7 +1943,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1393,
@@ -1961,7 +1961,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1394,
@@ -2123,7 +2123,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1403,
@@ -2141,7 +2141,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1404,
@@ -2159,7 +2159,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1405,
@@ -2177,7 +2177,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1406,
@@ -2195,7 +2195,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1407,
@@ -2213,7 +2213,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1408,
@@ -2231,7 +2231,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1409,
@@ -2249,7 +2249,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1410,
@@ -2267,7 +2267,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1411,
@@ -2285,7 +2285,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1412,
@@ -2303,7 +2303,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1413,
@@ -2321,7 +2321,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1414,
@@ -2339,7 +2339,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1415,
@@ -2357,7 +2357,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1416,
@@ -2375,7 +2375,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1417,
@@ -2393,7 +2393,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1418,
@@ -2411,7 +2411,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1419,
@@ -2429,7 +2429,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1420,
@@ -2447,7 +2447,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1421,
@@ -2465,7 +2465,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1422,
@@ -2483,7 +2483,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1423,
@@ -2501,7 +2501,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1424,
@@ -2519,7 +2519,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1425,
@@ -2537,7 +2537,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1426,
@@ -2555,7 +2555,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1427,
@@ -2573,7 +2573,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1428,
@@ -2591,7 +2591,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1429,
@@ -2609,7 +2609,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1430,
@@ -2645,7 +2645,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1432,
@@ -2663,7 +2663,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1433,
@@ -2681,7 +2681,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1434,
@@ -2699,7 +2699,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1435,
@@ -2717,7 +2717,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1436,
@@ -2735,7 +2735,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1437,
@@ -2753,7 +2753,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:14Z"
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 1438,
@@ -2771,7 +2771,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:24Z"
+      "scraped_at": "2026-09-12T05:29:21Z"
     },
     {
       "id": 1439,
@@ -2789,7 +2789,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:24Z"
+      "scraped_at": "2026-09-12T05:29:21Z"
     },
     {
       "id": 1440,
@@ -2807,7 +2807,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:24Z"
+      "scraped_at": "2026-09-12T05:29:21Z"
     },
     {
       "id": 1441,
@@ -2825,7 +2825,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:24Z"
+      "scraped_at": "2026-09-12T05:29:21Z"
     },
     {
       "id": 1451,
@@ -2861,7 +2861,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1453,
@@ -2879,7 +2879,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1454,
@@ -2915,7 +2915,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1456,
@@ -2933,7 +2933,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1457,
@@ -2951,7 +2951,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1458,
@@ -2969,7 +2969,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1459,
@@ -2987,7 +2987,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1477,
@@ -3005,7 +3005,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1478,
@@ -3023,7 +3023,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1479,
@@ -3041,7 +3041,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:45Z"
+      "scraped_at": "2026-09-12T05:27:46Z"
     },
     {
       "id": 1480,
@@ -3095,7 +3095,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
     },
     {
       "id": 1483,
@@ -3113,7 +3113,169 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:42:06Z"
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1487,
+      "title": "function MedWindow(URL)\n{\npopwin = window.open(URL,'win1','width=700,height=500,top=100,bottom=100,left=150,scrollbars=yes');\nif (popwin){popwin.opener=this;}\n}\n\n\n\n\n\n\n\n\n \n\n \n\n\n\n     \n Available Tender Notice(s) \n    \n\n\n\n\n\n\n  59 record(s) found. \n  \n  * Click on the Title to view details.\n  \n  \n  \n\n  \n  \n    \n       \n        \n           \n           \n            Posted Date\n            Closing Date\n            Type\n            Ministry/Department\n            Reference No/Title\n          \n          \n          \n          document.write('<tr bgcolor='+(1%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            12-09-2026\n            07-10-2026 at 09:30 am\n            Tender\n            Public Works Department\n            (T/471/09/2026)Naik Taraf Pusat Penjaja KabongNotes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/471/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(2%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            12-09-2026\n            14-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/468/09/2026)Retender : Naiktaraf Jeti Nelayan Kampung Hulu Laut Kabong 4Notes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/468/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(3%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            12-09-2026\n            07-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/470/09/2026)Penyambungan Bekalan Elektrik (3 Fasa ) Dan Sistem Pendawaian Dalaman (1 Fasa) Rumah Panjang Babu Tengah, DebakNotes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/470/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(4%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            12-09-2026\n            07-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/467/09/2026)Penyambungan Bekalan Elektrik (3 Fasa ) Dan Sistem Pendawaian Dalaman (1 Fasa) Di Rumah Panjang Selangking, Layar, Betong.Notes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/467/09/2026 at JKR Sarawak Homepage\n          \n          \n          \n          document.write('<tr bgcolor='+(5%2?'#FFFFFF':'#c2d2f1')+'>');\n    \n         \n            \n            12-09-2026\n            14-10-2026 at 12:00 noon\n            Tender\n            Public Works Department\n            (T/469/09/2026)Retender : Naiktaraf Jeti Nelayan Kampung Hulu Laut Kabong 3Notes: Please refer to Special Notice to Tenderers Concerning Compulsory Site Visit T/469/09/2026 at JKR Sarawak Homepage\n          \n          \n           \n        \n  \n    \n  \n  \n  \n  [Home] Records \n  \n            1 - 5 ||\n          \n       \n          6 - 10 ||\n         \n       \n          11 - 15 ||\n         \n       \n          16 - 20 ||\n         \n       \n          21 - 25 ||\n         \n       \n          26 - 30 ||\n         \n       \n          31 - 35 ||\n         \n       \n          36 - 40 ||\n         \n       \n          41 - 45 ||\n         \n       \n          46 - 50 ||\n         \n       \n          51 - 55 ||\n         \n       \n                   56 - 59",
+      "ref": null,
+      "source_id": 4,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "javascript:MedWindow('public_tender_view.jsp?TenderId=271077');",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:27:50Z"
+    },
+    {
+      "id": 1488,
+      "title": "07-10-2026 at 09:30 am",
+      "ref": null,
+      "source_id": 4,
+      "open_date": "2026-09-12",
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": null,
+      "status": "active",
+      "url": "https://etendernotice.sarawak.gov.my/etender/public/public_tender_list.jsp",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:27:50Z"
+    },
+    {
+      "id": 1489,
+      "title": "1 YEARS SERVICE CONTRACT - LIGHTING MAINTENANCE AT EMS GF2 M4 STESEN JANAKUASA SULTAN AZLAN SHAH (SJSAS)",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/files/Iklan_Tender_RFx_4000054309.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1490,
+      "title": "FLASH TANK A REPAIR  WORKS DURING MAJOR  OVERHAUL 2027 AT  MANJUNG 5, TNB POWER  GENERATION SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/accolades/0_Tender_Notice_RFX4000054322.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1491,
+      "title": "MEMBEKAL, MENGHANTAR, MEMASANG, MENGUJI DAN MENTAULIAH SISTEM PEMANTAUAN VIDEO BERPUSAT (CCTV) DI PUSAT PENILAIAN (ASSESSMENT CENTRE) DI TNB INTEGRATED LEARNING SOLUTION – ILSAS BANGI SELANGOR DARUL EHSAN",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/IKLAN_-_DCC_3582026_%28IIS_TNB_ILS_HOPE_F_00252026%29.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1492,
+      "title": "TO SUPPLY AND DELIVER SOOTBLOWER SPARES TO MANJUNG 5, TNB POWER GENERATION SDN. BHD.",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_RFX4000054334.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1493,
+      "title": "DOUBLE CIRCUIT 132KV OVERHEAD LINES PMU ENSTEK (ESTK)-PMU ENSTEK SOUTH (ESTS).",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/Tender_Notice_-_RFx_No._4000054326.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1494,
+      "title": "SUPPLY OF TRANSFORMER FOR GRID MAINTENANCE, GRIDDIVISION, TNB\nMAINHEAD A : 240 MVA & 180 MVA 275/132KV AUTOTRANSFORMER \nMAINHEAD B : 90MVA 132/33KV & 30MVA 132/11KV POWER TRANSFORMER",
+      "ref": null,
+      "source_id": 11,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TNB",
+      "status": "active",
+      "url": "https://www.tnb.com.my/assets/tender_price/T-29543_4000054342_TenderNotice.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:03Z"
+    },
+    {
+      "id": 1495,
+      "title": "REGISTRATION OF INTEREST: TENDER FOR NEXT GENERATION IP BROADCAST CENTRE (NGIPBC) PLATFORM MODERNIZATION",
+      "ref": null,
+      "source_id": 12,
+      "open_date": null,
+      "deadline": null,
+      "value": null,
+      "category": null,
+      "ministry": "TM",
+      "status": "active",
+      "url": "https://www.tm.com.my/sites/default/files/2026-09/ROI%20NOTICE%20-%20NGIPBC.pdf",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:29:10Z"
     },
     {
       "id": 164,
@@ -23435,7 +23597,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1071,
@@ -23453,7 +23615,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1216,
@@ -23471,7 +23633,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1262,
@@ -23489,7 +23651,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1263,
@@ -23507,7 +23669,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1280,
@@ -23525,7 +23687,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1281,
@@ -23543,7 +23705,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1303,
@@ -23561,7 +23723,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1304,
@@ -23579,7 +23741,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1305,
@@ -23597,7 +23759,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1318,
@@ -23615,7 +23777,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1319,
@@ -23633,7 +23795,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1320,
@@ -23651,7 +23813,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1321,
@@ -23669,7 +23831,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1322,
@@ -23687,7 +23849,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1323,
@@ -23705,7 +23867,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1324,
@@ -23723,7 +23885,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1325,
@@ -23741,7 +23903,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1326,
@@ -23759,7 +23921,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1327,
@@ -23777,7 +23939,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1328,
@@ -23795,7 +23957,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1251,
@@ -23813,7 +23975,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1261,
@@ -23831,7 +23993,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1276,
@@ -23849,7 +24011,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1286,
@@ -23867,7 +24029,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1314,
@@ -23885,7 +24047,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1110,
@@ -23903,7 +24065,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1142,
@@ -23921,7 +24083,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1152,
@@ -23939,7 +24101,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1206,
@@ -23957,7 +24119,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1260,
@@ -23975,7 +24137,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1279,
@@ -23993,7 +24155,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1301,
@@ -24011,7 +24173,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1302,
@@ -24029,7 +24191,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1309,
@@ -24047,7 +24209,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1310,
@@ -24065,7 +24227,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1311,
@@ -24083,7 +24245,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1312,
@@ -24101,7 +24263,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1313,
@@ -24119,7 +24281,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1335,
@@ -24137,7 +24299,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1336,
@@ -24155,7 +24317,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1447,
@@ -24173,7 +24335,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1448,
@@ -24191,7 +24353,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1449,
@@ -24209,7 +24371,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1450,
@@ -24227,7 +24389,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1464,
@@ -24245,7 +24407,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1066,
@@ -24263,7 +24425,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1067,
@@ -24281,7 +24443,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1068,
@@ -24299,7 +24461,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1069,
@@ -24317,7 +24479,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1147,
@@ -24335,7 +24497,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1244,
@@ -24353,7 +24515,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1245,
@@ -24371,7 +24533,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1246,
@@ -24389,7 +24551,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1247,
@@ -24407,7 +24569,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1248,
@@ -24425,7 +24587,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1249,
@@ -24443,7 +24605,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1250,
@@ -24461,7 +24623,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1267,
@@ -24479,7 +24641,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1268,
@@ -24497,7 +24659,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1278,
@@ -24515,7 +24677,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1287,
@@ -24533,7 +24695,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1146,
@@ -24551,7 +24713,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1288,
@@ -24569,7 +24731,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1289,
@@ -24587,7 +24749,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1290,
@@ -24605,7 +24767,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1291,
@@ -24623,7 +24785,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1292,
@@ -24641,7 +24803,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1293,
@@ -24659,7 +24821,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1294,
@@ -24677,7 +24839,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1295,
@@ -24695,7 +24857,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1296,
@@ -24713,7 +24875,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1297,
@@ -24731,7 +24893,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1298,
@@ -24749,7 +24911,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1299,
@@ -24767,7 +24929,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1300,
@@ -24785,7 +24947,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1308,
@@ -24803,7 +24965,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1330,
@@ -24821,7 +24983,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1331,
@@ -24875,7 +25037,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1334,
@@ -24893,7 +25055,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1337,
@@ -24911,7 +25073,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 852,
@@ -24929,7 +25091,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1444,
@@ -24947,7 +25109,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1445,
@@ -24965,7 +25127,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1446,
@@ -24983,7 +25145,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1329,
@@ -25001,7 +25163,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1443,
@@ -25019,7 +25181,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1237,
@@ -25037,7 +25199,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1274,
@@ -25055,7 +25217,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1275,
@@ -25073,7 +25235,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1460,
@@ -25091,7 +25253,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1461,
@@ -25109,7 +25271,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1462,
@@ -25127,7 +25289,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1463,
@@ -25145,7 +25307,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1476,
@@ -25163,7 +25325,61 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
+    },
+    {
+      "id": 1484,
+      "title": "CADANGAN MEMBINA DAN MENYIAPKAN SEBUAH DEWAN KOMUNITI JENIS TERBUKA DI ATAS LOT 783 JALAN EMAS 33, BANDAR SUNGAI EMAS, BANTING, DAERAH KUALA LANGAT.",
+      "ref": "MPKL/JK/SH : 57/2026",
+      "source_id": 2,
+      "open_date": "2026-09-17",
+      "deadline": "2026-09-24",
+      "value": null,
+      "category": "Gred CIDB: G3 / B24",
+      "ministry": "Majlis Perbandaran Kuala Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87968",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:27:35Z"
+    },
+    {
+      "id": 1485,
+      "title": "CADANGAN MEMBINA DAN MENYIAPKAN SEBUAH DEWAN KOMUNITI JENIS TERBUKA DI ATAS LOT 17272, JALAN BSE 4/41, BANDAR SERI EHSAN, BANTING, KUALA LANGAT.",
+      "ref": "MPKL/JK/SH:56/2026",
+      "source_id": 2,
+      "open_date": "2026-09-17",
+      "deadline": "2026-09-24",
+      "value": null,
+      "category": "Gred CIDB: G3 / B24",
+      "ministry": "Majlis Perbandaran Kuala Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87965",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:27:35Z"
+    },
+    {
+      "id": 1486,
+      "title": "CADANGAN MEROBOH DAN MEMBINA BARU BANGUNAN STOR SIMPANAN BAHAN KIMIA UNIT VEKTOR JPSPKP MPKL DI JALAN STADIUM, TELOK DATOK, BANTING, KUALA LANGAT.",
+      "ref": "MPKL/JK/SH : 54/2026",
+      "source_id": 2,
+      "open_date": "2026-09-17",
+      "deadline": "2026-09-24",
+      "value": null,
+      "category": "Gred CIDB: G3 / B24",
+      "ministry": "Majlis Perbandaran Kuala Langat",
+      "status": "upcoming",
+      "url": "https://tender.selangor.my/tenders/87963",
+      "notes": null,
+      "starred": 0,
+      "notified": 0,
+      "date_added": null,
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1145,
@@ -25181,7 +25397,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1259,
@@ -25199,7 +25415,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1277,
@@ -25217,7 +25433,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1285,
@@ -25235,7 +25451,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1207,
@@ -25253,7 +25469,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1208,
@@ -25271,7 +25487,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1317,
@@ -25289,7 +25505,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1475,
@@ -25307,7 +25523,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1064,
@@ -25325,7 +25541,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1065,
@@ -25343,7 +25559,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1161,
@@ -25361,7 +25577,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1235,
@@ -25379,7 +25595,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1236,
@@ -25397,7 +25613,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1442,
@@ -25415,7 +25631,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1063,
@@ -25433,7 +25649,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1307,
@@ -25451,7 +25667,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1258,
@@ -25469,7 +25685,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1273,
@@ -25487,7 +25703,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1316,
@@ -25505,7 +25721,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1234,
@@ -25523,7 +25739,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1228,
@@ -25541,7 +25757,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1229,
@@ -25559,7 +25775,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1230,
@@ -25577,7 +25793,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1231,
@@ -25595,7 +25811,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1232,
@@ -25613,7 +25829,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1233,
@@ -25631,7 +25847,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1470,
@@ -25649,7 +25865,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1471,
@@ -25667,7 +25883,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1472,
@@ -25685,7 +25901,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1473,
@@ -25703,7 +25919,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1474,
@@ -25721,7 +25937,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1072,
@@ -25739,7 +25955,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1468,
@@ -25757,7 +25973,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1469,
@@ -25775,7 +25991,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1467,
@@ -25793,7 +26009,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1144,
@@ -25811,7 +26027,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1466,
@@ -25829,7 +26045,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 1465,
@@ -25847,7 +26063,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 255,
@@ -25865,7 +26081,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     },
     {
       "id": 259,
@@ -25883,7 +26099,7 @@
       "starred": 0,
       "notified": 0,
       "date_added": null,
-      "scraped_at": "2026-09-11T05:40:13Z"
+      "scraped_at": "2026-09-12T05:27:35Z"
     }
   ],
   "notifications": []
