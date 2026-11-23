@@ -248,6 +248,7 @@ tr:hover td{background:#fafbfc}
   <div class="nl">Tools</div>
   <button class="nb" id="mn-sources" onclick="nav('sources');closeDrawer()">🌐 Sources</button>
   <button class="nb" id="mn-pipeline" onclick="nav('pipeline');closeDrawer()">⚙️ Pipeline</button>
+  <button class="nb" id="mn-analytics" onclick="nav('analytics');closeDrawer()">📊 Site Usage</button>
 </div>
 
 <div class="app">
@@ -261,6 +262,7 @@ tr:hover td{background:#fafbfc}
     <div class="nl">Tools</div>
     <button class="nb" id="dn-sources" onclick="nav('sources')">🌐 Sources</button>
     <button class="nb" id="dn-pipeline" onclick="nav('pipeline')">⚙️ Pipeline</button>
+    <button class="nb" id="dn-analytics" onclick="nav('analytics')">📊 Site Usage</button>
   </aside>
   <main class="main" id="main"></main>
 </div>
@@ -362,11 +364,11 @@ function nav(pg){
   S.page=pg;S.pn=1;
   S.status=['active','upcoming','overdue'].includes(pg)?pg:null;
   S.starred=pg==='starred';
-  ['tenders','active','upcoming','overdue','starred','sources','pipeline'].forEach(p=>{
+  ['tenders','active','upcoming','overdue','starred','sources','pipeline','analytics'].forEach(p=>{
     document.getElementById('dn-'+p)?.classList.toggle('on',p===pg);
     document.getElementById('mn-'+p)?.classList.toggle('on',p===pg);
   });
-  if(pg==='sources')renderSrc();else if(pg==='pipeline')renderPipe();else renderTenders();
+  if(pg==='sources')renderSrc();else if(pg==='pipeline')renderPipe();else if(pg==='analytics')renderAnalytics();else renderTenders();
 }
 
 async function renderTenders(){
@@ -533,6 +535,72 @@ async function renderPipe(){
   }else document.getElementById('la').innerHTML='<div style="color:var(--muted);font-size:.8rem">Logs in API mode only.</div>';
 }
 
+async function renderAnalytics(){
+  const el=document.getElementById('main');
+  el.innerHTML='<h2 style="margin-bottom:.7rem;font-size:.95rem">📊 Site Usage</h2><div id="an"><div class="shimmer" style="height:200px"></div></div>';
+  let d;
+  try{
+    const r=await fetch('/api/analytics',{signal:AbortSignal.timeout(6000)});
+    d=await r.json().catch(()=>null);
+    if(!d)d={connected:false,reason:'fetch_error'};
+  }catch{d={connected:false,reason:'fetch_error'};}
+  document.getElementById('an').innerHTML=d.connected?analyticsHTML(d):analyticsFallback(d.reason,d.detail);
+}
+
+function analyticsHTML(d){
+  const t=d.totals||{views:0,visitors:0};
+  return`<div class="stats" style="grid-template-columns:repeat(2,1fr);max-width:420px;margin-bottom:.85rem">
+    <div class="stat st"><div class="sn">${(t.views||0).toLocaleString()}</div><div class="sl">Page Views (${d.days}d)</div></div>
+    <div class="stat sa"><div class="sn">${(t.visitors||0).toLocaleString()}</div><div class="sl">Visitors (${d.days}d)</div></div>
+  </div>
+  <div class="pc"><h3>Daily Views</h3>${sparkBars(d.daily||[])}
+    <p style="font-size:.74rem;color:var(--muted);margin-top:.4rem">${d.since} → ${d.until}</p></div>
+  <div class="sgrid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="pc"><h3>🔗 Top Pages</h3>${rankList(d.pages)}</div>
+    <div class="pc"><h3>🌍 Top Countries</h3>${rankList(d.countries)}</div>
+    <div class="pc"><h3>💻 Devices</h3>${rankList(d.devices)}</div>
+    <div class="pc"><h3>↪️ Referrers</h3>${rankList(d.referrers)}</div>
+  </div>`;
+}
+
+function sparkBars(daily){
+  if(!daily.length)return'<p style="font-size:.78rem;color:var(--muted)">No daily data yet.</p>';
+  const max=Math.max(1,...daily.map(x=>x.views));
+  const w=600,h=110,bw=w/daily.length;
+  const bars=daily.map((x,i)=>{
+    const bh=Math.max(2,(x.views/max)*(h-16));
+    const bx=i*bw+1,by=h-bh-14;
+    return`<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${Math.max(1,bw-2).toFixed(1)}" height="${bh.toFixed(1)}" rx="2" fill="var(--primary)" opacity=".85"><title>${esc(x.key)}: ${x.views} views</title></rect>`;
+  }).join('');
+  return`<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:110px;display:block" preserveAspectRatio="none">${bars}</svg>`;
+}
+
+function rankList(rows){
+  if(!rows||!rows.length)return'<p style="font-size:.78rem;color:var(--muted)">No data yet.</p>';
+  const max=Math.max(1,...rows.map(r=>r.views));
+  return`<div style="display:flex;flex-direction:column;gap:.4rem">${rows.map(r=>`
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <span style="flex:1.2;font-size:.79rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(r.key)}">${esc(r.key)||'—'}</span>
+      <div style="flex:1;background:var(--bg);border-radius:4px;height:6px;overflow:hidden"><div style="height:100%;background:var(--primary);width:${Math.round(r.views/max*100)}%"></div></div>
+      <span style="font-size:.74rem;color:var(--muted);min-width:34px;text-align:right">${r.views.toLocaleString()}</span>
+    </div>`).join('')}</div>`;
+}
+
+function analyticsFallback(reason,detail){
+  const MAP={
+    no_token:'Web Analytics isn’t connected yet — no access token configured.',
+    no_project:'Web Analytics isn’t connected yet — no project ID configured.',
+    api_error:'Couldn’t reach the Vercel Analytics API right now'+(detail?' ('+esc(detail)+').':'.'),
+    fetch_error:'The analytics endpoint isn’t reachable from this deployment (expected on static hosts like Netlify — Web Analytics needs the Vercel deployment).',
+  };
+  const msg=MAP[reason]||'Site usage analytics isn’t connected yet.';
+  return`<div class="pc">
+    <h3>📊 Site Usage</h3>
+    <p style="font-size:.85rem;color:var(--text);margin:.3rem 0 .6rem">${msg}</p>
+    <p style="font-size:.79rem;color:var(--muted);line-height:1.65">To enable it: turn on <b>Web Analytics</b> in the Vercel dashboard → <b>Analytics</b> tab → <b>Enable</b>, then add a <code>VERCEL_ANALYTICS_TOKEN</code> environment variable and redeploy.</p>
+  </div>`;
+}
+
 async function triggerScrape(){
   if(S.mode!=='api'){toast('API mode only');return;}
   const btn=document.getElementById('sbtn');btn.disabled=true;btn.textContent='⏳ Running…';
@@ -664,5 +732,7 @@ document.addEventListener('click',e=>{
 
 boot();
 </script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
