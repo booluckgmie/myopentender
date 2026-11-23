@@ -18,6 +18,7 @@ const SOURCES = {
   14: require('./sources/johor'),
   15: require('./sources/mahb'),
   16: require('./sources/petronas'),
+  17: require('./sources/bnm'),
 };
 
 async function scrapeAll(db, sourceIds) {
